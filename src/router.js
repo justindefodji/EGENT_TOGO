@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './pages/Home.vue'
 import About from './pages/About.vue'
 import Services from './pages/Services.vue'
+import Products from './pages/Products.vue'
 import Gallery from './pages/Gallery.vue'
 
 const routes = [
@@ -18,9 +19,14 @@ const routes = [
     component: About
   },
   {
-    path: '/services-produits',
+    path: '/services',
     name: 'Services',
     component: Services
+  },
+  {
+    path: '/produits',
+    name: 'Products',
+    component: Products
   },
   {
     path: '/galerie',

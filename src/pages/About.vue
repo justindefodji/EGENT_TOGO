@@ -1,32 +1,49 @@
 <template>
-  <div class="bg-white py-8 md:py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Titre -->
-      <div class="text-center mb-16 md:mb-20">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-dark mb-4">À PROPOS DE <span class="text-secondary">NOUS</span></h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Découvrez notre mission, nos valeurs et notre engagement envers l'énergie durable</p>
+  <div>
+    <!-- Hero Section About -->
+    <div class="bg-gradient-to-br from-blue-900 via-blue-800 to-dark relative overflow-visible -mt-32 pt-0">
+      <!-- Background elements -->
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
       </div>
 
-      <!-- Section Vidéo/Image avec bouton play -->
-      <div class="mb-16 md:mb-24">
-        <div class="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
-          <img 
-            src="https://via.placeholder.com/1200x500?text=About+Video" 
-            alt="À propos d'EGENT TOGO"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-          <!-- Gradient overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-          <!-- Play button -->
-          <button class="absolute inset-0 flex items-center justify-center">
-            <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center hover:bg-secondary transition-all duration-300 shadow-xl">
-              <i class="fas fa-play text-dark text-xl ml-1"></i>
-            </div>
-          </button>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-32 md:py-40">
+        <!-- Section Titre Hero -->
+        <div class="text-center mb-16 md:mb-20">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">À PROPOS DE <span class="text-secondary">NOUS</span></h1>
+          <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            Découvrez notre mission, nos valeurs et notre engagement envers l'énergie durable
+          </p>
         </div>
       </div>
 
-      <!-- Section Notre Histoire -->
+      <!-- Section Vidéo/Image avec bouton play - déborde sur la section blanche -->
+      <div class="relative h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl group mx-4 sm:mx-6 lg:mx-8 mb-0 md:mb-0 -mt-40 md:-mt-56 z-20">
+        <img 
+          src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1200&h=600&fit=crop" 
+          alt="À propos d'EGENT TOGO"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent"></div>
+        <!-- Play button -->
+        <button class="absolute inset-0 flex items-center justify-center group">
+          <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center hover:bg-secondary transition-all duration-300 shadow-2xl transform group-hover:scale-110">
+            <i class="fas fa-play text-dark text-3xl ml-1"></i>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenu blanc -->
+    <div class="bg-white py-8 md:py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      </div>
+    </div>
+
+    <!-- Section Notre Histoire -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-16 md:mb-24">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <!-- Carte verte avec statistiques -->
@@ -254,6 +271,7 @@
       </div> -->
 
       <!-- Section CTA - Solutions d'Énergie -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 md:mb-24">
       <div class="mb-16 md:mb-24 py-16 md:py-24 bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl px-8 md:px-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <!-- Contenu texte gauche -->
@@ -291,6 +309,7 @@
         <button class="bg-secondary hover:bg-orange-600 text-white font-black px-8 py-4 rounded-full transition-colors duration-300 text-lg">
           Demander un Devis
         </button>
+      </div>
       </div>
     </div>
   </div>

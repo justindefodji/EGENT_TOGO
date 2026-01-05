@@ -114,7 +114,7 @@
       <!-- Bottom Divider -->
       <div class="border-t border-blue-700 pt-8">
         <p class="text-center text-blue-300 text-sm">
-          &copy; 2025 EGENT-TOGO. Tous droits réservés.
+          &copy; 2026 EGENT-TOGO. Tous droits réservés.
         </p>
       </div>
     </div>

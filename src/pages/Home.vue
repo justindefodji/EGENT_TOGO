@@ -103,7 +103,7 @@
           <h2 class="text-4xl md:text-5xl font-black text-[#05075F] leading-tight">NOUS OFFRONS DES SOLUTIONS ÉNERGÉTIQUES DURABLES</h2>
         </div>
 
-        c
+        
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <!-- Service 1: Électricité Générale -->
           <div class="group relative overflow-hidden rounded-3xl h-80">

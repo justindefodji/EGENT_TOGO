@@ -11,7 +11,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-32 md:py-40">
         <!-- Section Titre Hero -->
         <div class="text-center mb-16 md:mb-20">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">SERVICES & <span class="text-secondary">PRODUITS</span></h1>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">NOS <span class="text-secondary">SERVICES</span></h1>
           <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             Nos services sont conçus pour répondre à vos besoins et vous accompagner dans la réalisation de vos projets.
           </p>
@@ -21,8 +21,8 @@
       <!-- Section Vidéo/Image avec bouton play - déborde sur la section blanche -->
       <div class="relative h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl group mx-4 sm:mx-6 lg:mx-8 mb-0 md:mb-0 -mt-40 md:-mt-56 z-20">
         <img 
-          src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1200&h=600&fit=crop" 
-          alt="Services et Produits EGENT TOGO"
+          src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&h=600&fit=crop" 
+          alt="Services EGENT TOGO"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <!-- Gradient overlay -->
@@ -204,79 +204,7 @@
       </div>
     </section>
 
-    <!-- Produits Phares Section -->
-    <section class="bg-white py-16 md:py-24">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center mb-20">
-          <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Nos produits</p>
-          <h2 class="text-4xl md:text-5xl font-black text-[#05075F] leading-tight mb-6">DÉCOUVREZ NOS PRODUITS PHARES</h2>
-          <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            Nous avons des produits conçus pour vous aider à réduire vos coûts d'électricité et à améliorer votre confort. Découvrez-les dès maintenant !
-          </p>
-        </div>
 
-        <!-- Products Grid - 3 Column Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-end">
-          <!-- Product 1: Armoire Billy -->
-          <div class="flex flex-col h-full">
-            <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=389&h=446&fit=crop" 
-                alt="Armoire Billy"
-                class="w-[389px] h-[446px] object-cover"
-              />
-              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
-                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Armoire Billy</h3>
-                <p class="text-gray-700 text-sm leading-relaxed">
-                  Solution anti délestage, pour éviter les coupures de courant. Remplace valablement les groupes électrogènes.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 2: Lampadaires EGENT Solar - CENTER/LARGER -->
-          <div class="flex flex-col-reverse h-full md:-mt-12">
-            <div class="relative overflow-hidden rounded-3xl shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=389&h=446&fit=crop" 
-                alt="Lampadaires EGENT Solar"
-                class="w-[389px] h-[446px] object-cover"
-              />
-              <div class="absolute inset-x-0 top-0 bg-white p-6 rounded-t-3xl">
-                <h3 class="text-3xl font-black text-[#0392C7] mb-2">Lampadaires<br>EGENT SOLAR</h3>
-                <p class="text-gray-700 text-sm leading-relaxed">
-                  Des lampadaires solaires pour illuminer vos espaces extérieurs tout en réduisant vos coûts d'électricité.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 3: Kit Zoklin -->
-          <div class="flex flex-col h-full">
-            <div class="relative bg-orange-50 rounded-3xl overflow-hidden shadow-lg">
-
-              <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=389&h=446&fit=crop" 
-                alt="Kit Zoklin"
-                class="w-[389px] h-[446px] object-cover"
-              />
-              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
-                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Kit Zoklin</h3>
-                <p class="text-gray-700 text-sm leading-relaxed">
-                  Votre solution solaire préconçue pour une installation rapide et facile. Tout inclus pour votre autonomie énergétique.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA Button -->
-        <div class="text-center">
-          <button class="bg-[#2F7914] hover:bg-[#1f5009] text-white px-8 py-3 text-lg font-semibold rounded-lg transition-colors duration-300">En savoir plus</button>
-        </div>
-      </div>
-    </section>
 
     <!-- CTA Section: Main d'oeuvre qualifiée -->
     <section class="relative overflow-hidden h-[371px] bg-gradient-to-r from-[#1a2b5a] via-[#2c3e7a] to-[#1a2b5a]">
