@@ -1,33 +1,7 @@
-# GitHub Pages configuration
-# This ensures assets are served with the correct MIME types
+# GitHub Pages configuration for Vue.js build
+# Jekyll is disabled via .nojekyll
 
-theme: jekyll-theme-minimal
-
-# Include the dist folder as it contains our built assets
-include:
-  - dist
-
-# Exclude node_modules and source files
-exclude:
-  - node_modules
-  - src
-  - public
-  - .github
-  - .vscode
-
-# MIME types for assets
-mime_types:
-  woff: application/font-woff
-  woff2: application/font-woff2
-  ttf: application/x-font-ttf
-  otf: application/x-font-opentype
-  js: application/javascript
-  css: text/css
-  svg: image/svg+xml
-  png: image/png
-  jpg: image/jpeg
-  jpeg: image/jpeg
-  gif: image/gif
+theme: null
   webp: image/webp
   json: application/json
 
