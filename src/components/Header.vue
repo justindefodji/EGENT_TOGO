@@ -68,13 +68,6 @@
           >
             CONTACT
           </RouterLink>
-          <RouterLink 
-            to="/devis" 
-            class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300"
-            :class="isActive('/devis') ? 'text-secondary' : 'text-dark hover:text-secondary'"
-          >
-            DEVIS
-          </RouterLink>
         </div>
 
         <!-- CTA Button + Mobile Menu -->
@@ -168,14 +161,6 @@
               @click="mobileMenuOpen = false"
             >
               CONTACT
-            </RouterLink>
-            <RouterLink 
-              to="/devis" 
-              class="block px-4 py-3 rounded-lg font-bold transition-all duration-300"
-              :class="isActive('/devis') ? 'text-secondary' : 'text-dark hover:text-secondary'"
-              @click="mobileMenuOpen = false"
-            >
-              DEVIS
             </RouterLink>
             <button class="w-full bg-secondary hover:bg-orange-600 text-white font-black px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mt-4" @click="navigateTo('/devis'); mobileMenuOpen = false">
               Demander un devis

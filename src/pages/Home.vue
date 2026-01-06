@@ -26,7 +26,7 @@
         </div>
       </div>
     </section>
-
+    <!-- Contact Info Section - déborde sur la section blanche -->
     <div class="px-4 -mt-12 mb-12 relative z-10">
       <div class="max-w-7xl mx-auto bg-[#2F7914] rounded-3xl shadow-lg overflow-hidden">
         <div class="px-6 lg:px-8 py-8">

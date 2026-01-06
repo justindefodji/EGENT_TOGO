@@ -19,7 +19,8 @@
       </div>
 
       <!-- Section Vidéo/Image avec bouton play - déborde sur la section blanche -->
-      <div class="relative h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl group mx-4 sm:mx-6 lg:mx-8 mb-0 md:mb-0 -mt-40 md:-mt-56 z-20">
+      <div class="px-4 -mt-12 mb-12 relative z-20">
+      <div class="max-w-7xl mx-auto relative h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl group">
         <img 
           src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&h=600&fit=crop" 
           alt="Services EGENT TOGO"
@@ -33,6 +34,7 @@
             <i class="fas fa-play text-dark text-3xl ml-1"></i>
           </div>
         </button>
+      </div>
       </div>
     </div>
 

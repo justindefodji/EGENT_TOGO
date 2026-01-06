@@ -1,44 +1,120 @@
 <template>
   <div>
     <!-- Hero Section About -->
-    <div class="bg-gradient-to-br from-blue-900 via-blue-800 to-dark relative overflow-visible -mt-32 pt-0">
-      <!-- Background elements -->
-      <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
-      </div>
+    <div class="relative overflow-hidden pt-8 pb-20 md:pt-16 md:pb-32">
+      <!-- Animated gradient background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-dark via-blue-900 to-indigo-900 -z-10"></div>
+      
+      <!-- Animated blob elements -->
+      <div class="absolute top-20 right-10 w-72 h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse -z-5"></div>
+      <div class="absolute -bottom-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000 -z-5"></div>
+      <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-4000 -z-5"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-32 md:py-40">
-        <!-- Section Titre Hero -->
-        <div class="text-center mb-16 md:mb-20">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">À PROPOS DE <span class="text-secondary">NOUS</span></h1>
-          <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Découvrez notre mission, nos valeurs et notre engagement envers l'énergie durable
-          </p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Main content grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Left content -->
+          <div class="space-y-8">
+            <!-- Badge -->
+            <div class="inline-block">
+              <div class="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-secondary font-bold text-sm inline-flex items-center gap-2 hover:bg-white/20 transition-all duration-300">
+                <i class="fas fa-star text-lg"></i>
+                À PROPOS D'EGENT-TOGO
+              </div>
+            </div>
+
+            <!-- Main heading with gradient -->
+            <div>
+              <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+                <span class="text-blue-1000 animate-shimmer">
+                  DÉCOUVREZ NOTRE
+                </span>
+                <br />
+                <span class="bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent animate-shimmer">
+                  MISSION ÉNERGIE
+                </span>
+              </h1>
+            </div>
+
+            <!-- Description -->
+            <p class="text-lg md:text-xl text-blue-800 leading-relaxed max-w-xl">
+              Une histoire d'expertise, de passion et d'engagement envers l'énergie durable. Depuis 2015, nous transformons vos besoins énergétiques en solutions innovantes et accessibles.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 pt-6">
+              <!-- <button @click="navigateTo('/devis')" class="group bg-gradient-to-r from-secondary to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                <span>Demander un Devis</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+              </button> -->
+              <!-- <button @click="navigateTo('/')" class="group px-8 py-4 rounded-full font-black text-lg text-white border-2 border-white/30 hover:border-white/60 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300">
+                En Savoir Plus
+              </button> -->
+            </div>
+
+            <!-- Stats -->
+            <!-- <div class="grid grid-cols-3 gap-4 pt-8">
+              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition-all duration-300">
+                <div class="text-3xl font-black bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">120+</div>
+                <p class="text-sm text-blue-900 mt-1 font-semibold">Clients heureux</p>
+              </div>
+              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition-all duration-300">
+                <div class="text-3xl font-black bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">8+</div>
+                <p class="text-sm text-blue-900 mt-1 font-semibold">Ans d'expérience</p>
+              </div>
+              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition-all duration-300">
+                <div class="text-3xl font-black bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">70%</div>
+                <p class="text-sm text-blue-900 mt-1 font-semibold">Plus durable</p>
+              </div>
+            </div> -->
+          </div>
+
+          <!-- Right side - Image with floating cards -->
+          <div class="relative h-96 md:h-[600px] lg:h-[650px]">
+            <!-- Main image -->
+            <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group">
+              <img 
+                src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&h=800&fit=crop" 
+                alt="À propos d'EGENT TOGO"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <!-- Gradient overlay -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-dark/40 via-transparent to-transparent group-hover:from-dark/20 transition-all duration-700"></div>
+            </div>
+
+            <!-- Floating card 1 - Top right -->
+            <div class="absolute top-8 -right-4 md:right-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-12 h-12 bg-gradient-to-br from-secondary to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
+                  <i class="fas fa-bolt text-xl"></i>
+                </div>
+                <h3 class="font-black text-blue-300 text-lg">Innovation</h3>
+              </div>
+              <p class="text-sm text-blue-200">Solutions énergétiques de demain, disponibles aujourd'hui</p>
+            </div>
+
+            <!-- Floating card 2 - Bottom left -->
+            <div class="absolute -bottom-4 left-0 md:left-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center text-white shadow-lg">
+                  <i class="fas fa-leaf text-xl"></i>
+                </div>
+                <h3 class="font-black text-blue-300 text-lg">Durabilité</h3>
+              </div>
+              <p class="text-sm text-blue-200">Énergie verte pour une planète plus propre</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Section Vidéo/Image avec bouton play - déborde sur la section blanche -->
-      <div class="relative h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl group mx-4 sm:mx-6 lg:mx-8 mb-0 md:mb-0 -mt-40 md:-mt-56 z-20">
-        <img 
-          src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1200&h=600&fit=crop" 
-          alt="À propos d'EGENT TOGO"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <!-- Gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent"></div>
-        <!-- Play button -->
-        <button class="absolute inset-0 flex items-center justify-center group">
-          <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center hover:bg-secondary transition-all duration-300 shadow-2xl transform group-hover:scale-110">
-            <i class="fas fa-play text-dark text-3xl ml-1"></i>
-          </div>
-        </button>
-      </div>
-    </div>
-
-    <!-- Contenu blanc -->
-    <div class="bg-white py-8 md:py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        <div class="text-white/50 text-sm font-semibold flex flex-col items-center gap-2">
+          <span>Découvrez plus</span>
+          <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
       </div>
     </div>
 
@@ -283,7 +359,7 @@
               Nous vous proposons des solutions d'énergie renouvelable pour votre maison ou votre entreprise à des prix abordables. Une première étape vers un avenir plus vert et économe en énergie.
             </p>
             <div>
-              <button class="bg-gradient-to-r from-secondary to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-black px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg transform hover:scale-105">
+              <button @click="navigateTo('/devis')" class="bg-gradient-to-r from-secondary to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-black px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg transform hover:scale-105">
                 Demander un devis
               </button>
             </div>
@@ -306,7 +382,7 @@
       <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-3xl p-12 md:p-16 text-center">
         <h2 class="text-3xl md:text-4xl font-black text-white mb-6">Prêt à Rejoindre Notre Mission ?</h2>
         <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">Contactez-nous pour découvrir comment nous pouvons transformer votre accès à l'énergie.</p>
-        <button class="bg-secondary hover:bg-orange-600 text-white font-black px-8 py-4 rounded-full transition-colors duration-300 text-lg">
+        <button @click="navigateTo('/devis')" class="bg-secondary hover:bg-orange-600 text-white font-black px-8 py-4 rounded-full transition-colors duration-300 text-lg">
           Demander un Devis
         </button>
       </div>
@@ -316,4 +392,73 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const navigateTo = (path) => {
+  router.push(path)
+}
 </script>
+<style scoped>
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.delay-2000 {
+  animation-delay: 2s;
+}
+
+.delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+h1 {
+  animation: slideInUp 0.8s ease-out;
+}
+
+p {
+  animation: slideInUp 0.8s ease-out 0.1s backwards;
+}
+
+button {
+  animation: slideInUp 0.8s ease-out 0.2s backwards;
+}
+
+.group > div {
+  animation: slideInUp 0.8s ease-out 0.3s backwards;
+}
+</style>
