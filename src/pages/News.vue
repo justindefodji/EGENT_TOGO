@@ -25,7 +25,7 @@
       <!-- Image Section -->
       <div class="relative w-full h-80 md:h-96 flex items-center justify-center overflow-hidden">
         <img 
-          src="/EGENT_TOGO/src/assets/images/custom/imagefont01.jpg" 
+          src="@/assets/images/custom/imagefont01.jpg" 
           alt="EGENT-TOGO Services"
           class="w-full h-full object-cover"
         />
