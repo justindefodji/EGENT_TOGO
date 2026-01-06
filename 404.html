@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page non trouvée</title>
+    <title>Redirection...</title>
     <script>
-      // Stocke la route demandée pour que Vue Router la traite
-      const path = location.pathname.replace('/EGENT_TOGO/', '');
-      sessionStorage.redirect = '/' + path;
+      // GitHub Pages 404 redirect for SPA
+      (function(){
+        const pathWithoutBase = location.pathname.replace('/EGENT_TOGO/', '') || '/';
+        sessionStorage.redirect = pathWithoutBase;
+        location.href = '/EGENT_TOGO/';
+      })();
     </script>
-    <meta http-equiv="refresh" content="0;url=/EGENT_TOGO/" />
   </head>
   <body>
   </body>
