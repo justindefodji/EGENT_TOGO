@@ -6,6 +6,7 @@ import About from './pages/About.vue'
 import Services from './pages/Services.vue'
 import Products from './pages/Products.vue'
 import Gallery from './pages/Gallery.vue'
+import News from './pages/News.vue'
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
     path: '/produits',
     name: 'Products',
     component: Products
+  },
+  {
+    path: '/actualites',
+    name: 'News',
+    component: News
   },
   {
     path: '/galerie',

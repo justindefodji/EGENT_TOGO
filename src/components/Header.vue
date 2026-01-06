@@ -38,7 +38,21 @@
             class="px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300"
             :class="isActive('/services') ? 'text-secondary' : 'text-dark hover:text-secondary'"
           >
-            SERVICES & PRODUITS
+            SERVICES
+          </RouterLink>
+          <RouterLink 
+            to="/produits" 
+            class="px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300"
+            :class="isActive('/produits') ? 'text-secondary' : 'text-dark hover:text-secondary'"
+          >
+            PRODUITS
+          </RouterLink>
+          <RouterLink 
+            to="/actualites" 
+            class="px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300"
+            :class="isActive('/actualites') ? 'text-secondary' : 'text-dark hover:text-secondary'"
+          >
+            ACTUALITÉS
           </RouterLink>
           <RouterLink 
             to="/galerie" 
@@ -107,7 +121,23 @@
               :class="isActive('/services') ? 'text-secondary' : 'text-dark hover:text-secondary'"
               @click="mobileMenuOpen = false"
             >
-              SERVICES & PRODUITS
+              SERVICES
+            </RouterLink>
+            <RouterLink 
+              to="/produits" 
+              class="block px-4 py-3 rounded-lg font-semibold transition-all duration-300"
+              :class="isActive('/produits') ? 'text-secondary' : 'text-dark hover:text-secondary'"
+              @click="mobileMenuOpen = false"
+            >
+              PRODUITS
+            </RouterLink>
+            <RouterLink 
+              to="/actualites" 
+              class="block px-4 py-3 rounded-lg font-semibold transition-all duration-300"
+              :class="isActive('/actualites') ? 'text-secondary' : 'text-dark hover:text-secondary'"
+              @click="mobileMenuOpen = false"
+            >
+              ACTUALITÉS
             </RouterLink>
             <RouterLink 
               to="/galerie" 
