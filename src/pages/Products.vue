@@ -21,7 +21,7 @@
       <!-- Section Image avec bouton -->
       <div class="relative h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl group mx-4 sm:mx-6 lg:mx-8 mb-0 md:mb-0 -mt-40 md:-mt-56 z-20">
         <img 
-          src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&h=600&fit=crop" 
+          src="/src/assets/images/montage_panneau.jpg" 
           alt="Nos Produits EGENT TOGO"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
@@ -54,7 +54,7 @@
           <div class="flex flex-col h-full">
             <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow cursor-pointer group">
               <img 
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=389&h=446&fit=crop" 
+                src="/src/assets/images/armoireBilly_monté.jpg" 
                 alt="Armoire Billy"
                 class="w-full h-[250px] object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -65,7 +65,7 @@
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-[#FF9D35] font-black">À partir de 500 000 FCFA</span>
-                  <button @click="navigateTo('/contact')" class="bg-[#0392C7] hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors text-sm">
+                  <button @click="navigateTo('/produits/armoire-billy')" class="bg-[#0392C7] hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors text-sm">
                     Détails
                   </button>
                 </div>
@@ -77,7 +77,7 @@
           <div class="flex flex-col-reverse h-full md:-mt-12">
             <div class="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow group">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=389&h=446&fit=crop" 
+                src="/src/assets/images/lampendaire_monté.jpg" 
                 alt="Lampadaires EGENT Solar"
                 class="w-full h-[250px] object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -88,7 +88,7 @@
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-[#FF9D35] font-black">À partir de 200 000 FCFA</span>
-                  <button @click="navigateTo('/contact')" class="bg-[#0392C7] hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors text-sm">
+                  <button @click="navigateTo('/produits/lampadaires-egent-solar')" class="bg-[#0392C7] hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors text-sm">
                     Détails
                   </button>
                 </div>
@@ -100,7 +100,7 @@
           <div class="flex flex-col h-full">
             <div class="relative bg-orange-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow cursor-pointer group">
               <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=389&h=446&fit=crop" 
+                src="/src/assets/images/montage_panneau2.jpg" 
                 alt="Kit Zoklin"
                 class="w-full h-[250px] object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -111,7 +111,7 @@
                 </p>
                 <div class="flex items-center justify-between">
                   <span class="text-[#FF9D35] font-black">À partir de 750 000 FCFA</span>
-                  <button @click="navigateTo('/contact')" class="bg-[#0392C7] hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors text-sm">
+                  <button @click="navigateTo('/produits/kit-zoklin')" class="bg-[#0392C7] hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors text-sm">
                     Détails
                   </button>
                 </div>
@@ -186,7 +186,7 @@
           <!-- Right Image -->
           <div class="relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1440&h=371&fit=crop" 
+              src="/src/assets/images/photo_chantier2.jpg" 
               alt="Nos produits"
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             />

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 min-h-screen">
     <!-- Hero Section About -->
     <div class="relative overflow-hidden pt-8 pb-20 md:pt-16 md:pb-32">
       <!-- Animated gradient background -->
@@ -37,7 +37,7 @@
             </div>
 
             <!-- Description -->
-            <p class="text-lg md:text-xl text-blue-800 leading-relaxed max-w-xl">
+            <p class="text-lg md:text-xl text-black leading-relaxed max-w-xl">
               Une histoire d'expertise, de passion et d'engagement envers l'énergie durable. Depuis 2015, nous transformons vos besoins énergétiques en solutions innovantes et accessibles.
             </p>
 
@@ -74,7 +74,7 @@
             <!-- Main image -->
             <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group">
               <img 
-                src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&h=800&fit=crop" 
+                src="/src/assets/images/montage_panneau.jpg" 
                 alt="À propos d'EGENT TOGO"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -186,7 +186,7 @@
             <!-- Image portrait de fond -->
             <div class="relative w-full h-full rounded-3xl overflow-visible shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&h=900&fit=crop" 
+                src="/src/assets/images/panneau_montés.jpg" 
                 alt="Panneaux solaires - Énergie renouvelable"
                 class="w-full h-full object-cover rounded-3xl hover:shadow-3xl transition-shadow duration-500"
               />
@@ -222,7 +222,7 @@
       
 
       <!-- Section Notre Équipes -->
-      <div class="mb-16 md:mb-24 py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white rounded-3xl px-8 md:px-16">
+      <div class="mb-16 md:mb-24 py-16 md:py-24 bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl px-8 md:px-16">
         <div class="text-center mb-16 md:mb-20">
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-dark mb-6">NOTRE <span class="text-secondary">ÉQUIPES</span></h2>
           <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -236,8 +236,8 @@
           <div class="group">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" 
-                alt="Professionnel de l'équipe"
+                src="/src/assets/images/egent_reception.jpg" 
+                alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/60 transition-all duration-300"></div>
@@ -255,7 +255,7 @@
           <div class="group">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop" 
+                src="/src/assets/images/chauffage_egent.jpg" 
                 alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -274,7 +274,7 @@
           <div class="group">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop" 
+                src="/src/assets/images/photo_chantier.jpg" 
                 alt="Professionnel de l'équipe"
                 class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -293,7 +293,7 @@
           <div class="group">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop" 
+                src="/src/assets/images/montage_panneau2.jpg" 
                 alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -348,7 +348,7 @@
 
       <!-- Section CTA - Solutions d'Énergie -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 md:mb-24">
-      <div class="mb-16 md:mb-24 py-16 md:py-24 bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl px-8 md:px-16">
+      <div class="mb-16 md:mb-24 py-16 md:py-24 bg-gradient-to-r from-blue-50/80 to-blue-100/80 backdrop-blur-sm rounded-3xl px-8 md:px-16 border border-blue-200/50">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <!-- Contenu texte gauche -->
           <div class="flex flex-col justify-center">
@@ -368,7 +368,7 @@
           <!-- Image droite -->
           <div class="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
             <img 
-              src="https://images.unsplash.com/photo-1635070041078-e3c3136db3f0?w=600&h=700&fit=crop" 
+              src="/src/assets/images/photo_chantier2.jpg" 
               alt="Solutions d'énergie renouvelable"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
@@ -379,11 +379,11 @@
       </div>
 
       <!-- CTA Section -->
-      <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-3xl p-12 md:p-16 text-center">
+      <div class="bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-900 rounded-3xl p-12 md:p-16 text-center shadow-2xl border border-blue-800/50">
         <h2 class="text-3xl md:text-4xl font-black text-white mb-6">Prêt à Rejoindre Notre Mission ?</h2>
         <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">Contactez-nous pour découvrir comment nous pouvons transformer votre accès à l'énergie.</p>
-        <button @click="navigateTo('/devis')" class="bg-secondary hover:bg-orange-600 text-white font-black px-8 py-4 rounded-full transition-colors duration-300 text-lg">
-          Demander un Devis
+        <button @click="navigateTo('/Contact')" class="bg-secondary hover:bg-orange-600 text-white font-black px-8 py-4 rounded-full transition-colors duration-300 text-lg">
+          Rejoignez-nous
         </button>
       </div>
       </div>

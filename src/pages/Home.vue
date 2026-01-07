@@ -68,7 +68,7 @@
     </div>
 
     <!-- About Section -->
-    <section class="bg-white py-16 md:py-24">
+    <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <!-- Content -->
@@ -86,7 +86,7 @@
           <!-- Image -->
           <div class="order-1 md:order-2">
             <img 
-              src="https://images.unsplash.com/photo-1509391366360-2e938148ae23?w=500&h=400&fit=crop" 
+              src="/src/assets/images/montage_panneau.jpg" 
               alt="Énergie autonome"
               class="w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow duration-300"
             />
@@ -96,7 +96,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="bg-white py-16 md:py-24">
+    <section id="services" class="bg-gradient-to-br from-white to-gray-50 py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Nos services</p>
@@ -110,7 +110,7 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=500&h=400&fit=crop" 
+                src="/src/assets/images/chauffage_egent.jpg" 
                 alt="Électricité générale"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -135,7 +135,7 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=400&fit=crop" 
+                src="/src/assets/images/photo_chantier.jpg" 
                 alt="Climatisation"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -160,7 +160,7 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=500&h=400&fit=crop" 
+                src="/src/assets/images/panneau_montés.jpg" 
                 alt="Énergie solaire"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -189,13 +189,13 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="bg-gray-50 py-16 md:py-24">
+    <section class="bg-gradient-to-br from-blue-50 to-blue-100 py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <!-- Image -->
           <div class="order-2 md:order-1">
             <img 
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=600&fit=crop" 
+              src="/src/assets/images/egent_reception.jpg" 
               alt="Pourquoi nous choisir"
               class="w-full rounded-3xl shadow-2xl"
             />
@@ -212,7 +212,7 @@
 
             <div class="grid grid-cols-2 gap-6">
               <!-- Feature 1 -->
-              <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/50">
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-gem text-[#FF9D35] text-2xl"></i>
                 </div>
@@ -221,7 +221,7 @@
               </div>
 
               <!-- Feature 2 -->
-              <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/50">
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-bolt text-[#FF9D35] text-2xl"></i>
                 </div>
@@ -230,7 +230,7 @@
               </div>
 
               <!-- Feature 3 -->
-              <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/50">
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-shield-alt text-[#FF9D35] text-2xl"></i>
                 </div>
@@ -239,7 +239,7 @@
               </div>
 
               <!-- Feature 4 -->
-              <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-white/50">
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-users text-[#FF9D35] text-2xl"></i>
                 </div>
@@ -253,7 +253,7 @@
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="bg-white py-16 md:py-24">
+    <section id="products" class="bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Nos produits</p>
@@ -267,9 +267,9 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-end">
           <!-- Product 1: Armoire Billy -->
           <div class="flex flex-col h-full">
-            <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer" @click="navigateTo('/products')">
+            <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer" @click="navigateTo('/produits/armoire-billy')">
               <img 
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=389&h=446&fit=crop" 
+                src="/src/assets/images/armoireBilly_monté.jpg" 
                 alt="Armoire Billy"
                 class="w-[389px] h-[446px] object-cover"
               />
@@ -284,9 +284,9 @@
 
           <!-- Product 2: Lampadaires EGENT Solar - CENTER/LARGER -->
           <div class="flex flex-col-reverse h-full md:-mt-12">
-            <div class="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer" @click="navigateTo('/products')">
+            <div class="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer" @click="navigateTo('/produits/lampadaires-egent-solar')">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=389&h=446&fit=crop" 
+                src="/src/assets/images/lampendaire_monté.jpg" 
                 alt="Lampadaires EGENT Solar"
                 class="w-[389px] h-[446px] object-cover"
               />
@@ -301,10 +301,10 @@
 
           <!-- Product 3: Kit Zoklin -->
           <div class="flex flex-col h-full">
-            <div class="relative bg-orange-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer" @click="navigateTo('/products')">
+            <div class="relative bg-orange-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer" @click="navigateTo('/produits/kit-zoklin')">
 
               <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=389&h=446&fit=crop" 
+                src="/src/assets/images/montage_panneau2.jpg" 
                 alt="Kit Zoklin"
                 class="w-[389px] h-[446px] object-cover"
               />
@@ -326,7 +326,7 @@
     </section>
 
     <!-- CTA Section: Dites au revoir aux pannes -->
-    <section class="bg-[#EDFAFF] py-16 md:py-24">
+    <section class="bg-gradient-to-r from-[#0392C7]/10 to-[#05075F]/10 py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <!-- Content -->
@@ -345,7 +345,7 @@
           <!-- Image -->
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=500&fit=crop" 
+              src="/src/assets/images/photo_chantier2.jpg" 
               alt="Professionnelle énergie solaire"
               class="w-full rounded-3xl shadow-2xl"
             />
