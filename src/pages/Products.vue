@@ -1,38 +1,104 @@
 <template>
   <div>
     <!-- Hero Section Products -->
-    <div class="bg-gradient-to-br from-blue-900 via-blue-800 to-dark relative overflow-visible -mt-32 pt-0">
-      <!-- Background elements -->
-      <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
-      </div>
+    <div class="relative overflow-visible pt-4 pb-12 md:pt-8 md:pb-20">
+      <!-- Animated gradient background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-dark -z-10"></div>
+      
+      <!-- Grain effect overlay - Extended behind navbar -->
+      <div class="absolute left-0 right-0 bottom-0 -top-32 opacity-60 -z-5" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22noise%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%221.1%22 numOctaves=%225%22 result=%22noise%22 /><feColorMatrix in=%22noise%22 type=%22saturate%22 values=%220%22 /></filter><rect width=%22100%22 height=%22100%22 fill=%22black%22 filter=%22url(%23noise)%22/></svg>'); background-size: 100px 100px;"></div>
+      
+      <!-- Animated blob elements -->
+      <div class="absolute top-20 right-10 w-72 h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse -z-5"></div>
+      <div class="absolute -bottom-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000 -z-5"></div>
+      <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-4000 -z-5"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-32 md:py-40">
-        <!-- Section Titre Hero -->
-        <div class="text-center mb-16 md:mb-20">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">NOS <span class="text-secondary">PRODUITS</span></h1>
-          <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Découvrez nos produits conçus pour vous aider à réduire vos coûts d'électricité et à améliorer votre confort de vie.
-          </p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Main content grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <!-- Left content -->
+          <div class="space-y-4 md:space-y-6">
+            <!-- Badge -->
+            <div class="inline-block">
+              <div class="px-3 py-1 md:px-4 md:py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-secondary font-bold text-xs md:text-sm inline-flex items-center gap-2 hover:bg-white/20 transition-all duration-300">
+                <i class="fas fa-star text-lg"></i>
+                NOS PRODUITS
+              </div>
+            </div>
+
+            <!-- Main heading with gradient -->
+            <div>
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
+                <span class="text-blue-800">
+                  SOLUTIONS
+                </span>
+                <br />
+                <span class="bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">
+                  PERFORMANTES
+                </span>
+              </h1>
+            </div>
+
+            <!-- Description -->
+            <p class="text-base md:text-lg text-blue-800 leading-relaxed max-w-xl">
+              Découvrez notre gamme de produits conçus pour réduire vos coûts d'électricité et améliorer votre confort de vie.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 pt-6">
+              <button class="group bg-gradient-to-r from-secondary to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                <span>Découvrir les Produits</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right side - Image with floating cards -->
+          <div class="relative h-80 md:h-[450px] lg:h-[500px]">
+            <!-- Main image -->
+            <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group">
+              <img 
+                src="/src/assets/images/montage_panneau.jpg" 
+                alt="Produits EGENT TOGO"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <!-- Gradient overlay -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-dark/40 via-transparent to-transparent group-hover:from-dark/20 transition-all duration-700"></div>
+            </div>
+
+            <!-- Floating card 1 - Top right -->
+            <div class="absolute top-4 md:top-8 -right-2 md:-right-4 lg:right-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 md:p-6 w-56 md:w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-secondary to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
+                  <i class="fas fa-box text-lg md:text-xl"></i>
+                </div>
+                <h3 class="font-black text-blue-300 text-base md:text-lg">Premium</h3>
+              </div>
+              <p class="text-xs md:text-sm text-blue-200">Produits de qualité supérieure</p>
+            </div>
+
+            <!-- Floating card 2 - Bottom left -->
+            <div class="absolute -bottom-2 md:-bottom-4 left-0 md:left-4 lg:left-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 md:p-6 w-56 md:w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center text-white shadow-lg">
+                  <i class="fas fa-shield-alt text-lg md:text-xl"></i>
+                </div>
+                <h3 class="font-black text-blue-300 text-base md:text-lg">Garantie</h3>
+              </div>
+              <p class="text-xs md:text-sm text-blue-200">Service client disponible 24/7</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Section Image avec bouton -->
-      <div class="relative h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl group mx-4 sm:mx-6 lg:mx-8 mb-0 md:mb-0 -mt-40 md:-mt-56 z-20">
-        <img 
-          src="/src/assets/images/montage_panneau.jpg" 
-          alt="Nos Produits EGENT TOGO"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <!-- Gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent"></div>
-        <!-- Play button -->
-        <button class="absolute inset-0 flex items-center justify-center group">
-          <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center hover:bg-secondary transition-all duration-300 shadow-2xl transform group-hover:scale-110">
-            <i class="fas fa-play text-dark text-3xl ml-1"></i>
-          </div>
-        </button>
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        <div class="text-white/50 text-sm font-semibold flex flex-col items-center gap-2">
+          <span>Découvrez plus</span>
+          <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
       </div>
     </div>
 

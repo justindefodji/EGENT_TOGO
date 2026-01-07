@@ -1,78 +1,63 @@
 <template>
   <div class="bg-gradient-to-b from-gray-40 via-gray-100 to-gray-200 min-h-screen">
     <!-- Hero Section About -->
-    <div class="relative overflow-hidden pt-8 pb-20 md:pt-16 md:pb-32">
+    <div class="relative overflow-visible pt-2 pb-8 md:pt-4 md:pb-12 lg:pb-16">
       <!-- Animated gradient background -->
       <div class="absolute inset-0 bg-gradient-to-br from-dark via-blue-900 to-indigo-900 -z-10"></div>
       
+      <!-- Grain effect overlay - Extended behind navbar -->
+      <div class="absolute left-0 right-0 bottom-0 -top-32 opacity-60 -z-5" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22noise%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%221.1%22 numOctaves=%225%22 result=%22noise%22 /><feColorMatrix in=%22noise%22 type=%22saturate%22 values=%220%22 /></filter><rect width=%22100%22 height=%22100%22 fill=%22black%22 filter=%22url(%23noise)%22/></svg>'); background-size: 100px 100px;"></div>
+      
       <!-- Animated blob elements -->
-      <div class="absolute top-20 right-10 w-72 h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse -z-5"></div>
-      <div class="absolute -bottom-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000 -z-5"></div>
-      <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-4000 -z-5"></div>
+      <div class="absolute top-10 right-5 sm:top-20 sm:right-10 w-48 sm:w-72 h-48 sm:h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse -z-5"></div>
+      <div class="absolute -bottom-16 left-10 sm:-bottom-20 sm:left-20 w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000 -z-5"></div>
+      <div class="absolute top-1/3 left-1/4 w-56 sm:w-80 h-56 sm:h-80 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-4000 -z-5"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
         <!-- Main content grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 lg:gap-12 items-center">
           <!-- Left content -->
-          <div class="space-y-8">
+          <div class="space-y-2 sm:space-y-3 md:space-y-4">
             <!-- Badge -->
             <div class="inline-block">
-              <div class="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-secondary font-bold text-sm inline-flex items-center gap-2 hover:bg-white/20 transition-all duration-300">
-                <i class="fas fa-star text-lg"></i>
-                À PROPOS D'EGENT-TOGO
+              <div class="px-2 sm:px-3 py-0.5 sm:py-1 md:px-4 md:py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-secondary font-bold text-xs inline-flex items-center gap-1 sm:gap-2 hover:bg-white/20 transition-all duration-300">
+                <i class="fas fa-star text-xs sm:text-lg"></i>
+                <span class="hidden sm:inline">À PROPOS D'EGENT-TOGO</span>
+                <span class="sm:hidden">À PROPOS</span>
               </div>
             </div>
 
             <!-- Main heading with gradient -->
             <div>
-              <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
-                <span class="text-blue-1000 animate-shimmer">
-                  DÉCOUVREZ NOTRE
+              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
+                <span class="text-blue-800">
+                  DÉCOUVREZ
                 </span>
                 <br />
-                <span class="bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent animate-shimmer">
-                  MISSION ÉNERGIE
+                <span class="bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">
+                  NOTRE MISSION
                 </span>
               </h1>
             </div>
 
             <!-- Description -->
-            <p class="text-lg md:text-xl text-black leading-relaxed max-w-xl">
-              Une histoire d'expertise, de passion et d'engagement envers l'énergie durable. Depuis 2015, nous transformons vos besoins énergétiques en solutions innovantes et accessibles.
+            <p class="text-xs sm:text-sm md:text-base lg:text-lg text-blue-800 leading-relaxed max-w-xl">
+              Une histoire d'expertise et d'engagement envers l'énergie durable. Depuis 2015, nous transformons vos besoins énergétiques en solutions innovantes.
             </p>
 
             <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 pt-6">
-              <!-- <button @click="navigateTo('/devis')" class="group bg-gradient-to-r from-secondary to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
-                <span>Demander un Devis</span>
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2 sm:pt-4 md:pt-6">
+              <button class="group bg-gradient-to-r from-secondary to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-black text-xs sm:text-base md:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                <span>Explore</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
-              </button> -->
-              <!-- <button @click="navigateTo('/')" class="group px-8 py-4 rounded-full font-black text-lg text-white border-2 border-white/30 hover:border-white/60 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300">
-                En Savoir Plus
-              </button> -->
+              </button>
             </div>
-
-            <!-- Stats -->
-            <!-- <div class="grid grid-cols-3 gap-4 pt-8">
-              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition-all duration-300">
-                <div class="text-3xl font-black bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">120+</div>
-                <p class="text-sm text-blue-900 mt-1 font-semibold">Clients heureux</p>
-              </div>
-              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition-all duration-300">
-                <div class="text-3xl font-black bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">8+</div>
-                <p class="text-sm text-blue-900 mt-1 font-semibold">Ans d'expérience</p>
-              </div>
-              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition-all duration-300">
-                <div class="text-3xl font-black bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">70%</div>
-                <p class="text-sm text-blue-900 mt-1 font-semibold">Plus durable</p>
-              </div>
-            </div> -->
           </div>
 
           <!-- Right side - Image with floating cards -->
-          <div class="relative h-96 md:h-[600px] lg:h-[650px]">
+          <div class="relative h-56 sm:h-64 md:h-80 lg:h-[420px]">
             <!-- Main image -->
-            <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group">
+            <div class="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl group">
               <img 
                 src="/src/assets/images/montage_panneau.jpg" 
                 alt="À propos d'EGENT TOGO"
@@ -83,35 +68,35 @@
             </div>
 
             <!-- Floating card 1 - Top right -->
-            <div class="absolute top-8 -right-4 md:right-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
-              <div class="flex items-center gap-3 mb-2">
-                <div class="w-12 h-12 bg-gradient-to-br from-secondary to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
-                  <i class="fas fa-bolt text-xl"></i>
+            <div class="absolute top-1 sm:top-3 md:top-6 -right-1 sm:-right-2 md:-right-3 lg:right-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-6 w-40 sm:w-48 md:w-56 lg:w-64 shadow-lg sm:shadow-2xl hover:shadow-2xl sm:hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
+              <div class="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
+                <div class="w-7 sm:w-9 md:w-10 lg:w-12 h-7 sm:h-9 md:h-10 lg:h-12 bg-gradient-to-br from-secondary to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
+                  <i class="fas fa-bolt text-xs sm:text-base md:text-lg lg:text-xl"></i>
                 </div>
-                <h3 class="font-black text-blue-300 text-lg">Innovation</h3>
+                <h3 class="font-black text-blue-300 text-xs sm:text-sm md:text-base lg:text-lg">Innovation</h3>
               </div>
-              <p class="text-sm text-blue-200">Solutions énergétiques de demain, disponibles aujourd'hui</p>
+              <p class="text-[10px] sm:text-xs md:text-sm text-blue-200 leading-tight">Solutions de demain</p>
             </div>
 
             <!-- Floating card 2 - Bottom left -->
-            <div class="absolute -bottom-4 left-0 md:left-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
-              <div class="flex items-center gap-3 mb-2">
-                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center text-white shadow-lg">
-                  <i class="fas fa-leaf text-xl"></i>
+            <div class="absolute -bottom-1 sm:-bottom-2 md:-bottom-3 left-0 sm:left-2 md:left-3 lg:left-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-6 w-40 sm:w-48 md:w-56 lg:w-64 shadow-lg sm:shadow-2xl hover:shadow-2xl sm:hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
+              <div class="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
+                <div class="w-7 sm:w-9 md:w-10 lg:w-12 h-7 sm:h-9 md:h-10 lg:h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center text-white shadow-lg">
+                  <i class="fas fa-leaf text-xs sm:text-base md:text-lg lg:text-xl"></i>
                 </div>
-                <h3 class="font-black text-blue-300 text-lg">Durabilité</h3>
+                <h3 class="font-black text-blue-300 text-xs sm:text-sm md:text-base lg:text-lg">Durabilité</h3>
               </div>
-              <p class="text-sm text-blue-200">Énergie verte pour une planète plus propre</p>
+              <p class="text-[10px] sm:text-xs md:text-sm text-blue-200 leading-tight">Énergie propre</p>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Scroll indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-        <div class="text-white/50 text-sm font-semibold flex flex-col items-center gap-2">
-          <span>Découvrez plus</span>
-          <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        <div class="text-white/40 text-xs sm:text-sm font-semibold flex flex-col items-center gap-1">
+          <span class="hidden sm:inline">Découvrez plus</span>
+          <svg class="w-4 sm:w-5 h-4 sm:h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </div>
