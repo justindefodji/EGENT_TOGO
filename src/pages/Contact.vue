@@ -15,9 +15,9 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
         <!-- Section Titre Hero -->
         <div class="text-center">
-          <p class="text-secondary font-semibold mb-4 text-sm uppercase tracking-widest">Nous vous écoutons</p>
+          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest">Nous vous écoutons</p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
-            Prenez <span class="text-secondary">Contact</span>
+            Prenez <span class="text-[#EE6D08]">Contact</span>
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             Vous avez une question ou un projet ? Notre équipe est à votre écoute pour vous aider à réaliser votre transition énergétique.
@@ -33,10 +33,10 @@
           <!-- Contact Cards -->
           <div class="contact-card group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-gray-100 hover:border-secondary">
             <div class="flex items-center gap-4 mb-6">
-              <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary transition-all duration-300">
-                <i class="fas fa-map-marker-alt text-secondary text-2xl group-hover:text-white transition-all duration-300"></i>
+              <div class="w-16 h-16 rounded-full bg-[#EE6D08]/10 flex items-center justify-center group-hover:bg-[#EE6D08] transition-all duration-300">
+                <i class="fas fa-map-marker-alt text-[#EE6D08] text-2xl group-hover:text-white transition-all duration-300"></i>
               </div>
-              <h3 class="text-xl font-black text-[#05075F]">Adresse</h3>
+              <h3 class="text-xl font-black text-[#016E98]">Adresse</h3>
             </div>
             <p class="text-gray-600 leading-relaxed">
               Rue des Ouvriers, Imm. à deux étages<br>
@@ -48,10 +48,10 @@
 
           <div class="contact-card group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-gray-100 hover:border-secondary">
             <div class="flex items-center gap-4 mb-6">
-              <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary transition-all duration-300">
-                <i class="fas fa-phone text-secondary text-2xl group-hover:text-white transition-all duration-300"></i>
+              <div class="w-16 h-16 rounded-full bg-[#EE6D08]/10 flex items-center justify-center group-hover:bg-[#EE6D08] transition-all duration-300">
+                <i class="fas fa-phone text-[#EE6D08] text-2xl group-hover:text-white transition-all duration-300"></i>
               </div>
-              <h3 class="text-xl font-black text-[#05075F]">Téléphone</h3>
+              <h3 class="text-xl font-black text-[#016E98]">Téléphone</h3>
             </div>
             <div class="space-y-3">
               <a href="tel:+22892531455" class="text-gray-600 hover:text-secondary transition-colors block font-semibold">
@@ -65,10 +65,10 @@
 
           <div class="contact-card group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-gray-100 hover:border-secondary">
             <div class="flex items-center gap-4 mb-6">
-              <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary transition-all duration-300">
-                <i class="fas fa-envelope text-secondary text-2xl group-hover:text-white transition-all duration-300"></i>
+              <div class="w-16 h-16 rounded-full bg-[#EE6D08]/10 flex items-center justify-center group-hover:bg-[#EE6D08] transition-all duration-300">
+                <i class="fas fa-envelope text-[#EE6D08] text-2xl group-hover:text-white transition-all duration-300"></i>
               </div>
-              <h3 class="text-xl font-black text-[#05075F]">Email</h3>
+              <h3 class="text-xl font-black text-[#016E98]">Email</h3>
             </div>
             <div class="space-y-3">
               <a href="mailto:infos@egenttogo.com" class="text-gray-600 hover:text-secondary transition-colors block font-semibold break-all">
@@ -82,29 +82,29 @@
         <!-- Contact Form Section -->
         <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-16">
           <div class="max-w-2xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-black text-[#05075F] mb-4 leading-tight">Envoyez-nous un message</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight">Envoyez-nous un message</h2>
             <p class="text-gray-600 text-lg mb-12">Remplissez le formulaire ci-dessous et notre équipe vous répondra au plus vite.</p>
             
             <form @submit.prevent="handleSubmit" class="space-y-6">
               <!-- Name & Phone Row -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Nom & Prénom</label>
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Nom & Prénom</label>
                   <input 
                     v-model="form.name"
                     type="text" 
                     placeholder="Jean Dupont"
-                    class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                     required
                   />
                 </div>
                 <div>
-                  <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Téléphone</label>
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Téléphone</label>
                   <input 
                     v-model="form.phone"
                     type="tel" 
                     placeholder="+228 XX XX XX XX"
-                    class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                     required
                   />
                 </div>
@@ -113,20 +113,20 @@
               <!-- Email & Subject Row -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Email</label>
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Email</label>
                   <input 
                     v-model="form.email"
                     type="email" 
                     placeholder="jean@example.com"
-                    class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                     required
                   />
                 </div>
                 <div>
-                  <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Objet</label>
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Objet</label>
                   <select 
                     v-model="form.subject"
-                    class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#05075F] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                     required
                   >
                     <option value="">Sélectionnez un objet</option>
@@ -141,12 +141,12 @@
 
               <!-- Message -->
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Message</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Message</label>
                 <textarea 
                   v-model="form.message"
                   rows="6"
                   placeholder="Décrivez votre demande en détail..."
-                  class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300 resize-none"
+                  class="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300 resize-none"
                   required
                 ></textarea>
               </div>
@@ -200,30 +200,30 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">Nos <span class="text-secondary">Horaires</span></h2>
-          <div class="w-24 h-1.5 bg-gradient-to-r from-secondary to-orange-500 rounded-full mx-auto"></div>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">Nos <span class="text-[#EE6D08]">Horaires</span></h2>
+          <div class="w-24 h-1.5 bg-gradient-to-r from-[#EE6D08] to-orange-500 rounded-full mx-auto"></div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <i class="fas fa-calendar-days text-secondary text-4xl mb-4"></i>
+            <i class="fas fa-calendar-days text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-4">Jours de Semaine</h3>
             <p class="text-gray-100 font-semibold text-lg">Lundi - Vendredi</p>
-            <p class="text-secondary font-black text-2xl mt-2">08:00 - 18:00</p>
+            <p class="text-[#EE6D08] font-black text-2xl mt-2">08:00 - 18:00</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <i class="fas fa-sun text-secondary text-4xl mb-4"></i>
+            <i class="fas fa-sun text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-4">Samedi</h3>
             <p class="text-gray-100 font-semibold text-lg">Samedi</p>
-            <p class="text-secondary font-black text-2xl mt-2">09:00 - 14:00</p>
+            <p class="text-[#EE6D08] font-black text-2xl mt-2">09:00 - 14:00</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <i class="fas fa-moon text-secondary text-4xl mb-4"></i>
+            <i class="fas fa-moon text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-4">Dimanche</h3>
             <p class="text-gray-100 font-semibold text-lg">Fermé</p>
-            <p class="text-secondary font-black text-2xl mt-2">-</p>
+            <p class="text-[#EE6D08] font-black text-2xl mt-2">-</p>
           </div>
         </div>
       </div>
@@ -233,7 +233,7 @@
     <section class="bg-white py-20 md:py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-[#05075F] mb-4 leading-tight">Visitez-nous</h2>
+          <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight">Visitez-nous</h2>
           <p class="text-gray-600 text-lg">Trouvez notre localisation sur la carte</p>
         </div>
         <div class="rounded-3xl overflow-hidden shadow-2xl h-96 md:h-96 border-4 border-gray-100 hover:shadow-3xl transition-all duration-300">
@@ -254,7 +254,7 @@
     <section class="bg-gray-50 py-20 md:py-32">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-[#05075F] mb-4 leading-tight">Questions <span class="text-secondary">Fréquentes</span></h2>
+          <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight">Questions <span class="text-secondary">Fréquentes</span></h2>
           <p class="text-gray-600 text-lg">Trouvez les réponses à vos questions</p>
         </div>
 
@@ -264,7 +264,7 @@
               @click="toggleFAQ(index)"
               class="w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
             >
-              <h3 class="text-lg font-black text-[#05075F] text-left">{{ faq.question }}</h3>
+              <h3 class="text-lg font-black text-[#016E98] text-left">{{ faq.question }}</h3>
               <i :class="['fas transition-transform duration-300', expandedFAQ === index ? 'fa-chevron-up' : 'fa-chevron-down']" style="color: var(--secondary)"></i>
             </button>
             <transition name="expand">

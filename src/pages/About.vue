@@ -3,7 +3,7 @@
     <!-- Hero Section About -->
     <div class="relative overflow-visible pt-2 pb-8 md:pt-4 md:pb-12 lg:pb-16">
       <!-- Animated gradient background -->
-      <div class="absolute inset-0 bg-gradient-to-br from-dark via-blue-900 to-indigo-900 -z-10"></div>
+      <!-- <div class="absolute inset-0 bg-gradient-to-br from-dark via-blue-900 to-indigo-900 -z-10"></div> -->
       
       <!-- Grain effect overlay - Extended behind navbar -->
       <div class="absolute left-0 right-0 bottom-0 -top-32 opacity-60 -z-5" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22noise%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%221.1%22 numOctaves=%225%22 result=%22noise%22 /><feColorMatrix in=%22noise%22 type=%22saturate%22 values=%220%22 /></filter><rect width=%22100%22 height=%22100%22 fill=%22black%22 filter=%22url(%23noise)%22/></svg>'); background-size: 100px 100px;"></div>
@@ -30,24 +30,24 @@
             <!-- Main heading with gradient -->
             <div>
               <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight">
-                <span class="text-blue-800">
+                <span class="text-[#016E98]">
                   DÉCOUVREZ
                 </span>
                 <br />
-                <span class="bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">
+                <span class="bg-gradient-to-r from-[#EE6D08] to-orange-400 bg-clip-text text-transparent">
                   NOTRE MISSION
                 </span>
               </h1>
             </div>
 
             <!-- Description -->
-            <p class="text-xs sm:text-sm md:text-base lg:text-lg text-blue-800 leading-relaxed max-w-xl">
+            <p class="text-xs sm:text-sm md:text-base lg:text-lg text-[#016E98] leading-relaxed max-w-xl">
               Une histoire d'expertise et d'engagement envers l'énergie durable. Depuis 2015, nous transformons vos besoins énergétiques en solutions innovantes.
             </p>
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2 sm:pt-4 md:pt-6">
-              <button class="group bg-gradient-to-r from-secondary to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-black text-xs sm:text-base md:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+              <button class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-black text-xs sm:text-base md:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
                 <span>Explore</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
               </button>
@@ -70,10 +70,10 @@
             <!-- Floating card 1 - Top right -->
             <div class="absolute top-1 sm:top-3 md:top-6 -right-1 sm:-right-2 md:-right-3 lg:right-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-6 w-40 sm:w-48 md:w-56 lg:w-64 shadow-lg sm:shadow-2xl hover:shadow-2xl sm:hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
               <div class="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
-                <div class="w-7 sm:w-9 md:w-10 lg:w-12 h-7 sm:h-9 md:h-10 lg:h-12 bg-gradient-to-br from-secondary to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
+                <div class="w-7 sm:w-9 md:w-10 lg:w-12 h-7 sm:h-9 md:h-10 lg:h-12 bg-gradient-to-br from-[#EE6D08] to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-bolt text-xs sm:text-base md:text-lg lg:text-xl"></i>
                 </div>
-                <h3 class="font-black text-blue-800 text-xs sm:text-sm md:text-base lg:text-lg">Innovation</h3>
+                <h3 class="font-black text-[#016E98] text-xs sm:text-sm md:text-base lg:text-lg">Innovation</h3>
               </div>
               <p class="text-[10px] sm:text-xs md:text-sm text-black leading-tight">Solutions de demain</p>
             </div>
@@ -84,7 +84,7 @@
                 <div class="w-7 sm:w-9 md:w-10 lg:w-12 h-7 sm:h-9 md:h-10 lg:h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-leaf text-xs sm:text-base md:text-lg lg:text-xl"></i>
                 </div>
-                <h3 class="font-black text-blue-800 text-xs sm:text-sm md:text-base lg:text-lg">Durabilité</h3>
+                <h3 class="font-black text-[#016E98] text-xs sm:text-sm md:text-base lg:text-lg">Durabilité</h3>
               </div>
               <p class="text-[10px] sm:text-xs md:text-sm text-black leading-tight">Énergie propre</p>
             </div>
@@ -127,7 +127,8 @@
 
           <!-- Contenu texte -->
           <div>
-            <h2 class="text-5xl font-black text-blue-900 mb-6">NOTRE HISTOIRE</h2>
+            <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Notre Histoire</p>
+            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight">NOTRE HISTOIRE</h2>
             <p class="text-lg text-gray-700 leading-relaxed">
               Fondée avec passion et expertise, EGENT TOGO a une histoire marquée par un engagement constant envers l'excellence et le service client. Depuis notre création, nous avons réalisé des projets variés et avons acquis une expérience approfondie dans le domaine des énergies renouvelables et de l'électricité générale. Chaque étape de notre parcours témoigne de notre détermination à être un acteur clé dans le secteur énergétique.
             </p>
@@ -144,7 +145,10 @@
             <div class="mb-20 md:mb-24">
               <div class="flex items-center gap-4 mb-8">
                 <div class="w-2 h-16 bg-gradient-to-b from-orange-400 to-transparent rounded-full"></div>
-                <h2 class="text-4xl md:text-5xl font-black text-dark">NOS OBJECTIFS</h2>
+                <div>
+                  <p class="text-[#FF9D35] font-semibold mb-1 text-sm uppercase tracking-widest">Nos Objectifs</p>
+                  <h2 class="text-4xl md:text-5xl font-black text-[#016E98]">NOS OBJECTIFS</h2>
+                </div>
               </div>
               <p class="text-lg text-gray-700 leading-relaxed">
                 Chez EGENT TOGO, notre objectif est de fournir des solutions énergétiques durables en se spécialisant dans la fourniture et l'installation d'équipements solaires ainsi que dans l'électricité générale. Nous nous engageons à offrir des solutions innovantes pour répondre aux besoins énergétiques de nos clients, tout en contribuant activement à la transition vers une énergie propre et renouvelable.
@@ -152,13 +156,16 @@
             </div>
 
             <!-- Ligne de séparation -->
-            <div class="h-1 bg-gradient-to-r from-secondary via-secondary/50 to-transparent mb-20 md:mb-24"></div>
+            <div class="h-1 bg-gradient-to-r from-[#FF9D35] via-[#FF9D35]/50 to-transparent mb-20 md:mb-24"></div>
 
             <!-- NOTRE VISION -->
             <div>
               <div class="flex items-center gap-4 mb-8">
                 <div class="w-2 h-16 bg-gradient-to-b from-blue-600 to-transparent rounded-full"></div>
-                <h2 class="text-4xl md:text-5xl font-black text-dark">NOTRE VISION</h2>
+                <div>
+                  <p class="text-[#FF9D35] font-semibold mb-1 text-sm uppercase tracking-widest">Notre Vision</p>
+                  <h2 class="text-4xl md:text-5xl font-black text-[#016E98]">NOTRE VISION</h2>
+                </div>
               </div>
               <p class="text-lg text-gray-700 leading-relaxed">
                 Notre vision chez EGENT TOGO est de devenir un leader reconnu dans le domaine des énergies renouvelables en offrant des solutions fiables, durables et innovantes. Nous aspirons à jouer un rôle essentiel dans la création d'un avenir énergétique plus propre et à contribuer au bien-être de nos clients, de nos communautés et de notre planète.
@@ -187,8 +194,9 @@
 
           <!-- Contenu droite avec cartes -->
           <div>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-dark mb-8 leading-tight">
-              POURQUOI CHOISIR LES<br/><span class="text-secondary">SOLUTIONS EGENT TOGO</span> ?
+            <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Nos Avantages</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-[#016E98] mb-8 leading-tight">
+              POURQUOI CHOISIR LES<br/><span class="text-[#FF9D35]">SOLUTIONS EGENT TOGO</span> ?
             </h2>
             <p class="text-lg text-gray-700 leading-relaxed mb-12">
               Nous nous engageons à fournir les meilleures solutions énergétiques avec expertise, fiabilité et engagement envers votre satisfaction. Chaque projet est réalisé avec précision et professionnalisme pour garantir votre succès énergétique.
@@ -198,10 +206,10 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <!-- Carte 1 -->
               <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                  <i class="fas fa-gem text-secondary text-2xl"></i>
+                <div class="w-12 h-12 bg-[#EE6D08]/10 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-gem text-[#EE6D08] text-2xl"></i>
                 </div>
-                <h3 class="text-lg font-black text-dark mb-3">Équipement de Qualité</h3>
+                <h3 class="text-lg font-black text-[#016E98]">Équipement de Qualité</h3>
                 <p class="text-sm text-gray-600 leading-relaxed">
                   Nous sélectionnons uniquement des équipements premium certifiés conformes aux normes internationales pour assurer performance et durabilité maximales.
                 </p>
@@ -209,10 +217,10 @@
 
               <!-- Carte 2 -->
               <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                  <i class="fas fa-leaf text-secondary text-2xl"></i>
+                <div class="w-12 h-12 bg-[#EE6D08]/10 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-leaf text-[#EE6D08] text-2xl"></i>
                 </div>
-                <h3 class="text-lg font-black text-dark mb-3">Énergie Durable</h3>
+                <h3 class="text-lg font-black text-[#016E98]">Énergie Durable</h3>
                 <p class="text-sm text-gray-600 leading-relaxed">
                   Nos solutions énergétiques respectent l'environnement tout en réduisant votre consommation et vos factures pour un avenir plus vert et économique.
                 </p>
@@ -220,10 +228,10 @@
 
               <!-- Carte 3 -->
               <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                  <i class="fas fa-check-circle text-secondary text-2xl"></i>
+                <div class="w-12 h-12 bg-[#EE6D08]/10 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-check-circle text-[#EE6D08] text-2xl"></i>
                 </div>
-                <h3 class="text-lg font-black text-dark mb-3">Installation sécurisée</h3>
+                <h3 class="text-lg font-black text-[#016E98]">Installation sécurisée</h3>
                 <p class="text-sm text-gray-600 leading-relaxed">
                   Nos équipes respectent les normes de sécurité strictes et utilisent les meilleures pratiques pour une installation fiable et sans risque.
                 </p>
@@ -231,10 +239,10 @@
 
               <!-- Carte 4 -->
               <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                  <i class="fas fa-users text-secondary text-2xl"></i>
+                <div class="w-12 h-12 bg-[#EE6D08]/10 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-users text-[#EE6D08] text-2xl"></i>
                 </div>
-                <h3 class="text-lg font-black text-dark mb-3">Technicien qualifié</h3>
+                <h3 class="text-lg font-black text-[#016E98]">Technicien qualifié</h3>
                 <p class="text-sm text-gray-600 leading-relaxed">
                   Notre équipe de techniciens certifiés possède une expertise approfondie pour garantir des installations optimales et un support technique d'excellence.
                 </p>
@@ -257,7 +265,8 @@
       <!-- Section Notre Équipes -->
       <div class="mb-16 md:mb-24 py-16 md:py-24 bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl px-8 md:px-16">
         <div class="text-center mb-16 md:mb-20">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-dark mb-6">NOTRE <span class="text-secondary">ÉQUIPES</span></h2>
+          <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Notre Équipe</p>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#016E98] mb-6">NOTRE <span class="text-[#FF9D35]">ÉQUIPES</span></h2>
           <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Nos experts passionnés sont au cœur de notre succès. Avec une expérience approfondie dans les énergies renouvelables et l'électricité générale, notre équipe s'engage à fournir des solutions innovantes et durables pour transformer votre accès à l'énergie.
           </p>
@@ -279,8 +288,8 @@
               </div>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-black text-dark mb-2 group-hover:text-secondary transition-colors duration-300">Koffi Diabaté</h3>
-              <p class="text-secondary font-bold text-sm">Chef du département énergie solaire</p>
+              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">Koffi Diabaté</h3>
+              <p class="text-[#EE6D08] font-bold text-sm">Chef du département énergie solaire</p>
             </div>
           </div>
 
@@ -298,8 +307,8 @@
               </div>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-black text-dark mb-2 group-hover:text-secondary transition-colors duration-300">Solim Gnitou</h3>
-              <p class="text-secondary font-bold text-sm">Chef du département climatisation</p>
+              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">Solim Gnitou</h3>
+              <p class="text-[#EE6D08] font-bold text-sm">Chef du département climatisation</p>
             </div>
           </div>
 
@@ -317,8 +326,8 @@
               </div>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-black text-dark mb-2 group-hover:text-secondary transition-colors duration-300">Yacine Diallo</h3>
-              <p class="text-secondary font-bold text-sm">Chef du département installation</p>
+              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">Yacine Diallo</h3>
+              <p class="text-[#EE6D08] font-bold text-sm">Chef du département installation</p>
             </div>
           </div>
 
@@ -336,8 +345,8 @@
               </div>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-black text-dark mb-2 group-hover:text-secondary transition-colors duration-300">Ama Mensah</h3>
-              <p class="text-secondary font-bold text-sm">Chef du département maintenance</p>
+              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">Ama Mensah</h3>
+              <p class="text-[#EE6D08] font-bold text-sm">Chef du département maintenance</p>
             </div>
           </div>
         </div>
@@ -385,14 +394,15 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <!-- Contenu texte gauche -->
           <div class="flex flex-col justify-center">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-dark mb-8 leading-tight">
-              DITES AU REVOIR AUX <span class="text-secondary">PANNES</span><br/>D'ÉLECTRICITÉ ET<br/>AUX <span class="text-secondary">FACTURES SALÉES.</span>
+            <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Solutions Énergétiques</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-[#016E98] mb-8 leading-tight">
+              DITES AU REVOIR AUX <span class="text-[#FF9D35]">PANNES</span><br/>D'ÉLECTRICITÉ ET<br/>AUX <span class="text-[#FF9D35]">FACTURES SALÉES.</span>
             </h2>
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
               Nous vous proposons des solutions d'énergie renouvelable pour votre maison ou votre entreprise à des prix abordables. Une première étape vers un avenir plus vert et économe en énergie.
             </p>
             <div>
-              <button @click="navigateTo('/devis')" class="bg-gradient-to-r from-secondary to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-black px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg transform hover:scale-105">
+              <button @click="navigateTo('/devis')" class="bg-gradient-to-r from-[#EE6D08] to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-black px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg transform hover:scale-105">
                 Demander un devis
               </button>
             </div>
@@ -415,7 +425,7 @@
       <div class="bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-900 rounded-3xl p-12 md:p-16 text-center shadow-2xl border border-blue-800/50">
         <h2 class="text-3xl md:text-4xl font-black text-white mb-6">Prêt à Rejoindre Notre Mission ?</h2>
         <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">Contactez-nous pour découvrir comment nous pouvons transformer votre accès à l'énergie.</p>
-        <button @click="navigateTo('/Contact')" class="bg-secondary hover:bg-orange-600 text-white font-black px-8 py-4 rounded-full transition-colors duration-300 text-lg">
+        <button @click="navigateTo('/Contact')" class="bg-[#EE6D08] hover:bg-orange-600 text-white font-black px-8 py-4 rounded-full transition-colors duration-300 text-lg">
           Rejoignez-nous
         </button>
       </div>

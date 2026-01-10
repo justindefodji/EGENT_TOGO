@@ -15,9 +15,9 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
         <!-- Section Titre Hero -->
         <div class="text-center">
-          <p class="text-secondary font-semibold mb-4 text-sm uppercase tracking-widest">Restez informé</p>
+          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest">Restez informé</p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
-            Nos <span class="text-secondary">Actualités</span>
+            Nos <span class="text-[#EE6D08]">Actualités</span>
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             Découvrez les dernières nouvelles, innovations et réalisations du groupe EGENT-TOGO. Suivez notre actualité pour rester connecté à nos développements.
@@ -66,8 +66,8 @@
     <section class="bg-white py-20 md:py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-20">
-          <h2 class="text-4xl md:text-5xl font-black text-[#05075F] leading-tight mb-4">Dernières shorts</h2>
-          <div class="w-24 h-1.5 bg-gradient-to-r from-secondary to-orange-500 rounded-full"></div>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-4">Dernières shorts</h2>
+          <div class="w-24 h-1.5 bg-gradient-to-r from-[#EE6D08] to-orange-500 rounded-full"></div>
         </div>
 
         <!-- Shorts Videos Grid -->
@@ -88,7 +88,7 @@
             </div>
             <div class="p-6">
               <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Court métrage</p>
-              <h3 class="text-lg font-black text-[#05075F] mb-3 leading-tight">Dernier jour de la foire FIL 2025</h3>
+              <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">Dernier jour de la foire FIL 2025</h3>
               <p class="text-gray-600 text-sm mb-6">Découvrez comment EGENT-TOGO transforme le secteur énergétique avec des solutions durables et innovantes</p>
               <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                 Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
@@ -112,7 +112,7 @@
             </div>
             <div class="p-6">
               <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Court métrage</p>
-              <h3 class="text-lg font-black text-[#05075F] mb-3 leading-tight">Nous sommes en #promotion sur nos articles pendant la foire.#lampadaire #Zoklin #kit</h3>
+              <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">Nous sommes en #promotion sur nos articles pendant la foire.#lampadaire #Zoklin #kit</h3>
               <p class="text-gray-600 text-sm mb-6">Nos programmes de formation innovants combinent théorie et pratique pour former les experts de demain</p>
               <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                 Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
@@ -136,7 +136,7 @@
             </div>
             <div class="p-6">
               <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Court métrage</p>
-              <h3 class="text-lg font-black text-[#05075F] mb-3 leading-tight">C'est le moment de passer au solaire avec les kits Zoklin by EGENT TOGO.#CETEF #Foire #solaire #2025</h3>
+              <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">C'est le moment de passer au solaire avec les kits Zoklin by EGENT TOGO.#CETEF #Foire #solaire #2025</h3>
               <p class="text-gray-600 text-sm mb-6">Explorez les réalisations concrètes et projets en cours du groupe EGENT-TOGO</p>
               <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                 Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
@@ -147,7 +147,7 @@
 
         <!-- Full Videos -->
         <div>
-          <h3 class="text-2xl md:text-3xl font-black text-[#05075F] mb-10">Nos vidéos</h3>
+          <h3 class="text-2xl md:text-3xl font-black text-[#016E98] mb-10">Nos vidéos</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             <!-- Video 1 -->
             <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
@@ -165,7 +165,7 @@
               </div>
               <div class="p-6">
                 <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Présentation</p>
-                <h3 class="text-lg font-black text-[#05075F] mb-3 leading-tight">Réalisation d'un système de pompage solaire à Klologo Kpévegamme/Préfecture de Vo</h3>
+                <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">Réalisation d'un système de pompage solaire à Klologo Kpévegamme/Préfecture de Vo</h3>
                 <p class="text-gray-600 text-sm mb-6">Découvrez comment EGENT-TOGO forme les professionnels compétents et recherchés du secteur énergétique</p>
                 <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                   Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
@@ -189,7 +189,7 @@
               </div>
               <div class="p-6">
                 <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Formation</p>
-                <h3 class="text-lg font-black text-[#05075F] mb-3 leading-tight">L'eau sans effort pour une ferme de cacao à Agapétodji dans le Kloto</h3>
+                <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">L'eau sans effort pour une ferme de cacao à Agapétodji dans le Kloto</h3>
                 <p class="text-gray-600 text-sm mb-6">Programme de formation approfondie en électrotechnique avec focus sur le bien-être et la sécurité</p>
                 <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                   Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
@@ -213,7 +213,7 @@
               </div>
               <div class="p-6">
                 <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Actualité</p>
-                <h3 class="text-lg font-black text-[#05075F] mb-3 leading-tight">Ils ont dit que c'était impossible...Une maison 100 % solaire en milieu urbain au Togo !</h3>
+                <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">Ils ont dit que c'était impossible...Une maison 100 % solaire en milieu urbain au Togo !</h3>
                 <p class="text-gray-600 text-sm mb-6">Les derniers projets et innovations du groupe en énergie renouvelable et développement durable</p>
                 <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                   Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
@@ -229,8 +229,8 @@
     <section class="bg-gray-50 py-20 md:py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-20">
-          <h2 class="text-4xl md:text-5xl font-black text-[#05075F] leading-tight mb-4">Derniers articles</h2>
-          <div class="w-24 h-1.5 bg-gradient-to-r from-secondary to-orange-500 rounded-full"></div>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-4">Derniers articles</h2>
+          <div class="w-24 h-1.5 bg-gradient-to-r from-[#EE6D08] to-orange-500 rounded-full"></div>
         </div>
 
         <!-- News Grid -->
@@ -245,7 +245,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <!-- Category Badge -->
-              <div class="absolute top-4 left-4 bg-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
+              <div class="absolute top-4 left-4 bg-[#EE6D08] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
                 Actualité
               </div>
               <!-- Date Badge -->
@@ -256,7 +256,7 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#05075F] mb-3 line-clamp-3 leading-tight">Inauguration du nouveau centre EGENT-TOGO</h3>
+              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">Inauguration du nouveau centre EGENT-TOGO</h3>
               <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
                 Découvrez notre nouveau centre technologique équipé des dernières innovations en matière d'efficacité énergétique et de solutions durables pour l'avenir.
               </p>
@@ -276,7 +276,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <!-- Category Badge -->
-              <div class="absolute top-4 left-4 bg-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
+              <div class="absolute top-4 left-4 bg-[#EE6D08] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
                 Partenariat
               </div>
               <!-- Date Badge -->
@@ -287,7 +287,7 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#05075F] mb-3 line-clamp-3 leading-tight">Nouveau partenariat international signé</h3>
+              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">Nouveau partenariat international signé</h3>
               <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
                 EGENT-TOGO s'associe avec un leader mondial pour apporter des solutions innovantes en matière d'énergie renouvelable et développement durable.
               </p>
@@ -307,7 +307,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <!-- Category Badge -->
-              <div class="absolute top-4 left-4 bg-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
+              <div class="absolute top-4 left-4 bg-[#EE6D08] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
                 Reconnaissance
               </div>
               <!-- Date Badge -->
@@ -318,7 +318,7 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#05075F] mb-3 line-clamp-3 leading-tight">EGENT-TOGO reçoit un prix pour l'innovation</h3>
+              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">EGENT-TOGO reçoit un prix pour l'innovation</h3>
               <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
                 Notre entreprise a été reconnue pour son engagement dans la recherche et le développement de solutions durables et innovantes.
               </p>
@@ -338,7 +338,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <!-- Category Badge -->
-              <div class="absolute top-4 left-4 bg-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
+              <div class="absolute top-4 left-4 bg-[#EE6D08] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
                 Événement
               </div>
               <!-- Date Badge -->
@@ -349,7 +349,7 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#05075F] mb-3 line-clamp-3 leading-tight">Forum clients EGENT-TOGO 2026</h3>
+              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">Forum clients EGENT-TOGO 2026</h3>
               <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
                 Nous invitons nos clients à participer à notre forum annuel pour découvrir les nouvelles solutions et tendances du secteur.
               </p>
@@ -369,7 +369,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <!-- Category Badge -->
-              <div class="absolute top-4 left-4 bg-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
+              <div class="absolute top-4 left-4 bg-[#EE6D08] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
                 Durabilité
               </div>
               <!-- Date Badge -->
@@ -380,7 +380,7 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#05075F] mb-3 line-clamp-3 leading-tight">Engagement pour un avenir durable</h3>
+              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">Engagement pour un avenir durable</h3>
               <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
                 EGENT-TOGO réaffirme son engagement envers la durabilité environnementale et les objectifs de développement durable.
               </p>
@@ -400,7 +400,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <!-- Category Badge -->
-              <div class="absolute top-4 left-4 bg-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
+              <div class="absolute top-4 left-4 bg-[#EE6D08] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
                 Ressources Humaines
               </div>
               <!-- Date Badge -->
@@ -411,7 +411,7 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#05075F] mb-3 line-clamp-3 leading-tight">EGENT-TOGO recrute des talents</h3>
+              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">EGENT-TOGO recrute des talents</h3>
               <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
                 Rejoignez notre équipe dynamique ! Nous recherchons des professionnels passionnés par l'énergie et l'innovation.
               </p>
@@ -443,7 +443,7 @@
             placeholder="Votre adresse email" 
             class="flex-1 px-6 py-4 rounded-lg text-dark font-semibold placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-blue-900"
           />
-          <button class="bg-secondary hover:bg-orange-600 text-white font-black px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap">
+          <button class="bg-[#EE6D08] hover:bg-orange-600 text-white font-black px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap">
             S'abonner
           </button>
         </div>

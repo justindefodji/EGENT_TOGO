@@ -45,7 +45,7 @@
             <!-- Header -->
             <div>
               <p class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest mb-3">{{ product.category }}</p>
-              <h1 class="text-4xl md:text-5xl font-black text-[#05075F] mb-6 leading-tight">{{ product.name }}</h1>
+              <h1 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight">{{ product.name }}</h1>
               
               <!-- Price -->
               <div class="bg-blue-50 rounded-2xl p-6 mb-8">
@@ -98,7 +98,7 @@
           <!-- Left: Description -->
           <div class="md:col-span-2">
             <div class="bg-white rounded-3xl p-8 shadow-lg">
-              <h2 class="text-3xl font-black text-[#05075F] mb-8">À propos de ce produit</h2>
+              <h2 class="text-3xl font-black text-[#016E98] mb-8">À propos de ce produit</h2>
               <div class="prose prose-lg max-w-none text-gray-700" v-html="product.longDescription"></div>
             </div>
           </div>
@@ -106,11 +106,11 @@
           <!-- Right: Specifications -->
           <div>
             <div class="bg-white rounded-3xl p-8 shadow-lg sticky top-20">
-              <h3 class="text-2xl font-black text-[#05075F] mb-8">Caractéristiques</h3>
+              <h3 class="text-2xl font-black text-[#016E98] mb-8">Caractéristiques</h3>
               <div class="space-y-6">
                 <div v-for="spec in product.specs" :key="spec.label" class="border-b border-gray-200 pb-4 last:border-b-0">
                   <p class="text-sm text-[#FF9D35] font-semibold uppercase tracking-widest mb-2">{{ spec.label }}</p>
-                  <p class="text-lg font-bold text-[#05075F]">{{ spec.value }}</p>
+                  <p class="text-lg font-bold text-[#016E98]">{{ spec.value }}</p>
                 </div>
               </div>
 
@@ -119,7 +119,7 @@
                 <div class="flex items-start gap-4">
                   <i class="fas fa-shield-alt text-[#0392C7] text-2xl mt-1"></i>
                   <div>
-                    <p class="font-bold text-[#05075F] mb-2">Couverture complète</p>
+                    <p class="font-bold text-[#016E98] mb-2">Couverture complète</p>
                     <p class="text-sm text-gray-700">
                       Tous nos produits sont couverts par une garantie complète et un service après-vente premium.
                     </p>
@@ -136,7 +136,7 @@
     <section class="bg-white py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-[#05075F] leading-tight mb-6">AUTRES PRODUITS</h2>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">AUTRES PRODUITS</h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto">
             Découvrez nos autres solutions énergétiques
           </p>
@@ -165,7 +165,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-gradient-to-r from-[#05075F] to-[#0392C7] py-16 md:py-24">
+    <section class="bg-gradient-to-r from-[#016E98] to-[#0392C7] py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-black text-white mb-8">PRÊT À PASSER À L'ACTION ?</h2>
         <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
@@ -238,7 +238,7 @@ const goBack = () => {
   font-weight: bold;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  color: #05075F;
+  color: #016E98;
 }
 
 .line-clamp-2 {

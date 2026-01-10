@@ -3,7 +3,7 @@
     <!-- Hero Section Services -->
     <div class="relative overflow-visible pt-4 pb-12 md:pt-8 md:pb-20">
       <!-- Animated gradient background -->
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-dark -z-10"></div>
+      <!-- <div class="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-dark -z-10"></div> -->
       
       <!-- Grain effect overlay - Extended behind navbar -->
       <div class="absolute left-0 right-0 bottom-0 -top-32 opacity-60 -z-5" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22noise%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%221.1%22 numOctaves=%225%22 result=%22noise%22 /><feColorMatrix in=%22noise%22 type=%22saturate%22 values=%220%22 /></filter><rect width=%22100%22 height=%22100%22 fill=%22black%22 filter=%22url(%23noise)%22/></svg>'); background-size: 100px 100px;"></div>
@@ -29,24 +29,24 @@
             <!-- Main heading with gradient -->
             <div>
               <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
-                <span class="text-blue-900">
+                <span class="text-[#016E98]">
                   SOLUTIONS
                 </span>
                 <br />
-                <span class="bg-gradient-to-r from-secondary to-orange-400 bg-clip-text text-transparent">
+                <span class="bg-gradient-to-r from-[#EE6D08] to-orange-400 bg-clip-text text-transparent">
                   ÉNERGÉTIQUES
                 </span>
               </h1>
             </div>
 
             <!-- Description -->
-            <p class="text-base md:text-lg text-blue-900 leading-relaxed max-w-xl">
+            <p class="text-base md:text-lg text-[#016E98] leading-relaxed max-w-xl">
               Des solutions innovantes et durables pour tous vos besoins énergétiques. Notre expertise au service de votre confort et de votre économie.
             </p>
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 pt-6">
-              <button class="group bg-gradient-to-r from-secondary to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+              <button class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
                 <span>Explorer les Services</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
               </button>
@@ -69,10 +69,10 @@
             <!-- Floating card 1 - Top right -->
             <div class="absolute top-4 md:top-8 -right-2 md:-right-4 lg:right-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 md:p-6 w-56 md:w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
               <div class="flex items-center gap-3 mb-2">
-                <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-secondary to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
+                <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-[#EE6D08] to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-sun text-lg md:text-xl"></i>
                 </div>
-                <h3 class="font-black text-blue-800 text-base md:text-lg">Solaire</h3>
+                <h3 class="font-black text-[#016E98] text-base md:text-lg">Solaire</h3>
               </div>
               <p class="text-xs md:text-sm text-black">Énergie renouvelable et durable</p>
             </div>
@@ -80,10 +80,10 @@
             <!-- Floating card 2 - Bottom left -->
             <div class="absolute -bottom-2 md:-bottom-4 left-0 md:left-4 lg:left-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 md:p-6 w-56 md:w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
               <div class="flex items-center gap-3 mb-2">
-                <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center text-white shadow-lg">
+                <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-blue-500 to-blue-500 rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-tools text-lg md:text-xl"></i>
                 </div>
-                <h3 class="font-black text-orange-800 text-base md:text-lg">Expertise</h3>
+                <h3 class="font-black text-[#EE6D08] text-base md:text-lg">Expertise</h3>
               </div>
               <p class="text-xs md:text-sm text-black">Installation et maintenance</p>
             </div>
@@ -107,7 +107,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 md:mb-16 lg:mb-20">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Nos services</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#05075F] leading-tight mb-4">NOUS OFFRONS DES SOLUTIONS ÉNERGÉTIQUES <span class="text-secondary">DURABLES</span></h2>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#016E98] leading-tight mb-4">NOUS OFFRONS DES SOLUTIONS ÉNERGÉTIQUES <span class="text-secondary">DURABLES</span></h2>
           <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">Découvrez nos services spécialisés en énergie renouvelable et solutions innovantes</p>
         </div>
 
@@ -292,7 +292,7 @@
       <!-- Content - Centered -->
       <div class="relative w-full max-w-7xl mx-auto h-auto md:h-full px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center py-12 md:py-16">
         <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-white leading-tight mb-4 md:mb-6">
-          UNE MAIN D'ŒUVRE <span class="text-secondary">QUALIFIÉE</span> DISPONIBLE 7/7
+          UNE MAIN D'ŒUVRE <span class="text-[#EE6D08]">QUALIFIÉE</span> DISPONIBLE 7/7
         </h2>
         
         <p class="text-white text-base sm:text-lg mb-6 md:mb-8 leading-relaxed opacity-95 max-w-2xl">
@@ -311,7 +311,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <!-- Left Content -->
           <div>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#05075F] leading-tight mb-4 md:mb-6">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-4 md:mb-6">
               DITES AU REVOIR AUX <span class="text-secondary">PANNES</span> D'ÉLECTRICITÉ
             </h2>
             

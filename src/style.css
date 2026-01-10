@@ -11,27 +11,110 @@
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #ffffff;
-  color: #001a4d;
+  color: #000000;
+}
+
+/* Charte graphique EGENT TOGO */
+:root {
+  --color-primary: #EE6D08;      /* Orange */
+  --color-secondary: #EE6D08;    /* Bleu */
+  --color-green-dark: #317812;   /* Vert foncé */
+  --color-green-lime: #8AB00D;   /* Vert lime */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray-light: #F0F0F0;
 }
 
 @layer components {
+  /* Boutons primaires - Orange */
   .btn-primary {
-    @apply px-6 py-3 bg-secondary text-white rounded font-semibold hover:bg-orange-600 transition;
+    @apply px-6 py-3 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    background-color: #EE6D08;
   }
 
+  .btn-primary:hover {
+    background-color: #d95c07;
+  }
+
+  /* Boutons secondaires - Bleu */
   .btn-secondary {
-    @apply px-6 py-3 bg-dark text-white rounded font-semibold hover:bg-blue-900 transition;
+    @apply px-6 py-3 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105;
+    background-color: #016E98;
   }
 
+  .btn-secondary:hover {
+    background-color: #014d6a;
+  }
+
+  /* Boutons vert foncé */
+  .btn-green-dark {
+    @apply px-6 py-3 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105;
+    background-color: #317812;
+  }
+
+  .btn-green-dark:hover {
+    background-color: #255c0d;
+  }
+
+  /* Boutons outline orange */
   .btn-outline {
-    @apply px-6 py-3 border-2 border-secondary text-secondary rounded font-semibold hover:bg-orange-50 transition;
+    @apply px-6 py-3 border-2 rounded-lg font-bold transition-all duration-300;
+    border-color: #EE6D08;
+    color: #EE6D08;
   }
 
+  .btn-outline:hover {
+    background-color: rgba(238, 109, 8, 0.1);
+  }
+
+  /* Titres de sections - Bleu */
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-dark mb-4;
+    @apply text-3xl md:text-4xl font-bold mb-4;
+    color: #016E98;
   }
 
+  /* Sous-titres */
   .section-subtitle {
-    @apply text-lg text-gray-600 mb-8;
+    @apply text-lg mb-8;
+    color: #666666;
+  }
+
+  /* Accent vert lime */
+  .accent-lime {
+    @apply font-bold;
+    color: #8AB00D;
+  }
+
+  /* Fond avec dégradé bleu à vert */
+  .gradient-brand {
+    background: linear-gradient(to right, #EE6D08, #317812);
+  }
+
+  /* Cartes avec bordure */
+  .card-brand {
+    @apply rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border p-6;
+    border-color: #F0F0F0;
+    background-color: #FFFFFF;
+  }
+
+  /* Lien avec effet hover */
+  .link-brand {
+    @apply transition-colors duration-300 font-semibold;
+    color: #016E98;
+  }
+
+  .link-brand:hover {
+    color: #EE6D08;
+  }
+
+  /* Icône lime */
+  .icon-lime {
+    color: #8AB00D;
   }
 }
+
+/* Transitions fluides */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+

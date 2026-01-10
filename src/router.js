@@ -15,47 +15,56 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: { title: 'Accueil' }
   },
   {
     path: '/a-propos',
     name: 'About',
-    component: About
+    component: About,
+    meta: { title: 'À propos' }
   },
   {
     path: '/services',
     name: 'Services',
-    component: Services
+    component: Services,
+    meta: { title: 'Services' }
   },
   {
     path: '/produits',
     name: 'Products',
-    component: Products
+    component: Products,
+    meta: { title: 'Produits' }
   },
   {
     path: '/produits/:slug',
     name: 'ProductDetail',
-    component: ProductDetail
+    component: ProductDetail,
+    meta: { title: 'Détail Produit' }
   },
   {
     path: '/actualites',
     name: 'News',
-    component: News
+    component: News,
+    meta: { title: 'Actualités' }
   },
   {
     path: '/galerie',
     name: 'Gallery',
-    component: Gallery
+    component: Gallery,
+    meta: { title: 'Galerie' }
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact
+    component: Contact,
+    meta: { title: 'Contact' }
   },
   {
     path: '/devis',
     name: 'Quote',
-    component: Quote
+    component: Quote,
+    meta: { title: 'Devis' }
   }
 ]
 

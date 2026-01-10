@@ -12,7 +12,7 @@
           <div class="z-10 max-w-3xl text-center">
             <h1 class="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
               ÉCRIVONS L'AVENIR DE
-              <span class="text-secondary font-black">L'ÉNERGIE</span>
+              <span class="text-[#EE6D08] font-black">L'ÉNERGIE</span>
               AU TOGO
             </h1>
             <p class="text-white text-lg mb-8 opacity-100">
@@ -74,7 +74,7 @@
           <!-- Content -->
           <div class="order-2 md:order-1">
             <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">À PROPOS DE NOUS</p>
-            <h2 class="text-4xl md:text-5xl font-black text-[#05075F] mb-6 leading-tight">VOTRE AVENIR D'AUTONOMIE ÉNERGÉTIQUE AVEC NOUS</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight">VOTRE AVENIR D'AUTONOMIE ÉNERGÉTIQUE AVEC NOUS</h2>
             
             <p class="text-gray-600 mb-8 leading-relaxed text-lg">
               Chez EGENT TOGO, notre objectif est de fournir des solutions énergétiques durables en se spécialisant dans la fourniture et l'installation d'équipements solaires ainsi que dans l'électricité générale. Depuis 2015, nous accompagnons les particuliers et les entreprises togolaises vers l'autonomie énergétique.
@@ -100,7 +100,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Nos services</p>
-          <h2 class="text-4xl md:text-5xl font-black text-[#05075F] leading-tight">NOUS OFFRONS DES SOLUTIONS ÉNERGÉTIQUES DURABLES</h2>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight">NOUS OFFRONS DES SOLUTIONS ÉNERGÉTIQUES DURABLES</h2>
         </div>
 
         
@@ -204,7 +204,7 @@
           <!-- Content -->
           <div class="order-1 md:order-2">
             <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Nos valeurs</p>
-            <h2 class="text-4xl md:text-5xl font-black text-[#05075F] mb-6 leading-tight">POURQUOI CHOISIR LES SOLUTIONS EGENT TOGO ?</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight">POURQUOI CHOISIR LES SOLUTIONS EGENT TOGO ?</h2>
             
             <p class="text-gray-600 mb-12 leading-relaxed text-lg">
               EGENT TOGO se distingue par son engagement envers la qualité, l'innovation et la satisfaction client. Nous utilisons uniquement des équipements certifiés et nos techniciens sont formés aux dernières technologies en matière d'énergie renouvelable.
@@ -216,7 +216,7 @@
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-gem text-[#FF9D35] text-2xl"></i>
                 </div>
-                <h3 class="font-black text-[#05075F] text-lg mb-3">Équipement de Qualité</h3>
+                <h3 class="font-black text-[#016E98] text-lg mb-3">Équipement de Qualité</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">Tous nos équipements sont certifiés et proviennent de marques internationales réputées pour leur durabilité.</p>
               </div>
 
@@ -225,7 +225,7 @@
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-bolt text-[#FF9D35] text-2xl"></i>
                 </div>
-                <h3 class="font-black text-[#05075F] text-lg mb-3">Énergie Durable</h3>
+                <h3 class="font-black text-[#016E98] text-lg mb-3">Énergie Durable</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">Nos solutions réduisent votre consommation d'électricité et votre empreinte carbone pour un avenir plus vert.</p>
               </div>
 
@@ -234,7 +234,7 @@
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-shield-alt text-[#FF9D35] text-2xl"></i>
                 </div>
-                <h3 class="font-black text-[#05075F] text-lg mb-3">Installation sécurisée</h3>
+                <h3 class="font-black text-[#016E98] text-lg mb-3">Installation sécurisée</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">Nos installations respectent les normes de sécurité internationales pour protéger votre investissement.</p>
               </div>
 
@@ -243,7 +243,7 @@
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-users text-[#FF9D35] text-2xl"></i>
                 </div>
-                <h3 class="font-black text-[#05075F] text-lg mb-3">Technicien qualifié</h3>
+                <h3 class="font-black text-[#016E98] text-lg mb-3">Technicien qualifié</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">Notre équipe dispose de certifications professionnelles et d'années d'expérience en installations énergétiques.</p>
               </div>
             </div>
@@ -257,7 +257,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Nos produits</p>
-          <h2 class="text-4xl md:text-5xl font-black text-[#05075F] leading-tight mb-6">DÉCOUVREZ NOS PRODUITS PHARES</h2>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">DÉCOUVREZ NOS PRODUITS PHARES</h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Nous proposons une gamme complète de solutions énergétiques pour particuliers et entreprises, conçues pour optimiser votre consommation et maximiser vos économies.
           </p>
@@ -320,20 +320,20 @@
 
         <!-- CTA Button -->
         <div class="text-center">
-          <button @click="navigateTo('/products')" class="btn-primary rounded-lg px-8 py-3 text-lg font-semibold">En savoir plus</button>
+          <button @click="navigateTo('/produits')" class="btn-primary rounded-lg px-8 py-3 text-lg font-semibold">En savoir plus</button>
         </div>
       </div>
     </section>
 
     <!-- CTA Section: Dites au revoir aux pannes -->
-    <section class="bg-gradient-to-r from-[#0392C7]/10 to-[#05075F]/10 py-16 md:py-24">
+    <section class="bg-gradient-to-r from-[#0392C7]/10 to-[#016E98]/10 py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <!-- Content -->
           <div>
-            <h2 class="text-4xl md:text-5xl font-black text-[#05075F] leading-tight mb-8">DITES AU REVOIR AUX PANNES<br>D'ÉLECTRICITÉ ET<br>AUX FACTURES SALÉES.</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-8">DITES AU REVOIR AUX PANNES<br>D'ÉLECTRICITÉ ET<br>AUX FACTURES SALÉES.</h2>
             
-            <p class="text-[#05075F] mb-8 leading-relaxed text-lg">
+            <p class="text-[#016E98] mb-8 leading-relaxed text-lg">
               Nous vous proposons des solutions d'énergie renouvelable adaptées à votre maison ou votre entreprise à des prix abordables. Rejoignez les centaines de clients satisfaits qui ont déjà réduit leurs factures d'électricité.
             </p>
 

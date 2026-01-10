@@ -15,9 +15,9 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
         <!-- Section Titre Hero -->
         <div class="text-center">
-          <p class="text-secondary font-semibold mb-4 text-sm uppercase tracking-widest">Obtenir un tarif personnalisé</p>
+          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest">Obtenir un tarif personnalisé</p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
-            Demande de <span class="text-secondary">Devis</span>
+            Demande de <span class="text-[#EE6D08]">Devis</span>
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             Remplissez ce formulaire pour recevoir un devis personnalisé et gratuit, adapté à vos besoins énergétiques spécifiques.
@@ -37,7 +37,7 @@
                 :class="[
                   'w-14 h-14 rounded-full flex items-center justify-center font-black text-lg transition-all duration-300 shadow-md',
                   currentStep === index 
-                    ? 'bg-secondary text-white scale-110 shadow-lg' 
+                    ? 'bg-[#EE6D08] text-white scale-110 shadow-lg' 
                     : index < currentStep 
                     ? 'bg-green-500 text-white' 
                     : 'bg-gray-200 text-gray-600'
@@ -60,7 +60,7 @@
             </div>
           </div>
           <div class="text-center">
-            <p class="text-gray-600 font-semibold text-lg">Étape {{ currentStep + 1 }} de {{ steps.length }}: <span class="text-secondary">{{ steps[currentStep].title }}</span></p>
+            <p class="text-gray-600 font-semibold text-lg">Étape {{ currentStep + 1 }} de {{ steps.length }}: <span class="text-[#EE6D08]">{{ steps[currentStep].title }}</span></p>
           </div>
         </div>
 
@@ -69,94 +69,94 @@
           <!-- Step 1: Général -->
           <div v-if="currentStep === 0" class="space-y-6 animate-fadeIn">
             <div class="mb-8">
-              <h2 class="text-4xl font-black text-[#05075F] mb-2">{{ steps[0].title }}</h2>
+              <h2 class="text-4xl font-black text-[#EE6D08] mb-2">{{ steps[0].title }}</h2>
               <p class="text-gray-600 text-lg">Commençons par vos informations personnelles</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Prénom *</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Prénom *</label>
                 <input 
                   v-model="form.firstName"
                   type="text" 
                   placeholder="Jean"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                   required
                 />
               </div>
 
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Nom *</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Nom *</label>
                 <input 
                   v-model="form.lastName"
                   type="text" 
                   placeholder="Dupont"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                   required
                 />
               </div>
 
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Email *</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Email *</label>
                 <input 
                   v-model="form.email"
                   type="email" 
                   placeholder="jean@example.com"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                   required
                 />
               </div>
 
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Téléphone *</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Téléphone *</label>
                 <input 
                   v-model="form.phone"
                   type="tel" 
                   placeholder="+228 XX XX XX XX"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                   required
                 />
               </div>
 
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Société</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Société</label>
                 <input 
                   v-model="form.company"
                   type="text" 
                   placeholder="Votre entreprise"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                 />
               </div>
 
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Fonction</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Fonction</label>
                 <input 
                   v-model="form.position"
                   type="text" 
                   placeholder="Votre fonction"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                 />
               </div>
             </div>
 
             <div>
-              <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Adresse *</label>
+              <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Adresse *</label>
               <input 
                 v-model="form.address"
                 type="text" 
                 placeholder="Votre adresse"
-                class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                 required
               />
             </div>
 
             <div>
-              <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Adresse d'installation</label>
+              <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Adresse d'installation</label>
               <input 
                 v-model="form.installationAddress"
                 type="text" 
                 placeholder="Adresse d'installation (si différente)"
-                class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
               />
             </div>
 
@@ -175,16 +175,16 @@
           <!-- Step 2: Technique -->
           <div v-if="currentStep === 1" class="space-y-6 animate-fadeIn">
             <div class="mb-8">
-              <h2 class="text-4xl font-black text-[#05075F] mb-2">{{ steps[1].title }}</h2>
+              <h2 class="text-4xl font-black text-[#016E98] mb-2">{{ steps[1].title }}</h2>
               <p class="text-gray-600 text-lg">Décrivez vos besoins techniques</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Type de client *</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type de client *</label>
                 <select 
                   v-model="form.clientType"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                   required
                 >
                   <option value="">Sélectionnez un type</option>
@@ -195,38 +195,38 @@
               </div>
 
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Consommation (kWh/mois)</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Consommation (kWh/mois)</label>
                 <input 
                   v-model="form.consumption"
                   type="number" 
                   placeholder="500"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                 />
               </div>
 
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Surface à couvrir (m²)</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Surface à couvrir (m²)</label>
                 <input 
                   v-model="form.area"
                   type="number" 
                   placeholder="100"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                 />
               </div>
 
               <div>
-                <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Budget estimé (FCFA)</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Budget estimé (FCFA)</label>
                 <input 
                   v-model="form.budget"
                   type="number" 
                   placeholder="1000000"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                 />
               </div>
             </div>
 
             <div>
-              <label class="block text-[#05075F] font-bold text-sm mb-4 uppercase tracking-widest">Services souhaités</label>
+              <label class="block text-[#016E98] font-bold text-sm mb-4 uppercase tracking-widest">Services souhaités</label>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <label class="flex items-center p-4 border-2 border-gray-300 rounded-xl cursor-pointer hover:border-secondary hover:bg-gray-50 transition-all duration-300">
                   <input 
@@ -235,7 +235,7 @@
                     value="energie-solaire"
                     class="w-5 h-5 text-secondary rounded focus:ring-2 focus:ring-secondary"
                   />
-                  <span class="ml-3 text-[#05075F] font-semibold">Énergie Solaire</span>
+                  <span class="ml-3 text-[#016E98] font-semibold">Énergie Solaire</span>
                 </label>
                 <label class="flex items-center p-4 border-2 border-gray-300 rounded-xl cursor-pointer hover:border-secondary hover:bg-gray-50 transition-all duration-300">
                   <input 
@@ -244,7 +244,7 @@
                     value="climatisation"
                     class="w-5 h-5 text-secondary rounded focus:ring-2 focus:ring-secondary"
                   />
-                  <span class="ml-3 text-[#05075F] font-semibold">Climatisation & Froid</span>
+                  <span class="ml-3 text-[#016E98] font-semibold">Climatisation & Froid</span>
                 </label>
                 <label class="flex items-center p-4 border-2 border-gray-300 rounded-xl cursor-pointer hover:border-secondary hover:bg-gray-50 transition-all duration-300">
                   <input 
@@ -253,7 +253,7 @@
                     value="electricite"
                     class="w-5 h-5 text-secondary rounded focus:ring-2 focus:ring-secondary"
                   />
-                  <span class="ml-3 text-[#05075F] font-semibold">Électricité Générale</span>
+                  <span class="ml-3 text-[#016E98] font-semibold">Électricité Générale</span>
                 </label>
                 <label class="flex items-center p-4 border-2 border-gray-300 rounded-xl cursor-pointer hover:border-secondary hover:bg-gray-50 transition-all duration-300">
                   <input 
@@ -262,7 +262,7 @@
                     value="installation"
                     class="w-5 h-5 text-secondary rounded focus:ring-2 focus:ring-secondary"
                   />
-                  <span class="ml-3 text-[#05075F] font-semibold">Installation & Maintenance</span>
+                  <span class="ml-3 text-[#016E98] font-semibold">Installation & Maintenance</span>
                 </label>
               </div>
             </div>
@@ -282,15 +282,15 @@
           <!-- Step 3: Objectif -->
           <div v-if="currentStep === 2" class="space-y-6 animate-fadeIn">
             <div class="mb-8">
-              <h2 class="text-4xl font-black text-[#05075F] mb-2">{{ steps[2].title }}</h2>
+              <h2 class="text-4xl font-black text-[#016E98] mb-2">{{ steps[2].title }}</h2>
               <p class="text-gray-600 text-lg">Présentez vos objectifs</p>
             </div>
 
             <div>
-              <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Objectif principal *</label>
+              <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Objectif principal *</label>
               <select 
                 v-model="form.objective"
-                class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                 required
               >
                 <option value="">Sélectionnez un objectif</option>
@@ -303,12 +303,12 @@
             </div>
 
             <div>
-              <label class="block text-[#05075F] font-bold text-sm mb-3 uppercase tracking-widest">Message supplémentaire</label>
+              <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Message supplémentaire</label>
               <textarea 
                 v-model="form.message"
                 rows="6"
                 placeholder="Décrivez vos besoins, contraintes ou spécificités du projet..."
-                class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#05075F] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300 resize-none"
+                class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300 resize-none"
               ></textarea>
             </div>
 
@@ -320,7 +320,7 @@
                 class="w-5 h-5 mt-1 text-secondary rounded focus:ring-2 focus:ring-secondary cursor-pointer flex-shrink-0"
                 required
               />
-              <label for="terms" class="text-[#05075F] text-sm cursor-pointer leading-relaxed">
+              <label for="terms" class="text-[#016E98] text-sm cursor-pointer leading-relaxed">
                 J'accepte les <span class="font-bold">conditions d'utilisation</span> et la <span class="font-bold">politique de confidentialité</span> de EGENT-TOGO.
               </label>
             </div>
@@ -343,7 +343,7 @@
               v-if="currentStep > 0"
               type="button"
               @click="previousStep"
-              class="px-8 py-4 bg-gray-200 hover:bg-gray-300 text-[#05075F] rounded-xl font-bold transition-all duration-300 transform hover:scale-105"
+              class="px-8 py-4 bg-gray-200 hover:bg-gray-300 text-[#016E98] rounded-xl font-bold transition-all duration-300 transform hover:scale-105"
             >
               <i class="fas fa-arrow-left mr-2"></i>Précédent
             </button>
@@ -397,19 +397,19 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <i class="fas fa-clock text-secondary text-4xl mb-4"></i>
+            <i class="fas fa-clock text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-2">Réponse Rapide</h3>
             <p class="text-gray-100">Nous répondons généralement dans les 24 heures</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <i class="fas fa-money-bill text-secondary text-4xl mb-4"></i>
+            <i class="fas fa-money-bill text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-2">Gratuit & Sans Engagement</h3>
             <p class="text-gray-100">Tous nos devis sont gratuits et sans frais</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <i class="fas fa-headset text-secondary text-4xl mb-4"></i>
+            <i class="fas fa-headset text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-2">Support Personnalisé</h3>
             <p class="text-gray-100">Une équipe dédiée pour vos questions</p>
           </div>
