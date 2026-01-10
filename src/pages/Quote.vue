@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section Quote -->
-    <div class="bg-gradient-to-br from-blue-900 via-blue-800 to-dark relative -mt-32 pt-0 overflow-hidden">
+    <div id="hero-quote" class="bg-gradient-to-br from-blue-900 via-blue-800 to-dark relative -mt-32 pt-0 overflow-hidden">
       <!-- Background elements -->
       <div class="absolute inset-0 opacity-20">
         <div class="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
@@ -15,11 +15,11 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
         <!-- Section Titre Hero -->
         <div class="text-center">
-          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest">Obtenir un tarif personnalisé</p>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
+          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown animation-delay-200">Obtenir un tarif personnalisé</p>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-400">
             Demande de <span class="text-[#EE6D08]">Devis</span>
           </h1>
-          <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+          <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-600">
             Remplissez ce formulaire pour recevoir un devis personnalisé et gratuit, adapté à vos besoins énergétiques spécifiques.
           </p>
         </div>
@@ -27,12 +27,12 @@
     </div>
 
     <!-- Quote Form Section -->
-    <section class="bg-white py-20 md:py-32">
+    <section id="form-section" class="bg-white py-20 md:py-32">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Progress Bar -->
-        <div class="mb-16">
+        <div class="mb-16 animate-fadeInUp animation-delay-200">
           <div class="flex items-center justify-between mb-8">
-            <div v-for="(step, index) in steps" :key="index" class="flex items-center flex-1">
+            <div v-for="(step, index) in steps" :key="index" class="flex items-center flex-1 animate-fadeInUp" :style="{ animationDelay: `${0.3 + index * 0.1}s` }">
               <div 
                 :class="[
                   'w-14 h-14 rounded-full flex items-center justify-center font-black text-lg transition-all duration-300 shadow-md',
@@ -59,7 +59,7 @@
               ></div>
             </div>
           </div>
-          <div class="text-center">
+          <div class="text-center animate-fadeInUp animation-delay-400">
             <p class="text-gray-600 font-semibold text-lg">Étape {{ currentStep + 1 }} de {{ steps.length }}: <span class="text-[#EE6D08]">{{ steps[currentStep].title }}</span></p>
           </div>
         </div>
@@ -67,14 +67,14 @@
         <!-- Form -->
         <form @submit.prevent="handleSubmit" class="space-y-8">
           <!-- Step 1: Général -->
-          <div v-if="currentStep === 0" class="space-y-6 animate-fadeIn">
-            <div class="mb-8">
+          <div v-if="currentStep === 0" class="space-y-6 animate-fadeInUp animation-delay-300">
+            <div class="mb-8 animate-slideInDown animation-delay-300">
               <h2 class="text-4xl font-black text-[#EE6D08] mb-2">{{ steps[0].title }}</h2>
-              <p class="text-gray-600 text-lg">Commençons par vos informations personnelles</p>
+              <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">Commençons par vos informations personnelles</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
+              <div class="animate-fadeInUp animation-delay-400">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Prénom *</label>
                 <input 
                   v-model="form.firstName"
@@ -85,7 +85,7 @@
                 />
               </div>
 
-              <div>
+              <div class="animate-fadeInUp animation-delay-500">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Nom *</label>
                 <input 
                   v-model="form.lastName"
@@ -96,7 +96,7 @@
                 />
               </div>
 
-              <div>
+              <div class="animate-fadeInUp animation-delay-600">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Email *</label>
                 <input 
                   v-model="form.email"
@@ -107,7 +107,7 @@
                 />
               </div>
 
-              <div>
+              <div class="animate-fadeInUp animation-delay-700">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Téléphone *</label>
                 <input 
                   v-model="form.phone"
@@ -118,7 +118,7 @@
                 />
               </div>
 
-              <div>
+              <div class="animate-fadeInUp animation-delay-800">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Société</label>
                 <input 
                   v-model="form.company"
@@ -128,7 +128,7 @@
                 />
               </div>
 
-              <div>
+              <div class="animate-fadeInUp animation-delay-900">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Fonction</label>
                 <input 
                   v-model="form.position"
@@ -139,7 +139,7 @@
               </div>
             </div>
 
-            <div>
+            <div class="animate-fadeInUp animation-delay-700">
               <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Adresse *</label>
               <input 
                 v-model="form.address"
@@ -150,7 +150,7 @@
               />
             </div>
 
-            <div>
+            <div class="animate-fadeInUp animation-delay-800">
               <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Adresse d'installation</label>
               <input 
                 v-model="form.installationAddress"
@@ -173,14 +173,14 @@
           </div>
 
           <!-- Step 2: Technique -->
-          <div v-if="currentStep === 1" class="space-y-6 animate-fadeIn">
-            <div class="mb-8">
+          <div v-if="currentStep === 1" class="space-y-6 animate-fadeInUp animation-delay-300">
+            <div class="mb-8 animate-slideInDown animation-delay-300">
               <h2 class="text-4xl font-black text-[#016E98] mb-2">{{ steps[1].title }}</h2>
-              <p class="text-gray-600 text-lg">Décrivez vos besoins techniques</p>
+              <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">Décrivez vos besoins techniques</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
+              <div class="animate-fadeInUp animation-delay-400">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type de client *</label>
                 <select 
                   v-model="form.clientType"
@@ -194,7 +194,7 @@
                 </select>
               </div>
 
-              <div>
+              <div class="animate-fadeInUp animation-delay-500">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Consommation (kWh/mois)</label>
                 <input 
                   v-model="form.consumption"
@@ -204,7 +204,7 @@
                 />
               </div>
 
-              <div>
+              <div class="animate-fadeInUp animation-delay-600">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Surface à couvrir (m²)</label>
                 <input 
                   v-model="form.area"
@@ -214,7 +214,7 @@
                 />
               </div>
 
-              <div>
+              <div class="animate-fadeInUp animation-delay-700">
                 <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Budget estimé (FCFA)</label>
                 <input 
                   v-model="form.budget"
@@ -225,7 +225,7 @@
               </div>
             </div>
 
-            <div>
+            <div class="animate-fadeInUp animation-delay-800">
               <label class="block text-[#016E98] font-bold text-sm mb-4 uppercase tracking-widest">Services souhaités</label>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <label class="flex items-center p-4 border-2 border-gray-300 rounded-xl cursor-pointer hover:border-secondary hover:bg-gray-50 transition-all duration-300">
@@ -280,13 +280,13 @@
           </div>
 
           <!-- Step 3: Objectif -->
-          <div v-if="currentStep === 2" class="space-y-6 animate-fadeIn">
-            <div class="mb-8">
+          <div v-if="currentStep === 2" class="space-y-6 animate-fadeInUp animation-delay-300">
+            <div class="mb-8 animate-slideInDown animation-delay-300">
               <h2 class="text-4xl font-black text-[#016E98] mb-2">{{ steps[2].title }}</h2>
-              <p class="text-gray-600 text-lg">Présentez vos objectifs</p>
+              <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">Présentez vos objectifs</p>
             </div>
 
-            <div>
+            <div class="animate-fadeInUp animation-delay-400">
               <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Objectif principal *</label>
               <select 
                 v-model="form.objective"
@@ -302,7 +302,7 @@
               </select>
             </div>
 
-            <div>
+            <div class="animate-fadeInUp animation-delay-500">
               <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Message supplémentaire</label>
               <textarea 
                 v-model="form.message"
@@ -387,7 +387,7 @@
     </section>
 
     <!-- Info Section -->
-    <section class="bg-gradient-to-r from-blue-900 via-blue-800 to-dark py-20 md:py-32 relative overflow-hidden">
+    <section id="info-section" class="bg-gradient-to-r from-blue-900 via-blue-800 to-dark py-20 md:py-32 relative overflow-hidden">
       <!-- Background elements -->
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
@@ -396,19 +396,19 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animation-delay-400">
             <i class="fas fa-clock text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-2">Réponse Rapide</h3>
             <p class="text-gray-100">Nous répondons généralement dans les 24 heures</p>
           </div>
 
-          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animation-delay-500">
             <i class="fas fa-money-bill text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-2">Gratuit & Sans Engagement</h3>
             <p class="text-gray-100">Tous nos devis sont gratuits et sans frais</p>
           </div>
 
-          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animation-delay-600">
             <i class="fas fa-headset text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-2">Support Personnalisé</h3>
             <p class="text-gray-100">Une équipe dédiée pour vos questions</p>
@@ -420,12 +420,15 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const currentStep = ref(0)
 const errorMessage = ref('')
 const submitMessage = ref('')
 const submitSuccess = ref(false)
+const heroInView = ref(false)
+const formInView = ref(false)
+const infoInView = ref(false)
 
 const steps = [
   { title: 'Général' },
@@ -451,6 +454,35 @@ const form = ref({
   message: '',
   terms: false
 })
+
+const setupObserver = () => {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.target.id === 'hero-quote') {
+        heroInView.value = entry.isIntersecting;
+      } else if (entry.target.id === 'form-section') {
+        formInView.value = entry.isIntersecting;
+      } else if (entry.target.id === 'info-section') {
+        infoInView.value = entry.isIntersecting;
+      }
+    });
+  }, observerOptions);
+
+  const sections = ['hero-quote', 'form-section', 'info-section'];
+  sections.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) observer.observe(element);
+  });
+};
+
+onMounted(() => {
+  setupObserver();
+});
 
 const validateStep = () => {
   errorMessage.value = ''
@@ -660,5 +692,77 @@ label {
 
 label:hover {
   color: #FF9D35;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Utilities */
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fadeIn {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Delay Utilities */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animation-delay-800 {
+  animation-delay: 0.8s;
+}
+
+.animation-delay-900 {
+  animation-delay: 0.9s;
 }
 </style>

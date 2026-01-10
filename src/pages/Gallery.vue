@@ -14,12 +14,12 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
         <!-- Section Titre Hero -->
-        <div class="text-center">
-          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest">Explorez nos réalisations</p>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
+        <div id="hero-title" class="text-center">
+          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown">Explorez nos réalisations</p>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
             Notre <span class="text-[#EE6D08]">Galerie</span>
           </h1>
-          <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+          <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
             Découvrez nos projets innovants et réalisations concrètes en énergie renouvelable et solutions durables pour le Togo et l'Afrique de l'Ouest.
           </p>
         </div>
@@ -30,29 +30,31 @@
     <section class="bg-white py-16 md:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Filter Buttons -->
-        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
+        <div id="filter-buttons" class="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
           <button 
-            v-for="category in categories" 
+            v-for="(category, index) in categories" 
             :key="category"
             @click="selectedCategory = category"
             :class="[
-              'px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300',
+              'px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 animate-fadeInUp',
               selectedCategory === category 
                 ? 'bg-[#EE6D08] text-white shadow-lg' 
                 : 'bg-gray-100 text-[#016E98] hover:bg-gray-200'
             ]"
+            :style="{ animationDelay: (0.05 * index) + 's' }"
           >
             {{ category }}
           </button>
         </div>
 
         <!-- Gallery Grid with Animation -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div id="gallery-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <div 
             v-for="(image, index) in filteredGallery" 
             :key="index"
             @click="openLightbox(index)"
-            class="gallery-item group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-72 cursor-pointer transform hover:scale-105"
+            class="gallery-item group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-72 cursor-pointer transform hover:scale-105 animate-fadeInUp"
+            :style="{ animationDelay: (0.08 * (index % 3)) + 's' }"
           >
             <!-- Image -->
             <img 
@@ -152,7 +154,7 @@
     </teleport>
 
     <!-- Statistics Section -->
-    <section class="bg-gradient-to-r from-blue-900 via-blue-800 to-dark py-20 md:py-32 relative overflow-hidden">
+    <section id="stats-section" class="bg-gradient-to-r from-blue-900 via-blue-800 to-dark py-20 md:py-32 relative overflow-hidden">
       <!-- Background elements -->
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
@@ -161,13 +163,13 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">Nos <span class="text-[#EE6D08]">Réalisations</span></h2>
-          <div class="w-24 h-1.5 bg-gradient-to-r from-[#EE6D08] to-orange-500 rounded-full mx-auto"></div>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight animate-slideInDown">Nos <span class="text-[#EE6D08]">Réalisations</span></h2>
+          <div class="w-24 h-1.5 bg-gradient-to-r from-[#EE6D08] to-orange-500 rounded-full mx-auto animate-fadeInUp animation-delay-200"></div>
         </div>
 
         <!-- Stats Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0s">
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
               <i class="fas fa-check text-white text-3xl"></i>
             </div>
@@ -175,7 +177,7 @@
             <p class="text-gray-100 font-semibold">Projets réalisés</p>
           </div>
 
-          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0.1s">
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
               <i class="fas fa-users text-white text-3xl"></i>
             </div>
@@ -183,7 +185,7 @@
             <p class="text-gray-100 font-semibold">Clients satisfaits</p>
           </div>
 
-          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0.2s">
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
               <i class="fas fa-star text-white text-3xl"></i>
             </div>
@@ -191,7 +193,7 @@
             <p class="text-gray-100 font-semibold">Années d'expérience</p>
           </div>
 
-          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0.3s">
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
               <i class="fas fa-trophy text-white text-3xl"></i>
             </div>
@@ -203,10 +205,10 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-white py-20 md:py-32">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-6 leading-tight">Prêt à concrétiser votre projet ?</h2>
-        <p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">
+    <section id="cta-section" class="bg-white py-20 md:py-32">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fadeInUp">
+        <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-6 leading-tight animate-slideInDown">Prêt à concrétiser votre projet ?</h2>
+        <p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed animate-fadeInUp animation-delay-200">
           Découvrez comment EGENT-TOGO peut transformer votre vision en réalité avec des solutions innovantes et durables.
         </p>
         <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -224,6 +226,13 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+
+// Animation refs
+const heroTitleInView = ref(false)
+const filterButtonsInView = ref(false)
+const galleryItemsInView = ref(false)
+const statsInView = ref(false)
+const ctaInView = ref(false)
 
 const selectedCategory = ref('Tous')
 const isLightboxOpen = ref(false)
@@ -367,7 +376,41 @@ const handleKeypress = (event) => {
   }
 }
 
+// Setup Intersection Observer
+const setupObserver = () => {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (entry.target.id === 'hero-title') heroTitleInView.value = true
+        if (entry.target.id === 'filter-buttons') filterButtonsInView.value = true
+        if (entry.target.id === 'gallery-items') galleryItemsInView.value = true
+        if (entry.target.id === 'stats-section') statsInView.value = true
+        if (entry.target.id === 'cta-section') ctaInView.value = true
+      }
+    });
+  }, observerOptions)
+
+  const elements = [
+    'hero-title',
+    'filter-buttons',
+    'gallery-items',
+    'stats-section',
+    'cta-section'
+  ]
+  
+  elements.forEach((id) => {
+    const el = document.getElementById(id)
+    if (el) observer.observe(el)
+  })
+}
+
 onMounted(() => {
+  setupObserver()
   window.addEventListener('keydown', handleKeypress)
 })
 
@@ -380,12 +423,39 @@ onUnmounted(() => {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.8s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
 }
 
 .gallery-item {

@@ -8,6 +8,7 @@ import Products from './pages/Products.vue'
 import ProductDetail from './pages/ProductDetail.vue'
 import Gallery from './pages/Gallery.vue'
 import News from './pages/News.vue'
+import ArticleDetail from './pages/ArticleDetail.vue'
 import Contact from './pages/Contact.vue'
 import Quote from './pages/Quote.vue'
 
@@ -47,6 +48,12 @@ const routes = [
     name: 'News',
     component: News,
     meta: { title: 'Actualités' }
+  },
+  {
+    path: '/article/:slug',
+    name: 'ArticleDetail',
+    component: ArticleDetail,
+    meta: { title: 'Détail Article' }
   },
   {
     path: '/galerie',

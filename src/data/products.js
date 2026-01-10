@@ -28,11 +28,11 @@ export const products = [
     </ul>
     `,
     images: [
-      '/src/assets/images/armoireBilly_monté.jpg',
-      '/src/assets/images/armoire_billy2.jpg',
-      '/src/assets/images/montage_panneau.jpg'
+      new URL('../assets/images/armoireBilly_monté.jpg', import.meta.url).href,
+      new URL('../assets/images/armoireBilly_monté.jpg', import.meta.url).href,
+      new URL('../assets/images/montage_panneau.jpg', import.meta.url).href
     ],
-    mainImage: '/src/assets/images/armoireBilly_monté.jpg',
+    mainImage: new URL('../assets/images/armoireBilly_monté.jpg', import.meta.url).href,
     specs: [
       { label: 'Puissance', value: '500W - 5000W' },
       { label: 'Tension', value: '220V/50Hz' },
@@ -72,11 +72,11 @@ export const products = [
     </ul>
     `,
     images: [
-      '/src/assets/images/lampendaire_monté.jpg',
-      '/src/assets/images/lampandaire_monté2.jpg',
-      '/src/assets/images/lampandaire_monté3.jpg'
+      new URL('../assets/images/lampendaire_monté.jpg', import.meta.url).href,
+      new URL('../assets/images/lampandaire_monté2.jpg', import.meta.url).href,
+      new URL('../assets/images/lampandaire_monté3.jpg', import.meta.url).href
     ],
-    mainImage: '/src/assets/images/lampendaire_monté.jpg',
+    mainImage: new URL('../assets/images/lampendaire_monté.jpg', import.meta.url).href,
     specs: [
       { label: 'Puissance solaire', value: '10W - 50W' },
       { label: 'Batterie', value: 'Lithium 5000mAh' },
@@ -118,11 +118,11 @@ export const products = [
     </ul>
     `,
     images: [
-      '/src/assets/images/montage_panneau2.jpg',
-      '/src/assets/images/montage_panneau.jpg',
-      '/src/assets/images/panneau_montés.jpg'
+      new URL('../assets/images/montage_panneau2.jpg', import.meta.url).href,
+      new URL('../assets/images/montage_panneau.jpg', import.meta.url).href,
+      new URL('../assets/images/panneau_montés.jpg', import.meta.url).href
     ],
-    mainImage: '/src/assets/images/montage_panneau2.jpg',
+    mainImage: new URL('../assets/images/montage_panneau2.jpg', import.meta.url).href,
     specs: [
       { label: 'Puissance panneaux', value: '3kW' },
       { label: 'Capacité batterie', value: '5kWh lithium' },

@@ -88,9 +88,7 @@
             </div>
             <div class="p-6">
               <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Court métrage</p>
-              <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">Dernier jour de la foire FIL 2025</h3>
-              <p class="text-gray-600 text-sm mb-6">Découvrez comment EGENT-TOGO transforme le secteur énergétique avec des solutions durables et innovantes</p>
-              <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+              <a href="https://www.youtube.com/watch?v=0hsRFnVH0nI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                 Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
               </a>
             </div>
@@ -112,9 +110,7 @@
             </div>
             <div class="p-6">
               <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Court métrage</p>
-              <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">Nous sommes en #promotion sur nos articles pendant la foire.#lampadaire #Zoklin #kit</h3>
-              <p class="text-gray-600 text-sm mb-6">Nos programmes de formation innovants combinent théorie et pratique pour former les experts de demain</p>
-              <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+              <a href="https://www.youtube.com/watch?v=htTP3kpQsJ8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                 Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
               </a>
             </div>
@@ -136,9 +132,7 @@
             </div>
             <div class="p-6">
               <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Court métrage</p>
-              <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">C'est le moment de passer au solaire avec les kits Zoklin by EGENT TOGO.#CETEF #Foire #solaire #2025</h3>
-              <p class="text-gray-600 text-sm mb-6">Explorez les réalisations concrètes et projets en cours du groupe EGENT-TOGO</p>
-              <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+              <a href="https://www.youtube.com/watch?v=BLHFLc475cY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                 Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
               </a>
             </div>
@@ -165,9 +159,7 @@
               </div>
               <div class="p-6">
                 <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Présentation</p>
-                <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">Réalisation d'un système de pompage solaire à Klologo Kpévegamme/Préfecture de Vo</h3>
-                <p class="text-gray-600 text-sm mb-6">Découvrez comment EGENT-TOGO forme les professionnels compétents et recherchés du secteur énergétique</p>
-                <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+                <a href="https://www.youtube.com/watch?v=UB04n_ZhA0U" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                   Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
                 </a>
               </div>
@@ -189,9 +181,7 @@
               </div>
               <div class="p-6">
                 <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Formation</p>
-                <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">L'eau sans effort pour une ferme de cacao à Agapétodji dans le Kloto</h3>
-                <p class="text-gray-600 text-sm mb-6">Programme de formation approfondie en électrotechnique avec focus sur le bien-être et la sécurité</p>
-                <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+                <a href="https://www.youtube.com/watch?v=gicyBGLAZSk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                   Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
                 </a>
               </div>
@@ -213,9 +203,7 @@
               </div>
               <div class="p-6">
                 <p class="text-secondary font-bold text-xs uppercase tracking-widest mb-3">Actualité</p>
-                <h3 class="text-lg font-black text-[#EE6D08] mb-3 leading-tight">Ils ont dit que c'était impossible...Une maison 100 % solaire en milieu urbain au Togo !</h3>
-                <p class="text-gray-600 text-sm mb-6">Les derniers projets et innovations du groupe en énergie renouvelable et développement durable</p>
-                <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+                <a href="https://www.youtube.com/watch?v=RV8AqnfORK4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
                   Voir sur YouTube <i class="fas fa-youtube ml-2"></i>
                 </a>
               </div>
@@ -256,13 +244,10 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">Inauguration du nouveau centre EGENT-TOGO</h3>
-              <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
-                Découvrez notre nouveau centre technologique équipé des dernières innovations en matière d'efficacité énergétique et de solutions durables pour l'avenir.
-              </p>
-              <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+              <p class="text-gray-700 text-sm leading-relaxed mb-4">Découvrez le lancement officiel de notre nouveau centre de formation équipé des dernières technologies.</p>
+              <router-link to="/article/inauguration-nouveau-centre" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300 mt-auto">
                 Lire l'article <i class="fas fa-arrow-right ml-2"></i>
-              </a>
+              </router-link>
             </div>
           </article>
 
@@ -287,13 +272,10 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">Nouveau partenariat international signé</h3>
-              <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
-                EGENT-TOGO s'associe avec un leader mondial pour apporter des solutions innovantes en matière d'énergie renouvelable et développement durable.
-              </p>
-              <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+              <p class="text-gray-700 text-sm leading-relaxed mb-4">EGENT-TOGO établit un partenariat stratégique avec des leaders mondiaux du secteur.</p>
+              <router-link to="/article/partenariat-international" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300 mt-auto">
                 Lire l'article <i class="fas fa-arrow-right ml-2"></i>
-              </a>
+              </router-link>
             </div>
           </article>
 
@@ -318,13 +300,10 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">EGENT-TOGO reçoit un prix pour l'innovation</h3>
-              <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
-                Notre entreprise a été reconnue pour son engagement dans la recherche et le développement de solutions durables et innovantes.
-              </p>
-              <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+              <p class="text-gray-700 text-sm leading-relaxed mb-4">EGENT-TOGO reçoit plusieurs distinctions pour son excellence opérationnelle.</p>
+              <router-link to="/article/prix-reconnaissance" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300 mt-auto">
                 Lire l'article <i class="fas fa-arrow-right ml-2"></i>
-              </a>
+              </router-link>
             </div>
           </article>
 
@@ -349,13 +328,10 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">Forum clients EGENT-TOGO 2026</h3>
-              <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
-                Nous invitons nos clients à participer à notre forum annuel pour découvrir les nouvelles solutions et tendances du secteur.
-              </p>
-              <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+              <p class="text-gray-700 text-sm leading-relaxed mb-4">Nous recrutons 50 nouveaux professionnels pour renforcer nos équipes.</p>
+              <router-link to="/article/ressources-humaines-equipe" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300 mt-auto">
                 Lire l'article <i class="fas fa-arrow-right ml-2"></i>
-              </a>
+              </router-link>
             </div>
           </article>
 
@@ -380,13 +356,10 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">Engagement pour un avenir durable</h3>
-              <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
-                EGENT-TOGO réaffirme son engagement envers la durabilité environnementale et les objectifs de développement durable.
-              </p>
-              <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+              <p class="text-gray-700 text-sm leading-relaxed mb-4">EGENT-TOGO s\'engage pour la protection de l\'environnement et le développement durable.</p>
+              <router-link to="/article/durabilite-engagement" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300 mt-auto">
                 Lire l'article <i class="fas fa-arrow-right ml-2"></i>
-              </a>
+              </router-link>
             </div>
           </article>
 
@@ -411,13 +384,10 @@
 
             <!-- Content -->
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-black text-[#EE6D08] mb-3 line-clamp-3 leading-tight">EGENT-TOGO recrute des talents</h3>
-              <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
-                Rejoignez notre équipe dynamique ! Nous recherchons des professionnels passionnés par l'énergie et l'innovation.
-              </p>
-              <a href="#" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300">
+              <p class="text-gray-700 text-sm leading-relaxed mb-4">Célébrez avec nous notre gala annuel de reconnaissance clients.</p>
+              <router-link to="/article/evenement-clients" class="inline-flex items-center text-secondary font-bold text-sm hover:text-orange-600 transition-colors duration-300 mt-auto">
                 Lire l'article <i class="fas fa-arrow-right ml-2"></i>
-              </a>
+              </router-link>
             </div>
           </article>
         </div>

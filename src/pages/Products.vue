@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section Products -->
-    <div class="relative overflow-visible pt-4 pb-12 md:pt-8 md:pb-20">
+    <div id="hero-section" class="relative overflow-visible pt-4 pb-12 md:pt-8 md:pb-20">
       <!-- Animated gradient background -->
       <!-- <div class="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-dark -z-10"></div> -->
       
@@ -19,7 +19,7 @@
           <!-- Left content -->
           <div class="space-y-4 md:space-y-6">
             <!-- Badge -->
-            <div class="inline-block">
+            <div class="inline-block animate-slideInDown animation-delay-200">
               <div class="px-3 py-1 md:px-4 md:py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-secondary font-bold text-xs md:text-sm inline-flex items-center gap-2 hover:bg-white/20 transition-all duration-300">
                 <i class="fas fa-star text-lg"></i>
                 NOS PRODUITS
@@ -27,7 +27,7 @@
             </div>
 
             <!-- Main heading with gradient -->
-            <div>
+            <div class="animate-slideInDown animation-delay-400">
               <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
                 <span class="text-[#016E98]">
                   SOLUTIONS
@@ -40,12 +40,12 @@
             </div>
 
             <!-- Description -->
-            <p class="text-base md:text-lg text-[#016E98] leading-relaxed max-w-xl">
+            <p class="text-base md:text-lg text-[#016E98] leading-relaxed max-w-xl animate-fadeInUp animation-delay-600">
               Découvrez notre gamme de produits conçus pour réduire vos coûts d'électricité et améliorer votre confort de vie.
             </p>
 
             <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 pt-6">
+            <div class="flex flex-col sm:flex-row gap-4 pt-6 animate-fadeInUp animation-delay-800">
               <button @click="scrollToProduits" class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
                 <span>Découvrir les Produits</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
@@ -56,7 +56,7 @@
           <!-- Right side - Image with floating cards -->
           <div class="relative h-80 md:h-[450px] lg:h-[500px]">
             <!-- Main image -->
-            <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group">
+            <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group animate-fadeInUp animation-delay-400">
               <img 
                 src="/src/assets/images/montage_panneau.jpg" 
                 alt="Produits EGENT TOGO"
@@ -67,7 +67,7 @@
             </div>
 
             <!-- Floating card 1 - Top right -->
-            <div class="absolute top-4 md:top-8 -right-2 md:-right-4 lg:right-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 md:p-6 w-56 md:w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
+            <div class="absolute top-4 md:top-8 -right-2 md:-right-4 lg:right-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 md:p-6 w-56 md:w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20 animate-slideInDown animation-delay-600">
               <div class="flex items-center gap-3 mb-2">
                 <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-[#EE6D08] to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-box text-lg md:text-xl"></i>
@@ -78,7 +78,7 @@
             </div>
 
             <!-- Floating card 2 - Bottom left -->
-            <div class="absolute -bottom-2 md:-bottom-4 left-0 md:left-4 lg:left-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 md:p-6 w-56 md:w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
+            <div class="absolute -bottom-2 md:-bottom-4 left-0 md:left-4 lg:left-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 md:p-6 w-56 md:w-64 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20 animate-fadeInUp animation-delay-600">
               <div class="flex items-center gap-3 mb-2">
                 <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-[#016E98] to-[#016E98] rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-shield-alt text-lg md:text-xl"></i>
@@ -103,13 +103,13 @@
     </div>
 
     <!-- Produits Phares Section -->
-    <section ref="produitsPhares" class="bg-white py-16 md:py-24">
+    <section id="produits-section" ref="produitsPhares" class="bg-white py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center mb-20">
-          <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest">Nos produits phares</p>
-          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">DÉCOUVREZ NOS MEILLEURES SOLUTIONS</h2>
-          <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-slideInDown animation-delay-200">Nos produits phares</p>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6 animate-slideInDown animation-delay-400">DÉCOUVREZ NOS MEILLEURES SOLUTIONS</h2>
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-600">
             Nos solutions énergétiques sont conçues avec les meilleures technologies disponibles pour vous garantir performance, durabilité et économies d'énergie.
           </p>
         </div>
@@ -117,7 +117,7 @@
         <!-- Products Grid - 3 Column Layout -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-end">
           <!-- Product 1: Armoire Billy -->
-          <div class="flex flex-col h-full">
+          <div class="flex flex-col h-full animate-fadeInUp animation-delay-400">
             <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow cursor-pointer group">
               <img 
                 src="/src/assets/images/armoireBilly_monté.jpg" 
@@ -140,7 +140,7 @@
           </div>
 
           <!-- Product 2: Lampadaires EGENT Solar -->
-          <div class="flex flex-col-reverse h-full md:-mt-12">
+          <div class="flex flex-col-reverse h-full md:-mt-12 animate-fadeInUp animation-delay-500">
             <div class="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow group">
               <img 
                 src="/src/assets/images/lampendaire_monté.jpg" 
@@ -163,7 +163,7 @@
           </div>
 
           <!-- Product 3: Kit Zoklin -->
-          <div class="flex flex-col h-full">
+          <div class="flex flex-col h-full animate-fadeInUp animation-delay-600">
             <div class="relative bg-orange-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow cursor-pointer group">
               <img 
                 src="/src/assets/images/montage_panneau2.jpg" 
@@ -196,7 +196,7 @@
     </section>
 
     <!-- CTA Section: Main d'oeuvre qualifiée -->
-    <section class="relative overflow-hidden h-auto md:h-[371px] bg-gradient-to-r from-[#1a2b5a] via-[#2c3e7a] to-[#1a2b5a] py-12 md:py-0">
+    <section id="qualifiee-section" class="relative overflow-hidden h-auto md:h-[371px] bg-gradient-to-r from-[#1a2b5a] via-[#2c3e7a] to-[#1a2b5a] py-12 md:py-0">
       <!-- Background Image Overlay -->
       <div class="absolute inset-0 opacity-40 hidden md:block">
         <img 
@@ -211,35 +211,35 @@
 
       <!-- Content - Centered -->
       <div class="relative w-full max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
-        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
+        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-6 animate-slideInDown animation-delay-200">
           UNE MAIN D'ŒUVRE QUALIFIÉE DISPONIBLE 7/7
         </h2>
         
-        <p class="text-white text-lg mb-8 leading-relaxed opacity-95 max-w-2xl">
+        <p class="text-white text-lg mb-8 leading-relaxed opacity-95 max-w-2xl animate-fadeInUp animation-delay-400">
           Nos techniciens expérimentés et certifiés sont à votre service pour installer vos produits avec professionnalisme et garantie de qualité.
         </p>
 
-        <button @click="navigateTo('/contact')" class="bg-[#FF9D35] hover:bg-orange-600 text-white px-8 py-3 text-base font-semibold rounded-lg transition-colors duration-300">
+        <button @click="navigateTo('/contact')" class="bg-[#FF9D35] hover:bg-orange-600 text-white px-8 py-3 text-base font-semibold rounded-lg transition-colors duration-300 animate-fadeInUp animation-delay-600">
           Contactez-nous
         </button>
       </div>
     </section>
 
     <!-- CTA Section: Commandez vos produits -->
-    <section class="relative overflow-hidden bg-white py-20 md:py-32">
+    <section id="commandez-section" class="relative overflow-hidden bg-white py-20 md:py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
           <div>
-            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">
+            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6 animate-slideInDown animation-delay-200">
               COMMANDEZ VOTRE SOLUTION ÉNERGÉTIQUE DÈS AUJOURD'HUI
             </h2>
             
-            <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+            <p class="text-gray-700 text-lg mb-8 leading-relaxed animate-fadeInUp animation-delay-400">
               Nos produits sont conçus pour offrir des performances optimales et une durabilité exceptionnelle. Investissez dans des solutions éprouvées et reconnues mondialement pour transformer votre autonomie énergétique.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex flex-col sm:flex-row gap-4 animate-fadeInUp animation-delay-600">
               <button @click="navigateTo('/devis')" class="bg-[#FF9D35] hover:bg-orange-600 text-white px-8 py-3 text-base font-semibold rounded-lg transition-colors duration-300">
                 Demander un devis
               </button>
@@ -250,7 +250,7 @@
           </div>
 
           <!-- Right Image -->
-          <div class="relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl animate-fadeInUp animation-delay-400">
             <img 
               src="/src/assets/images/photo_chantier2.jpg" 
               alt="Nos produits"
@@ -264,12 +264,90 @@
   </div>
 </template>
 
+<style scoped>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-700 { animation-delay: 0.7s; }
+.animation-delay-800 { animation-delay: 0.8s; }
+.animation-delay-900 { animation-delay: 0.9s; }
+</style>
+
 <script setup>
 import { useRouter } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const router = useRouter()
 const produitsPhares = ref(null)
+const heroInView = ref(false)
+const produitInView = ref(false)
+const qualifieeInView = ref(false)
+const commandezInView = ref(false)
+
+const setupObserver = () => {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.target.id === 'hero-section') {
+        heroInView.value = entry.isIntersecting;
+      } else if (entry.target.id === 'produits-section') {
+        produitInView.value = entry.isIntersecting;
+      } else if (entry.target.id === 'qualifiee-section') {
+        qualifieeInView.value = entry.isIntersecting;
+      } else if (entry.target.id === 'commandez-section') {
+        commandezInView.value = entry.isIntersecting;
+      }
+    });
+  }, observerOptions);
+
+  const sections = ['hero-section', 'produits-section', 'qualifiee-section', 'commandez-section'];
+  sections.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) observer.observe(element);
+  });
+};
+
+onMounted(() => {
+  setupObserver();
+});
 
 const navigateTo = (path) => {
   router.push(path)
