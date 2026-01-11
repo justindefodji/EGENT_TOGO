@@ -129,10 +129,10 @@
                 <p class="text-gray-700 text-sm leading-relaxed mb-4">
                   Solution anti délestage performante pour éviter les coupures de courant. Remplace efficacement les groupes électrogènes sans émission polluante.
                 </p>
-                <div class="flex items-center justify-between">
-                  <span class="text-[#FF9D35] font-black">À partir de 500 000 FCFA</span>
-                  <button @click="navigateTo('/produits/armoire-billy')" class="bg-[#0392C7] hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors text-sm">
-                    Détails
+                <div class="space-y-4">
+                  <p class="text-[#FF9D35] font-black text-lg">À partir de 500 000 FCFA</p>
+                  <button @click="navigateTo('/produits/armoire-billy')" class="w-full bg-[#0392C7] hover:bg-[#016E98] text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-300 cursor-pointer">
+                    Détail
                   </button>
                 </div>
               </div>
@@ -148,14 +148,14 @@
                 class="w-full h-[250px] object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div class="bg-white p-6">
-                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Lampadaires<br>EGENT SOLAR</h3>
+                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Lampadaires EGENT SOLAR</h3>
                 <p class="text-gray-700 text-sm leading-relaxed mb-4">
                   Lampadaires solaires autonomes et écologiques pour illuminer vos routes, places publiques et espaces extérieurs sans frais d'électricité.
                 </p>
-                <div class="flex items-center justify-between">
-                  <span class="text-[#FF9D35] font-black">À partir de 200 000 FCFA</span>
-                  <button @click="navigateTo('/produits/lampadaires-egent-solar')" class="bg-[#0392C7] hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors text-sm">
-                    Détails
+                <div class="space-y-4">
+                  <p class="text-[#FF9D35] font-black text-lg">À partir de 200 000 FCFA</p>
+                  <button @click="navigateTo('/produits/lampadaires-egent-solar')" class="w-full bg-[#0392C7] hover:bg-[#016E98] text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-300 cursor-pointer">
+                    Détail
                   </button>
                 </div>
               </div>
@@ -175,10 +175,10 @@
                 <p class="text-gray-700 text-sm leading-relaxed mb-4">
                   Kit solaire préconçu et complet pour une installation rapide et facile. Parfait pour débuter votre transition énergétique en toute confiance.
                 </p>
-                <div class="flex items-center justify-between">
-                  <span class="text-[#FF9D35] font-black">À partir de 750 000 FCFA</span>
-                  <button @click="navigateTo('/produits/kit-zoklin')" class="bg-[#0392C7] hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors text-sm">
-                    Détails
+                <div class="space-y-4">
+                  <p class="text-[#FF9D35] font-black text-lg">À partir de 750 000 FCFA</p>
+                  <button @click="navigateTo('/produits/kit-zoklin')" class="w-full bg-[#0392C7] hover:bg-[#016E98] text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-300 cursor-pointer">
+                    Détail
                   </button>
                 </div>
               </div>
@@ -310,8 +310,10 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
+import { useCursorFollowText } from '../composables/useCursorFollowText'
 
 const router = useRouter()
+useCursorFollowText()
 const produitsPhares = ref(null)
 const heroInView = ref(false)
 const produitInView = ref(false)

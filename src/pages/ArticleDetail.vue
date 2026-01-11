@@ -197,9 +197,11 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useCursorFollowText } from '../composables/useCursorFollowText'
 
 const route = useRoute()
 const router = useRouter()
+useCursorFollowText()
 const heroInView = ref(false)
 const detailInView = ref(false)
 const relatedInView = ref(false)

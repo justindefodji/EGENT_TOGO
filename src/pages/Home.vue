@@ -1,27 +1,28 @@
 <template>
   <div>
     <!-- Hero Section -->
+    <div class="flex justify-center pt-8 pb-4 animate-pulse">
+      <span class="text-xl md:text-2xl font-black text-[#2F7914] tracking-widest uppercase animate-bounce">HERO SECTION</span>
+    </div>
     <section 
       id="home" 
-      class="relative overflow-visible -mt-32 pt-0 pb-20 md:pb-32 bg-cover bg-center bg-no-repeat"
-      :style="{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${hero1})` }"
+      class="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-start justify-center overflow-hidden -mt-48 pt-0"
+      :style="{ backgroundImage: `url(${hero1})` }"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
-        <div class="flex items-center justify-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-start justify-center">
+        <div class="flex items-start justify-center w-full">
           <!-- Content -->
-          <div class="z-10 max-w-3xl text-center animate-fadeInUp">
-            <h1 class="text-6xl md:text-7xl font-black text-white mb-6 leading-tight animate-slideInDown">
-              ÉCRIVONS L'AVENIR DE
-              <span class="text-[#EE6D08] font-black inline-block animate-pulse">L'ÉNERGIE</span>
-              AU TOGO
+          <div class="z-10 max-w-4xl text-center pt-32">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
+              Écrivons l'Avenir de l'Énergie<br>au Togo et en Afrique.
             </h1>
-            <p class="text-white text-lg mb-8 opacity-100 animate-fadeInUp animation-delay-200">
+            <!-- <p class="text-white text-lg mb-8 opacity-100 animate-fadeInUp animation-delay-200">
               Rejoignez-nous pour bâtir des solutions durables et innovantes, adaptées aux besoins énergétiques de demain au Togo et en Afrique.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp animation-delay-400">
+            </p> -->
+            <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp animation-delay-400">
               <button @click="navigateTo('/devis')" class="btn-primary rounded-lg hover:scale-105 transition-transform duration-300">Demander un devis</button>
               <button @click="navigateTo('/galerie')" class="btn-secondary rounded-lg hover:scale-105 transition-transform duration-300">Voir nos projets</button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -264,45 +265,10 @@
         </div>
 
         <!-- Products Grid - 3 Column Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-end">
-          <!-- Product 1: Armoire Billy -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-end justify-items-start">
+          <!-- Product 1: Kit Zoklin -->
           <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0s">
-            <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer hover:scale-105 duration-300" @click="navigateTo('/produits/armoire-billy')">
-              <img 
-                src="/src/assets/images/armoireBilly_monté.jpg" 
-                alt="Armoire Billy"
-                class="w-[389px] h-[446px] object-cover hover:scale-110 transition-transform duration-500"
-              />
-              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
-                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Armoire Billy</h3>
-                <p class="text-gray-700 text-sm leading-relaxed">
-                  Solution anti délestage performante pour éviter les coupures de courant. Remplace efficacement les groupes électrogènes avec zéro émission.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 2: Lampadaires EGENT Solar - CENTER/LARGER -->
-          <div class="flex flex-col-reverse h-full md:-mt-12 transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.15s">
-            <div class="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all cursor-pointer hover:scale-105 duration-300" @click="navigateTo('/produits/lampadaires-egent-solar')">
-              <img 
-                src="/src/assets/images/lampendaire_monté.jpg" 
-                alt="Lampadaires EGENT Solar"
-                class="w-[389px] h-[446px] object-cover hover:scale-110 transition-transform duration-500"
-              />
-              <div class="absolute inset-x-0 top-0 bg-white p-6 rounded-t-3xl">
-                <h3 class="text-3xl font-black text-[#0392C7] mb-2">Lampadaires<br>EGENT SOLAR</h3>
-                <p class="text-gray-700 text-sm leading-relaxed">
-                  Lampadaires solaires autonomes et écologiques pour illuminer vos routes, places publiques et espaces extérieurs sans coût d'électricité.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 3: Kit Zoklin -->
-          <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.3s">
-            <div class="relative bg-orange-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer hover:scale-105 duration-300" @click="navigateTo('/produits/kit-zoklin')">
-
+            <div class="relative bg-orange-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
                 src="/src/assets/images/montage_panneau2.jpg" 
                 alt="Kit Zoklin"
@@ -310,9 +276,74 @@
               />
               <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
                 <h3 class="text-2xl font-black text-[#0392C7] mb-2">Kit Zoklin</h3>
-                <p class="text-gray-700 text-sm leading-relaxed">
+                <p class="text-gray-700 text-sm leading-relaxed mb-4">
                   Kit solaire préconçu et complet pour une installation rapide et facile. Parfait pour débuter votre transition énergétique en toute confiance.
                 </p>
+                <button @click="navigateTo('/produits/kit-zoklin')" class="w-full bg-[#0392C7] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#016E98] transition-colors duration-300 cursor-pointer">
+                  Détail
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2: Free Water - CENTER/LARGER -->
+          <div class="flex flex-col-reverse h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.15s">
+            <div class="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300">
+              <img 
+                src="/src/assets/images/freewater.jpeg" 
+                alt="Free Water"
+                class="w-[389px] h-[446px] object-cover hover:scale-110 transition-transform duration-500"
+              />
+              <div class="absolute inset-x-0 top-0 bg-white p-6 rounded-t-3xl">
+                <h3 class="text-3xl font-black text-[#0392C7] mb-2">Free<br>Water</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                  Solution innovante de purification d'eau solaire autonome et écologique. Fournit de l'eau potable sans coût énergétique pour vos communautés.
+                </p>
+                <button @click="navigateTo('/produits/free-water')" class="w-full bg-[#0392C7] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#016E98] transition-colors duration-300 cursor-pointer">
+                  Détail
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3: Lampadaires EGENT Solar -->
+          <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.3s">
+            <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/src/assets/images/lampendaire_monté.jpg" 
+                alt="Lampadaires EGENT Solar"
+                class="w-[389px] h-[446px] object-cover hover:scale-110 transition-transform duration-500"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
+                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Lampadaires EGENT SOLAR</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                  Lampadaires solaires autonomes et écologiques pour illuminer vos routes, places publiques et espaces extérieurs sans coût d'électricité.
+                </p>
+                <button @click="navigateTo('/produits/lampadaires-egent-solar')" class="w-full bg-[#0392C7] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#016E98] transition-colors duration-300 cursor-pointer">
+                  Détail
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Product - Armoire Billy -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-center justify-items-start">
+          <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.45s">
+            <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/src/assets/images/armoireBilly_monté.jpg" 
+                alt="Armoire Billy"
+                class="w-[389px] h-[446px] object-cover hover:scale-110 transition-transform duration-500"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
+                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Armoire Billy</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                  Solution anti délestage performante pour éviter les coupures de courant. Remplace efficacement les groupes électrogènes avec zéro émission.
+                </p>
+                <button @click="navigateTo('/produits/armoire-billy')" class="w-full bg-[#0392C7] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#016E98] transition-colors duration-300 cursor-pointer">
+                  Détail
+                </button>
               </div>
             </div>
           </div>
@@ -322,6 +353,189 @@
         <div class="text-center">
           <button @click="navigateTo('/produits')" class="btn-primary rounded-lg px-8 py-3 text-lg font-semibold">En savoir plus</button>
         </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials-section" class="bg-gradient-to-br from-white via-blue-50 to-blue-100 py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-20 animate-fadeInUp">
+          <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-pulse">Témoignages</p>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">CE QUE NOS CLIENTS DISENT DE NOUS</h2>
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            Découvrez les histoires de réussite de nos clients qui ont transformé leur consommation énergétique grâce à nos solutions innovantes.
+          </p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <!-- Testimonial 1 -->
+          <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fadeInUp" style="animation-delay: 0s">
+            <!-- Top Gradient Bar -->
+            <div class="h-1 bg-gradient-to-r from-[#EE6D08] via-[#FF9D35] to-[#016E98] rounded-t-3xl"></div>
+            
+            <!-- Profile Image -->
+            <div class="flex justify-center -mt-12 relative z-10">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" 
+                alt="Amavi Kwame"
+                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+              />
+            </div>
+            
+            <div class="p-8 pt-6">
+              <!-- Stars -->
+              <div class="flex items-center gap-1 mb-8 justify-center">
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+              </div>
+
+              <!-- Quote -->
+              <p class="text-gray-700 text-base leading-relaxed mb-8 italic text-center">
+                "EGENT TOGO a complètement transformé ma maison. Depuis l'installation des panneaux solaires, ma facture d'électricité a baissé de 80%. Leur équipe est professionnelle et à l'écoute."
+              </p>
+
+              <!-- Client Info -->
+              <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
+                <h4 class="font-black text-[#016E98] text-base">Amavi Kwame</h4>
+                <p class="text-gray-500 text-sm">Propriétaire, Lomé</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fadeInUp md:-mt-8" style="animation-delay: 0.15s">
+            <!-- Top Gradient Bar -->
+            <div class="h-1 bg-gradient-to-r from-[#016E98] via-[#EE6D08] to-[#2F7914] rounded-t-3xl"></div>
+            
+            <!-- Profile Image -->
+            <div class="flex justify-center -mt-12 relative z-10">
+              <img 
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop" 
+                alt="Mawuena Coffie"
+                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+              />
+            </div>
+            
+            <div class="p-8 pt-6">
+              <!-- Stars -->
+              <div class="flex items-center gap-1 mb-8 justify-center">
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+              </div>
+
+              <!-- Quote -->
+              <p class="text-gray-700 text-base leading-relaxed mb-8 italic text-center">
+                "Nous avons choisi EGENT TOGO pour équiper notre entreprise. L'armoire Billy nous a sauvé pendant les délestages. Un investissement vraiment rentable et une équipe d'experts exceptionnels."
+              </p>
+
+              <!-- Client Info -->
+              <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
+                <h4 class="font-black text-[#016E98] text-base">Mawuena Coffie</h4>
+                <p class="text-gray-500 text-sm">Directeur Entreprise, Sokodé</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fadeInUp" style="animation-delay: 0.3s">
+            <!-- Top Gradient Bar -->
+            <div class="h-1 bg-gradient-to-r from-[#2F7914] via-[#8AB00D] to-[#EE6D08] rounded-t-3xl"></div>
+            
+            <!-- Profile Image -->
+            <div class="flex justify-center -mt-12 relative z-10">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" 
+                alt="Ekué Laurent"
+                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+              />
+            </div>
+            
+            <div class="p-8 pt-6">
+              <!-- Stars -->
+              <div class="flex items-center gap-1 mb-8 justify-center">
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+                <i class="fas fa-star text-[#FF9D35] text-xl"></i>
+              </div>
+
+              <!-- Quote -->
+              <p class="text-gray-700 text-base leading-relaxed mb-8 italic text-center">
+                "Les lampadaires EGENT Solar ont illuminé notre quartier sans aucun coût d'électricité. C'est écologique, fiable et vraiment innovant. Bravo à EGENT TOGO pour cette solution!"
+              </p>
+
+              <!-- Client Info -->
+              <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
+                <h4 class="font-black text-[#016E98] text-base">Ekué Laurent</h4>
+                <p class="text-gray-500 text-sm">Syndic, Kpalimé</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Section -->
+        <!-- <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12"> -->
+          <!-- Stat 1 -->
+          <!-- <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center hover:scale-105 animate-fadeInUp" style="animation-delay: 0s">
+            <div class="flex items-center justify-center mb-4">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#EE6D08] to-[#FF9D35] flex items-center justify-center">
+                <i class="fas fa-check-circle text-white text-2xl"></i>
+              </div>
+            </div>
+            <h3 class="text-4xl font-black text-[#016E98] mb-2">500+</h3>
+            <p class="text-gray-600 font-semibold">Clients Satisfaits</p>
+          </div> -->
+
+          <!-- Stat 2 -->
+          <!-- <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center hover:scale-105 animate-fadeInUp" style="animation-delay: 0.1s">
+            <div class="flex items-center justify-center mb-4">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#016E98] to-[#0392C7] flex items-center justify-center">
+                <i class="fas fa-project-diagram text-white text-2xl"></i>
+              </div>
+            </div>
+            <h3 class="text-4xl font-black text-[#016E98] mb-2">1000+</h3>
+            <p class="text-gray-600 font-semibold">Projets Réalisés</p>
+          </div> -->
+
+          <!-- Stat 3 -->
+          <!-- <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center hover:scale-105 animate-fadeInUp" style="animation-delay: 0.2s">
+            <div class="flex items-center justify-center mb-4">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#2F7914] to-[#8AB00D] flex items-center justify-center">
+                <i class="fas fa-leaf text-white text-2xl"></i>
+              </div>
+            </div>
+            <h3 class="text-4xl font-black text-[#016E98] mb-2">2000+</h3>
+            <p class="text-gray-600 font-semibold">Tonnes CO2 Évitées</p>
+          </div> -->
+
+          <!-- Stat 4 -->
+          <!-- <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center hover:scale-105 animate-fadeInUp" style="animation-delay: 0.3s">
+            <div class="flex items-center justify-center mb-4">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#FF9D35] to-[#EE6D08] flex items-center justify-center">
+                <i class="fas fa-award text-white text-2xl"></i>
+              </div>
+            </div>
+            <h3 class="text-4xl font-black text-[#016E98] mb-2">10+</h3>
+            <p class="text-gray-600 font-semibold">Ans d'Expérience</p>
+          </div>
+        </div> -->
+
+        <!-- CTA -->
+        <!-- <div class="text-center">
+          <p class="text-gray-700 text-lg mb-6">Rejoignez nos clients satisfaits et transformez votre consommation énergétique dès aujourd'hui!</p>
+          <button @click="navigateTo('/devis')" class="bg-gradient-to-r from-[#EE6D08] to-[#FF9D35] hover:from-[#d95c07] hover:to-orange-600 text-white px-10 py-4 text-lg font-black rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md">
+            Demander un devis gratuit
+          </button>
+        </div> -->
       </div>
     </section>
 
@@ -359,12 +573,15 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
-import hero1 from '/src/assets/images/hero1.jpg?url'
+import { useCursorFollowText } from '../composables/useCursorFollowText'
+import hero1 from '/src/assets/images/headpage3.png?url'
 
 const router = useRouter()
+useCursorFollowText()
 const aboutInView = ref(false)
 const productsInView = ref(false)
 const whyChooseInView = ref(false)
+const testimonialsInView = ref(false)
 const ctaInView = ref(false)
 
 // Intersection Observer pour les animations
@@ -380,6 +597,9 @@ const setupObserver = () => {
       if (entry.target.id === 'why-choose-section' && entry.isIntersecting) {
         whyChooseInView.value = true
       }
+      if (entry.target.id === 'testimonials-section' && entry.isIntersecting) {
+        testimonialsInView.value = true
+      }
       if (entry.target.id === 'cta-section' && entry.isIntersecting) {
         ctaInView.value = true
       }
@@ -390,6 +610,7 @@ const setupObserver = () => {
     'about-section',
     'products-section',
     'why-choose-section',
+    'testimonials-section',
     'cta-section'
   ]
 

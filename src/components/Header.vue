@@ -1,62 +1,62 @@
 <template>
   <header 
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-    :class="isScrolling ? 'px-4 py-0' : 'px-4 py-4'"
+    :class="isScrolling ? 'px-4 py-0' : 'px-4 py-3'"
   >
-    <div class="max-w-7xl mx-auto bg-white/30 backdrop-blur-md rounded-3xl shadow-xl overflow-hidden border border-white/20">
-      <nav class="flex justify-between items-center px-6 lg:px-8 py-4 lg:py-5">
+    <div class="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-white/20">
+      <nav class="flex justify-between items-center px-4 lg:px-6 py-3 lg:py-4">
         <!-- Logo -->
         <RouterLink to="/" class="flex items-center hover:opacity-80 transition-opacity duration-300 group">
-          <img src="@/assets/images/logo.png" alt="EGENT TOGO" class="h-12 w-auto group-hover:scale-110 transition-transform duration-300">
+          <img src="@/assets/images/logo.png" alt="EGENT TOGO" class="h-10 w-auto group-hover:scale-110 transition-transform duration-300">
         </RouterLink>
 
         <!-- Menu Desktop -->
         <div class="hidden lg:flex items-center space-x-2">
           <RouterLink 
             to="/" 
-            class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300"
-            :class="isActive('/') ? 'text-[#EE6D08]' : 'text-[#016E98] hover:text-[#EE6D08]'"
+            class="px-3 py-1.5 rounded-lg font-bold text-xs transition-all duration-300"
+            :class="isActive('/') ? 'text-[#EE6D08]' : 'text-[#016E98] hover:text-[#EE6D080]'"
           >
             ACCUEIL
           </RouterLink>
           <RouterLink 
             to="/a-propos" 
-            class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300"
+            class="px-3 py-1.5 rounded-lg font-bold text-xs transition-all duration-300"
             :class="isActive('/a-propos') ? 'text-[#EE6D08]' : 'text-[#016E98] hover:text-[#EE6D08]'"
           >
             À PROPOS
           </RouterLink>
           <RouterLink 
             to="/services" 
-            class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300"
+            class="px-3 py-1.5 rounded-lg font-bold text-xs transition-all duration-300"
             :class="isActive('/services') ? 'text-[#EE6D08]' : 'text-[#016E98] hover:text-[#EE6D08]'"
           >
             SERVICES
           </RouterLink>
           <RouterLink 
             to="/produits" 
-            class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300"
+            class="px-3 py-1.5 rounded-lg font-bold text-xs transition-all duration-300"
             :class="isActive('/produits') ? 'text-[#EE6D08]' : 'text-[#016E98] hover:text-[#EE6D08]'"
           >
             PRODUITS
           </RouterLink>
           <RouterLink 
             to="/actualites" 
-            class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300"
+            class="px-3 py-1.5 rounded-lg font-bold text-xs transition-all duration-300"
             :class="isActive('/actualites') ? 'text-[#EE6D08]' : 'text-[#016E98] hover:text-[#EE6D08]'"
           >
             ACTUALITÉS
           </RouterLink>
           <RouterLink 
             to="/galerie" 
-            class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300"
+            class="px-3 py-1.5 rounded-lg font-bold text-xs transition-all duration-300"
             :class="isActive('/galerie') ? 'text-[#EE6D08]' : 'text-[#016E98] hover:text-[#EE6D08]'"
           >
-            GALERIE
+            NOS RÉALISATIONS
           </RouterLink>
           <RouterLink 
             to="/contact" 
-            class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300"
+            class="px-3 py-1.5 rounded-lg font-bold text-xs transition-all duration-300"
             :class="isActive('/contact') ? 'text-[#EE6D08]' : 'text-[#016E98] hover:text-[#EE6D08]'"
           >
             CONTACT
@@ -64,8 +64,11 @@
         </div>
 
         <!-- CTA Button + Mobile Menu -->
-        <div class="flex items-center space-x-4">
-          <button class="hidden lg:block bg-[#EE6D08] hover:bg-[#016E98] text-white font-black px-6 py-2.5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm" @click="navigateTo('/devis')">
+        <div class="flex items-center space-x-2 lg:space-x-3">
+          <button class="hidden lg:block bg-[#016E98] hover:bg-[#EE6D08] text-white font-black px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs" @click="navigateTo('/produits')">
+            Voir nos projets
+          </button>
+          <button class="hidden lg:block bg-[#EE6D08] hover:bg-[#016E98] text-white font-black px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs" @click="navigateTo('/devis')">
             Demander un devis
           </button>
 
@@ -145,7 +148,7 @@
               :class="isActive('/galerie') ? 'text-[#EE6D08]' : 'text-[#016E98] hover:text-[#EE6D08]'"
               @click="mobileMenuOpen = false"
             >
-              GALERIE
+              NOS RÉALISATIONS
             </RouterLink>
             <RouterLink 
               to="/contact" 
@@ -155,9 +158,14 @@
             >
               CONTACT
             </RouterLink>
-            <button class="w-full bg-[#EE6D08] hover:bg-[#016E98] text-white font-black px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mt-4" @click="navigateTo('/devis'); mobileMenuOpen = false">
-              Demander un devis
-            </button>
+            <div class="space-y-2 mt-4">
+              <button class="w-full bg-[#016E98] hover:bg-[#EE6D08] text-white font-black px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" @click="navigateTo('/produits'); mobileMenuOpen = false">
+                Voir nos projets
+              </button>
+              <button class="w-full bg-[#EE6D08] hover:bg-[#016E98] text-white font-black px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" @click="navigateTo('/devis'); mobileMenuOpen = false">
+                Demander un devis
+              </button>
+            </div>
           </div>
         </div>
       </transition>

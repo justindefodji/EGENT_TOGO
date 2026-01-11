@@ -424,6 +424,9 @@
 </template>
 
 <script setup>
+import { useCursorFollowText } from '../composables/useCursorFollowText'
+
+useCursorFollowText()
 </script>
 
 <style scoped>

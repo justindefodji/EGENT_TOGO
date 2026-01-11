@@ -17,7 +17,7 @@
         <div id="hero-title" class="text-center">
           <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown">Explorez nos réalisations</p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
-            Notre <span class="text-[#EE6D08]">Galerie</span>
+            Nos <span class="text-[#EE6D08]">Réalisations</span>
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
             Découvrez nos projets innovants et réalisations concrètes en énergie renouvelable et solutions durables pour le Togo et l'Afrique de l'Ouest.
@@ -225,6 +225,9 @@
 </template>
 
 <script setup>
+import { useCursorFollowText } from '../composables/useCursorFollowText'
+
+useCursorFollowText()
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 // Animation refs

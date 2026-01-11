@@ -216,7 +216,7 @@
             <i class="fas fa-sun text-[#EE6D08] text-4xl mb-4"></i>
             <h3 class="text-xl font-black text-white mb-4">Samedi</h3>
             <p class="text-gray-100 font-semibold text-lg">Samedi</p>
-            <p class="text-[#EE6D08] font-black text-2xl mt-2">09:00 - 14:00</p>
+            <p class="text-[#EE6D08] font-black text-2xl mt-2">09:00 - 15:00</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0.2s">
@@ -240,7 +240,7 @@
           <iframe 
             width="100%" 
             height="100%" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.737279356194!2d1.2239!3d6.1256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x101fb37aedbfbfbf%3A0x1a1a1a1a1a1a1a1a!2sLom%C3%A9%2C%20Togo!5e0!3m2!1sfr!2s!4v1234567890" 
+            src="https://www.google.com/maps/d/u/0/embed?mid=1y_tbAMeuz_ifDLafJ3l6Y68Rn0bB8k0" 
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
@@ -281,6 +281,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useCursorFollowText } from '../composables/useCursorFollowText'
+
+useCursorFollowText()
 
 // Animation refs
 const heroTitleInView = ref(false)

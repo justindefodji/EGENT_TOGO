@@ -188,10 +188,12 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { getProductBySlug, products } from '../data/products'
 
 const router = useRouter()
 const route = useRoute()
+useCursorFollowText()
 
 const product = ref(null)
 const heroInView = ref(false)

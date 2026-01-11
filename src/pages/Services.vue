@@ -342,6 +342,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useCursorFollowText } from '../composables/useCursorFollowText'
+
+useCursorFollowText()
 
 // Refs for section visibility
 const heroInView = ref(false)

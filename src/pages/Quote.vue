@@ -215,7 +215,7 @@
               </div>
 
               <div class="animate-fadeInUp animation-delay-700">
-                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Budget estimé (FCFA)</label>
+                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Coût moyenne d'électricité (FCFA)</label>
                 <input 
                   v-model="form.budget"
                   type="number" 
@@ -262,7 +262,7 @@
                     value="installation"
                     class="w-5 h-5 text-secondary rounded focus:ring-2 focus:ring-secondary"
                   />
-                  <span class="ml-3 text-[#016E98] font-semibold">Installation & Maintenance</span>
+                  <span class="ml-3 text-[#016E98] font-semibold">Plomberie</span>
                 </label>
               </div>
             </div>
@@ -421,6 +421,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useCursorFollowText } from '../composables/useCursorFollowText'
+
+useCursorFollowText()
 
 const currentStep = ref(0)
 const errorMessage = ref('')

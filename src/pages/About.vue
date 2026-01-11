@@ -437,9 +437,11 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
+import { useCursorFollowText } from '../composables/useCursorFollowText'
 import VisualContentSection from '../components/VisualContentSection.vue'
 
 const router = useRouter()
+useCursorFollowText()
 
 const navigateTo = (path) => {
   router.push(path)
