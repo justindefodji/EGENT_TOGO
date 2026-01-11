@@ -46,8 +46,8 @@
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 pt-6 animate-fadeInUp animation-delay-800">
-              <button class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
-                <span>Explorer les Services</span>
+              <button @click="scrollToServices" class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                <span>Explorez nos services</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
               </button>
             </div>
@@ -103,7 +103,7 @@
     </div>
 
     <!-- Services Cards with Images -->
-    <section id="services-section" class="bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24 lg:py-32">
+    <section id="services-section" ref="servicesSection" class="bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24 lg:py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 md:mb-16 lg:mb-20 animate-fadeInUp animation-delay-200">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-slideInDown animation-delay-200">Nos services</p>
@@ -347,6 +347,7 @@ import { useCursorFollowText } from '../composables/useCursorFollowText'
 useCursorFollowText()
 
 // Refs for section visibility
+const servicesSection = ref(null)
 const heroInView = ref(false)
 const servicesInView = ref(false)
 const mainDoeuvreInView = ref(false)
@@ -382,6 +383,12 @@ const setupObserver = () => {
   observer.observe(document.getElementById('services-section'))
   observer.observe(document.getElementById('maindoeuvre-section'))
   observer.observe(document.getElementById('pannes-section'))
+}
+
+const scrollToServices = () => {
+  if (servicesSection.value) {
+    servicesSection.value.scrollIntoView({ behavior: 'smooth' })
+  }
 }
 
 onMounted(() => {

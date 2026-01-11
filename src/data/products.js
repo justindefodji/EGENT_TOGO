@@ -131,6 +131,52 @@ export const products = [
       { label: 'Autonomie', value: '2-3 jours' },
       { label: 'Garantie', value: '5 ans' }
     ]
+  },
+  {
+    id: 4,
+    slug: 'free-water',
+    name: 'Free Water',
+    price: '350 000 FCFA',
+    category: 'Systèmes d\'eau',
+    shortDescription: 'Solution innovante de purification d\'eau solaire autonome et écologique.',
+    description: `Free Water est une solution révolutionnaire de purification d'eau alimentée par l'énergie solaire. Un système autonome et écologique qui fournit de l'eau potable sans coûts énergétiques pour vos communautés.`,
+    longDescription: `
+    <h3>Caractéristiques principales:</h3>
+    <ul>
+      <li>Technologie de purification multi-étages avancée</li>
+      <li>Alimentation solaire complète</li>
+      <li>Batterie de stockage intégrée</li>
+      <li>Capacité: 100-500 litres/jour selon modèle</li>
+      <li>Filtre ultra-performant éliminant 99,9% des contaminants</li>
+      <li>Interface utilisateur intuitive</li>
+      <li>Garantie 3 ans</li>
+    </ul>
+    
+    <h3>Avantages:</h3>
+    <ul>
+      <li>Eau potable de qualité garantie</li>
+      <li>Zéro coûts d'exploitation énergétique</li>
+      <li>Solution autonome et indépendante du réseau</li>
+      <li>Parfait pour zones isolées et communautés</li>
+      <li>Installation simple et rapide</li>
+      <li>Maintenance facile - filtres remplaçables</li>
+      <li>Impact environnemental minimal</li>
+    </ul>
+    `,
+    images: [
+      new URL('../assets/images/montage_panneau.jpg', import.meta.url).href,
+      new URL('../assets/images/panneau_montés.jpg', import.meta.url).href,
+      new URL('../assets/images/freewater.jpeg', import.meta.url).href
+    ],
+    mainImage: new URL('../assets/images/freewater.jpeg', import.meta.url).href,
+    specs: [
+      { label: 'Capacité', value: '100-500 L/jour' },
+      { label: 'Puissance solaire', value: '1000W' },
+      { label: 'Batterie', value: 'Lithium 2kWh' },
+      { label: 'Purification', value: 'Multi-étages (99.9%)' },
+      { label: 'Durée de vie filtre', value: '12 mois' },
+      { label: 'Garantie', value: '3 ans' }
+    ]
   }
 ]
 

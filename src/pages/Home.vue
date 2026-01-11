@@ -2,17 +2,17 @@
   <div>
     <!-- Hero Section -->
     <div class="flex justify-center pt-8 pb-4 animate-pulse">
-      <span class="text-xl md:text-2xl font-black text-[#2F7914] tracking-widest uppercase animate-bounce">HERO SECTION</span>
+      <span class="text-xl md:text-2xl font-black text-[#2F7914] tracking-widest uppercase animate-bounce"></span>
     </div>
     <section 
       id="home" 
-      class="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-start justify-center overflow-hidden -mt-48 pt-0"
+      class="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-start justify-center overflow-hidden -mt-24 md:-mt-48 pt-0"
       :style="{ backgroundImage: `url(${hero1})` }"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-start justify-center">
         <div class="flex items-start justify-center w-full">
           <!-- Content -->
-          <div class="z-10 max-w-4xl text-center pt-32">
+          <div class="z-10 max-w-4xl text-center pt-16 md:pt-32 px-2 sm:px-4">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
               Écrivons l'Avenir de l'Énergie<br>au Togo et en Afrique.
             </h1>
@@ -31,7 +31,7 @@
     <div class="px-4 -mt-12 mb-12 relative z-10 animate-fadeInUp animation-delay-600">
       <div class="max-w-7xl mx-auto bg-[#2F7914] rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
         <div class="px-6 lg:px-8 py-8">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 items-center">
             <div class="flex items-center space-x-4 transform hover:scale-105 transition-transform duration-300 animate-slideInDown" style="animation-delay: 0s">
               <div class="flex-shrink-0">
                 <div class="flex items-center justify-center h-14 w-14 rounded-full bg-white hover:bg-[#FF9D35] transition-colors duration-300">
@@ -106,7 +106,7 @@
 
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <!-- Service 1: Électricité Générale -->
+          <!-- Service 1: Energie Solaire -->
           <div @click="navigateTo('/services')" class="group relative overflow-hidden rounded-3xl h-80 cursor-pointer transition-all duration-500 hover:scale-105 animate-fadeInUp" style="animation-delay: 0s">
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
@@ -122,7 +122,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-6 rounded-3xl">
-              <h3 class="text-2xl md:text-3xl font-black text-white">ÉLECTRICITÉ<br>GÉNÉRALE</h3>
+              <h3 class="text-2xl md:text-3xl font-black text-white">ÉNÉGIE<br>SOLAIRE</h3>
             </div>
             
             <!-- Button -->
@@ -147,7 +147,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-6 rounded-3xl">
-              <h3 class="text-2xl md:text-3xl font-black text-white">CLIMATISATION<br>& FROID</h3>
+              <h3 class="text-2xl md:text-3xl font-black text-white">ELECTRICITE<br>GENERALE</h3>
             </div>
             
             <!-- Button -->
@@ -172,7 +172,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-6 rounded-3xl">
-              <h3 class="text-2xl md:text-3xl font-black text-white">ÉNERGIE<br>SOLAIRE</h3>
+              <h3 class="text-2xl md:text-3xl font-black text-white">CLIMATISATION<br>FROID</h3>
             </div>
             
             <!-- Button -->
@@ -265,14 +265,14 @@
         </div>
 
         <!-- Products Grid - 3 Column Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-end justify-items-start">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16 items-end justify-items-center md:justify-items-start">
           <!-- Product 1: Kit Zoklin -->
           <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0s">
             <div class="relative bg-orange-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
                 src="/src/assets/images/montage_panneau2.jpg" 
                 alt="Kit Zoklin"
-                class="w-[389px] h-[446px] object-cover hover:scale-110 transition-transform duration-500"
+                class="w-full md:w-[389px] h-auto md:h-[446px] object-cover hover:scale-110 transition-transform duration-500"
               />
               <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
                 <h3 class="text-2xl font-black text-[#0392C7] mb-2">Kit Zoklin</h3>
@@ -292,10 +292,10 @@
               <img 
                 src="/src/assets/images/freewater.jpeg" 
                 alt="Free Water"
-                class="w-[389px] h-[446px] object-cover hover:scale-110 transition-transform duration-500"
+                class="w-full md:w-[389px] h-auto md:h-[446px] object-cover hover:scale-110 transition-transform duration-500"
               />
               <div class="absolute inset-x-0 top-0 bg-white p-6 rounded-t-3xl">
-                <h3 class="text-3xl font-black text-[#0392C7] mb-2">Free<br>Water</h3>
+                <h3 class="text-3xl font-black text-[#0392C7] mb-2">FreeWater</h3>
                 <p class="text-gray-700 text-sm leading-relaxed mb-4">
                   Solution innovante de purification d'eau solaire autonome et écologique. Fournit de l'eau potable sans coût énergétique pour vos communautés.
                 </p>
@@ -312,7 +312,7 @@
               <img 
                 src="/src/assets/images/lampendaire_monté.jpg" 
                 alt="Lampadaires EGENT Solar"
-                class="w-[389px] h-[446px] object-cover hover:scale-110 transition-transform duration-500"
+                class="w-full md:w-[389px] h-auto md:h-[446px] object-cover hover:scale-110 transition-transform duration-500"
               />
               <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
                 <h3 class="text-2xl font-black text-[#0392C7] mb-2">Lampadaires EGENT SOLAR</h3>
@@ -328,13 +328,13 @@
         </div>
 
         <!-- Additional Product - Armoire Billy -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-center justify-items-start">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16 items-center justify-items-center md:justify-items-start">
           <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.45s">
             <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
                 src="/src/assets/images/armoireBilly_monté.jpg" 
                 alt="Armoire Billy"
-                class="w-[389px] h-[446px] object-cover hover:scale-110 transition-transform duration-500"
+                class="w-full md:w-[389px] h-auto md:h-[446px] object-cover hover:scale-110 transition-transform duration-500"
               />
               <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
                 <h3 class="text-2xl font-black text-[#0392C7] mb-2">Armoire Billy</h3>

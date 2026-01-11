@@ -184,6 +184,29 @@
               </div>
             </div>
           </div>
+
+          <!-- Product 4: Free Water -->
+          <div class="flex flex-col h-full animate-fadeInUp animation-delay-700">
+            <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow cursor-pointer group">
+              <img 
+                src="/src/assets/images/freewater.jpeg" 
+                alt="Free Water"
+                class="w-full h-[250px] object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="bg-white p-6">
+                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Free Water</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                  Solution innovante de purification d'eau solaire autonome et écologique. Fournit de l'eau potable sans coût énergétique pour vos communautés.
+                </p>
+                <div class="space-y-4">
+                  <p class="text-[#FF9D35] font-black text-lg">À partir de 350 000 FCFA</p>
+                  <button @click="navigateTo('/produits/free-water')" class="w-full bg-[#0392C7] hover:bg-[#016E98] text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-300 cursor-pointer">
+                    Détail
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- CTA Button -->

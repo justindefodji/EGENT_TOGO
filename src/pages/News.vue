@@ -38,26 +38,30 @@
     <!-- Video Section - Overlapping Hero and News -->
     <div class="relative -mt-24 md:-mt-32 lg:-mt-40 -mb-12 md:-mb-16 lg:-mb-20 z-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl group h-64 md:h-80 lg:h-96">
-          <!-- Video/Image Background -->
-          <img 
-            src="https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=1200&h=600&fit=crop" 
-            alt="EGENT-TOGO Solutions"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
-          <!-- Dark Overlay -->
-          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300"></div>
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl h-64 md:h-80 lg:h-96 bg-black group">
+          <!-- Video ou Image Fallback -->
+          <video 
+            ref="videoElement"
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="auto"
+            class="w-full h-full object-cover"
+            @canplay="onCanPlay"
+            @error="onVideoError"
+            @loadstart="onLoadStart"
+          >
+            <source src="/videos/videoauto.mp4" type="video/mp4" />
+          </video>
           
-          <!-- Play Button -->
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-            <button class="relative group/play">
-              <div class="w-24 h-24 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl group-hover/play:shadow-3xl transition-all duration-300 transform group-hover/play:scale-110">
-                <i class="fas fa-play text-secondary text-4xl md:text-5xl"></i>
-              </div>
-              <!-- Pulsing ring effect -->
-              <div class="absolute inset-0 w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white opacity-0 group-hover/play:opacity-100 animate-pulse"></div>
-            </button>
-          </div>
+          <!-- Image de fallback (affichée si vidéo vide) -->
+          <img 
+            v-if="!videoLoaded"
+            src="https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=1200&h=600&fit=crop" 
+            alt="EGENT-TOGO Actualités"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
         </div>
       </div>
     </div>
@@ -425,8 +429,52 @@
 
 <script setup>
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { ref, onMounted } from 'vue'
 
 useCursorFollowText()
+
+const videoElement = ref(null)
+const videoLoaded = ref(false)
+
+const onLoadStart = () => {
+  console.log('Début du chargement de la vidéo...')
+}
+
+const onCanPlay = () => {
+  console.log('Vidéo prête à être lue')
+  videoLoaded.value = true
+  if (videoElement.value) {
+    videoElement.value.play().catch(err => {
+      console.log('Erreur autoplay:', err)
+    })
+  }
+}
+
+const onVideoError = (e) => {
+  console.error('Erreur vidéo:', e)
+  videoLoaded.value = false
+}
+
+onMounted(() => {
+  if (videoElement.value) {
+    // Ajouter les écouteurs d'événements
+    videoElement.value.addEventListener('canplay', onCanPlay)
+    videoElement.value.addEventListener('error', onVideoError)
+    
+    // Essayer de jouer
+    const playPromise = videoElement.value.play()
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          videoLoaded.value = true
+          console.log('Autoplay réussi')
+        })
+        .catch(error => {
+          console.log('Autoplay non disponible:', error)
+        })
+    }
+  }
+})
 </script>
 
 <style scoped>

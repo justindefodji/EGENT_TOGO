@@ -85,6 +85,16 @@
                   Nous contacter
                 </button>
               </div>
+
+              <!-- Free Water CTA -->
+              <div v-if="product.slug !== 'free-water'" class="mt-8 pt-8 border-t-2 border-gray-200">
+                <h3 class="text-xl font-black text-[#016E98] mb-4">Découvrez aussi Free Water</h3>
+                <p class="text-gray-600 mb-4">Solution innovante de purification d'eau solaire autonome et écologique.</p>
+                <button @click="navigateToProduct('free-water')" class="bg-[#0392C7] hover:bg-[#016E98] text-white px-8 py-3 text-lg font-semibold rounded-lg transition-colors flex items-center justify-center gap-2 w-full sm:w-auto">
+                  <i class="fas fa-info-circle"></i>
+                  Voir les détails
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -255,7 +265,14 @@ const navigateToProduct = (slug) => {
 }
 
 const goBack = () => {
-  router.push('/produits')
+  router.push('/produits').then(() => {
+    setTimeout(() => {
+      const section = document.getElementById('produits-section')
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
+  })
 }
 </script>
 
