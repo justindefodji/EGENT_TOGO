@@ -89,19 +89,81 @@
     </section>
 
     <!-- Results Section -->
-    <section class="py-16 md:py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-black text-[#016E98] mb-12 text-center">Résultats Clés</h2>
+    <section class="py-16 md:py-28 bg-gradient-to-br from-white via-blue-50/50 to-white relative overflow-hidden">
+      <!-- Decorative background elements -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full -mr-48 -mt-48 blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-100/20 rounded-full -ml-48 -mb-48 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16 animate-fadeInUp">
+          <p class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest mb-3">Résultats Mesurables</p>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] mb-4 leading-tight">
+            Résultats <span class="bg-gradient-to-r from-[#FF9D35] to-orange-500 bg-clip-text text-transparent">Clés</span>
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Les chiffres qui prouvent notre impact et l'efficacité de nos solutions</p>
+        </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           <div 
             v-for="(result, index) in project.results"
             :key="index"
-            class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center animate-fadeInUp"
+            class="group relative h-full animate-fadeInUp"
             :style="{ animationDelay: `${200 + index * 100}ms` }"
           >
-            <p class="text-3xl md:text-4xl font-black text-[#FF9D35] mb-2">{{ result.metric }}</p>
-            <p class="text-gray-700 font-semibold">{{ result.description }}</p>
+            <!-- Card background with gradient and border -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[#016E98]/5 via-transparent to-[#FF9D35]/5 rounded-3xl border border-blue-200/50 group-hover:border-[#0392C7]/30 transition-all duration-300"></div>
+            
+            <!-- Gradient overlay on hover -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[#016E98]/0 to-[#FF9D35]/0 group-hover:from-blue-500/10 group-hover:to-orange-400/10 rounded-3xl transition-all duration-300"></div>
+
+            <!-- Content -->
+            <div class="relative p-8 h-full flex flex-col justify-between">
+              <!-- Icon Container -->
+              <div class="mb-6">
+                <div class="relative inline-block">
+                  <div class="absolute inset-0 bg-gradient-to-br from-[#FF9D35]/20 to-orange-500/10 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300 group-hover:from-[#FF9D35]/40 group-hover:to-orange-500/20"></div>
+                  <div class="relative w-16 h-16 bg-gradient-to-br from-[#FF9D35] to-orange-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6">
+                    <i :class="getResultIcon(index)" class="fas text-white text-2xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Text Content -->
+              <div>
+                <p class="text-4xl md:text-5xl font-black bg-gradient-to-r from-[#FF9D35] via-orange-500 to-[#FF9D35] bg-clip-text text-transparent mb-3 group-hover:scale-105 transition-transform duration-300 origin-left">
+                  {{ result.metric }}
+                </p>
+                <p class="text-gray-700 font-semibold text-base leading-relaxed group-hover:text-[#016E98] transition-colors duration-300">
+                  {{ result.description }}
+                </p>
+              </div>
+
+              <!-- Bottom accent line -->
+              <div class="mt-6 h-1 w-12 bg-gradient-to-r from-[#FF9D35] to-orange-500 rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+            <!-- 3D perspective effect on hover -->
+            <div class="absolute inset-0 rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-300 pointer-events-none"
+              :style="{ boxShadow: '0 20px 40px rgba(1, 110, 152, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.6)' }"></div>
+          </div>
+        </div>
+
+        <!-- Stats Footer -->
+        <div class="mt-16 pt-12 border-t border-blue-200/30">
+          <div class="grid grid-cols-3 gap-8 text-center">
+            <div class="animate-fadeInUp animation-delay-600">
+              <p class="text-2xl md:text-3xl font-black text-[#016E98]">100+</p>
+              <p class="text-gray-600 mt-2">Projets Réussis</p>
+            </div>
+            <div class="animate-fadeInUp animation-delay-700">
+              <p class="text-2xl md:text-3xl font-black text-[#016E98]">95%</p>
+              <p class="text-gray-600 mt-2">Satisfaction Client</p>
+            </div>
+            <div class="animate-fadeInUp animation-delay-800">
+              <p class="text-2xl md:text-3xl font-black text-[#016E98]">50+</p>
+              <p class="text-gray-600 mt-2">Experts</p>
+            </div>
           </div>
         </div>
       </div>
@@ -265,6 +327,16 @@ const navigateTo = (path) => {
 
 const navigateToProject = (slug) => {
   router.push(`/projets/${slug}`)
+}
+
+const getResultIcon = (index) => {
+  const icons = [
+    'fa-chart-line',      // Pour les augmentations/croissance
+    'fa-users',           // Pour les utilisateurs/clients
+    'fa-star',            // Pour la qualité/satisfaction
+    'fa-rocket'           // Pour la performance/vitesse
+  ]
+  return `fas ${icons[index] || 'fa-check'}`
 }
 
 router.afterEach(() => {

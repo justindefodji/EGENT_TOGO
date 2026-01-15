@@ -29,8 +29,97 @@
     <!-- Quote Form Section -->
     <section id="form-section" class="bg-white py-20 md:py-32">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Progress Bar -->
-        <div class="mb-16 animate-fadeInUp animation-delay-200">
+        <!-- Service Selection -->
+        <div v-if="!selectedService" class="mb-16 animate-fadeInUp animation-delay-200">
+          <!-- Header Section -->
+          <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+              <span class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest">Commençons</span>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-black text-[#016E98] mb-6 leading-tight">
+              Quel service vous <span class="bg-gradient-to-r from-[#FF9D35] to-orange-500 bg-clip-text text-transparent">intéresse</span> ?
+            </h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+              Nous proposons une large gamme de solutions adaptées à vos besoins. Sélectionnez le service qui correspond à votre projet pour recevoir un devis personnalisé.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div 
+              v-for="(service, index) in services"
+              :key="service.id"
+              @click="selectService(service.id)"
+              class="group relative h-full cursor-pointer animate-fadeInUp"
+              :style="{ animationDelay: `${200 + index * 80}ms` }"
+            >
+              <!-- Card Container -->
+              <div class="h-full rounded-3xl overflow-hidden bg-white border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <!-- Background Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-all duration-500" :class="service.bgGradient"></div>
+
+                <!-- Content -->
+                <div class="relative p-8 h-full flex flex-col items-center justify-between text-center">
+                  <!-- Icon Container -->
+                  <div class="mb-6">
+                    <div class="relative w-20 h-20 mx-auto">
+                      <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" :class="service.bgGradient"></div>
+                      <div class="relative w-full h-full rounded-full flex items-center justify-center bg-gradient-to-br transition-all duration-500" :class="service.bgGradient">
+                        <i :class="[service.icon, 'text-3xl text-white group-hover:scale-125 transition-transform duration-500']"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Text Content -->
+                  <div class="flex-1 mb-6">
+                    <h3 class="text-2xl font-bold text-[#016E98] mb-3 group-hover:text-[#FF9D35] transition-colors duration-300">
+                      {{ service.name }}
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                      {{ service.description }}
+                    </p>
+                  </div>
+
+                  <!-- Bottom Accent Line -->
+                  <div class="w-0 h-1 bg-gradient-to-r from-[#FF9D35] to-orange-500 rounded-full group-hover:w-12 transition-all duration-500 mb-4"></div>
+
+                  <!-- CTA Button -->
+                  <button class="px-6 py-2.5 bg-gradient-to-r from-[#FF9D35] to-orange-500 text-white rounded-full font-semibold text-sm shadow-md hover:shadow-lg transform group-hover:scale-110 transition-all duration-500 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">
+                    Sélectionner
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                  </button>
+                </div>
+
+                <!-- Border glow on hover -->
+                <div class="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-[#FF9D35]/30 transition-all duration-500 pointer-events-none"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Box -->
+          <div class="mt-16 p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-200 animate-fadeInUp animation-delay-600">
+            <div class="flex items-start gap-4">
+              <i class="fas fa-info-circle text-[#FF9D35] text-2xl flex-shrink-0 mt-1"></i>
+              <div>
+                <h4 class="text-lg font-bold text-[#016E98] mb-2">Besoin d'aide pour choisir ?</h4>
+                <p class="text-gray-700">
+                  Notre équipe d'experts est disponible pour vous conseiller. Contactez-nous pour une consultation gratuite et sans engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Bar (shown after service selection) -->
+        <div v-if="selectedService" class="mb-16 animate-fadeInUp animation-delay-200">
+          <!-- Back to Services Button -->
+          <button 
+            @click="resetService"
+            class="flex items-center gap-2 text-[#0392C7] hover:text-[#FF9D35] font-semibold mb-8 transition-colors"
+          >
+            <i class="fas fa-arrow-left"></i>
+            Retour aux services
+          </button>
+
           <div class="flex items-center justify-between mb-8">
             <div v-for="(step, index) in steps" :key="index" class="flex items-center flex-1 animate-fadeInUp" :style="{ animationDelay: `${0.3 + index * 0.1}s` }">
               <div 
@@ -65,8 +154,8 @@
         </div>
 
         <!-- Form -->
-        <form @submit.prevent="handleSubmit" class="space-y-8">
-          <!-- Step 1: Général -->
+        <form v-if="selectedService" @submit.prevent="handleSubmit" class="space-y-8">
+          <!-- Step 1: General Info -->
           <div v-if="currentStep === 0" class="space-y-6 animate-fadeInUp animation-delay-300">
             <div class="mb-8 animate-slideInDown animation-delay-300">
               <h2 class="text-4xl font-black text-[#EE6D08] mb-2">{{ steps[0].title }}</h2>
@@ -172,98 +261,308 @@
             </transition>
           </div>
 
-          <!-- Step 2: Technique -->
+          <!-- Step 2: Service-specific fields -->
           <div v-if="currentStep === 1" class="space-y-6 animate-fadeInUp animation-delay-300">
             <div class="mb-8 animate-slideInDown animation-delay-300">
               <h2 class="text-4xl font-black text-[#016E98] mb-2">{{ steps[1].title }}</h2>
-              <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">Décrivez vos besoins techniques</p>
+              <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">{{ getServiceDescription() }}</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="animate-fadeInUp animation-delay-400">
-                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type de client *</label>
-                <select 
-                  v-model="form.clientType"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
-                  required
-                >
-                  <option value="">Sélectionnez un type</option>
-                  <option value="particulier">Particulier</option>
-                  <option value="professionnel">Professionnel</option>
-                  <option value="entreprise">Entreprise</option>
-                </select>
-              </div>
+            <!-- Service-specific fields component -->
+            <div v-if="selectedService === 'energie-solaire'" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="animate-fadeInUp animation-delay-400">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Consommation annuelle (kWh) *</label>
+                  <input 
+                    v-model="form.solarConsumption"
+                    type="number" 
+                    placeholder="5000"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  />
+                </div>
 
-              <div class="animate-fadeInUp animation-delay-500">
-                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Consommation (kWh/mois)</label>
-                <input 
-                  v-model="form.consumption"
-                  type="number" 
-                  placeholder="500"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
-                />
-              </div>
+                <div class="animate-fadeInUp animation-delay-500">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Surface toiture disponible (m²) *</label>
+                  <input 
+                    v-model="form.roofArea"
+                    type="number" 
+                    placeholder="50"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  />
+                </div>
 
-              <div class="animate-fadeInUp animation-delay-600">
-                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Surface à couvrir (m²)</label>
-                <input 
-                  v-model="form.area"
-                  type="number" 
-                  placeholder="100"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
-                />
-              </div>
+                <div class="animate-fadeInUp animation-delay-600">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type de bâtiment *</label>
+                  <select 
+                    v-model="form.buildingType"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  >
+                    <option value="">Sélectionnez un type</option>
+                    <option value="residence">Résidence</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="industrial">Industriel</option>
+                  </select>
+                </div>
 
-              <div class="animate-fadeInUp animation-delay-700">
-                <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Coût moyenne d'électricité (FCFA)</label>
-                <input 
-                  v-model="form.budget"
-                  type="number" 
-                  placeholder="1000000"
-                  class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
-                />
+                <div class="animate-fadeInUp animation-delay-700">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Budget estimé (FCFA)</label>
+                  <input 
+                    v-model="form.budget"
+                    type="number" 
+                    placeholder="1000000"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  />
+                </div>
               </div>
             </div>
 
-            <div class="animate-fadeInUp animation-delay-800">
-              <label class="block text-[#016E98] font-bold text-sm mb-4 uppercase tracking-widest">Services souhaités</label>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <label class="flex items-center p-4 border-2 border-gray-300 rounded-xl cursor-pointer hover:border-secondary hover:bg-gray-50 transition-all duration-300">
+            <div v-if="selectedService === 'electricite-generale'" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="animate-fadeInUp animation-delay-400">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type d'installation *</label>
+                  <select 
+                    v-model="form.installationType"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  >
+                    <option value="">Sélectionnez</option>
+                    <option value="nouveau">Nouvelle installation</option>
+                    <option value="renovation">Rénovation</option>
+                    <option value="extension">Extension</option>
+                  </select>
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-500">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Puissance requise (kW) *</label>
                   <input 
-                    v-model="form.services" 
-                    type="checkbox" 
-                    value="energie-solaire"
-                    class="w-5 h-5 text-secondary rounded focus:ring-2 focus:ring-secondary"
+                    v-model="form.power"
+                    type="number" 
+                    placeholder="10"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
                   />
-                  <span class="ml-3 text-[#016E98] font-semibold">Énergie Solaire</span>
-                </label>
-                <label class="flex items-center p-4 border-2 border-gray-300 rounded-xl cursor-pointer hover:border-secondary hover:bg-gray-50 transition-all duration-300">
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-600">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Nombre de points de distribution</label>
                   <input 
-                    v-model="form.services" 
-                    type="checkbox" 
-                    value="climatisation"
-                    class="w-5 h-5 text-secondary rounded focus:ring-2 focus:ring-secondary"
+                    v-model="form.distributionPoints"
+                    type="number" 
+                    placeholder="20"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                   />
-                  <span class="ml-3 text-[#016E98] font-semibold">Climatisation & Froid</span>
-                </label>
-                <label class="flex items-center p-4 border-2 border-gray-300 rounded-xl cursor-pointer hover:border-secondary hover:bg-gray-50 transition-all duration-300">
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-700">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Budget estimé (FCFA)</label>
                   <input 
-                    v-model="form.services" 
-                    type="checkbox" 
-                    value="electricite"
-                    class="w-5 h-5 text-secondary rounded focus:ring-2 focus:ring-secondary"
+                    v-model="form.budget"
+                    type="number" 
+                    placeholder="500000"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
                   />
-                  <span class="ml-3 text-[#016E98] font-semibold">Électricité Générale</span>
-                </label>
-                <label class="flex items-center p-4 border-2 border-gray-300 rounded-xl cursor-pointer hover:border-secondary hover:bg-gray-50 transition-all duration-300">
+                </div>
+              </div>
+            </div>
+
+            <div v-if="selectedService === 'climatisation'" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="animate-fadeInUp animation-delay-400">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Surface à climatiser (m²) *</label>
                   <input 
-                    v-model="form.services" 
-                    type="checkbox" 
-                    value="installation"
-                    class="w-5 h-5 text-secondary rounded focus:ring-2 focus:ring-secondary"
+                    v-model="form.areaToClimate"
+                    type="number" 
+                    placeholder="100"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
                   />
-                  <span class="ml-3 text-[#016E98] font-semibold">Plomberie</span>
-                </label>
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-500">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type d'espace *</label>
+                  <select 
+                    v-model="form.spaceType"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  >
+                    <option value="">Sélectionnez</option>
+                    <option value="residence">Résidence</option>
+                    <option value="bureau">Bureau</option>
+                    <option value="commerce">Commerce</option>
+                    <option value="industrie">Industrie</option>
+                  </select>
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-600">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type d'installation souhaité *</label>
+                  <select 
+                    v-model="form.climateType"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  >
+                    <option value="">Sélectionnez</option>
+                    <option value="split">Split</option>
+                    <option value="cassette">Cassette</option>
+                    <option value="centralisee">Centralisée</option>
+                  </select>
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-700">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Budget estimé (FCFA)</label>
+                  <input 
+                    v-model="form.budget"
+                    type="number" 
+                    placeholder="2000000"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div v-if="selectedService === 'plomberie'" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="animate-fadeInUp animation-delay-400">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type de travaux *</label>
+                  <select 
+                    v-model="form.plumbingType"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  >
+                    <option value="">Sélectionnez</option>
+                    <option value="installation">Installation neuve</option>
+                    <option value="reparation">Réparation</option>
+                    <option value="renovation">Rénovation</option>
+                  </select>
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-500">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Nombre de points d'eau *</label>
+                  <input 
+                    v-model="form.waterPoints"
+                    type="number" 
+                    placeholder="5"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  />
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-600">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Matériau préféré *</label>
+                  <select 
+                    v-model="form.material"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  >
+                    <option value="">Sélectionnez</option>
+                    <option value="cuivre">Cuivre</option>
+                    <option value="pvc">PVC</option>
+                    <option value="inox">Inox</option>
+                  </select>
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-700">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Budget estimé (FCFA)</label>
+                  <input 
+                    v-model="form.budget"
+                    type="number" 
+                    placeholder="500000"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div v-if="selectedService === 'fournitures'" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="animate-fadeInUp animation-delay-400">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type d'équipements souhaités *</label>
+                  <select 
+                    v-model="form.equipmentType"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  >
+                    <option value="">Sélectionnez</option>
+                    <option value="panneaux">Panneaux solaires</option>
+                    <option value="batteries">Batteries de stockage</option>
+                    <option value="onduleurs">Onduleurs</option>
+                    <option value="climatiseurs">Climatiseurs</option>
+                    <option value="sanitaires">Articles sanitaires</option>
+                  </select>
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-500">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Quantité requise *</label>
+                  <input 
+                    v-model="form.quantity"
+                    type="number" 
+                    placeholder="10"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  />
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-600">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Marque ou modèle préféré</label>
+                  <input 
+                    v-model="form.preferredBrand"
+                    type="text" 
+                    placeholder="Ex: Sunpower, Tesla, etc."
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  />
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-700">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Budget estimé (FCFA)</label>
+                  <input 
+                    v-model="form.budget"
+                    type="number" 
+                    placeholder="1000000"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div v-if="selectedService === 'consulting'" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="animate-fadeInUp animation-delay-400">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Type de consulting *</label>
+                  <select 
+                    v-model="form.consultingType"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  >
+                    <option value="">Sélectionnez</option>
+                    <option value="audit">Audit énergétique</option>
+                    <option value="conception">Conception de projet</option>
+                    <option value="optimisation">Optimisation de consommation</option>
+                    <option value="formation">Formation technique</option>
+                  </select>
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-500">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Durée estimée (jours)</label>
+                  <input 
+                    v-model="form.duration"
+                    type="number" 
+                    placeholder="5"
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                  />
+                </div>
+
+                <div class="animate-fadeInUp animation-delay-600 md:col-span-2">
+                  <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Domaine principal du projet *</label>
+                  <input 
+                    v-model="form.projectField"
+                    type="text" 
+                    placeholder="Ex: Énergie renouvelable, Efficacité énergétique, etc."
+                    class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
+                    required
+                  />
+                </div>
               </div>
             </div>
 
@@ -279,35 +578,41 @@
             </transition>
           </div>
 
-          <!-- Step 3: Objectif -->
+          <!-- Step 3: Final Confirmation -->
           <div v-if="currentStep === 2" class="space-y-6 animate-fadeInUp animation-delay-300">
             <div class="mb-8 animate-slideInDown animation-delay-300">
               <h2 class="text-4xl font-black text-[#016E98] mb-2">{{ steps[2].title }}</h2>
-              <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">Présentez vos objectifs</p>
+              <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">Confirmez vos informations et validez votre demande</p>
             </div>
 
-            <div class="animate-fadeInUp animation-delay-400">
-              <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Objectif principal *</label>
-              <select 
-                v-model="form.objective"
-                class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300"
-                required
-              >
-                <option value="">Sélectionnez un objectif</option>
-                <option value="autonomie">Atteindre l'autonomie énergétique</option>
-                <option value="reduction">Réduire ma facture d'électricité</option>
-                <option value="ecologie">Adopter une solution écologique</option>
-                <option value="fiabilite">Améliorer la fiabilité de l'électricité</option>
-                <option value="autre">Autre</option>
-              </select>
+            <div class="bg-blue-50 rounded-2xl p-8 border-2 border-blue-200">
+              <h3 class="text-xl font-bold text-[#016E98] mb-6">Résumé de votre demande</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between pb-3 border-b border-blue-300">
+                  <span class="text-gray-700"><strong>Service:</strong></span>
+                  <span class="text-[#016E98] font-semibold">{{ getSelectedServiceName() }}</span>
+                </div>
+                <div class="flex justify-between pb-3 border-b border-blue-300">
+                  <span class="text-gray-700"><strong>Nom:</strong></span>
+                  <span class="text-[#016E98] font-semibold">{{ form.firstName }} {{ form.lastName }}</span>
+                </div>
+                <div class="flex justify-between pb-3 border-b border-blue-300">
+                  <span class="text-gray-700"><strong>Email:</strong></span>
+                  <span class="text-[#016E98] font-semibold">{{ form.email }}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-700"><strong>Téléphone:</strong></span>
+                  <span class="text-[#016E98] font-semibold">{{ form.phone }}</span>
+                </div>
+              </div>
             </div>
 
             <div class="animate-fadeInUp animation-delay-500">
-              <label class="block text-[#016E98] font-bold text-sm mb-3 uppercase tracking-widest">Message supplémentaire</label>
+              <label class="block text-[#016E98] font-bold text-sm mb-4 uppercase tracking-widest">Message supplémentaire</label>
               <textarea 
                 v-model="form.message"
-                rows="6"
-                placeholder="Décrivez vos besoins, contraintes ou spécificités du projet..."
+                rows="5"
+                placeholder="Ajoutez des détails ou des informations supplémentaires..."
                 class="w-full px-6 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-[#016E98] placeholder-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-all duration-300 resize-none"
               ></textarea>
             </div>
@@ -426,6 +731,7 @@ import { useCursorFollowText } from '../composables/useCursorFollowText'
 useCursorFollowText()
 
 const currentStep = ref(0)
+const selectedService = ref(null)
 const errorMessage = ref('')
 const submitMessage = ref('')
 const submitSuccess = ref(false)
@@ -433,13 +739,65 @@ const heroInView = ref(false)
 const formInView = ref(false)
 const infoInView = ref(false)
 
+const services = [
+  {
+    id: 'energie-solaire',
+    name: 'Énergie Solaire',
+    description: 'Installation de panneaux solaires et systèmes photovoltaïques',
+    icon: 'fas fa-sun',
+    bgGradient: 'from-yellow-400 via-orange-400 to-orange-600',
+    accentColor: 'bg-yellow-400'
+  },
+  {
+    id: 'electricite-generale',
+    name: 'Électricité Générale',
+    description: 'Installation et maintenance des systèmes électriques',
+    icon: 'fas fa-bolt',
+    bgGradient: 'from-blue-400 via-blue-500 to-blue-700',
+    accentColor: 'bg-blue-400'
+  },
+  {
+    id: 'climatisation',
+    name: 'Climatisation & Froid',
+    description: 'Systèmes de climatisation et de refroidissement',
+    icon: 'fas fa-snowflake',
+    bgGradient: 'from-cyan-400 via-blue-400 to-blue-600',
+    accentColor: 'bg-cyan-400'
+  },
+  {
+    id: 'plomberie',
+    name: 'Plomberie',
+    description: 'Installation et réparation de systèmes de plomberie',
+    icon: 'fas fa-water',
+    bgGradient: 'from-teal-400 via-cyan-500 to-blue-600',
+    accentColor: 'bg-teal-400'
+  },
+  {
+    id: 'fournitures',
+    name: 'Fourniture d\'Équipements',
+    description: 'Vente d\'équipements et de matériel spécialisé',
+    icon: 'fas fa-cube',
+    bgGradient: 'from-purple-400 via-purple-500 to-purple-700',
+    accentColor: 'bg-purple-400'
+  },
+  {
+    id: 'consulting',
+    name: 'Consulting',
+    description: 'Audit énergétique et conseil en optimisation',
+    icon: 'fas fa-chart-line',
+    bgGradient: 'from-pink-400 via-rose-500 to-red-600',
+    accentColor: 'bg-pink-400'
+  }
+]
+
 const steps = [
-  { title: 'Général' },
-  { title: 'Technique' },
-  { title: 'Objectif' }
+  { title: 'Informations' },
+  { title: 'Détails du Service' },
+  { title: 'Confirmation' }
 ]
 
 const form = ref({
+  // General
   firstName: '',
   lastName: '',
   email: '',
@@ -448,15 +806,96 @@ const form = ref({
   position: '',
   address: '',
   installationAddress: '',
-  clientType: '',
-  consumption: '',
-  area: '',
-  budget: '',
-  services: [],
-  objective: '',
   message: '',
-  terms: false
+  terms: false,
+  
+  // Solar
+  solarConsumption: '',
+  roofArea: '',
+  buildingType: '',
+  
+  // Electricity
+  installationType: '',
+  power: '',
+  distributionPoints: '',
+  
+  // Climate
+  areaToClimate: '',
+  spaceType: '',
+  climateType: '',
+  
+  // Plumbing
+  plumbingType: '',
+  waterPoints: '',
+  material: '',
+  
+  // Equipment
+  equipmentType: '',
+  quantity: '',
+  preferredBrand: '',
+  
+  // Consulting
+  consultingType: '',
+  duration: '',
+  projectField: '',
+  
+  // Common
+  budget: ''
 })
+
+const selectService = (serviceId) => {
+  selectedService.value = serviceId
+  currentStep.value = 0
+}
+
+const resetService = () => {
+  selectedService.value = null
+  currentStep.value = 0
+  // Reset only service-specific fields but keep general info
+  form.value = {
+    ...form.value,
+    solarConsumption: '',
+    roofArea: '',
+    buildingType: '',
+    installationType: '',
+    power: '',
+    distributionPoints: '',
+    areaToClimate: '',
+    spaceType: '',
+    climateType: '',
+    plumbingType: '',
+    waterPoints: '',
+    material: '',
+    equipmentType: '',
+    quantity: '',
+    preferredBrand: '',
+    consultingType: '',
+    duration: '',
+    projectField: '',
+    budget: ''
+  }
+}
+
+const getSelectedServiceName = () => {
+  const service = services.find(s => s.id === selectedService.value)
+  return service ? service.name : ''
+}
+
+const getServiceDescription = () => {
+  const service = services.find(s => s.id === selectedService.value)
+  if (!service) return ''
+  
+  const descriptions = {
+    'energie-solaire': 'Remplissez les détails de votre installation solaire',
+    'electricite-generale': 'Décrivez vos besoins en électricité générale',
+    'climatisation': 'Précisez vos besoins en climatisation',
+    'plomberie': 'Détaillez vos travaux de plomberie',
+    'fournitures': 'Spécifiez les équipements souhaités',
+    'consulting': 'Définissez vos objectifs de consulting'
+  }
+  
+  return descriptions[selectedService.value] || ''
+}
 
 const setupObserver = () => {
   const observerOptions = {
@@ -518,17 +957,87 @@ const validateStep = () => {
   }
 
   if (currentStep.value === 1) {
-    if (!form.value.clientType) {
-      errorMessage.value = 'Veuillez sélectionner un type de client'
-      return false
+    // Service-specific validations
+    if (selectedService.value === 'energie-solaire') {
+      if (!form.value.solarConsumption) {
+        errorMessage.value = 'La consommation annuelle est requise'
+        return false
+      }
+      if (!form.value.roofArea) {
+        errorMessage.value = 'La surface de toiture est requise'
+        return false
+      }
+      if (!form.value.buildingType) {
+        errorMessage.value = 'Le type de bâtiment est requis'
+        return false
+      }
+    }
+    
+    if (selectedService.value === 'electricite-generale') {
+      if (!form.value.installationType) {
+        errorMessage.value = 'Le type d\'installation est requis'
+        return false
+      }
+      if (!form.value.power) {
+        errorMessage.value = 'La puissance requise est requise'
+        return false
+      }
+    }
+    
+    if (selectedService.value === 'climatisation') {
+      if (!form.value.areaToClimate) {
+        errorMessage.value = 'La surface à climatiser est requise'
+        return false
+      }
+      if (!form.value.spaceType) {
+        errorMessage.value = 'Le type d\'espace est requis'
+        return false
+      }
+      if (!form.value.climateType) {
+        errorMessage.value = 'Le type d\'installation est requis'
+        return false
+      }
+    }
+    
+    if (selectedService.value === 'plomberie') {
+      if (!form.value.plumbingType) {
+        errorMessage.value = 'Le type de travaux est requis'
+        return false
+      }
+      if (!form.value.waterPoints) {
+        errorMessage.value = 'Le nombre de points d\'eau est requis'
+        return false
+      }
+      if (!form.value.material) {
+        errorMessage.value = 'Le matériau est requis'
+        return false
+      }
+    }
+    
+    if (selectedService.value === 'fournitures') {
+      if (!form.value.equipmentType) {
+        errorMessage.value = 'Le type d\'équipement est requis'
+        return false
+      }
+      if (!form.value.quantity) {
+        errorMessage.value = 'La quantité est requise'
+        return false
+      }
+    }
+    
+    if (selectedService.value === 'consulting') {
+      if (!form.value.consultingType) {
+        errorMessage.value = 'Le type de consulting est requis'
+        return false
+      }
+      if (!form.value.projectField) {
+        errorMessage.value = 'Le domaine du projet est requis'
+        return false
+      }
     }
   }
 
   if (currentStep.value === 2) {
-    if (!form.value.objective) {
-      errorMessage.value = 'Veuillez sélectionner un objectif'
-      return false
-    }
     if (!form.value.terms) {
       errorMessage.value = 'Vous devez accepter les conditions d\'utilisation'
       return false
@@ -555,7 +1064,7 @@ const handleSubmit = () => {
     
     // Réinitialiser le formulaire après 3 secondes
     setTimeout(() => {
-      currentStep.value = 0
+      resetService()
       form.value = {
         firstName: '',
         lastName: '',
@@ -565,12 +1074,25 @@ const handleSubmit = () => {
         position: '',
         address: '',
         installationAddress: '',
-        clientType: '',
-        consumption: '',
-        area: '',
+        solarConsumption: '',
+        roofArea: '',
+        buildingType: '',
+        installationType: '',
+        power: '',
+        distributionPoints: '',
+        areaToClimate: '',
+        spaceType: '',
+        climateType: '',
+        plumbingType: '',
+        waterPoints: '',
+        material: '',
+        equipmentType: '',
+        quantity: '',
+        preferredBrand: '',
+        consultingType: '',
+        duration: '',
+        projectField: '',
         budget: '',
-        services: [],
-        objective: '',
         message: '',
         terms: false
       }
