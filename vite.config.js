@@ -21,7 +21,7 @@ const copy404Plugin = {
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/EGENT_TOGO/',
   plugins: [vue(), copy404Plugin],
   resolve: {
     alias: {
