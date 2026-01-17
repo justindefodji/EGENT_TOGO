@@ -430,9 +430,11 @@
 
 <script setup>
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 import { ref, onMounted } from 'vue'
 
 useCursorFollowText()
+const { setMeta } = useSEOMeta()
 
 const videoElement = ref(null)
 const videoLoaded = ref(false)
@@ -457,6 +459,14 @@ const onVideoError = (e) => {
 }
 
 onMounted(() => {
+  // Définir les métadonnées Open Graph pour la page Actualités
+  setMeta(
+    'Actualités - EGENT-TOGO',
+    'Restez informé des dernières nouvelles, innovations et réalisations d\'EGENT-TOGO en énergie solaire et durabilité.',
+    '/src/assets/images/panneau_montés.jpg',
+    '/actualites'
+  )
+  
   if (videoElement.value) {
     // Ajouter les écouteurs d'événements
     videoElement.value.addEventListener('canplay', onCanPlay)

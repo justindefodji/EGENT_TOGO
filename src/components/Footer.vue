@@ -47,25 +47,29 @@
             Suivez EGENT-TOGO sur les réseaux sociaux pour les actualités et nouveautés.
           </p>
           <div class="flex items-center space-x-4">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Facebook">
+            <a href="https://www.facebook.com/people/EGENT-TOGO/100036214345608/" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Facebook">
               <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Twitter/X">
+            <a href="https://twitter.com/EgentTogo" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Twitter/X">
               <i class="fab fa-x-twitter"></i>
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="LinkedIn">
+            <a href="https://www.linkedin.com/company/egenttogo/" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="LinkedIn">
               <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Instagram">
+            <a href="https://www.instagram.com/egent_togo/" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Instagram">
               <i class="fab fa-instagram"></i>
+
             </a>
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="YouTube">
+            <a href="https://www.threads.net/egent_togo/" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Threads">
+              <i class="fab fa-threads"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UC-OymaCWKirMuMAzyDN5uYw/featured" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="YouTube">
               <i class="fab fa-youtube"></i>
             </a>
-            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="TikTok">
+            <a href="https://www.youtube.com/channel/UC-OymaCWKirMuMAzyDN5uYw/featured" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="TikTok">
               <i class="fab fa-tiktok"></i>
             </a>
-            <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="WhatsApp">
+            <a href="https://api.whatsapp.com/send?phone=22892531455&text=Bonjour%2C%20je%20vous%20contacte%20de%20la%20part%20de%20%2AGo%20Africa%20Online%2A%2C%0A" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="WhatsApp">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>

@@ -1,0 +1,21 @@
+services:
+  # Service Node.js pour Vite
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: egent_togo_app
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm run dev
+    networks:
+      - egent_network
+
+networks:
+  egent_network:
+    driver: bridge
+

@@ -294,9 +294,12 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import { useSEOMeta } from '../composables/useSEOMeta'
 import { projects } from '../data/projects.js'
+
+const { setMeta } = useSEOMeta()
 
 const router = useRouter()
 const route = useRoute()
@@ -343,7 +346,19 @@ router.afterEach(() => {
   loadProject()
 })
 
-loadProject()
+onMounted(() => {
+  loadProject()
+  
+  // Mettre à jour les métadonnées SEO du projet
+  if (project.value) {
+    setMeta(
+      project.value.title + ' - EGENT-TOGO',
+      project.value.description || `Découvrez notre projet ${project.value.title}`,
+      project.value.mainImage,
+      `/projets/${project.value.slug}`
+    )
+  }
+})
 </script>
 
 <style scoped>

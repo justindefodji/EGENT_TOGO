@@ -355,9 +355,11 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const { setMeta } = useSEOMeta()
 
 useCursorFollowText()
 
@@ -412,6 +414,14 @@ const setupObserver = () => {
 
 onMounted(() => {
   setupObserver()
+  
+  // Définir les métadonnées Open Graph pour la page Services
+  setMeta(
+    'Services - EGENT-TOGO',
+    'Explorez nos services : énergie solaire, électricité générale et climatisation. Solutions durables adaptées à vos besoins.',
+    '/src/assets/images/chauffage_egent.jpg',
+    '/services'
+  )
 })
 </script>
 

@@ -159,11 +159,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useSEOMeta } from '../composables/useSEOMeta'
 import { projects } from '../data/projects.js'
 
 const router = useRouter()
+const { setMeta } = useSEOMeta()
 const projectsSection = ref(null)
 
 const scrollToProjects = () => {
@@ -176,6 +178,15 @@ const navigateToProject = (slug) => {
   router.push(`/projets/${slug}`)
 }
 
+onMounted(() => {
+  // Définir les métadonnées Open Graph pour la page Projets
+  setMeta(
+    'Projets - EGENT-TOGO',
+    'Explorez nos projets innovants en énergie solaire et solutions durables pour le Togo et l\'Afrique.',
+    '/src/assets/images/panneau_montés.jpg',
+    '/projets'
+  )
+})
 const navigateTo = (path) => {
   router.push(path)
 }

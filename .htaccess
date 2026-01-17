@@ -3,14 +3,14 @@
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /EGENT_TOGO/
+  RewriteBase /
   
   # Don't rewrite if it's an actual file or directory
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   
-  # Rewrite all requests to index.html for Vue Router
-  RewriteRule ^(?!.*\.(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|otf|eot|json|webp|xml|txt|map)$).*$ /EGENT_TOGO/index.html [L]
+  # Rewrite all other requests to index.html for Vue Router
+  RewriteRule ^(?!.*\.(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|otf|eot|json|webp|xml|txt|map)$).*$ /index.html [L]
 </IfModule>
 
 <IfModule mod_mime.c>

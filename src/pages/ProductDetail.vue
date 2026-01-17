@@ -199,7 +199,10 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 import { getProductBySlug, products } from '../data/products'
+
+const { setMeta } = useSEOMeta()
 
 const router = useRouter()
 const route = useRoute()
@@ -248,6 +251,15 @@ onMounted(() => {
   const foundProduct = getProductBySlug(productSlug)
   if (foundProduct) {
     product.value = JSON.parse(JSON.stringify(foundProduct))
+    
+    // Mettre à jour les métadonnées SEO pour le produit détail
+    setMeta(
+      product.value.name + ' - EGENT-TOGO',
+      product.value.description || `Découvrez ${product.value.name}`,
+      product.value.mainImage,
+      `/produits/${productSlug}`
+    )
+    
     setTimeout(() => {
       setupObserver();
     }, 100);

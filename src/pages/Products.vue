@@ -334,8 +334,10 @@
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 
 const router = useRouter()
+const { setMeta } = useSEOMeta()
 useCursorFollowText()
 const produitsPhares = ref(null)
 const heroInView = ref(false)
@@ -371,8 +373,16 @@ const setupObserver = () => {
 };
 
 onMounted(() => {
-  setupObserver();
-});
+  setupObserver()
+  
+  // Définir les métadonnées Open Graph pour la page Produits
+  setMeta(
+    'Produits - EGENT-TOGO',
+    'Découvrez nos produits phares : Kit Zoklin, FreeWater, Lampadaires EGENT SOLAR et Armoire Billy.',
+    '/src/assets/images/montage_panneau2.jpg',
+    '/produits'
+  )
+})
 
 const navigateTo = (path) => {
   router.push(path)

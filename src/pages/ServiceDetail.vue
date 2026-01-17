@@ -235,6 +235,7 @@
 
 <script>
 import { services } from '../data/services.js';
+import { useSEOMeta } from '../composables/useSEOMeta.js';
 
 export default {
   name: 'ServiceDetail',
@@ -266,6 +267,19 @@ export default {
       
       if (this.service) {
         this.currentImage = this.service.mainImage;
+        
+        // Mettre à jour les métadonnées SEO pour le service détail
+        const { setMeta } = useSEOMeta();
+        if (setMeta) {
+          const pathname = `/services/${this.service.slug}`;
+          const description = this.service.description || `Découvrez notre service ${this.service.name}`;
+          setMeta(
+            this.service.name + ' - EGENT-TOGO',
+            description,
+            this.service.mainImage,
+            pathname
+          );
+        }
       }
     }
   },

@@ -247,9 +247,12 @@
 
 <script setup>
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 
 useCursorFollowText()
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+
+const { setMeta } = useSEOMeta()
 
 // Animation refs
 const heroTitleInView = ref(false)
@@ -436,6 +439,14 @@ const setupObserver = () => {
 onMounted(() => {
   setupObserver()
   window.addEventListener('keydown', handleKeypress)
+  
+  // Définir les métadonnées Open Graph pour la page Galerie
+  setMeta(
+    'Galerie - Nos Réalisations',
+    'Découvrez nos réalisations en énergie solaire, lampadaires LED et solutions durables au Togo.',
+    '/src/assets/images/photo_chantier.jpg',
+    '/galerie'
+  )
 })
 
 onUnmounted(() => {

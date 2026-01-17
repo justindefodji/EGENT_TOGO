@@ -727,8 +727,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 
 useCursorFollowText()
+const { setMeta } = useSEOMeta()
 
 const currentStep = ref(0)
 const selectedService = ref(null)
@@ -923,8 +925,16 @@ const setupObserver = () => {
 };
 
 onMounted(() => {
-  setupObserver();
-});
+  setupObserver()
+  
+  // Définir les métadonnées Open Graph pour la page Devis
+  setMeta(
+    'Devis - EGENT-TOGO',
+    'Demandez un devis personnalisé pour vos projets énergétiques. Réponse rapide et professionnelle d\'EGENT-TOGO.',
+    '/src/assets/images/logo_marque.png',
+    '/devis'
+  )
+})
 
 const validateStep = () => {
   errorMessage.value = ''

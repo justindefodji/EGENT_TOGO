@@ -42,7 +42,8 @@
 
             <!-- Description -->
             <p class="text-xs sm:text-sm md:text-base lg:text-lg text-[#016E98] leading-relaxed max-w-xl animate-fadeInUp animation-delay-200">
-              Une histoire d'expertise et d'engagement envers l'énergie durable. Depuis 2015, nous transformons vos besoins énergétiques en solutions innovantes.
+              Rendre l’énergie solaire accessible à tous les Togolais grâce à des solutions technologiques durables, innovantes et démocratisées.
+
             </p>
 
             <!-- CTA Buttons -->
@@ -440,9 +441,11 @@
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 import VisualContentSection from '../components/VisualContentSection.vue'
 
 const router = useRouter()
+const { setMeta } = useSEOMeta()
 useCursorFollowText()
 
 const navigateTo = (path) => {
@@ -495,6 +498,14 @@ const setupObserver = () => {
 
 onMounted(() => {
   setupObserver()
+  
+  // Définir les métadonnées Open Graph pour la page À propos
+  setMeta(
+    'À Propos - EGENT-TOGO',
+    'Découvrez EGENT-TOGO, leader des solutions énergétiques innovantes au Togo. Depuis 2019, nous accompagnons nos clients dans leur transition énergétique.',
+    '/src/assets/images/egent_reception.jpg',
+    '/a-propos'
+  )
 })
 </script>
 <style scoped>

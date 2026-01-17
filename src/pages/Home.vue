@@ -287,15 +287,15 @@
           </div>
 
           <!-- Product 2: Free Water - CENTER/LARGER -->
-          <div class="flex flex-col-reverse h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.15s">
+          <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.15s">
             <div class="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300">
               <img 
                 src="/src/assets/images/freewater.jpeg" 
                 alt="Free Water"
                 class="w-full md:w-[389px] h-auto md:h-[446px] object-cover hover:scale-110 transition-transform duration-500"
               />
-              <div class="absolute inset-x-0 top-0 bg-white p-6 rounded-t-3xl">
-                <h3 class="text-3xl font-black text-[#0392C7] mb-2">FreeWater</h3>
+              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
+                <h3 class="text-2xl font-black text-[#0392C7] mb-2">FreeWater</h3>
                 <p class="text-gray-700 text-sm leading-relaxed mb-4">
                   Solution innovante de purification d'eau solaire autonome et écologique. Fournit de l'eau potable sans coût énergétique pour vos communautés.
                 </p>
@@ -326,6 +326,8 @@
             </div>
           </div>
         </div>
+
+        
 
         <!-- Additional Product - Armoire Billy -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16 items-center justify-items-center md:justify-items-start">
@@ -380,7 +382,8 @@
               <img 
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" 
                 alt="Amavi Kwame"
-                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+                @click="openLightbox('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop')"
+                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image"
               />
             </div>
             
@@ -417,7 +420,8 @@
               <img 
                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop" 
                 alt="Mawuena Coffie"
-                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+                @click="openLightbox('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop')"
+                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image"
               />
             </div>
             
@@ -454,7 +458,8 @@
               <img 
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" 
                 alt="Ekué Laurent"
-                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+                @click="openLightbox('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop')"
+                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image"
               />
             </div>
             
@@ -567,6 +572,16 @@
         </div>
       </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div v-if="selectedImage" class="lightbox-overlay" @click="closeModal">
+      <button class="lightbox-close-btn" @click="closeModal" title="Fermer (Esc)">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="lightbox-content" @click.stop>
+        <img :src="selectedImage" alt="Image agrandie" class="lightbox-image" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -574,15 +589,27 @@
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 import hero1 from '/src/assets/images/headepage.webp?url'
 
 const router = useRouter()
+const { setMeta } = useSEOMeta()
+
 useCursorFollowText()
 const aboutInView = ref(false)
 const productsInView = ref(false)
 const whyChooseInView = ref(false)
 const testimonialsInView = ref(false)
 const ctaInView = ref(false)
+const selectedImage = ref(null)
+
+const closeModal = () => {
+  selectedImage.value = null
+}
+
+const openLightbox = (imageSrc) => {
+  selectedImage.value = imageSrc
+}
 
 // Intersection Observer pour les animations
 const setupObserver = () => {
@@ -622,6 +649,21 @@ const setupObserver = () => {
 
 onMounted(() => {
   setupObserver()
+  
+  // Définir les métadonnées Open Graph pour la page d'accueil
+  setMeta(
+    'Accueil - Solutions Énergétiques Innovantes',
+    'EGENT-TOGO : solutions innovantes en électricité, énergie solaire et climatisation au Togo. Leader de votre transition énergétique.',
+    '/src/assets/images/headepage.webp',
+    '/'
+  )
+  
+  // Ajouter l'event listener pour la touche Esc
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal()
+    }
+  })
 })
 
 // Navigation vers une route
@@ -703,5 +745,92 @@ const scrollToContact = () => {
 
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
+}
+
+/* Lightbox Styles */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 51;
+}
+
+.lightbox-close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.testimonial-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-image:hover {
+  transform: scale(1.05);
 }
 </style>

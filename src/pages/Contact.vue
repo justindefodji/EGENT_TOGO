@@ -282,8 +282,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 
 useCursorFollowText()
+const { setMeta } = useSEOMeta()
 
 // Animation refs
 const heroTitleInView = ref(false)
@@ -372,6 +374,14 @@ const setupObserver = () => {
 
 onMounted(() => {
   setupObserver()
+  
+  // Définir les métadonnées Open Graph pour la page Contact
+  setMeta(
+    'Contact - EGENT-TOGO',
+    'Contactez EGENT-TOGO pour vos projets énergétiques. Nous sommes à Lomé, au Togo. Téléphone, email et formulaire de contact disponibles.',
+    '/src/assets/images/logo_marque.png',
+    '/contact'
+  )
 })
 
 const handleSubmit = () => {

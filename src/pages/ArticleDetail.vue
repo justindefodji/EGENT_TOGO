@@ -111,15 +111,18 @@
                 <div class="border-b border-gray-200 pb-4 animate-fadeInUp animation-delay-800">
                   <p class="text-sm text-[#FF9D35] font-semibold uppercase tracking-widest mb-3">Partager</p>
                   <div class="flex gap-3">
-                    <a href="#" class="w-10 h-10 rounded-full bg-blue-50 hover:bg-[#FF9D35] text-[#0392C7] hover:text-white transition-all flex items-center justify-center">
+                    <button @click="shareOnFacebook" title="Partager sur Facebook" class="w-10 h-10 rounded-full bg-blue-50 hover:bg-[#FF9D35] text-[#0392C7] hover:text-white transition-all flex items-center justify-center cursor-pointer">
                       <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-blue-50 hover:bg-[#FF9D35] text-[#0392C7] hover:text-white transition-all flex items-center justify-center">
+                    </button>
+                    <button @click="shareOnTwitter" title="Partager sur Twitter" class="w-10 h-10 rounded-full bg-blue-50 hover:bg-[#FF9D35] text-[#0392C7] hover:text-white transition-all flex items-center justify-center cursor-pointer">
                       <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-blue-50 hover:bg-[#FF9D35] text-[#0392C7] hover:text-white transition-all flex items-center justify-center">
+                    </button>
+                    <button @click="shareOnLinkedIn" title="Partager sur LinkedIn" class="w-10 h-10 rounded-full bg-blue-50 hover:bg-[#FF9D35] text-[#0392C7] hover:text-white transition-all flex items-center justify-center cursor-pointer">
                       <i class="fab fa-linkedin-in"></i>
-                    </a>
+                    </button>
+                    <button @click="shareOnWhatsApp" title="Partager sur WhatsApp" class="w-10 h-10 rounded-full bg-blue-50 hover:bg-[#FF9D35] text-[#0392C7] hover:text-white transition-all flex items-center justify-center cursor-pointer">
+                      <i class="fab fa-whatsapp"></i>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -198,6 +201,7 @@
 import { computed, ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
+import { useSEOMeta } from '../composables/useSEOMeta'
 
 // Import images
 import imgHeadepage from '@/assets/images/headepage.webp'
@@ -209,6 +213,7 @@ import imgPhotoChantier from '@/assets/images/photo_chantier.jpg'
 
 const route = useRoute()
 const router = useRouter()
+const { setMeta } = useSEOMeta()
 useCursorFollowText()
 const heroInView = ref(false)
 const detailInView = ref(false)
@@ -350,6 +355,24 @@ onMounted(() => {
   setTimeout(() => {
     setupObserver();
   }, 100);
+  
+  // Mettre à jour les métadonnées SEO de l'article pour prévisualisation des liens
+  const currentArticle = article.value
+  if (currentArticle) {
+    setMeta(
+      currentArticle.title,
+      currentArticle.excerpt || `Lire l'article: ${currentArticle.title}`,
+      currentArticle.image,
+      `/actualites/${currentArticle.slug}`,
+      {
+        type: 'article',  // Type spécifique pour les articles
+        siteName: 'EGENT-TOGO',
+        locale: 'fr_FR',
+        imageWidth: '1200',
+        imageHeight: '630'
+      }
+    )
+  }
 })
 
 const goBack = () => {
@@ -358,6 +381,56 @@ const goBack = () => {
 
 const navigateToArticle = (slug) => {
   router.push(`/article/${slug}`)
+}
+
+// Fonctions de partage sur les réseaux sociaux
+const getShareUrl = () => {
+  const baseUrl = window.location.origin
+  const currentArticle = article.value
+  if (!currentArticle) return window.location.href
+  return `${baseUrl}/actualites/${currentArticle.slug}`
+}
+
+const shareOnFacebook = () => {
+  const url = encodeURIComponent(getShareUrl())
+  window.open(
+    `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+    'facebook-share',
+    'width=600,height=400'
+  )
+}
+
+const shareOnTwitter = () => {
+  const currentArticle = article.value
+  const url = encodeURIComponent(getShareUrl())
+  const text = encodeURIComponent(`${currentArticle?.title || 'Article'} - EGENT-TOGO`)
+  window.open(
+    `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
+    'twitter-share',
+    'width=600,height=400'
+  )
+}
+
+const shareOnLinkedIn = () => {
+  const url = encodeURIComponent(getShareUrl())
+  window.open(
+    `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+    'linkedin-share',
+    'width=600,height=400'
+  )
+}
+
+const shareOnWhatsApp = () => {
+  const currentArticle = article.value
+  const url = getShareUrl()
+  const text = encodeURIComponent(
+    `${currentArticle?.title || 'Article'} - EGENT-TOGO\n\n${url}`
+  )
+  window.open(
+    `https://wa.me/?text=${text}`,
+    'whatsapp-share',
+    'width=600,height=400'
+  )
 }
 </script>
 
