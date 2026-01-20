@@ -108,10 +108,18 @@ export function useFirebaseData() {
       error.value = null
       const q = query(collection(db, 'gallery'), orderBy('createdAt', 'desc'))
       const querySnapshot = await getDocs(q)
-      gallery.value = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }))
+      gallery.value = querySnapshot.docs.map(doc => {
+        const data = doc.data()
+        // Corriger les anciennes URLs d'images
+        if (data.image && data.image.includes('/src/assets/images/')) {
+          const filename = data.image.split('/').pop()
+          data.image = `/EGENT_TOGO/images/${filename}`
+        }
+        return {
+          id: doc.id,
+          ...data
+        }
+      })
     } catch (err) {
       console.error('Erreur chargement galerie:', err)
       error.value = err.message

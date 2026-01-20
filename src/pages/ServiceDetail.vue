@@ -237,6 +237,14 @@
 import { services } from '../data/services.js';
 import { useSEOMeta } from '../composables/useSEOMeta.js';
 
+// Initialize Google Analytics
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-65BEBH9XRC');
+}
+
 export default {
   name: 'ServiceDetail',
   data() {

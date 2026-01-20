@@ -622,6 +622,19 @@ import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 import { projects as staticProjects } from '../data/projects.js'
 
+// Google Analytics - Dynamic Loading
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date())
+  gtag('config', 'G-65BEBH9XRC')
+  
+  const script = document.createElement('script')
+  script.async = true
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65BEBH9XRC'
+  document.head.appendChild(script)
+}
+
 const { setMeta } = useSEOMeta()
 const { deleteProject } = useFirebaseData()
 const router = useRouter()

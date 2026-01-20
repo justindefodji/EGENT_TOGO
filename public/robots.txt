@@ -1,23 +1,59 @@
-# Robots.txt for EGENT-TOGO Website
-# Allow all bots to crawl the entire site
+# Robots.txt pour EGENT-TOGO
+# Stratégie SEO complète pour tous les bots
 
+# Configuration par défaut pour tous les bots
 User-agent: *
 Allow: /
-
-# Allow search engines to crawl assets
 Allow: /assets/
-Allow: /EGENT_TOGO/assets/
+Allow: /src/
+Allow: /EGENT_TOGO/
 
-# Disallow private/sensitive directories (if any)
+# Disallow sections sensibles
+Disallow: /admin/
 Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /.env
+Disallow: /dist/
+Disallow: /*.map
+Disallow: /firebase.json
 
-# Specify sitemap location
+# Optimisation de crawl
+Crawl-delay: 1
+Request-rate: 1/1s
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# SEO Optimisation - Directives d'indexation
+# Important: Définir le sitemap
+Sitemap: https://www.egenttogo.com/sitemap.xml
 Sitemap: https://alifoe.github.io/EGENT_TOGO/sitemap.xml
 
-# Crawl delay for bots (optional - in seconds)
-Crawl-delay: 1
+# Images et médias - Autoriser l'indexation
+User-agent: *
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webm$
+Allow: /*.mp4$
+
+# Désactiver l'indexation des fichiers CSS/JS inutiles
+Disallow: /assets/style*.css
+Disallow: /assets/*.map
+
+# Commentaires
+# - Crawl-delay: 1 = attendre 1 seconde entre deux requêtes
+# - Request-rate: 1/1s = 1 requête par seconde
+# - Voir https://www.robotstxt.org pour plus d'infos
 
 # Rules for specific bots
 User-agent: Googlebot

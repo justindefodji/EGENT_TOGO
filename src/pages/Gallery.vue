@@ -17,10 +17,10 @@
         <div id="hero-title" class="text-center">
           <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown">Explorez nos réalisations</p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
-            Nos <span class="text-[#EE6D08]">Réalisations</span>
+            Galerie de nos <span class="text-[#EE6D08]">réalisations</span> en énergie solaire et climatisation
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
-            Découvrez nos projets innovants et réalisations concrètes en énergie renouvelable et solutions durables pour le Togo et l'Afrique de l'Ouest.
+            Explorez notre galerie de projets d'énergie solaire, installations de climatisation et solutions durables. Découvrez les réalisations concrètes d'EGENT-TOGO au Togo et en Afrique de l'Ouest.
           </p>
         </div>
       </div>
@@ -78,7 +78,7 @@
               :src="image.image"
               :alt="image.title || 'Galerie image'"
               class="w-full h-full object-cover group-hover:brightness-50 transition-all duration-500"
-              @error="(e) => e.target.src = '@/assets/images/montage_panneau2.jpg'"
+              @error="(e) => e.target.src = '/EGENT_TOGO/images/montage_panneau2.jpg'"
             />
             <!-- Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
@@ -260,6 +260,19 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 
+// Google Analytics - Dynamic Loading
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date())
+  gtag('config', 'G-65BEBH9XRC')
+  
+  const script = document.createElement('script')
+  script.async = true
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65BEBH9XRC'
+  document.head.appendChild(script)
+}
+
 const { setMeta } = useSEOMeta()
 const { gallery, loading, initializeGallery } = useFirebaseData()
 
@@ -330,10 +343,16 @@ onMounted(() => {
   window.addEventListener('keydown', handleKeypress)
   
   setMeta(
-    'Galerie - Nos Réalisations - EGENT-TOGO',
-    'Découvrez nos réalisations en énergie solaire, lampadaires LED et solutions durables au Togo.',
-    'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop',
-    '/galerie'
+    'Galerie EGENT-TOGO - Réalisations en Énergie Solaire et Climatisation',
+    'Galerie de projets d\'énergie solaire, lampadaires LED et solutions durables. Découvrez nos 500+ réalisations et installations au Togo, Afrique de l\'Ouest.',
+    '/src/assets/images/montage_panneau.jpg',
+    '/galerie',
+    {
+      type: 'website',
+      siteName: 'EGENT-TOGO',
+      imageWidth: '1200',
+      imageHeight: '630'
+    }
   )
 })
 

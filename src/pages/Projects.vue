@@ -163,6 +163,19 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import { collection, getDocs } from 'firebase/firestore'
+
+// Google Analytics - Dynamic Loading
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date())
+  gtag('config', 'G-65BEBH9XRC')
+  
+  const script = document.createElement('script')
+  script.async = true
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65BEBH9XRC'
+  document.head.appendChild(script)
+}
 import { db } from '../lib/firebase'
 
 const router = useRouter()

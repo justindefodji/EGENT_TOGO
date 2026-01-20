@@ -194,7 +194,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { auth } from '../lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
@@ -202,6 +202,19 @@ import { db } from '../lib/firebase'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 import ArticleFormModal from '../components/ArticleFormModal.vue'
+
+// Google Analytics - Dynamic Loading
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date())
+  gtag('config', 'G-65BEBH9XRC')
+  
+  const script = document.createElement('script')
+  script.async = true
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65BEBH9XRC'
+  document.head.appendChild(script)
+}
 
 const { setMeta } = useSEOMeta()
 const { deleteNews, updateNews } = useFirebaseData()
@@ -239,6 +252,26 @@ const findRelatedArticles = () => {
     .slice(0, 2)
 }
 
+// ✅ WATCHER POUR METTRE À JOUR LES MÉTADONNÉES DÈS QUE L'ARTICLE EST CHARGÉ
+watch(article, (newArticle) => {
+  if (newArticle && newArticle.title && newArticle.image) {
+    console.log('👀 [ArticleDetail] Article détecté, mise à jour des métadonnées...')
+    
+    setMeta(
+      `${newArticle.title} - EGENT-TOGO`,
+      newArticle.excerpt || newArticle.title,
+      newArticle.image,  // ✅ IMAGE CRITIQUE POUR LE PARTAGE
+      `/article/${newArticle.slug || route.params.slug}`,
+      {
+        type: 'article',
+        siteName: 'EGENT-TOGO'
+      }
+    )
+    
+    console.log('✅ [ArticleDetail] Métadonnées mises à jour pour:', newArticle.title)
+  }
+}, { deep: true })
+
 onMounted(async () => {
   // Vérifier si l'utilisateur est admin
   auth.onAuthStateChanged((user) => {
@@ -254,11 +287,11 @@ onMounted(async () => {
     article.value = { ...foundArticle }
     findRelatedArticles()
     
-    // Utiliser la signature correcte de setMeta : (title, description, image, pathname, options)
+    // ✅ MISE À JOUR INITIALE DES MÉTADONNÉES
     setMeta(
-      `${article.value.title} - EGENT-TOGO`,
-      article.value.excerpt,
-      article.value.image,
+      `${foundArticle.title} - EGENT-TOGO`,
+      foundArticle.excerpt || foundArticle.title,
+      foundArticle.image,  // ✅ IMAGE CRITIQUE POUR LE PARTAGE
       `/article/${articleSlug}`,
       {
         type: 'article',
@@ -315,26 +348,62 @@ const deleteArticleConfirm = async () => {
 
 const shareOnFacebook = () => {
   const url = window.location.href
+  console.log('🔗 [Partage] Facebook:', url)
   window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank')
 }
 
 const shareOnTwitter = () => {
   const url = window.location.href
   const text = article.value?.title || 'Article intéressant'
+  console.log('🔗 [Partage] Twitter:', url, 'Texte:', text)
   window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank')
 }
 
 const shareOnLinkedIn = () => {
   const url = window.location.href
+  console.log('🔗 [Partage] LinkedIn:', url)
   window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank')
+}
+
+const shareOnWhatsApp = () => {
+  const url = window.location.href
+  console.log('🔗 [Partage] WhatsApp:', url)
+  window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`, '_blank')
+}
+
+const shareOnTelegram = () => {
+  const url = window.location.href
+  console.log('🔗 [Partage] Telegram:', url)
+  window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}`, '_blank')
+}
+
+const printArticle = () => {
+  window.print()
 }
 
 const copyToClipboard = async () => {
   try {
-    await navigator.clipboard.writeText(window.location.href)
-    alert('Lien copié dans le presse-papiers!')
+    const url = window.location.href
+    await navigator.clipboard.writeText(url)
+    
+    // ✅ AFFICHER LA VÉRIFICATION DES MÉTADONNÉES
+    const ogImage = document.querySelector('meta[property="og:image"]')?.content
+    const ogTitle = document.querySelector('meta[property="og:title"]')?.content
+    const ogDescription = document.querySelector('meta[property="og:description"]')?.content
+    
+    console.log(' [Copie] Lien copié avec métadonnées:')
+    console.log({
+      url: url,
+      ogTitle: ogTitle,
+      ogDescription: ogDescription,
+      ogImage: ogImage,  // ✅ AFFICHÉE SUR WHATSAPP, FACEBOOK, TWITTER, ETC.
+      statut: '✅ Prêt pour partage social'
+    })
+    
+    alert('✅ Lien copié dans le presse-papiers!\n\n📸 L\'image s\'affichera sur:\n• WhatsApp\n• Facebook\n• Twitter/X\n• LinkedIn\n• Telegram\n• Et autres réseaux sociaux')
   } catch (error) {
-    console.error('Erreur copie:', error)
+    console.error('❌ Erreur copie:', error)
+    alert('❌ Erreur lors de la copie')
   }
 }
 </script>

@@ -666,9 +666,12 @@
             <button 
               v-if="currentStep === steps.length - 1"
               type="submit"
-              class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg uppercase tracking-widest"
+              :disabled="isSubmitting"
+              class="px-8 py-4 bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg uppercase tracking-widest flex items-center gap-2"
             >
-              <i class="fas fa-check-circle mr-2"></i>Envoyer le devis
+              <i v-if="!isSubmitting" class="fas fa-check-circle"></i>
+              <i v-else class="fas fa-spinner animate-spin"></i>
+              {{ isSubmitting ? 'Envoi...' : 'Envoyer le devis' }}
             </button>
           </div>
         </form>
@@ -724,10 +727,27 @@
   </div>
 </template>
 
+
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { db } from '../lib/firebase'
+
+// Charger Google Analytics dynamiquement
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date())
+  gtag('config', 'G-65BEBH9XRC')
+  
+  // Charger le script Google Analytics
+  const script = document.createElement('script')
+  script.async = true
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65BEBH9XRC'
+  document.head.appendChild(script)
+}
 
 useCursorFollowText()
 const { setMeta } = useSEOMeta()
@@ -737,6 +757,7 @@ const selectedService = ref(null)
 const errorMessage = ref('')
 const submitMessage = ref('')
 const submitSuccess = ref(false)
+const isSubmitting = ref(false)
 const heroInView = ref(false)
 const formInView = ref(false)
 const infoInView = ref(false)
@@ -1069,9 +1090,64 @@ const previousStep = () => {
 
 const handleSubmit = () => {
   if (validateStep()) {
+    submitQuoteToFirebase()
+  }
+}
+
+const submitQuoteToFirebase = async () => {
+  try {
+    isSubmitting.value = true
+    submitMessage.value = '⏳ Envoi de votre devis...'
+
+    // Préparer les données du formulaire
+    const quoteData = {
+      // Informations générales
+      firstName: form.value.firstName,
+      lastName: form.value.lastName,
+      email: form.value.email,
+      phone: form.value.phone,
+      company: form.value.company,
+      position: form.value.position,
+      address: form.value.address,
+      installationAddress: form.value.installationAddress,
+      service: selectedService.value,
+      serviceName: getSelectedServiceName(),
+      message: form.value.message,
+      budget: form.value.budget,
+      
+      // Champs spécifiques au service
+      solarConsumption: form.value.solarConsumption,
+      roofArea: form.value.roofArea,
+      buildingType: form.value.buildingType,
+      installationType: form.value.installationType,
+      power: form.value.power,
+      distributionPoints: form.value.distributionPoints,
+      areaToClimate: form.value.areaToClimate,
+      spaceType: form.value.spaceType,
+      climateType: form.value.climateType,
+      plumbingType: form.value.plumbingType,
+      waterPoints: form.value.waterPoints,
+      material: form.value.material,
+      equipmentType: form.value.equipmentType,
+      quantity: form.value.quantity,
+      preferredBrand: form.value.preferredBrand,
+      consultingType: form.value.consultingType,
+      duration: form.value.duration,
+      projectField: form.value.projectField,
+      
+      // Métadonnées
+      status: 'new',
+      createdAt: serverTimestamp(),
+      ipAddress: await getClientIP(),
+      userAgent: navigator.userAgent
+    }
+
+    // Sauvegarder dans Firebase
+    await addDoc(collection(db, 'quotes'), quoteData)
+
     submitSuccess.value = true
-    submitMessage.value = 'Merci ! Votre demande de devis a été envoyée avec succès. Notre équipe vous contactera sous peu.'
-    
+    submitMessage.value = '✅ Merci ! Votre demande de devis a été envoyée avec succès. Notre équipe vous contactera sous peu.'
+
     // Réinitialiser le formulaire après 3 secondes
     setTimeout(() => {
       resetService()
@@ -1108,6 +1184,23 @@ const handleSubmit = () => {
       }
       submitMessage.value = ''
     }, 3000)
+  } catch (error) {
+    console.error('Erreur envoi devis:', error)
+    submitSuccess.value = false
+    submitMessage.value = '❌ Erreur lors de l\'envoi. Veuillez réessayer.'
+  } finally {
+    isSubmitting.value = false
+  }
+}
+
+// Fonction pour obtenir l'IP du client
+const getClientIP = async () => {
+  try {
+    const response = await fetch('https://api.ipify.org?format=json')
+    const data = await response.json()
+    return data.ip
+  } catch {
+    return 'unknown'
   }
 }
 </script>

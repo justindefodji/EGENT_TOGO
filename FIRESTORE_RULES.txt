@@ -11,7 +11,29 @@ service cloud.firestore {
     }
     match /gallery/{document=**} {
       allow read: if true;
+      allow create: if true;  // Admin peut créer
+      allow update: if true;  // Admin peut modifier
+      allow delete: if true;  // Admin peut supprimer
+    }
+    match /projects/{document=**} {
+      allow read: if true;
       allow write: if false;
+    }
+    
+    // Contact Forms - Public can create, anyone with app access can read/update/delete
+    match /contact_forms/{document=**} {
+      allow create: if true;  // Public peut créer
+      allow read: if true;    // Pour le moment, admin peut lire (à sécuriser phase 2)
+      allow update: if true;  // Pour le moment, admin peut modifier (à sécuriser phase 2)
+      allow delete: if true;  // Pour le moment, admin peut supprimer (à sécuriser phase 2)
+    }
+    
+    // Quotes - Public can create, anyone with app access can read/update/delete
+    match /quotes/{document=**} {
+      allow create: if true;  // Public peut créer
+      allow read: if true;    // Pour le moment, admin peut lire (à sécuriser phase 2)
+      allow update: if true;  // Pour le moment, admin peut modifier (à sécuriser phase 2)
+      allow delete: if true;  // Pour le moment, admin peut supprimer (à sécuriser phase 2)
     }
   }
 }

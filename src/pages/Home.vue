@@ -13,8 +13,11 @@
         <div class="flex items-start justify-center w-full">
           <!-- Content -->
           <div class="z-10 max-w-4xl text-center pt-16 md:pt-32 px-2 sm:px-4">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
-              Écrivons l'Avenir de l'Énergie<br>au Togo et en Afrique.
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-black leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
+              <span class="text-white">Écrivons l'Avenir de </span>
+              <span class="text-[#FF9D35]">l'Énergie</span>
+              <br />
+              <span class="text-[#016E98]">au Togo et en Afrique.</span>
             </h1>
             <!-- <p class="text-white text-lg mb-8 opacity-100 animate-fadeInUp animation-delay-200">
               Rejoignez-nous pour bâtir des solutions durables et innovantes, adaptées aux besoins énergétiques de demain au Togo et en Afrique.
@@ -592,6 +595,14 @@ import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import hero1 from '/src/assets/images/headepage.webp?url'
 
+// Initialize Google Analytics
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-65BEBH9XRC');
+}
+
 const router = useRouter()
 const { setMeta } = useSEOMeta()
 
@@ -650,12 +661,18 @@ const setupObserver = () => {
 onMounted(() => {
   setupObserver()
   
-  // Définir les métadonnées Open Graph pour la page d'accueil
+  // ✅ SEO OPTIMISÉ POUR LA PAGE D'ACCUEIL
   setMeta(
-    'Accueil - Solutions Énergétiques Innovantes',
-    'EGENT-TOGO : solutions innovantes en électricité, énergie solaire et climatisation au Togo. Leader de votre transition énergétique.',
-    '/src/assets/images/headepage.webp',
-    '/'
+    'EGENT-TOGO - Solutions Énergie Solaire & Climatisation au Togo',
+    'EGENT-TOGO: leader des solutions d\'énergie solaire, climatisation et électricité durable au Togo. 500+ projets réalisés, 10K+ clients. Devis gratuit.',
+    '/src/assets/images/montage_panneau.jpg',
+    '/',
+    {
+      type: 'website',
+      siteName: 'EGENT-TOGO',
+      imageWidth: '1200',
+      imageHeight: '630'
+    }
   )
   
   // Ajouter l'event listener pour la touche Esc

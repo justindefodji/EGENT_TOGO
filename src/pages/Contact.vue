@@ -15,9 +15,9 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
         <!-- Section Titre Hero -->
         <div id="hero-title" class="text-center">
-          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown">Nous vous écoutons</p>
+          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown">Contactez-nous</p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
-            Prenez <span class="text-[#EE6D08]">Contact</span>
+            Contactez <span class="text-[#EE6D08]">EGENT-TOGO</span> pour vos projets énergétiques
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
             Vous avez une question ou un projet ? Notre équipe est à votre écoute pour vous aider à réaliser votre transition énergétique.
@@ -167,9 +167,12 @@
               <!-- Submit Button -->
               <button 
                 type="submit"
-                class="w-full bg-secondary hover:bg-orange-600 text-white font-black py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase tracking-widest text-sm"
+                :disabled="isSubmitting"
+                class="w-full bg-secondary hover:bg-orange-600 disabled:bg-gray-400 text-white font-black py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase tracking-widest text-sm inline-flex items-center justify-center gap-2"
               >
-                Envoyer le message
+                <i v-if="!isSubmitting" class="fas fa-paper-plane"></i>
+                <i v-else class="fas fa-spinner fa-spin"></i>
+                {{ isSubmitting ? 'Envoi en cours...' : 'Envoyer le message' }}
               </button>
             </form>
 
@@ -279,10 +282,20 @@
   </div>
 </template>
 
+
+
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { db } from '../lib/firebase'
+
+// Google Analytics
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-65BEBH9XRC');
 
 useCursorFollowText()
 const { setMeta } = useSEOMeta()
@@ -308,6 +321,7 @@ const form = ref({
 
 const submitMessage = ref('')
 const submitSuccess = ref(false)
+const isSubmitting = ref(false)
 
 const faqs = ref([
   {
@@ -375,16 +389,22 @@ const setupObserver = () => {
 onMounted(() => {
   setupObserver()
   
-  // Définir les métadonnées Open Graph pour la page Contact
+  // ✅ SEO OPTIMISÉ POUR LA PAGE CONTACT
   setMeta(
-    'Contact - EGENT-TOGO',
-    'Contactez EGENT-TOGO pour vos projets énergétiques. Nous sommes à Lomé, au Togo. Téléphone, email et formulaire de contact disponibles.',
+    'Contactez EGENT-TOGO - Solutions Énergétiques au Togo',
+    'Contactez EGENT-TOGO pour vos projets d\'énergie solaire et climatisation. Formulaire de contact, adresse à Lomé, téléphone et email. Devis gratuit sans engagement.',
     '/src/assets/images/logo_marque.png',
-    '/contact'
+    '/contact',
+    {
+      type: 'website',
+      siteName: 'EGENT-TOGO',
+      imageWidth: '1200',
+      imageHeight: '630'
+    }
   )
 })
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
   // Validation basique
   if (!form.value.name || !form.value.phone || !form.value.email || !form.value.subject || !form.value.message || !form.value.agree) {
     submitMessage.value = 'Veuillez remplir tous les champs et accepter les conditions.'
@@ -392,15 +412,50 @@ const handleSubmit = () => {
     return
   }
 
-  // Simuler l'envoi
-  submitMessage.value = 'Merci pour votre message ! Nous vous recontacterons très bientôt.'
-  submitSuccess.value = true
+  try {
+    isSubmitting.value = true
+    submitMessage.value = '⏳ Envoi en cours...'
 
-  // Réinitialiser le formulaire
-  setTimeout(() => {
-    form.value = { name: '', phone: '', email: '', subject: '', message: '', agree: false }
-    submitMessage.value = ''
-  }, 4000)
+    // Sauvegarder dans Firebase
+    await addDoc(collection(db, 'contact_forms'), {
+      name: form.value.name,
+      phone: form.value.phone,
+      email: form.value.email,
+      subject: form.value.subject,
+      message: form.value.message,
+      agree: form.value.agree,
+      status: 'new',
+      createdAt: serverTimestamp(),
+      ipAddress: await getClientIP(),
+      userAgent: navigator.userAgent
+    })
+
+    submitMessage.value = '✅ Merci pour votre message ! Nous vous recontacterons très bientôt.'
+    submitSuccess.value = true
+
+    // Réinitialiser le formulaire
+    setTimeout(() => {
+      form.value = { name: '', phone: '', email: '', subject: '', message: '', agree: false }
+      submitMessage.value = ''
+    }, 4000)
+  } catch (error) {
+    console.error('Erreur envoi:', error)
+    submitMessage.value = '❌ Erreur lors de l\'envoi. Veuillez réessayer.'
+    submitSuccess.value = false
+  } finally {
+    isSubmitting.value = false
+  }
+}
+
+// Fonction pour obtenir l'IP du client (optionnel)
+const getClientIP = async () => {
+  try {
+    const response = await fetch('https://api.ipify.org?format=json')
+    const data = await response.json()
+    return data.ip
+  } catch {
+    return 'unknown'
+  }
 }
 </script>
 

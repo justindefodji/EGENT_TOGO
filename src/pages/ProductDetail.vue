@@ -57,7 +57,7 @@
             <!-- Header -->
             <div>
               <p class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest mb-3 animate-slideInDown animation-delay-400">{{ product.category }}</p>
-              <h1 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight animate-slideInDown animation-delay-500">{{ product.name }}</h1>
+              <h1 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight animate-slideInDown animation-delay-500">{{ product.name }} - EGENT-TOGO</h1>
               
               <!-- Price -->
               <div class="bg-blue-50 rounded-2xl p-6 mb-8 animate-fadeInUp animation-delay-500">
@@ -601,6 +601,14 @@ import { collection, getDocs, query, doc, updateDoc } from 'firebase/firestore'
 import { db, auth } from '../lib/firebase'
 import { useSEOMeta } from '../composables/useSEOMeta'
 
+// Initialize Google Analytics
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-65BEBH9XRC');
+}
+
 const { setMeta } = useSEOMeta()
 const router = useRouter()
 const route = useRoute()
@@ -825,12 +833,20 @@ onMounted(async () => {
   
   if (foundProduct) {
     product.value = { ...foundProduct }
-    setMeta({
-      title: `${product.value.name} - EGENT-TOGO`,
-      description: product.value.shortDescription || product.value.description,
-      image: product.value.mainImage,
-      url: `/produits/${productSlug}`
-    })
+    
+    // ✅ SEO OPTIMISÉ POUR LA PAGE PRODUIT
+    setMeta(
+      `${product.value.name} - ${product.value.category} EGENT-TOGO`,
+      product.value.shortDescription || product.value.description || `Découvrez ${product.value.name}, une solution ${product.value.category} de qualité d\'EGENT-TOGO. Livré avec garantie et support technique.`,
+      product.value.mainImage,
+      `/produits/${productSlug}`,
+      {
+        type: 'product',
+        siteName: 'EGENT-TOGO',
+        imageWidth: '1200',
+        imageHeight: '630'
+      }
+    )
   } else {
     router.push('/produits')
     return

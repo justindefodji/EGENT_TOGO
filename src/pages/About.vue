@@ -1,4 +1,6 @@
 <template>
+
+  
   <div class="bg-gradient-to-b from-gray-40 via-gray-100 to-gray-200 min-h-screen">
     <!-- Hero Section About -->
     <div class="relative overflow-visible pt-2 pb-8 md:pt-4 md:pb-12 lg:pb-16">
@@ -27,15 +29,15 @@
               </div>
             </div>
 
-            <!-- Main heading with gradient -->
+            <!-- Main heading with gradient - ✅ SEO OPTIMISÉ -->
             <div>
               <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight animate-slideInDown" style="animation-delay: 0.1s">
                 <span class="text-[#016E98]">
-                  DÉCOUVREZ
+                  DÉCOUVREZ EGENT-TOGO
                 </span>
                 <br />
                 <span class="bg-gradient-to-r from-[#EE6D08] to-orange-400 bg-clip-text text-transparent inline-block animate-pulse">
-                  NOTRE MISSION
+                  LEADER DE L'ÉNERGIE DURABLE
                 </span>
               </h1>
             </div>
@@ -444,6 +446,14 @@ import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import VisualContentSection from '../components/VisualContentSection.vue'
 
+// Initialize Google Analytics
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-65BEBH9XRC');
+}
+
 const router = useRouter()
 const { setMeta } = useSEOMeta()
 useCursorFollowText()
@@ -499,15 +509,25 @@ const setupObserver = () => {
 onMounted(() => {
   setupObserver()
   
-  // Définir les métadonnées Open Graph pour la page À propos
+  // ✅ SEO OPTIMISÉ POUR LA PAGE À PROPOS
   setMeta(
-    'À Propos - EGENT-TOGO',
-    'Découvrez EGENT-TOGO, leader des solutions énergétiques innovantes au Togo. Depuis 2019, nous accompagnons nos clients dans leur transition énergétique.',
+    'À Propos d\'EGENT-TOGO - Leader en Solutions Énergétiques Durables',
+    'EGENT-TOGO: solutions d\'énergie solaire et climatisation innovantes au Togo. Découvrez notre mission, nos services et notre engagement envers l\'énergie durable.',
     '/src/assets/images/egent_reception.jpg',
-    '/a-propos'
+    '/a-propos',
+    {
+      type: 'website',  // ✅ Page statique, pas un article
+      siteName: 'EGENT-TOGO',
+      imageWidth: '1200',
+      imageHeight: '630'
+    }
   )
 })
+
+
+
 </script>
+
 <style scoped>
 @keyframes fadeInUp {
   from {

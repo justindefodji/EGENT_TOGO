@@ -9,7 +9,7 @@
             <img src="@/assets/images/logo.png" alt="EGENT TOGO" class="h-15 w-auto relative z-10">
           </div>
           <p class="text-blue-50 text-base leading-relaxed">
-            Nous accompagnons les entreprises comme particulier à réaliser leur projet de système solaire off Grid ou One Grid. Nous commercialisons des équipements solaires de qualités rassurantes avec une garantie.
+            Nous accompagnons les entreprises comme particulier à réaliser leur projet de système solaire Off-Grid et On-Grid. Nous commercialisons des équipements solaires de qualités rassurantes avec une garantie.
           </p>
         </div>
 

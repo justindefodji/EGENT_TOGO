@@ -17,7 +17,7 @@
         <div class="text-center">
           <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest">Restez informé</p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
-            Nos <span class="text-[#EE6D08]">Actualités</span>
+            Actualités EGENT-TOGO - \u00c9nergie Solaire et <span class="text-[#EE6D08]">Innovations</span> au Togo
           </h1>
           <!-- <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             Découvrez les dernières nouvelles, innovations et réalisations du groupe EGENT-TOGO. <br>
@@ -314,6 +314,19 @@ import { useRouter } from 'vue-router'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 
+// Google Analytics - Dynamic Loading
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date())
+  gtag('config', 'G-65BEBH9XRC')
+  
+  const script = document.createElement('script')
+  script.async = true
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65BEBH9XRC'
+  document.head.appendChild(script)
+}
+
 const router = useRouter()
 const { setMeta } = useSEOMeta()
 const { articles, loading, error, initializeArticles } = useFirebaseData()
@@ -332,11 +345,18 @@ const onVideoError = () => {
 onMounted(async () => {
   await initializeArticles()
   
+  // \u2705 SEO OPTIMIS\u00c9 POUR LA PAGE ACTUALIT\u00c9S
   setMeta(
-    'Actualités - EGENT-TOGO',
-    'Restez informé des dernières nouvelles, innovations et réalisations d\'EGENT-TOGO en énergie solaire et durabilité.',
-    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop',
-    '/actualites'
+    'Actualit\u00e9s EGENT-TOGO - Derni\u00e8res Nouvelles en \u00c9nergie Solaire au Togo',
+    'Restez inform\u00e9 des derni\u00e9res actualit\u00e9s, innovations et r\u00e9alisations d\'EGENT-TOGO en \u00e9nergie solaire, climatisation et solutions durables au Togo.',
+    '/src/assets/images/montage_panneau.jpg',
+    '/actualites',
+    {
+      type: 'website',
+      siteName: 'EGENT-TOGO',
+      imageWidth: '1200',
+      imageHeight: '630'
+    }
   )
 })
 

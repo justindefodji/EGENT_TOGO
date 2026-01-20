@@ -305,6 +305,14 @@ import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 
+// Initialize Google Analytics
+if (typeof window !== 'undefined') {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-65BEBH9XRC');
+}
+
 const router = useRouter()
 const { setMeta } = useSEOMeta()
 const { products, loading, error, initializeProducts } = useFirebaseData()

@@ -81,6 +81,34 @@
             Galerie
             <span class="ml-auto bg-red-500 px-2 py-1 text-xs rounded-full">{{ gallery.length }}</span>
           </button>
+
+          <button
+            @click="currentSection = 'forms'"
+            :class="[
+              'w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center gap-3',
+              currentSection === 'forms'
+                ? 'bg-orange-500 text-white font-bold'
+                : 'hover:bg-blue-700 text-blue-100'
+            ]"
+          >
+            <i class="fas fa-envelope"></i>
+            Formulaires
+            <span class="ml-auto bg-red-500 px-2 py-1 text-xs rounded-full">{{ contactForms.length }}</span>
+          </button>
+
+          <button
+            @click="currentSection = 'quotes'"
+            :class="[
+              'w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center gap-3',
+              currentSection === 'quotes'
+                ? 'bg-orange-500 text-white font-bold'
+                : 'hover:bg-blue-700 text-blue-100'
+            ]"
+          >
+            <i class="fas fa-file-invoice-dollar"></i>
+            Devis
+            <span class="ml-auto bg-red-500 px-2 py-1 text-xs rounded-full">{{ quotes.length }}</span>
+          </button>
         </div>
       </nav>
 
@@ -107,6 +135,8 @@
             <i v-if="currentSection === 'articles'" class="fas fa-newspaper mr-2"></i>
             <i v-if="currentSection === 'projects'" class="fas fa-building mr-2"></i>
             <i v-if="currentSection === 'gallery'" class="fas fa-images mr-2"></i>
+            <i v-if="currentSection === 'forms'" class="fas fa-envelope mr-2"></i>
+            <i v-if="currentSection === 'quotes'" class="fas fa-file-invoice-dollar mr-2"></i>
             {{ sectionTitle }}
           </h1>
           <p class="text-gray-600 text-sm mt-1">Gérez votre contenu de manière centralisée</p>
@@ -122,7 +152,7 @@
         <!-- Dashboard Section -->
         <div v-if="currentSection === 'dashboard'" class="space-y-8">
           <!-- Stats Cards -->
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
             <div class="bg-white rounded-lg shadow p-6 border-l-4 border-orange-500">
               <div class="flex items-center justify-between">
                 <div>
@@ -156,15 +186,37 @@
               <p class="text-gray-500 text-xs mt-4">Galerie photos</p>
             </div>
 
+            <div class="bg-white rounded-lg shadow p-6 border-l-4 border-cyan-500">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Projets</p>
+                  <p class="text-4xl font-black text-blue-800 mt-2">{{ projects.length }}</p>
+                </div>
+                <i class="fas fa-building text-cyan-500 text-4xl opacity-20"></i>
+              </div>
+              <p class="text-gray-500 text-xs mt-4">Projets en base</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6 border-l-4 border-red-500">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Formulaires</p>
+                  <p class="text-4xl font-black text-blue-800 mt-2">{{ contactForms.length }}</p>
+                </div>
+                <i class="fas fa-envelope text-red-500 text-4xl opacity-20"></i>
+              </div>
+              <p class="text-gray-500 text-xs mt-4">Messages de contact</p>
+            </div>
+
             <div class="bg-white rounded-lg shadow p-6 border-l-4 border-purple-500">
               <div class="flex items-center justify-between">
                 <div>
-                  <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Total</p>
-                  <p class="text-4xl font-black text-blue-800 mt-2">{{ products.length + articles.length + gallery.length }}</p>
+                  <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Devis</p>
+                  <p class="text-4xl font-black text-blue-800 mt-2">{{ quotes.length }}</p>
                 </div>
-                <i class="fas fa-database text-purple-500 text-4xl opacity-20"></i>
+                <i class="fas fa-file-invoice-dollar text-purple-500 text-4xl opacity-20"></i>
               </div>
-              <p class="text-gray-500 text-xs mt-4">Éléments en base</p>
+              <p class="text-gray-500 text-xs mt-4">Demandes de devis</p>
             </div>
           </div>
 
@@ -252,6 +304,16 @@
         <div v-if="currentSection === 'gallery'" class="space-y-6">
           <GalleryManagement :gallery="gallery" @refresh="loadGallery" />
         </div>
+
+        <!-- Forms Section -->
+        <div v-if="currentSection === 'forms'" class="space-y-6">
+          <FormsManagement />
+        </div>
+
+        <!-- Quotes Section -->
+        <div v-if="currentSection === 'quotes'" class="space-y-6">
+          <QuotesManagement />
+        </div>
       </div>
     </main>
   </div>
@@ -266,6 +328,8 @@ import ProductsManagement from '../components/AdminProducts.vue'
 import ArticlesManagement from '../components/AdminNews.vue'
 import ProjectsManagement from '../components/AdminProjects.vue'
 import GalleryManagement from '../components/AdminGallery.vue'
+import FormsManagement from '../components/AdminForms.vue'
+import QuotesManagement from '../components/AdminQuotes.vue'
 
 const router = useRouter()
 
@@ -274,6 +338,8 @@ const products = ref([])
 const articles = ref([])
 const projects = ref([])
 const gallery = ref([])
+const contactForms = ref([])
+const quotes = ref([])
 const statusMessage = ref('')
 
 const currentDate = computed(() => {
@@ -292,7 +358,9 @@ const sectionTitle = computed(() => {
     products: 'Gestion des Produits',
     articles: 'Gestion des Articles',
     projects: 'Gestion des Projets',
-    gallery: 'Gestion de la Galerie'
+    gallery: 'Gestion de la Galerie',
+    forms: 'Gestion des Formulaires',
+    quotes: 'Gestion des Devis'
   }
   return titles[currentSection.value]
 })
@@ -402,11 +470,39 @@ const loadGallery = async () => {
   }
 }
 
+const loadForms = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'contact_forms'))
+    contactForms.value = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }))
+  } catch (error) {
+    console.error('Erreur chargement formulaires:', error)
+    statusMessage.value = '❌ Erreur lors du chargement des formulaires'
+  }
+}
+
+const loadQuotes = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'quotes'))
+    quotes.value = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }))
+  } catch (error) {
+    console.error('Erreur chargement devis:', error)
+    statusMessage.value = '❌ Erreur lors du chargement des devis'
+  }
+}
+
 onMounted(async () => {
   await loadProducts()
   await loadProjects()
   await loadArticles()
   await loadGallery()
+  await loadForms()
+  await loadQuotes()
 })
 
 const logout = () => {

@@ -7,7 +7,7 @@
       <nav class="flex justify-between items-center px-4 lg:px-6 py-3 lg:py-4">
         <!-- Logo -->
         <RouterLink to="/" class="flex items-center hover:opacity-80 transition-opacity duration-300 group">
-          <img src="@/assets/images/logo.png" alt="EGENT TOGO" class="h-10 w-auto group-hover:scale-110 transition-transform duration-300">
+          <img src="@/assets/images/logo.png" alt="EGENT TOGO" class="h-8 w-auto group-hover:scale-110 transition-transform duration-300">
         </RouterLink>
 
         <!-- Menu Desktop -->
@@ -65,10 +65,10 @@
 
         <!-- CTA Button + Mobile Menu -->
         <div class="flex items-center space-x-2 lg:space-x-3">
-          <button class="hidden lg:block bg-[#016E98] hover:bg-[#EE6D08] text-white font-black px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs" @click="navigateTo('/projets')">
+          <button class="hidden lg:block bg-[#016E98] hover:bg-[#EE6D08] text-white font-bold px-3 py-1.5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs" @click="navigateTo('/projets')">
             Voir nos projets
           </button>
-          <button class="hidden lg:block bg-[#EE6D08] hover:bg-[#016E98] text-white font-black px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs" @click="navigateTo('/devis')">
+          <button class="hidden lg:block bg-[#EE6D08] hover:bg-[#016E98] text-white font-bold px-3 py-1.5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs" @click="navigateTo('/devis')">
             Demander un devis
           </button>
 
