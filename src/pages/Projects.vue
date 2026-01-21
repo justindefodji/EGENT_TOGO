@@ -53,7 +53,7 @@
           <div class="relative h-80 md:h-[450px] lg:h-[500px] animate-fadeInUp animation-delay-400">
             <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group animate-fadeInUp animation-delay-500">
               <img 
-                src="/EGENT_TOGO/images/panneau_montés.jpg" 
+                src="/images/panneau_montés.jpg" 
                 alt="Nos projets"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -209,14 +209,14 @@ const mapProjectDoc = (doc) => {
   // Corriger les anciennes URLs d'images
   if (data.mainImage && data.mainImage.includes('/src/assets/images/')) {
     const filename = data.mainImage.split('/').pop()
-    data.mainImage = `/EGENT_TOGO/images/${filename}`
+    data.mainImage = `/images/${filename}`
   }
   
   if (data.images && Array.isArray(data.images)) {
     data.images = data.images.map(img => {
       if (img && img.includes('/src/assets/images/')) {
         const filename = img.split('/').pop()
-        return `/EGENT_TOGO/images/${filename}`
+        return `/images/${filename}`
       }
       return img
     })
@@ -268,7 +268,7 @@ onMounted(async () => {
   setMeta(
     'Projets - EGENT-TOGO',
     'Explorez nos projets innovants en énergie solaire et solutions durables pour le Togo et l\'Afrique.',
-    projects.value.length > 0 ? projects.value[0].mainImage : '/EGENT_TOGO/images/panneau_montés.jpg',
+    projects.value.length > 0 ? projects.value[0].mainImage : '/images/panneau_montés.jpg',
     '/projets'
   )
 })

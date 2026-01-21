@@ -1,9 +1,10 @@
 /**
- * Composable pour gérer les uploads d'images avec drag & drop
- * Stocke les images en base64 dans Firebase
+ * Composable pour gérer les uploads d'images avec Firebase Storage
+ * Uploade les images sur Firebase Storage et retourne l'URL
  */
 
 import { ref } from 'vue'
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 export function useImageUpload() {
   const uploadStatus = ref({
@@ -13,8 +14,10 @@ export function useImageUpload() {
     success: false
   })
 
+  const storage = getStorage()
+
   /**
-   * Convertit un fichier en base64
+   * Convertit un fichier en base64 (pour preview local)
    */
   const fileToBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -22,6 +25,88 @@ export function useImageUpload() {
       reader.readAsDataURL(file)
       reader.onload = () => resolve(reader.result)
       reader.onerror = (error) => reject(error)
+    })
+  }
+
+  /**
+   * Upload une image sur Firebase Storage et retourne son URL
+   */
+  const uploadImageToStorage = async (file) => {
+    if (!isValidImageFile(file)) {
+      throw new Error(uploadStatus.value.error)
+    }
+
+    try {
+      uploadStatus.value.isUploading = true
+      uploadStatus.value.error = null
+
+      // Générer un nom unique pour le fichier
+      const timestamp = Date.now()
+      const randomStr = Math.random().toString(36).substring(2, 8)
+      const fileName = `${timestamp}-${randomStr}-${file.name}`
+      
+      // Créer la référence de stockage
+      const imageRef = storageRef(storage, `articles/${fileName}`)
+      
+      // Compresser l'image avant upload
+      const compressedFile = await compressImageFile(file)
+      
+      // Uploader le fichier
+      const snapshot = await uploadBytes(imageRef, compressedFile)
+      
+      // Récupérer l'URL de téléchargement
+      const downloadURL = await getDownloadURL(snapshot.ref)
+      
+      uploadStatus.value.success = true
+      uploadStatus.value.progress = 100
+      
+      return downloadURL
+    } catch (error) {
+      uploadStatus.value.error = `Erreur upload: ${error.message}`
+      console.error('Erreur upload Firebase Storage:', error)
+      throw error
+    } finally {
+      uploadStatus.value.isUploading = false
+    }
+  }
+
+  /**
+   * Compresse une image avant upload
+   */
+  const compressImageFile = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        const img = new Image()
+        img.onload = () => {
+          const canvas = document.createElement('canvas')
+          
+          let width = img.width
+          let height = img.height
+          const maxWidth = 1200
+          
+          if (width > maxWidth) {
+            height = (height * maxWidth) / width
+            width = maxWidth
+          }
+          
+          canvas.width = width
+          canvas.height = height
+          
+          const ctx = canvas.getContext('2d')
+          ctx.fillStyle = '#ffffff'
+          ctx.fillRect(0, 0, width, height)
+          ctx.drawImage(img, 0, 0, width, height)
+          
+          canvas.toBlob((blob) => {
+            resolve(blob)
+          }, 'image/jpeg', 0.8)
+        }
+        img.onerror = () => reject(new Error('Impossible de charger l\'image'))
+        img.src = e.target.result
+      }
+      reader.onerror = () => reject(new Error('Erreur lecture fichier'))
+      reader.readAsDataURL(file)
     })
   }
 
@@ -46,47 +131,39 @@ export function useImageUpload() {
   }
 
   /**
-   * Gère le drop d'images (drag & drop)
+   * Gère le drop d'images (drag & drop) - retourne l'URL Firebase Storage
    */
   const handleImageDrop = async (event) => {
     event.preventDefault()
     event.stopPropagation()
     
     const files = event.dataTransfer?.files || event.target?.files || []
-    const imageResults = []
     
     uploadStatus.value.isUploading = true
     uploadStatus.value.error = null
     uploadStatus.value.progress = 0
     
     try {
-      for (let i = 0; i < files.length; i++) {
-        const file = files[i]
-        
-        if (!isValidImageFile(file)) {
-          continue
-        }
-        
-        const base64 = await fileToBase64(file)
-        imageResults.push({
-          src: base64,
-          name: file.name,
-          size: file.size,
-          type: file.type
-        })
-        
-        uploadStatus.value.progress = Math.round(((i + 1) / files.length) * 100)
+      if (files.length === 0) {
+        throw new Error('Aucun fichier sélectionné')
       }
       
-      if (imageResults.length > 0) {
-        uploadStatus.value.success = true
-        uploadStatus.value.progress = 100
+      const file = files[0]
+      
+      if (!isValidImageFile(file)) {
+        throw new Error(uploadStatus.value.error)
       }
       
-      return imageResults
+      // Upload sur Firebase Storage
+      const downloadURL = await uploadImageToStorage(file)
+      
+      uploadStatus.value.success = true
+      uploadStatus.value.progress = 100
+      
+      return downloadURL
     } catch (error) {
-      uploadStatus.value.error = `Erreur upload: ${error.message}`
-      console.error('Erreur upload:', error)
+      uploadStatus.value.error = error.message
+      console.error('Erreur:', error)
       throw error
     } finally {
       uploadStatus.value.isUploading = false
@@ -105,7 +182,7 @@ export function useImageUpload() {
   }
 
   /**
-   * Crée une URL temporaire pour un blob
+   * Crée une URL temporaire pour un blob (pour preview)
    */
   const createObjectURL = (blob) => {
     return URL.createObjectURL(blob)
@@ -122,6 +199,7 @@ export function useImageUpload() {
     uploadStatus,
     handleImageDrop,
     handleFileSelect,
+    uploadImageToStorage,
     fileToBase64,
     isValidImageFile,
     createObjectURL,

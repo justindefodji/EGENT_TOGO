@@ -406,14 +406,14 @@ const mapProjectDoc = (doc) => {
   // Corriger les anciennes URLs d'images
   if (data.mainImage && data.mainImage.includes('/src/assets/images/')) {
     const filename = data.mainImage.split('/').pop()
-    data.mainImage = `/EGENT_TOGO/images/${filename}`
+    data.mainImage = `/images/${filename}`
   }
   
   if (data.images && Array.isArray(data.images)) {
     data.images = data.images.map(img => {
       if (img && img.includes('/src/assets/images/')) {
         const filename = img.split('/').pop()
-        return `/EGENT_TOGO/images/${filename}`
+        return `/images/${filename}`
       }
       return img
     })

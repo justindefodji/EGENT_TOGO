@@ -31,9 +31,6 @@ if (typeof window !== 'undefined') {
   })
   window.gtag = gtag
   window.GA_MEASUREMENT_ID = measurementId
-  
-  // Log pour vérifier l'initialisation
-  console.log('📊 [GA] Google Analytics initialized with ID:', measurementId)
 }
 
 // Router tracking automatique
@@ -44,7 +41,6 @@ router.afterEach((to, from) => {
       page_location: window.location.href,
       page_path: to.path
     })
-    console.log('📊 [GA] Route change tracked:', to.path)
   }
 })
 

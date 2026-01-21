@@ -78,7 +78,7 @@
               :src="image.image"
               :alt="image.title || 'Galerie image'"
               class="w-full h-full object-cover group-hover:brightness-50 transition-all duration-500"
-              @error="(e) => e.target.src = '/EGENT_TOGO/images/montage_panneau2.jpg'"
+              @error="(e) => e.target.src = '/images/montage_panneau2.jpg'"
             />
             <!-- Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
@@ -274,7 +274,7 @@ if (typeof window !== 'undefined') {
 }
 
 const { setMeta } = useSEOMeta()
-const { gallery, loading, initializeGallery } = useFirebaseData()
+const { gallery, loading, error, initializeGallery } = useFirebaseData()
 
 onMounted(() => {
   initializeGallery()

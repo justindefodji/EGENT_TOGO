@@ -176,6 +176,7 @@
 <script setup>
 import { ref, reactive, watch } from 'vue'
 import { useFirebaseData } from '../composables/useFirebaseData'
+import { useImageUpload } from '../composables/useImageUpload'
 import QuillEditor from './QuillEditor.vue'
 
 const props = defineProps({
@@ -188,10 +189,12 @@ const props = defineProps({
 const emit = defineEmits(['save', 'close'])
 
 const { addNews } = useFirebaseData()
+const { uploadImageToStorage } = useImageUpload()
 
 const imageInput = ref(null)
 const dragOverImage = ref(false)
 const saving = ref(false)
+const previewImage = ref(null)
 
 const form = reactive({
   title: '',
@@ -244,76 +247,39 @@ const generateSlug = () => {
 }
 
 // Traiter le drop d'image
-const handleImageDrop = (e) => {
+const handleImageDrop = async (e) => {
   dragOverImage.value = false
   const files = e.dataTransfer.files
   if (files.length > 0) {
-    handleImageFile(files[0])
+    await handleImageFile(files[0])
   }
 }
 
 // Traiter la sélection d'image
-const handleImageSelect = (e) => {
+const handleImageSelect = async (e) => {
   const files = e.target.files
   if (files.length > 0) {
-    handleImageFile(files[0])
+    await handleImageFile(files[0])
   }
 }
 
-// Convertir l'image en Base64 (avec compression)
-const handleImageFile = (file) => {
-  if (!file.type.startsWith('image/')) {
-    errors.image = '❌ Veuillez sélectionner une image'
-    return
-  }
-
-  // Vérifier taille initiale
-  const fileSizeMB = file.size / (1024 * 1024)
-  if (fileSizeMB > 5) {
-    errors.image = `❌ Image trop grosse (${fileSizeMB.toFixed(1)}MB). Maximum 5MB.`
-    return
-  }
-
-  const reader = new FileReader()
-  reader.onload = (e) => {
-    // Compresser l'image avant stockage
-    compressImage(e.target.result, (compressedBase64) => {
-      form.image = compressedBase64
-      errors.image = ''
-    })
-  }
-  reader.readAsDataURL(file)
-}
-
-// Compresser l'image (réduire dimensions et qualité)
-const compressImage = (base64Data, callback) => {
-  const img = new Image()
-  img.onload = () => {
-    const canvas = document.createElement('canvas')
-    
-    // Réduire à 1200px max en largeur (bon pour web)
-    let width = img.width
-    let height = img.height
-    const maxWidth = 1200
-    
-    if (width > maxWidth) {
-      height = (height * maxWidth) / width
-      width = maxWidth
+// Upload l'image sur Firebase Storage
+const handleImageFile = async (file) => {
+  try {
+    // Créer un preview local d'abord
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      previewImage.value = e.target.result
     }
-    
-    canvas.width = width
-    canvas.height = height
-    
-    const ctx = canvas.getContext('2d')
-    ctx.fillStyle = '#ffffff'
-    ctx.fillRect(0, 0, width, height)
-    ctx.drawImage(img, 0, 0, width, height)
-    
-    // Convertir en JPEG avec qualité réduite (0.7 = 70%)
-    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7)
-    callback(compressedBase64)
+    reader.readAsDataURL(file)
+
+    // Uploader sur Firebase Storage
+    const downloadURL = await uploadImageToStorage(file)
+    form.image = downloadURL
+    errors.image = ''
+  } catch (error) {
+    errors.image = error.message
   }
-  img.src = base64Data
 }
 
 // Valider le formulaire

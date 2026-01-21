@@ -113,7 +113,7 @@ export function useFirebaseData() {
         // Corriger les anciennes URLs d'images
         if (data.image && data.image.includes('/src/assets/images/')) {
           const filename = data.image.split('/').pop()
-          data.image = `/EGENT_TOGO/images/${filename}`
+          data.image = `/images/${filename}`
         }
         return {
           id: doc.id,

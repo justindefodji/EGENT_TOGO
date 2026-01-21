@@ -25,7 +25,6 @@ export function useAnalytics() {
         page_title: pageName,
         page_location: pageLocation || window.location.href
       })
-      console.log('📊 [GA] Page view tracked:', pageName)
     }
   }
 
@@ -41,7 +40,6 @@ export function useAnalytics() {
         ...eventData,
         timestamp: new Date().toISOString()
       })
-      console.log('📊 [GA] Event tracked:', eventName, eventData)
     }
   }
 
@@ -189,7 +187,6 @@ export function useAnalytics() {
         value: conversionValue,
         currency: 'XOF'
       })
-      console.log('📊 [GA] Conversion tracked:', conversionId)
     }
   }
 
@@ -203,7 +200,6 @@ export function useAnalytics() {
       gtagInstance('config', {
         'user_id': userId
       })
-      console.log('📊 [GA] User ID set:', userId)
     }
   }
 
@@ -216,7 +212,6 @@ export function useAnalytics() {
       gtagInstance('config', {
         'user_properties': properties
       })
-      console.log('📊 [GA] User properties set:', properties)
     }
   }
 
@@ -226,7 +221,6 @@ export function useAnalytics() {
   const optOut = () => {
     if (typeof window !== 'undefined') {
       window[`ga-disable-${window.GA_MEASUREMENT_ID}`] = true
-      console.log('📊 [GA] User opted out')
     }
   }
 
@@ -236,7 +230,6 @@ export function useAnalytics() {
   const optIn = () => {
     if (typeof window !== 'undefined') {
       delete window[`ga-disable-${window.GA_MEASUREMENT_ID}`]
-      console.log('📊 [GA] User opted in')
     }
   }
 

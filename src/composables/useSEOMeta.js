@@ -32,7 +32,6 @@ export function useSEOMeta() {
    */
   const resolveImageUrl = (imagePath) => {
     if (!imagePath) {
-      console.warn('⚠️ [SEO Meta] Aucune image fournie - utilisation de l\'image par défaut')
       return `${getBaseUrl()}/src/assets/images/logo.png`
     }
     
@@ -40,13 +39,11 @@ export function useSEOMeta() {
     
     // Si c'est déjà une URL absolue (http/https) - PRÉFÉRÉ pour les réseaux sociaux
     if (imagePath.startsWith('http')) {
-      console.log('✅ [SEO Meta] URL absolue détectée:', imagePath)
       return imagePath
     }
     
     // Si c'est une URL de données (base64) - NON RECOMMANDÉ pour les réseaux sociaux
     if (imagePath.startsWith('data:')) {
-      console.warn('⚠️ [SEO Meta] URL base64 détectée - non recommandée pour le partage social')
       return imagePath
     }
     
@@ -54,13 +51,11 @@ export function useSEOMeta() {
     if (imagePath.includes('/') || imagePath.includes('\\')) {
       // Pour les images dans src/assets, on les sert depuis /src/assets/
       const resolvedUrl = `${baseUrl}/src${imagePath.startsWith('/') ? '' : '/'}${imagePath}`
-      console.log('✅ [SEO Meta] Image locale résolue:', resolvedUrl)
       return resolvedUrl
     }
     
     // Chemin par défaut
     const defaultUrl = `${baseUrl}${imagePath.startsWith('/') ? '' : '/'}${imagePath}`
-    console.log('✅ [SEO Meta] Chemin par défaut résolu:', defaultUrl)
     return defaultUrl
   }
 
@@ -90,16 +85,6 @@ export function useSEOMeta() {
     // ✅ AFFICHAGE DE L'IMAGE RÉSOLVUE POUR VÉRIFICATION
     const ogImageTag = document.querySelector('meta[property="og:image"]')
     const twitterImageTag = document.querySelector('meta[name="twitter:image"]')
-    
-    console.log('🔍 [SEO Meta Validator] Vérification complète des métadonnées:')
-    console.log({
-      statut: isValid ? '✅ VALIDE' : '❌ INCOMPLET',
-      détails: checks,
-      imageOG: ogImageTag?.content || '❌ Manquante',
-      imageTwitter: twitterImageTag?.content || '❌ Manquante',
-      horodatage: new Date().toLocaleTimeString('fr-FR'),
-      prêtPourPartage: isValid ? '✅ OUI - Images affichées sur réseaux sociaux' : '❌ NON - Correction nécessaire'
-    })
     
     return { isValid, details: checks }
   }
@@ -231,22 +216,6 @@ export function useSEOMeta() {
     script.type = 'application/ld+json'
     script.textContent = JSON.stringify(jsonLdData)
     document.head.appendChild(script)
-
-    // ✅ LOG DE VÉRIFICATION - IMPORTANT POUR LE DÉBOGAGE
-    console.log('=' * 50)
-    console.log('🤖 [SEO Meta Robot] ✅ Métadonnées mises à jour avec SUCCÈS:')
-    console.log({
-      titre: title,
-      description: description,
-      imageUrl: imageUrl,  // ✅ AFFICHÉE POUR LE PARTAGE SOCIAL
-      urlComplète: fullUrl,
-      typeOG: ogType,
-      tailleImage: `${imageWidth}x${imageHeight}`,
-      nombreTags: ogTags.length,
-      heureMaj: new Date().toLocaleTimeString('fr-FR'),
-      statut: '✅ PRÊT POUR LES RÉSEAUX SOCIAUX'
-    })
-    console.log('=' * 50)
 
     // ✅ Valider après mise à jour
     setTimeout(() => {
