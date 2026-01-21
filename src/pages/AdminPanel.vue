@@ -376,7 +376,7 @@ const loadProducts = async () => {
     }))
   } catch (error) {
     console.error('Erreur chargement produits:', error)
-    statusMessage.value = '❌ Erreur lors du chargement des produits'
+    statusMessage.value = '❌  Erreur lors du chargement des produits'
   }
 }
 
@@ -396,7 +396,7 @@ const loadProjects = async () => {
     }
   } catch (error) {
     console.error('Erreur chargement projets:', error)
-    statusMessage.value = '❌ Erreur lors du chargement des projets'
+    statusMessage.value = '❌  Erreur lors du chargement des projets'
   }
 }
 
