@@ -33,6 +33,7 @@
               :src="article.image" 
               :alt="article.title"
               class="w-full h-full object-cover"
+              @error="(e) => e.target.src = 'https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=800&h=600&fit=crop'"
             />
           </div>
 
@@ -107,6 +108,7 @@
                       :src="relatedArticle.image"
                       :alt="relatedArticle.title"
                       class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      @error="(e) => e.target.src = 'https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=400&h=300&fit=crop'"
                     />
                   </div>
                   <div class="p-6">
@@ -232,10 +234,20 @@ const editingArticle = ref(null)
 const loadArticles = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, 'articles'))
-    articles.value = querySnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }))
+    articles.value = querySnapshot.docs.map(doc => {
+      const data = doc.data()
+      
+      // Si l'image est en Base64 (très longue), utiliser un placeholder
+      if (data.image && data.image.startsWith('data:image')) {
+        console.warn('⚠️ Image Base64 détectée - utiliser placeholder')
+        data.image = 'https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=800&h=600&fit=crop'
+      }
+      
+      return {
+        id: doc.id,
+        ...data
+      }
+    })
   } catch (error) {
     console.error('Erreur chargement articles:', error)
   }

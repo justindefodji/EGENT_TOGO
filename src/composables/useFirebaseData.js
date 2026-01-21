@@ -89,10 +89,20 @@ export function useFirebaseData() {
       error.value = null
       const q = query(collection(db, 'articles'), orderBy('createdAt', 'desc'))
       const querySnapshot = await getDocs(q)
-      articles.value = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }))
+      articles.value = querySnapshot.docs.map(doc => {
+        const data = doc.data()
+        
+        // Détecter et corriger les images Base64 (très longues)
+        if (data.image && data.image.startsWith('data:image')) {
+          console.warn('⚠️ Image Base64 détectée pour:', data.title)
+          data.image = 'https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=800&h=600&fit=crop'
+        }
+        
+        return {
+          id: doc.id,
+          ...data
+        }
+      })
     } catch (err) {
       console.error('Erreur chargement articles:', err)
       error.value = err.message
