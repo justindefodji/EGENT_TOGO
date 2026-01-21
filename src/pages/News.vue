@@ -247,13 +247,18 @@
             :style="{ animationDelay: (0.1 * index) + 's' }"
           >
             <!-- Image -->
-            <div class="relative overflow-hidden h-56 bg-gray-200">
+            <div v-if="article.image" class="relative overflow-hidden h-56 bg-gray-200">
               <img 
                 :src="article.image" 
                 :alt="article.title"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                @error="(e) => e.target.src = 'https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=400&h=300&fit=crop'"
               />
+              <!-- Category Badge -->
+              <div class="absolute top-4 left-4 bg-[#EE6D08] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
+                {{ article.category || 'Actualité' }}
+              </div>
+            </div>
+            <div v-else class="relative h-56 bg-gray-300">
               <!-- Category Badge -->
               <div class="absolute top-4 left-4 bg-[#EE6D08] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
                 {{ article.category || 'Actualité' }}

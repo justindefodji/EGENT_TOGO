@@ -28,12 +28,11 @@
         <!-- Article Hero -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <!-- Image -->
-          <div v-if="article" class="rounded-3xl overflow-hidden h-96 bg-gray-100">
+          <div v-if="article && article.image" class="rounded-3xl overflow-hidden h-96 bg-gray-100">
             <img 
               :src="article.image" 
               :alt="article.title"
               class="w-full h-full object-cover"
-              @error="(e) => e.target.src = 'https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=800&h=600&fit=crop'"
             />
           </div>
 
@@ -103,14 +102,14 @@
                   :to="`/article/${relatedArticle.slug}`"
                   class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div class="h-48 overflow-hidden bg-gray-100">
+                  <div v-if="relatedArticle.image" class="h-48 overflow-hidden bg-gray-100">
                     <img 
                       :src="relatedArticle.image"
                       :alt="relatedArticle.title"
                       class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      @error="(e) => e.target.src = 'https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=400&h=300&fit=crop'"
                     />
                   </div>
+                  <div v-else class="h-48 bg-gray-300"></div>
                   <div class="p-6">
                     <p class="text-[#FF9D35] font-semibold text-xs uppercase tracking-widest mb-2">
                       {{ relatedArticle.category }}
@@ -234,20 +233,10 @@ const editingArticle = ref(null)
 const loadArticles = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, 'articles'))
-    articles.value = querySnapshot.docs.map(doc => {
-      const data = doc.data()
-      
-      // Si l'image est en Base64 (très longue), utiliser un placeholder
-      if (data.image && data.image.startsWith('data:image')) {
-        console.warn('⚠️ Image Base64 détectée - utiliser placeholder')
-        data.image = 'https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=800&h=600&fit=crop'
-      }
-      
-      return {
-        id: doc.id,
-        ...data
-      }
-    })
+    articles.value = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }))
   } catch (error) {
     console.error('Erreur chargement articles:', error)
   }
