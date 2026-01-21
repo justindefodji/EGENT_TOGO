@@ -17,7 +17,7 @@
         <div class="text-center">
           <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest">Restez informé</p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
-            Actualités EGENT-TOGO - \u00c9nergie Solaire et <span class="text-[#EE6D08]">Innovations</span> au Togo
+            Actualités EGENT TOGO  
           </h1>
           <!-- <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             Découvrez les dernières nouvelles, innovations et réalisations du groupe EGENT-TOGO. <br>
@@ -37,7 +37,7 @@
     </div>
 
     <!-- Video Section - Overlapping Hero and News -->
-    <div class="relative -mt-24 md:-mt-32 lg:-mt-40 -mb-12 md:-mb-16 lg:-mb-20 z-20">
+    <div class="relative -mt-24 md:-mt-34 lg:-mt-40 -mb-12 md:-mb-16 lg:-mb-20 z-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative rounded-3xl overflow-hidden shadow-2xl h-64 md:h-80 lg:h-96 bg-black group">
           <!-- Video ou Image Fallback -->

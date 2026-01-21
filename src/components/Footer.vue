@@ -32,11 +32,13 @@
         <div>
           <h3 class="font-black text-xl text-white mb-6">Services</h3>
           <ul class="space-y-3 text-blue-50">
-            <li><a href="#" class="hover:text-[#EE6D08] transition-colors duration-300">Électricité Générale</a></li>
-            <li><a href="#" class="hover:text-[#EE6D08] transition-colors duration-300">Climatisation & Froid</a></li>
-            <li><a href="#" class="hover:text-[#EE6D08] transition-colors duration-300">Énergie Solaire</a></li>
-            <li><a href="#" class="hover:text-[#EE6D08] transition-colors duration-300">Installation</a></li>
-            <li><a href="#" class="hover:text-[#EE6D08] transition-colors duration-300">Maintenance</a></li>
+            <li><RouterLink to="/services" class="hover:text-[#EE6D08] transition-colors duration-300">Tous les Services</RouterLink></li>
+            <li><RouterLink to="/service/energie-solaire" class="hover:text-[#EE6D08] transition-colors duration-300">Énergie Solaire</RouterLink></li>
+            <li><RouterLink to="/service/electricite-generale" class="hover:text-[#EE6D08] transition-colors duration-300">Électricité Générale</RouterLink></li>
+            <li><RouterLink to="/service/climatisation-froid" class="hover:text-[#EE6D08] transition-colors duration-300">Climatisation & Froid</RouterLink></li>
+            <li><RouterLink to="/service/plomberie" class="hover:text-[#EE6D08] transition-colors duration-300">Plomberie</RouterLink></li>
+            <li><RouterLink to="/service/fourniture-equipements" class="hover:text-[#EE6D08] transition-colors duration-300">Fourniture d'Équipements</RouterLink></li>
+            <li><RouterLink to="/service/consulting" class="hover:text-[#EE6D08] transition-colors duration-300">consulting</RouterLink></li>
           </ul>
         </div>
 

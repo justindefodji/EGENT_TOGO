@@ -13,7 +13,7 @@
         <div class="flex items-start justify-center w-full">
           <!-- Content -->
           <div class="z-10 max-w-4xl text-center pt-16 md:pt-32 px-2 sm:px-4">
-            <h1 class="text-4xl md:text-5xl lg:text-7xl font-black leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
+            <h1 class="text-4xl md:text-5xl lg:text-5xl font-black leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
               <span class="text-white">Écrivons l'Avenir de </span>
               <span class="text-[#FF9D35]">l'Énergie</span>
               <br />
