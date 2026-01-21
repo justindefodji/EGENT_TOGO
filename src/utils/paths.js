@@ -1,6 +1,6 @@
 /**
  * Utility for constructing URLs with proper base path
- * Works with both local dev (/) and GitHub Pages (/EGENT_TOGO/)
+ * Works with both local dev (/) and custom domains
  */
 
 export function getImageUrl(imagePath) {
