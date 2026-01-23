@@ -300,7 +300,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { auth } from '../lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../lib/firebase'
-import { useSEOMeta } from '../composables/useSEOMeta'
+import { useOpenGraphMeta } from '../composables/useOpenGraphMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 import ArticleFormModal from '../components/ArticleFormModal.vue'
 
@@ -317,7 +317,7 @@ if (typeof window !== 'undefined') {
   document.head.appendChild(script)
 }
 
-const { setMeta } = useSEOMeta()
+const { setArticleMeta, getArticleJsonLD, injectJsonLD } = useOpenGraphMeta()
 const { deleteNews, updateNews } = useFirebaseData()
 const router = useRouter()
 const route = useRoute()
@@ -358,20 +358,29 @@ const findRelatedArticles = () => {
 // ✅ WATCHER POUR METTRE À JOUR LES MÉTADONNÉES DÈS QUE L'ARTICLE EST CHARGÉ
 watch(article, (newArticle) => {
   if (newArticle && newArticle.title && newArticle.image) {
-    console.log('👀 [ArticleDetail] Article détecté, mise à jour des métadonnées...')
+    console.log('👀 [ArticleDetail] Article détecté, configuration Open Graph...')
     
-    setMeta(
-      `${newArticle.title} - EGENT-TOGO`,
-      newArticle.excerpt || newArticle.title,
-      newArticle.image,  // ✅ IMAGE CRITIQUE POUR LE PARTAGE
-      `/article/${newArticle.slug || route.params.slug}`,
-      {
-        type: 'article',
-        siteName: 'EGENT-TOGO'
-      }
-    )
+    // Configuration des meta tags Open Graph
+    setArticleMeta({
+      titre: `${newArticle.title} - EGENT-TOGO`,
+      description: newArticle.excerpt || newArticle.title,
+      image: newArticle.image,
+      url: `/article/${newArticle.slug || route.params.slug}`,
+      date: newArticle.date || new Date().toISOString(),
+      categorie: newArticle.category || 'Articles'
+    })
     
-    console.log('✅ [ArticleDetail] Métadonnées mises à jour pour:', newArticle.title)
+    // Injecter les données structurées JSON-LD
+    const jsonLd = getArticleJsonLD({
+      titre: newArticle.title,
+      description: newArticle.excerpt || newArticle.title,
+      image: newArticle.image,
+      url: `/article/${newArticle.slug || route.params.slug}`,
+      date: newArticle.date || new Date().toISOString()
+    })
+    injectJsonLD(jsonLd)
+    
+    console.log('✅ [ArticleDetail] Métadonnées OG configurées pour:', newArticle.title)
   }
 }, { deep: true })
 
@@ -391,16 +400,24 @@ onMounted(async () => {
     findRelatedArticles()
     
     // ✅ MISE À JOUR INITIALE DES MÉTADONNÉES
-    setMeta(
-      `${foundArticle.title} - EGENT-TOGO`,
-      foundArticle.excerpt || foundArticle.title,
-      foundArticle.image,  // ✅ IMAGE CRITIQUE POUR LE PARTAGE
-      `/article/${articleSlug}`,
-      {
-        type: 'article',
-        siteName: 'EGENT-TOGO'
-      }
-    )
+    setArticleMeta({
+      titre: `${foundArticle.title} - EGENT-TOGO`,
+      description: foundArticle.excerpt || foundArticle.title,
+      image: foundArticle.image,
+      url: `/article/${articleSlug}`,
+      date: foundArticle.date || new Date().toISOString(),
+      categorie: foundArticle.category || 'Articles'
+    })
+    
+    // Injecter les données structurées JSON-LD
+    const jsonLd = getArticleJsonLD({
+      titre: foundArticle.title,
+      description: foundArticle.excerpt || foundArticle.title,
+      image: foundArticle.image,
+      url: `/article/${articleSlug}`,
+      date: foundArticle.date || new Date().toISOString()
+    })
+    injectJsonLD(jsonLd)
   } else {
     router.push('/actualites')
     return

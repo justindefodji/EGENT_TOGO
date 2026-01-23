@@ -21,6 +21,7 @@ import DataImport from './pages/DataImport.vue'
 import AddImagesToGallery from './pages/AddImagesToGallery.vue'
 import ImportProductsPage from './pages/ImportProductsPage.vue'
 import Debug from './pages/Debug.vue'
+import MetaTagsDebug from './pages/MetaTagsDebug.vue'
 
 // Composants Admin
 import AdminNews from './components/AdminNews.vue'
@@ -145,6 +146,12 @@ const routes = [
     name: 'Debug',
     component: Debug,
     meta: { title: 'Débogage' }
+  },
+  {
+    path: '/debug-meta-tags',
+    name: 'MetaTagsDebug',
+    component: MetaTagsDebug,
+    meta: { title: 'Test Meta Tags Open Graph' }
   }
 ]
 

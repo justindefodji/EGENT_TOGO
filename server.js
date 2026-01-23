@@ -136,22 +136,31 @@ async function getPrerenderedPage(slug) {
 
 /**
  * Middleware pour déterminer si c'est un crawler
+ * ⚠️ CRITIQUE: Les réseaux sociaux ne peuvent pas exécuter JavaScript
+ * Ce serveur fait du pre-rendering (server-side rendering) pour les crawlers
  */
 function isCrawler(userAgent) {
   const crawlers = [
-    'facebookexternalhit',
-    'twitterbot',
-    'linkedinbot',
-    'whatsapp',
-    'telegram',
-    'slurp',
-    'googlebot',
-    'bingbot',
-    'yandexbot',
-    'baiduspider'
-  ];
+    'facebookexternalhit',      // Facebook
+    'twitterbot',               // Twitter/X
+    'linkedinbot',              // LinkedIn
+    'whatsapp',                 // WhatsApp - IMPORTANT!
+    'telegram',                 // Telegram
+    'slurp',                    // Yahoo
+    'googlebot',                // Google
+    'bingbot',                  // Bing
+    'yandexbot',                // Yandex
+    'baiduspider',              // Baidu
+    'discordbot',               // Discord
+    'pinterest',                // Pinterest
+    'vkontakte',                // VK
+    'msnbot',                   // MSN
+    'baiduspider',              // Baidu
+    'duckduckbot',              // DuckDuckGo
+    'sogou'                     // Sogou
+  ]
 
-  return crawlers.some(crawler => userAgent.toLowerCase().includes(crawler));
+  return crawlers.some(crawler => userAgent.toLowerCase().includes(crawler))
 }
 
 /**
