@@ -211,8 +211,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { collection, getDocs, query, orderBy, addDoc, updateDoc, deleteDoc, doc, serverTimestamp } from 'firebase/firestore'
-import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage'
-import { db, storage } from '../lib/firebase'
+import { db } from '../lib/firebase'
 
 // État
 const gallery = ref([])
@@ -297,6 +296,36 @@ const handleFileInput = (e) => {
   }
 }
 
+// Compresser une image
+const compressImage = (base64Data, callback) => {
+  const img = new Image()
+  img.onload = () => {
+    const canvas = document.createElement('canvas')
+    let width = img.width
+    let height = img.height
+    
+    // Réduire la taille max à 800px pour les images
+    const maxWidth = 800
+    if (width > maxWidth) {
+      height = (height * maxWidth) / width
+      width = maxWidth
+    }
+    
+    canvas.width = width
+    canvas.height = height
+    
+    const ctx = canvas.getContext('2d')
+    ctx.fillStyle = '#ffffff'
+    ctx.fillRect(0, 0, width, height)
+    ctx.drawImage(img, 0, 0, width, height)
+    
+    // Compression très agressive: 0.5 = 50% de qualité
+    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.5)
+    callback(compressedBase64)
+  }
+  img.src = base64Data
+}
+
 // Lire l'image
 const readImage = (file) => {
   if (!file.type.startsWith('image/')) {
@@ -312,7 +341,11 @@ const readImage = (file) => {
   currentFile.value = file
   const reader = new FileReader()
   reader.onload = (e) => {
-    previewImage.value = e.target.result  // Preview locale UNIQUEMENT
+    // Compresser l'image avant d'afficher la preview
+    compressImage(e.target.result, (compressedBase64) => {
+      previewImage.value = compressedBase64  // Afficher la preview comprimée
+      formData.value.imageUrl = compressedBase64  // Stocker le base64 comprimé
+    })
   }
   reader.onerror = () => {
     showStatus('❌ Erreur lors de la lecture de l\'image', 'error')
@@ -335,27 +368,12 @@ const submitForm = async () => {
       throw new Error('Veuillez sélectionner une image')
     }
 
-    let imageUrl = formData.value.imageUrl
-
-    // Si une nouvelle image a été sélectionnée, l'uploader vers Firebase Storage
-    if (currentFile.value) {
-      isUploadingImage.value = true
-      statusMessage.value = '⏳ Upload de l\'image...'
-      
-      const timestamp = Date.now()
-      const fileName = `gallery/${timestamp}_${currentFile.value.name}`
-      const fileRef = storageRef(storage, fileName)
-      
-      await uploadBytes(fileRef, currentFile.value)
-      imageUrl = await getDownloadURL(fileRef)
-      currentFile.value = null
-    }
-
+    // Les images restent en base64 (stockées directement dans Firestore)
     const data = {
       title: formData.value.title,
       category: formData.value.category,
       description: formData.value.description || '',
-      imageUrl: imageUrl
+      imageUrl: formData.value.imageUrl
     }
 
     if (isEditing.value) {

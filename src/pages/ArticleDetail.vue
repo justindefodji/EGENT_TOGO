@@ -27,13 +27,28 @@
 
         <!-- Article Hero -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Image -->
-          <div v-if="article && article.image" class="rounded-3xl overflow-hidden h-96 bg-gray-100">
-            <img 
-              :src="article.image" 
-              :alt="article.title"
-              class="w-full h-full object-cover"
-            />
+          <!-- Images Section -->
+          <div class="flex flex-col gap-4">
+            <!-- Main Image -->
+            <div v-if="article && article.image" class="relative bg-gray-100 rounded-3xl overflow-hidden h-96">
+              <img 
+                :src="article.image" 
+                :alt="article.title"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            
+            <!-- Thumbnails for Supplementary Images -->
+            <div v-if="article && article.images && article.images.length > 0" class="grid grid-cols-3 gap-4">
+              <img 
+                v-for="(image, index) in article.images"
+                :key="index"
+                :src="image"
+                :alt="`${article.title} - Image ${index + 1}`"
+                class="w-full h-24 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                @click="article.image = image"
+              />
+            </div>
           </div>
 
           <!-- Info -->
@@ -88,6 +103,28 @@
                 ></div>
                 <div v-else class="text-gray-500 italic">
                   Contenu de l'article non disponible
+                </div>
+              </div>
+            </div>
+
+            <!-- Galerie d'images supplémentaires -->
+            <div v-if="article && article.images && article.images.length > 0" class="mt-12">
+              <h2 class="text-3xl font-black text-[#016E98] mb-8">Galerie photos</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div 
+                  v-for="(image, idx) in article.images"
+                  :key="idx"
+                  class="relative rounded-2xl overflow-hidden h-64 bg-gray-200 hover:shadow-lg transition-shadow cursor-pointer group"
+                  @click="openImageModal(idx)"
+                >
+                  <img 
+                    :src="image"
+                    :alt="`${article.title} - Image ${idx + 1}`"
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center pointer-events-none">
+                    <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -191,6 +228,69 @@
       @save="saveArticle"
       @close="closeEditModal"
     />
+
+    <!-- Lightbox Modal pour Galerie -->
+    <div v-if="showImageModal && article && article.images" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+      <!-- Main Image -->
+      <div class="relative w-full max-w-5xl h-full flex items-center justify-center">
+        <!-- Close Button -->
+        <button
+          @click="closeImageModal"
+          class="absolute top-6 right-6 text-white hover:text-gray-300 text-3xl transition-colors z-10"
+          title="Fermer"
+        >
+          ✕
+        </button>
+
+        <!-- Previous Button -->
+        <button
+          @click="previousImage"
+          class="absolute left-6 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full w-12 h-12 flex items-center justify-center transition-colors z-10"
+          title="Image précédente"
+        >
+          <i class="fas fa-chevron-left text-2xl"></i>
+        </button>
+
+        <!-- Image Display -->
+        <div class="w-full max-h-[80vh] flex items-center justify-center">
+          <img
+            :src="article.images[currentImageIndex]"
+            :alt="`${article.title} - Image ${currentImageIndex + 1}`"
+            class="max-w-full max-h-full object-contain rounded-lg"
+          />
+        </div>
+
+        <!-- Next Button -->
+        <button
+          @click="nextImage"
+          class="absolute right-6 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full w-12 h-12 flex items-center justify-center transition-colors z-10"
+          title="Image suivante"
+        >
+          <i class="fas fa-chevron-right text-2xl"></i>
+        </button>
+
+        <!-- Counter -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded-full text-sm font-semibold">
+          {{ currentImageIndex + 1 }} / {{ article.images.length }}
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2 overflow-x-auto max-w-[90%] pb-2">
+          <button
+            v-for="(image, idx) in article.images"
+            :key="idx"
+            @click="currentImageIndex = idx"
+            :class="[
+              'flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all',
+              currentImageIndex === idx ? 'border-[#FF9D35] scale-110' : 'border-white/30 hover:border-white/60'
+            ]"
+            title="`Image ${idx + 1}`"
+          >
+            <img :src="image" :alt="`Thumbnail ${idx + 1}`" class="w-full h-full object-cover" />
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -229,6 +329,8 @@ const loading = ref(true)
 const isAdmin = ref(false)
 const showEditModal = ref(false)
 const editingArticle = ref(null)
+const showImageModal = ref(false)
+const currentImageIndex = ref(0)
 
 const loadArticles = async () => {
   try {
@@ -405,6 +507,32 @@ const copyToClipboard = async () => {
   } catch (error) {
     console.error('❌ Erreur copie:', error)
     alert('❌ Erreur lors de la copie')
+  }
+}
+
+// Galerie photos
+const openImageModal = (index) => {
+  currentImageIndex.value = index
+  showImageModal.value = true
+}
+
+const closeImageModal = () => {
+  showImageModal.value = false
+}
+
+const previousImage = () => {
+  if (currentImageIndex.value > 0) {
+    currentImageIndex.value--
+  } else {
+    currentImageIndex.value = article.value.images.length - 1
+  }
+}
+
+const nextImage = () => {
+  if (currentImageIndex.value < article.value.images.length - 1) {
+    currentImageIndex.value++
+  } else {
+    currentImageIndex.value = 0
   }
 }
 </script>

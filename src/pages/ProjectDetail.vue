@@ -288,14 +288,16 @@
             />
           </div>
 
-          <!-- Description courte -->
+          <!-- Description -->
           <div>
             <label class="block text-sm font-bold text-gray-700 mb-2">Description</label>
-            <textarea 
+            <QuillEditor 
               v-model="editForm.description"
-              rows="3"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-            ></textarea>
+              class="rounded-lg border border-gray-300"
+            />
+            <p class="text-xs text-gray-500 mt-2">
+              💡 Utilisez l'éditeur ci-dessus pour formatter votre texte. Pas besoin de connaître le HTML!
+            </p>
           </div>
 
           <!-- Image principale -->
@@ -621,6 +623,7 @@ import { db } from '../lib/firebase'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 import { projects as staticProjects } from '../data/projects.js'
+import QuillEditor from '../components/QuillEditor.vue'
 
 // Google Analytics - Dynamic Loading
 if (typeof window !== 'undefined') {
@@ -759,6 +762,7 @@ const openEditModal = () => {
     date: project.value.date || '',
     slug: project.value.slug || '',
     description: project.value.description || '',
+    details: project.value.details || '',
     mainImage: project.value.mainImage || '',
     images: project.value.images ? JSON.parse(JSON.stringify(project.value.images)) : [],
     results: project.value.results ? JSON.parse(JSON.stringify(project.value.results)) : [],
@@ -778,6 +782,7 @@ const closeEditModal = () => {
     date: '',
     slug: '',
     description: '',
+    details: '',
     mainImage: '',
     images: [],
     results: [],
@@ -898,6 +903,7 @@ const saveProject = async () => {
       date: editForm.value.date,
       slug: editForm.value.slug,
       description: editForm.value.description,
+      details: editForm.value.details,
       mainImage: editForm.value.mainImage,
       results: editForm.value.results,
       mainCharacteristics: editForm.value.mainCharacteristics,

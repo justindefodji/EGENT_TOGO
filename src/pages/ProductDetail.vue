@@ -298,13 +298,14 @@
 
           <!-- Long Description (HTML) -->
           <div>
-            <label class="block text-sm font-bold text-gray-700 mb-2">Description longue (HTML)</label>
-            <textarea 
+            <label class="block text-sm font-bold text-gray-700 mb-2">Description longue</label>
+            <QuillEditor 
               v-model="editForm.longDescription"
-              rows="4"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 font-mono text-sm"
-              placeholder="HTML autorisé. Ex: <h3>Titre</h3> <ul><li>Item</li></ul>"
-            ></textarea>
+              class="rounded-lg border border-gray-300"
+            />
+            <p class="text-xs text-gray-500 mt-2">
+              💡 Utilisez l'éditeur ci-dessus pour formatter votre texte. Pas besoin de connaître le HTML!
+            </p>
           </div>
 
           <!-- Images -->
@@ -600,6 +601,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { collection, getDocs, query, doc, updateDoc } from 'firebase/firestore'
 import { db, auth } from '../lib/firebase'
 import { useSEOMeta } from '../composables/useSEOMeta'
+import QuillEditor from '../components/QuillEditor.vue'
 
 // Initialize Google Analytics
 if (typeof window !== 'undefined') {
@@ -666,6 +668,7 @@ const checkAdminStatus = () => {
 const openEditModal = () => {
   // Copier les données du produit dans le formulaire
   editForm.value = {
+    id: product.value.id,
     name: product.value.name || '',
     category: product.value.category || '',
     price: product.value.price || '',
@@ -674,6 +677,7 @@ const openEditModal = () => {
     description: product.value.description || '',
     longDescription: product.value.longDescription || '',
     mainImage: product.value.mainImage || '',
+    images: product.value.images ? JSON.parse(JSON.stringify(product.value.images)) : [],
     mainCharacteristics: product.value.mainCharacteristics ? JSON.parse(JSON.stringify(product.value.mainCharacteristics)) : [],
     advantages: product.value.advantages ? JSON.parse(JSON.stringify(product.value.advantages)) : [],
     specs: product.value.specs ? JSON.parse(JSON.stringify(product.value.specs)) : []

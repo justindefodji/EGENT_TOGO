@@ -88,20 +88,6 @@
               ref="imageInput"
             />
             
-            <!-- État: pas d'image -->
-            <div v-if="!previewImage" class="space-y-3">
-              <div class="text-4xl">🖼️</div>
-              <p class="text-gray-700 font-semibold">Glissez une image ici</p>
-              <p class="text-sm text-gray-600">ou cliquez pour sélectionner</p>
-              <button 
-                @click="$refs.imageInput.click()"
-                type="button"
-                class="text-blue-600 hover:text-blue-700 font-semibold px-6 py-2 bg-blue-50 rounded-lg inline-block"
-              >
-                <i class="fas fa-cloud-upload-alt mr-2"></i>Sélectionner
-              </button>
-            </div>
-
             <!-- État: upload en cours -->
             <div v-if="isUploadingImage" class="space-y-3">
               <div class="animate-spin text-4xl">⏳</div>
@@ -143,6 +129,84 @@
           </div>
 
           <p v-if="errors.image" class="text-red-600 text-xs mt-1">{{ errors.image }}</p>
+        </div>
+
+        <!-- Images Supplémentaires -->
+        <div>
+          <label class="block text-sm font-bold text-gray-700 mb-2">Images supplémentaires (glisser-déposer)</label>
+          <div
+            @drop.prevent="handleDrop"
+            @dragover.prevent="handleDragOver"
+            @dragleave.prevent="handleDragLeave"
+            :class="[
+              'border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors',
+              isDraggingImages ? 'border-blue-500 bg-blue-50' : 'border-gray-300 hover:border-gray-400'
+            ]"
+          >
+            <input 
+              type="file"
+              accept="image/*"
+              multiple
+              @change="handleSupplementaryImageSelect"
+              class="hidden"
+              ref="fileInputSupplementary"
+            />
+            
+            <div class="space-y-3">
+              <div class="text-4xl">📸</div>
+              <p class="text-gray-600 font-semibold">Glissez vos images ici</p>
+              <p class="text-sm text-gray-500">ou cliquez pour sélectionner</p>
+              <button 
+                @click="$refs.fileInputSupplementary?.click()"
+                type="button"
+                class="text-blue-600 hover:text-blue-700 font-semibold px-6 py-2 bg-blue-50 rounded-lg inline-block"
+              >
+                <i class="fas fa-cloud-upload-alt mr-2"></i>Sélectionner des images
+              </button>
+            </div>
+          </div>
+
+          <!-- Aperçu des images en attente -->
+          <div v-if="pendingImages.length > 0" class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div v-for="image in pendingImages" :key="image.id" class="relative">
+              <img :src="image.src" :alt="image.fileName" class="w-full h-32 object-cover rounded-lg" />
+              <button
+                type="button"
+                @click="removeImage(image.id)"
+                class="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-8 h-8 flex items-center justify-center transition"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+
+          <!-- Bouton Ajouter Images -->
+          <div v-if="pendingImages.length > 0" class="mt-4">
+            <button
+              type="button"
+              @click="addImagesToArticle"
+              class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition"
+            >
+              ✅ Ajouter {{ pendingImages.length }} image(s)
+            </button>
+          </div>
+
+          <!-- Images Confirmées -->
+          <div v-if="form.images && form.images.length > 0" class="mt-4">
+            <p class="text-sm font-semibold text-gray-700 mb-2">Images ajoutées ({{ form.images.length }})</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div v-for="(image, idx) in form.images" :key="idx" class="relative">
+                <img :src="image" :alt="`Image ${idx + 1}`" class="w-full h-32 object-cover rounded-lg" />
+                <button
+                  type="button"
+                  @click="form.images.splice(idx, 1)"
+                  class="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-8 h-8 flex items-center justify-center transition"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Excerpt (Résumé) -->
@@ -236,18 +300,22 @@ const { addNews, updateNews } = useFirebaseData()
 const { compressImage, isValidImageFile } = useImageCompression()
 
 const imageInput = ref(null)
+const fileInputSupplementary = ref(null)
 const dragOverImage = ref(false)
+const isDraggingImages = ref(false)
 const saving = ref(false)
 const isUploadingImage = ref(false)
 const statusMessage = ref('')
 const currentFile = ref(null)
 const previewImage = ref(null)  // Preview + stockage en base64 compressé
+const pendingImages = ref([])
 
 const form = reactive({
   title: '',
   slug: '',
   category: '',
   image: '',
+  images: [],
   excerpt: '',
   content: '',
   date: new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: 'numeric' }),
@@ -271,10 +339,12 @@ watch(() => props.article, (newArticle) => {
     form.category = newArticle.category || ''
     form.image = newArticle.image || ''
     previewImage.value = newArticle.image || ''  // URL depuis Firestore
+    form.images = newArticle.images ? JSON.parse(JSON.stringify(newArticle.images)) : []
     form.excerpt = newArticle.excerpt || ''
     form.content = newArticle.content || ''
     form.date = newArticle.date || ''
     form.author = newArticle.author || 'EGENT-TOGO'
+    pendingImages.value = []
   }
 }, { immediate: true })
 
@@ -357,6 +427,88 @@ const handleImageFile = async (file) => {
   }
 }
 
+// Gérer les images supplémentaires (drag & drop)
+const handleDragOver = (e) => {
+  e.preventDefault()
+  isDraggingImages.value = true
+}
+
+const handleDragLeave = () => {
+  isDraggingImages.value = false
+}
+
+const handleDrop = (e) => {
+  e.preventDefault()
+  isDraggingImages.value = false
+  const files = Array.from(e.dataTransfer.files).filter(file => file.type.startsWith('image/'))
+  processImageFiles(files)
+}
+
+const handleSupplementaryImageSelect = (e) => {
+  const files = Array.from(e.target.files).filter(file => file.type.startsWith('image/'))
+  processImageFiles(files)
+}
+
+// Compresser une image
+const compressImageBase64 = (base64Data, callback) => {
+  const img = new Image()
+  img.onload = () => {
+    const canvas = document.createElement('canvas')
+    let width = img.width
+    let height = img.height
+    
+    const maxWidth = 800
+    if (width > maxWidth) {
+      height = (height * maxWidth) / width
+      width = maxWidth
+    }
+    
+    canvas.width = width
+    canvas.height = height
+    
+    const ctx = canvas.getContext('2d')
+    ctx.fillStyle = '#ffffff'
+    ctx.fillRect(0, 0, width, height)
+    ctx.drawImage(img, 0, 0, width, height)
+    
+    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.5)
+    callback(compressedBase64)
+  }
+  img.src = base64Data
+}
+
+// Traiter les fichiers images supplémentaires
+const processImageFiles = (files) => {
+  files.forEach(file => {
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      compressImageBase64(e.target.result, (compressedBase64) => {
+        pendingImages.value.push({
+          id: Date.now() + Math.random(),
+          src: compressedBase64,
+          fileName: file.name
+        })
+      })
+    }
+    reader.readAsDataURL(file)
+  })
+}
+
+// Retirer une image en attente
+const removeImage = (id) => {
+  pendingImages.value = pendingImages.value.filter(img => img.id !== id)
+}
+
+// Ajouter les images aux articles
+const addImagesToArticle = () => {
+  if (pendingImages.value.length > 0) {
+    const newImages = pendingImages.value.map(img => img.src)
+    form.images = [...(form.images || []), ...newImages]
+    pendingImages.value = []
+    statusMessage.value = `✅ ${newImages.length} image(s) ajoutée(s)!`
+  }
+}
+
 // Valider le formulaire
 const validateForm = () => {
   errors.title = ''
@@ -396,6 +548,7 @@ const submitForm = async () => {
       slug: form.slug,
       category: form.category,
       image: form.image,  // Base64 compressé < 300KB
+      images: form.images || [],  // Images supplémentaires
       excerpt: form.excerpt,
       content: form.content,
       date: form.date,

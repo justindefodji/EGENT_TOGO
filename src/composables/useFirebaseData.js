@@ -110,6 +110,10 @@ export function useFirebaseData() {
       const querySnapshot = await getDocs(q)
       gallery.value = querySnapshot.docs.map(doc => {
         const data = doc.data()
+        // Normaliser le champ image (support imageUrl du nouvel AdminGallery et image de l'ancien)
+        if (!data.image && data.imageUrl) {
+          data.image = data.imageUrl
+        }
         // Corriger les anciennes URLs d'images
         if (data.image && data.image.includes('/src/assets/images/')) {
           const filename = data.image.split('/').pop()
