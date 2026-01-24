@@ -278,18 +278,18 @@
             @click="navigateTo(`/produits/${product.slug || product.id}`)"
           >
             <!-- Product Image Section -->
-            <div v-if="product.image || product.mainImage" class="relative w-full h-72 overflow-hidden bg-gray-200">
+            <div v-if="product.image || product.mainImage" class="relative w-full h-auto overflow-hidden bg-gray-200 flex items-center justify-center">
               <img 
                 :src="product.image || product.mainImage" 
                 :alt="product.name || product.title || 'Produit'"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                 @error="(e) => e.target.src = '/images/montage_panneau.jpg'"
               />
               <!-- Hover Overlay -->
               <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
             </div>
             <!-- Placeholder if no image -->
-            <div v-else class="w-full h-72 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+            <div v-else class="w-full h-80 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
               <div class="text-center">
                 <i class="fas fa-image text-gray-400 text-4xl mb-2 block"></i>
                 <p class="text-gray-500 text-sm">Image à venir</p>

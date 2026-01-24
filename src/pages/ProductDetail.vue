@@ -29,11 +29,11 @@
           <!-- Images Section -->
           <div class="flex flex-col gap-4 animate-fadeInUp animation-delay-300">
             <!-- Main Image -->
-            <div class="relative bg-gray-100 rounded-3xl overflow-hidden w-full h-72 sm:h-80 md:h-96 lg:h-[28rem] flex items-center justify-center">
+            <div class="relative bg-gray-100 rounded-3xl overflow-hidden w-full h-auto flex items-center justify-center">
               <img 
                 :src="product.mainImage || '/images/montage_panneau.jpg'" 
                 :alt="product.name"
-                class="w-full h-full object-contain md:object-contain lg:object-contain"
+                class="w-full h-auto object-contain"
                 @error="(e) => e.target.src = '/images/montage_panneau.jpg'"
               />
             </div>
