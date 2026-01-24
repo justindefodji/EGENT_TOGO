@@ -13,9 +13,9 @@ import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/fire
 // Configuration Firebase (depuis votre .env ou config)
 const firebaseConfig = {
   apiKey: process.env.VITE_FIREBASE_API_KEY || "AIzaSyANlMpC7fOc5Z2f-jKVz3VJ_2L2pKu9QrE",
-  authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN || "egent-togo-ca36f.firebaseapp.com",
-  projectId: process.env.VITE_FIREBASE_PROJECT_ID || "egent-togo-ca36f",
-  storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET || "egent-togo-ca36f.firebasestorage.app",
+  authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN || "EGENT TOGO-ca36f.firebaseapp.com",
+  projectId: process.env.VITE_FIREBASE_PROJECT_ID || "EGENT TOGO-ca36f",
+  storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET || "EGENT TOGO-ca36f.firebasestorage.app",
   messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "897858491783",
   appId: process.env.VITE_FIREBASE_APP_ID || "1:897858491783:web:6e4f3b8b3c2a1d9e5f7g8h"
 }
@@ -88,7 +88,7 @@ async function fetchArticles() {
             image: image.startsWith('http') ? image : 'https://alifoe.github.io/EGENT_TOGO' + image,
             category,
             date: dateStr,
-            author: 'EGENT-TOGO'
+            author: 'EGENT TOGO'
           })
         }
       } catch (err) {

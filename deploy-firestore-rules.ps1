@@ -1,7 +1,7 @@
 # Script PowerShell pour appliquer les règles Firestore
 # Utilise Firebase CLI
 
-Write-Host "🔐 Configuration des Règles Firestore - EGENT-TOGO" -ForegroundColor Cyan
+Write-Host "🔐 Configuration des Règles Firestore - EGENT TOGO" -ForegroundColor Cyan
 Write-Host "=================================================="
 Write-Host ""
 
@@ -26,7 +26,7 @@ firebase login
 
 Write-Host ""
 Write-Host "📂 Configuration du projet..." -ForegroundColor Cyan
-firebase use EGENT-TOGO
+firebase use EGENT TOGO
 
 Write-Host ""
 Write-Host "🔐 Application des règles Firestore..." -ForegroundColor Cyan

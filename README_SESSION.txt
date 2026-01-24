@@ -8,7 +8,7 @@
       └─ Articles on /actualites
       └─ Article Details on /article/:slug
       └─ Responsive design (mobile/tablet/desktop)
-      └─ EGENT-TOGO colors preserved
+      └─ EGENT TOGO colors preserved
 
    📸 Social Media Sharing
       └─ Facebook Share (with image)
@@ -120,7 +120,7 @@
    ✓ Route Navigation           (All paths working)
    ✓ Error Handling             (Try-catch blocks)
    ✓ User Feedback              (Status messages)
-   ✓ Design Consistency         (EGENT-TOGO colors)
+   ✓ Design Consistency         (EGENT TOGO colors)
 
 ═══════════════════════════════════════════════════════════════════
 

@@ -1,7 +1,7 @@
 {
-  "name": "egent-togo-functions",
+  "name": "EGENT TOGO-functions",
   "version": "1.0.0",
-  "description": "Cloud Functions for EGENT-TOGO - Meta tags pre-rendering",
+  "description": "Cloud Functions for EGENT TOGO - Meta tags pre-rendering",
   "main": "index.js",
   "scripts": {
     "serve": "firebase emulators:start --only functions",

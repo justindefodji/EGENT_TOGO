@@ -122,12 +122,12 @@ export function useDataImport() {
           date: '5 Jan 2026',
           image: '/images/montage_panneau.jpg',
           excerpt: 'Découvrez le lancement officiel de notre nouveau centre de formation.',
-          seoDescription: 'EGENT-TOGO inaugure un nouveau centre de formation moderne équipé de technologies dernier cri.',
+          seoDescription: 'EGENT TOGO inaugure un nouveau centre de formation moderne équipé de technologies dernier cri.',
           keywords: 'centre de formation, formation, Togo',
-          author: 'EGENT-TOGO',
+          author: 'EGENT TOGO',
           readingTime: 4,
           content: [
-            'EGENT-TOGO a le plaisir d\'annoncer l\'inauguration officielle de son nouveau centre de formation.',
+            'EGENT TOGO a le plaisir d\'annoncer l\'inauguration officielle de son nouveau centre de formation.',
             'Avec une surface de 5000 m², le centre accueille plus de 200 apprenants simultanément.',
             'L\'équipe EGENT TOGO a été très professionnelle et les installations sont ultramodernes.'
           ],
@@ -140,15 +140,15 @@ export function useDataImport() {
           category: 'Partenariat',
           date: '2 Jan 2026',
           image: '/images/montage_panneau.jpg',
-          excerpt: 'EGENT-TOGO établit un partenariat stratégique avec des leaders mondiaux.',
-          seoDescription: 'EGENT-TOGO signe un partenariat stratégique avec des entreprises internationales majeures.',
+          excerpt: 'EGENT TOGO établit un partenariat stratégique avec des leaders mondiaux.',
+          seoDescription: 'EGENT TOGO signe un partenariat stratégique avec des entreprises internationales majeures.',
           keywords: 'partenariat, collaboration, innovation',
-          author: 'EGENT-TOGO',
+          author: 'EGENT TOGO',
           readingTime: 3,
           content: [
-            'EGENT-TOGO a signé un accord de partenariat historique avec plusieurs entreprises internationales.',
+            'EGENT TOGO a signé un accord de partenariat historique avec plusieurs entreprises internationales.',
             'Ce partenariat vise à renforcer notre capacité à offrir des solutions innovantes et durables.',
-            'Cette alliance stratégique positionne EGENT-TOGO comme un acteur clé du marché africain.'
+            'Cette alliance stratégique positionne EGENT TOGO comme un acteur clé du marché africain.'
           ],
           published: true
         },
@@ -159,13 +159,13 @@ export function useDataImport() {
           category: 'Reconnaissance',
           date: '30 Déc 2025',
           image: '/images/montage_panneau.jpg',
-          excerpt: 'EGENT-TOGO reçoit plusieurs distinctions pour son excellence opérationnelle.',
-          seoDescription: 'EGENT-TOGO reçoit le prix Excellence et Innovation 2025 pour son excellence.',
+          excerpt: 'EGENT TOGO reçoit plusieurs distinctions pour son excellence opérationnelle.',
+          seoDescription: 'EGENT TOGO reçoit le prix Excellence et Innovation 2025 pour son excellence.',
           keywords: 'prix, excellence, reconnaissance',
-          author: 'EGENT-TOGO',
+          author: 'EGENT TOGO',
           readingTime: 3,
           content: [
-            'EGENT-TOGO a remporté le prestigieux prix "Excellence et Innovation 2025".',
+            'EGENT TOGO a remporté le prestigieux prix "Excellence et Innovation 2025".',
             'Cette reconnaissance récompense nos efforts continus en matière de qualité et d\'innovation.',
             'Cette récompense nous motive à poursuivre notre quête d\'excellence.'
           ],
@@ -179,12 +179,12 @@ export function useDataImport() {
           date: '25 Déc 2025',
           image: '/images/montage_panneau.jpg',
           excerpt: 'Nous recrutons 50 nouveaux professionnels pour renforcer nos équipes.',
-          seoDescription: 'EGENT-TOGO recrute 50 nouveaux professionnels dans divers domaines.',
+          seoDescription: 'EGENT TOGO recrute 50 nouveaux professionnels dans divers domaines.',
           keywords: 'recrutement, emploi, carrière',
-          author: 'EGENT-TOGO',
+          author: 'EGENT TOGO',
           readingTime: 2,
           content: [
-            'EGENT-TOGO accélère son recrutement et prévoit d\'intégrer 50 nouveaux collaborateurs.',
+            'EGENT TOGO accélère son recrutement et prévoit d\'intégrer 50 nouveaux collaborateurs.',
             'Cette expansion reflète notre croissance continue et notre ambition de servir davantage de clients.',
             'Nous recherchons des professionnels dans plusieurs domaines: techniques, ventes, gestion.'
           ],

@@ -209,7 +209,7 @@
                     <div>
                       <p class="font-bold text-[#016E98] mb-2">À savoir</p>
                       <p class="text-sm text-gray-700">
-                        Restez informé des dernières actualités de EGENT-TOGO.
+                        Restez informé des dernières actualités de EGENT TOGO.
                       </p>
                     </div>
                   </div>
@@ -362,7 +362,7 @@ watch(article, (newArticle) => {
     
     // Configuration des meta tags Open Graph
     setArticleMeta({
-      titre: `${newArticle.title} - EGENT-TOGO`,
+      titre: `${newArticle.title} - EGENT TOGO`,
       description: newArticle.excerpt || newArticle.title,
       image: newArticle.image,
       url: `/article/${newArticle.slug || route.params.slug}`,
@@ -401,7 +401,7 @@ onMounted(async () => {
     
     // ✅ MISE À JOUR INITIALE DES MÉTADONNÉES
     setArticleMeta({
-      titre: `${foundArticle.title} - EGENT-TOGO`,
+      titre: `${foundArticle.title} - EGENT TOGO`,
       description: foundArticle.excerpt || foundArticle.title,
       image: foundArticle.image,
       url: `/article/${articleSlug}`,

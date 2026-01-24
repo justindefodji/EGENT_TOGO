@@ -126,7 +126,7 @@ def parse_articles(html):
                 'image': image,
                 'category': category,
                 'date': date_str,
-                'author': 'EGENT-TOGO'
+                'author': 'EGENT TOGO'
             }
 
             articles.append(article)

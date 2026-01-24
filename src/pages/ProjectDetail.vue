@@ -737,11 +737,11 @@ const findProject = () => {
     currentImage.value = foundProject.mainImage || foundProject.images?.[0]
     
     setMeta(
-      `${project.value.title} - EGENT-TOGO`,
+      `${project.value.title} - EGENT TOGO`,
       project.value.description,
       currentImage.value,
       `/projets/${slug}`,
-      { type: 'article', siteName: 'EGENT-TOGO' }
+      { type: 'article', siteName: 'EGENT TOGO' }
     )
   } else {
     router.push('/projets')

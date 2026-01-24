@@ -257,5 +257,5 @@ Le serveur est prêt à être déployé sur:
 
 ═══════════════════════════════════════════════════════════════════════════════
 
-Développé avec ❤️ pour EGENT-TOGO
+Développé avec ❤️ pour EGENT TOGO
 Les images s'affichent maintenant correctement partout! 🎉

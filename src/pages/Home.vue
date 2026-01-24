@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full overflow-x-hidden">
     <!-- Hero Section -->
     <div class="flex justify-center pt-8 pb-4 animate-pulse">
       <span class="text-xl md:text-2xl font-black text-[#2F7914] tracking-widest uppercase animate-bounce"></span>

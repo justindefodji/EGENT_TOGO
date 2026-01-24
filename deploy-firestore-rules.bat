@@ -3,7 +3,7 @@ REM Script PowerShell pour déployer les règles Firestore facilement
 REM Windows batch script
 
 echo.
-echo 🔐 Deployment des Règles Firestore - EGENT-TOGO
+echo 🔐 Deployment des Règles Firestore - EGENT TOGO
 echo ================================================
 echo.
 

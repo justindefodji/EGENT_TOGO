@@ -171,7 +171,7 @@ const { setArticleMeta } = useOpenGraphMeta()
 
 const articleSlug = ref('test-article')
 const testMeta = ref({
-  titre: 'Test Article - EGENT-TOGO',
+  titre: 'Test Article - EGENT TOGO',
   description: 'Ceci est un article de test pour vérifier les meta tags Open Graph',
   image: 'https://via.placeholder.com/1200x630'
 })

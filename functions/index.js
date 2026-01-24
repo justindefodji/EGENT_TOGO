@@ -105,7 +105,7 @@ app.get('/article/:slug', async (req, res) => {
     const image = article.image || article.imagePrincipale || article.coverImage || `${SITE_URL}/og-default.png`
     const articleUrl = `${SITE_URL}/article/${slug}`
     const date = article.date ? formatDate(article.date) : formatDate(new Date())
-    const author = escapeHtml(article.author || article.auteur || 'EGENT-TOGO')
+    const author = escapeHtml(article.author || article.auteur || 'EGENT TOGO')
     const category = escapeHtml(article.category || article.categorie || 'Actualités')
 
     console.log(`[Article] ✅ Trouvé: ${titre}`)
@@ -119,7 +119,7 @@ app.get('/article/:slug', async (req, res) => {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Meta tags de base -->
-  <title>${titre} - EGENT-TOGO</title>
+  <title>${titre} - EGENT TOGO</title>
   <meta name="description" content="${description}">
   <meta name="author" content="${author}">
   
@@ -132,7 +132,7 @@ app.get('/article/:slug', async (req, res) => {
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:url" content="${articleUrl}" />
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="EGENT-TOGO" />
+  <meta property="og:site_name" content="EGENT TOGO" />
   <meta property="og:locale" content="fr_FR" />
   
   <!-- Article spécifique -->

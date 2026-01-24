@@ -6,7 +6,7 @@
 echo "🤖 [Metadata Robot Test Script]"
 echo "================================"
 echo ""
-echo "Test des métadonnées SEO pour EGENT-TOGO"
+echo "Test des métadonnées SEO pour EGENT TOGO"
 echo ""
 
 # Configuration

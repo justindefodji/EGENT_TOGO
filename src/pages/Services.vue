@@ -426,7 +426,7 @@ onMounted(() => {
   
   // Définir les métadonnées Open Graph pour la page Services
   setMeta(
-    'Services - EGENT-TOGO',
+    'Services - EGENT TOGO',
     'Explorez nos services : énergie solaire, électricité générale et climatisation. Solutions durables adaptées à vos besoins.',
     '/src/assets/images/chauffage_egent.jpg',
     '/services'

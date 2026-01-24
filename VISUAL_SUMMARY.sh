@@ -127,7 +127,7 @@ cat << 'EOF'
 L'HTML de la page article contient maintenant:
 
 <!-- OPEN GRAPH (Facebook, LinkedIn, Pinterest) -->
-<meta property="og:title" content="Inauguration du nouveau centre - EGENT-TOGO">
+<meta property="og:title" content="Inauguration du nouveau centre - EGENT TOGO">
 <meta property="og:description" content="Découvrez le lancement officiel...">
 <meta property="og:image" content="https://storage.firebase.com/articles/...jpg">
 <meta property="og:url" content="http://localhost:5174/EGENT_TOGO/article/inauguration">
@@ -135,7 +135,7 @@ L'HTML de la page article contient maintenant:
 
 <!-- TWITTER CARD -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Inauguration du nouveau centre - EGENT-TOGO">
+<meta name="twitter:title" content="Inauguration du nouveau centre - EGENT TOGO">
 <meta name="twitter:description" content="Découvrez le lancement officiel...">
 <meta name="twitter:image" content="https://storage.firebase.com/articles/...jpg">
 
@@ -219,13 +219,13 @@ Après le contenu de l'article, section automatique:
 │  APRÈS (Maintenant OK):                            │
 │  ────────────────────────────────────────────────── │
 │  setMeta(                                           │
-│    "Titre - EGENT-TOGO",                           │
+│    "Titre - EGENT TOGO",                           │
 │    "Description de l'article",                      │
 │    "https://...image.jpg",                          │
 │    "/article/slug",                                 │
 │    {                                                │
 │      type: 'article',                               │
-│      siteName: 'EGENT-TOGO'                         │
+│      siteName: 'EGENT TOGO'                         │
 │    }                                                │
 │  )                                                  │
 │                                                     │
@@ -271,7 +271,7 @@ Après le contenu de l'article, section automatique:
    ├─ Meta tags Open Graph automatiques
    ├─ Partage social sur 4 réseaux
    ├─ Articles liés par catégorie
-   └─ Design EGENT-TOGO intact
+   └─ Design EGENT TOGO intact
 
 ✅ Social Sharing Opérationnel
    ├─ Lien partagé avec image attachée

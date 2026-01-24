@@ -11,7 +11,7 @@ import { getFirestore } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 import { getStorage } from 'firebase/storage'
 
-// ⚠️ CONFIGURATION FIREBASE - EGENT-TOGO
+// ⚠️ CONFIGURATION FIREBASE - EGENT TOGO
 const firebaseConfig = {
   apiKey: "AIzaSyAMdQcFCUcZd6Lqj2oyb6VZRKd2Z_PvDcI",
   authDomain: "egenttogo-edc4e.firebaseapp.com",

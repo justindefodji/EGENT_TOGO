@@ -266,7 +266,7 @@ onMounted(async () => {
   
   // Définir les métadonnées Open Graph pour la page Projets
   setMeta(
-    'Projets - EGENT-TOGO',
+    'Projets - EGENT TOGO',
     'Explorez nos projets innovants en énergie solaire et solutions durables pour le Togo et l\'Afrique.',
     projects.value.length > 0 ? projects.value[0].mainImage : '/images/panneau_montés.jpg',
     '/projets'

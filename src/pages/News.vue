@@ -20,7 +20,7 @@
             Actualités EGENT TOGO  
           </h1>
           <!-- <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-            Découvrez les dernières nouvelles, innovations et réalisations du groupe EGENT-TOGO. <br>
+            Découvrez les dernières nouvelles, innovations et réalisations du groupe EGENT TOGO. <br>
             <br>Suivez notre actualité pour rester connecté à nos développements.
           </p> -->
         </div>
@@ -30,7 +30,7 @@
       <!-- <div class="relative w-full h-80 md:h-96 flex items-center justify-center overflow-hidden">
         <img 
           src="@/assets/images/custom/imagefont01.jpg" 
-          alt="EGENT-TOGO Services"
+          alt="EGENT TOGO Services"
           class="w-full h-full object-cover"
         />
       </div> -->
@@ -60,7 +60,7 @@
           <img 
             v-if="!videoLoaded"
             src="https://images.unsplash.com/photo-1509391366360-2e0b3f3446ea?w=1200&h=600&fit=crop" 
-            alt="EGENT-TOGO Actualités"
+            alt="EGENT TOGO Actualités"
             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
         </div>
@@ -295,7 +295,7 @@
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">Restez Informé</h2>
         <p class="text-lg md:text-xl text-gray-100 mb-12">
-          Abonnez-vous à notre newsletter pour recevoir les dernières actualités, innovations et opportunités du groupe EGENT-TOGO.
+          Abonnez-vous à notre newsletter pour recevoir les dernières actualités, innovations et opportunités du groupe EGENT TOGO.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
           <input 
@@ -352,13 +352,13 @@ onMounted(async () => {
   
   // \u2705 SEO OPTIMIS\u00c9 POUR LA PAGE ACTUALIT\u00c9S
   setMeta(
-    'Actualit\u00e9s EGENT-TOGO - Derni\u00e8res Nouvelles en \u00c9nergie Solaire au Togo',
-    'Restez inform\u00e9 des derni\u00e9res actualit\u00e9s, innovations et r\u00e9alisations d\'EGENT-TOGO en \u00e9nergie solaire, climatisation et solutions durables au Togo.',
+    'Actualit\u00e9s EGENT TOGO - Derni\u00e8res Nouvelles en \u00c9nergie Solaire au Togo',
+    'Restez inform\u00e9 des derni\u00e9res actualit\u00e9s, innovations et r\u00e9alisations d\'EGENT TOGO en \u00e9nergie solaire, climatisation et solutions durables au Togo.',
     '/src/assets/images/montage_panneau.jpg',
     '/actualites',
     {
       type: 'website',
-      siteName: 'EGENT-TOGO',
+      siteName: 'EGENT TOGO',
       imageWidth: '1200',
       imageHeight: '630'
     }

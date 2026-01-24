@@ -197,7 +197,7 @@
    A: No! Everything is ready to use. Just test and enjoy!
 
    Q: What about the design?
-   A: Design is 100% preserved. Same EGENT-TOGO colors and layout.
+   A: Design is 100% preserved. Same EGENT TOGO colors and layout.
 
    Q: When can I add articles?
    A: After AdminNews.vue is built (2-3 hour job - see plan)

@@ -67,7 +67,7 @@ export function useOpenGraphMeta() {
     image, 
     url = '/',
     date = null,
-    auteur = 'EGENT-TOGO',
+    auteur = 'EGENT TOGO',
     categorie = null 
   }) => {
     
@@ -97,7 +97,7 @@ export function useOpenGraphMeta() {
         { property: 'og:image:alt', content: titre },
         { property: 'og:url', content: fullUrl },
         { property: 'og:type', content: 'article' },
-        { property: 'og:site_name', content: 'EGENT-TOGO' },
+        { property: 'og:site_name', content: 'EGENT TOGO' },
         { property: 'og:locale', content: 'fr_TG' },
         
         // ========================================
@@ -166,7 +166,7 @@ export function useOpenGraphMeta() {
         { property: 'og:image:alt', content: titre },
         { property: 'og:url', content: fullUrl },
         { property: 'og:type', content: type },
-        { property: 'og:site_name', content: 'EGENT-TOGO' },
+        { property: 'og:site_name', content: 'EGENT TOGO' },
         { name: 'description', content: description },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: titre },
@@ -201,7 +201,7 @@ export function useOpenGraphMeta() {
     image, 
     url,
     date,
-    auteur = 'EGENT-TOGO'
+    auteur = 'EGENT TOGO'
   }) => {
     const baseUrl = getBaseUrl()
     
@@ -219,7 +219,7 @@ export function useOpenGraphMeta() {
       },
       publisher: {
         '@type': 'Organization',
-        name: 'EGENT-TOGO',
+        name: 'EGENT TOGO',
         logo: {
           '@type': 'ImageObject',
           url: `${baseUrl}/src/assets/images/logo.png`,

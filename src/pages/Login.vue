@@ -18,7 +18,7 @@
               alt="EGENT TOGO Logo" 
               class="h-16 w-auto mx-auto mb-4 drop-shadow-lg hover:scale-110 transition-transform duration-300"
             >
-            <!-- <h1 class="text-3xl font-black text-[#016E98]">EGENT-TOGO</h1> -->
+            <!-- <h1 class="text-3xl font-black text-[#016E98]">EGENT TOGO</h1> -->
             <p class="text-sm font-semibold text-[#EE6D08] mt-2 tracking-widest uppercase">Espace Administrateur</p>
           </div>
 
@@ -126,7 +126,7 @@
           <span class="text-2xl">🔒</span>
           <div>
             <p class="text-sm font-semibold text-[#016E98]">Zone Sécurisée</p>
-            <p class="text-xs text-gray-600 mt-1">Réservée aux administrateurs d'EGENT-TOGO</p>
+            <p class="text-xs text-gray-600 mt-1">Réservée aux administrateurs d'EGENT TOGO</p>
             <p class="text-xs text-gray-500 mt-1">Authentification sécurisée via Firebase</p>
           </div>
         </div>

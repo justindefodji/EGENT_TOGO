@@ -29,7 +29,7 @@ export function useMetaRobot() {
     // Appeler le robot SEO
     setMeta(title, description, image, pathname, {
       type,
-      siteName: 'EGENT-TOGO',
+      siteName: 'EGENT TOGO',
       locale: 'fr_FR',
       imageWidth: '1200',
       imageHeight: '630'

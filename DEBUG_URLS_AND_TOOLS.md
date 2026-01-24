@@ -206,7 +206,7 @@ Chaque document doit avoir:
   content: "<p>Contenu complet...</p>",
   category: "News" ou "Inaugurations" etc,
   date: "2026-01-23",
-  author: "EGENT-TOGO",
+  author: "EGENT TOGO",
   images: [                                    ← Images supplémentaires
     "https://...",
     "https://..."
@@ -295,7 +295,7 @@ On devrait voir:
 │   [IMAGE 1200x630 de l'article]        │
 │                                         │
 │ Inauguration du Nouveau Centre         │
-│ EGENT-TOGO                             │
+│ EGENT TOGO                             │
 │                                         │
 │ Découvrez notre nouvel espace de       │
 │ 5000 m² entièrement dédié aux          │

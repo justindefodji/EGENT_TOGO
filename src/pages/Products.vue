@@ -357,7 +357,7 @@ onMounted(() => {
   
   // Définir les métadonnées Open Graph pour la page Produits
   setMeta(
-    'Produits - EGENT-TOGO',
+    'Produits - EGENT TOGO',
     'Découvrez nos produits phares : Kit Zoklin, FreeWater, Lampadaires EGENT SOLAR et Armoire Billy.',
     '/src/assets/images/montage_panneau2.jpg',
     '/produits'

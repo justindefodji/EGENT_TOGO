@@ -6,7 +6,7 @@ param(
     [string]$Slug = "notre-engagement-en-faveur-de-la-durabilit"
 )
 
-Write-Host "🧪 Test Meta Tags Articles - EGENT-TOGO" -ForegroundColor Green
+Write-Host "🧪 Test Meta Tags Articles - EGENT TOGO" -ForegroundColor Green
 Write-Host "=======================================" -ForegroundColor Green
 Write-Host ""
 

@@ -253,7 +253,7 @@
           <input 
             v-model="form.author"
             type="text"
-            placeholder="Ex: EGENT-TOGO"
+            placeholder="Ex: EGENT TOGO"
             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
@@ -319,7 +319,7 @@ const form = reactive({
   excerpt: '',
   content: '',
   date: new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: 'numeric' }),
-  author: 'EGENT-TOGO'
+  author: 'EGENT TOGO'
 })
 
 const errors = reactive({
@@ -343,7 +343,7 @@ watch(() => props.article, (newArticle) => {
     form.excerpt = newArticle.excerpt || ''
     form.content = newArticle.content || ''
     form.date = newArticle.date || ''
-    form.author = newArticle.author || 'EGENT-TOGO'
+    form.author = newArticle.author || 'EGENT TOGO'
     pendingImages.value = []
   }
 }, { immediate: true })

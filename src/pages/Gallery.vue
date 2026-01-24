@@ -20,7 +20,7 @@
             Galerie de nos <span class="text-[#EE6D08]">réalisations</span> en énergie solaire et climatisation
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
-            Explorez notre galerie de projets d'énergie solaire, installations de climatisation et solutions durables. Découvrez les réalisations concrètes d'EGENT-TOGO au Togo et en Afrique de l'Ouest.
+            Explorez notre galerie de projets d'énergie solaire, installations de climatisation et solutions durables. Découvrez les réalisations concrètes d'EGENT TOGO au Togo et en Afrique de l'Ouest.
           </p>
         </div>
       </div>
@@ -218,7 +218,7 @@
     <section id="map-section" class="bg-white py-20 md:py-32 animate-fadeInUp">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Visitez-nous</h2>
+          <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Visualisez quelqu'unes de nos réalisations</h2>
           <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-200">Trouvez notre localisation sur la carte</p>
         </div>
         <div class="rounded-3xl overflow-hidden shadow-2xl h-96 md:h-96 border-4 border-gray-100 hover:shadow-3xl transition-all duration-300 animate-fadeInUp animation-delay-400">
@@ -240,7 +240,7 @@
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fadeInUp">
         <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-6 leading-tight animate-slideInDown">Prêt à concrétiser votre projet ?</h2>
         <p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed animate-fadeInUp animation-delay-200">
-          Découvrez comment EGENT-TOGO peut transformer votre vision en réalité avec des solutions innovantes et durables.
+          Découvrez comment EGENT TOGO peut transformer votre vision en réalité avec des solutions innovantes et durables.
         </p>
         <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/contact" class="px-8 py-4 bg-secondary text-white font-bold rounded-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
@@ -343,13 +343,13 @@ onMounted(() => {
   window.addEventListener('keydown', handleKeypress)
   
   setMeta(
-    'Galerie EGENT-TOGO - Réalisations en Énergie Solaire et Climatisation',
+    'Galerie EGENT TOGO - Réalisations en Énergie Solaire et Climatisation',
     'Galerie de projets d\'énergie solaire, lampadaires LED et solutions durables. Découvrez nos 500+ réalisations et installations au Togo, Afrique de l\'Ouest.',
     '/src/assets/images/montage_panneau.jpg',
     '/galerie',
     {
       type: 'website',
-      siteName: 'EGENT-TOGO',
+      siteName: 'EGENT TOGO',
       imageWidth: '1200',
       imageHeight: '630'
     }

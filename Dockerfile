@@ -1,4 +1,4 @@
-# Dockerfile pour EGENT-TOGO
+# Dockerfile pour EGENT TOGO
 FROM node:20-alpine
 
 # Définir le répertoire de travail

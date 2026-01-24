@@ -143,5 +143,5 @@ Le robot est 100% opérationnel et prêt pour la production.
 
 ═══════════════════════════════════════════════════════════════════════════════
 
-Développé avec ❤️ pour EGENT-TOGO
+Développé avec ❤️ pour EGENT TOGO
 Les images s'affichent maintenant correctement! 🎉

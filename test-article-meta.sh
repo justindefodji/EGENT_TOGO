@@ -3,7 +3,7 @@
 # 🧪 Script de test pour la configuration Meta Tags Open Graph
 # Usage: bash test-article-meta.sh
 
-echo "🧪 Test Meta Tags Articles - EGENT-TOGO"
+echo "🧪 Test Meta Tags Articles - EGENT TOGO"
 echo "========================================"
 echo ""
 

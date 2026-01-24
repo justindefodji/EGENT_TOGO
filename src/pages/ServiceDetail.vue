@@ -296,7 +296,7 @@ export default {
           const pathname = `/services/${this.service.slug}`;
           const description = this.service.description || `Découvrez notre service ${this.service.name}`;
           setMeta(
-            this.service.name + ' - EGENT-TOGO',
+            this.service.name + ' - EGENT TOGO',
             description,
             this.service.mainImage,
             pathname

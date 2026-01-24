@@ -1,5 +1,5 @@
 /**
- * Configuration Google Analytics 4 pour EGENT-TOGO
+ * Configuration Google Analytics 4 pour EGENT TOGO
  * Support complet du tracking: pages, événements, utilisateurs, conversions
  */
 

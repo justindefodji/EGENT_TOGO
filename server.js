@@ -1,5 +1,5 @@
 /**
- * Serveur Prerendering pour EGENT-TOGO
+ * Serveur Prerendering pour EGENT TOGO
  * Génère les pages HTML avec métadonnées pour les crawlers sociaux
  * 
  * Installation:
@@ -301,7 +301,7 @@ process.on('SIGINT', async () => {
 app.listen(PORT, () => {
   console.log(`
 ╔════════════════════════════════════════╗
-║  🤖 Serveur Prerendering EGENT-TOGO    ║
+║  🤖 Serveur Prerendering EGENT TOGO    ║
 ║  Port: ${PORT}                            ║
 ║  Frontend: ${FRONTEND_URL}        ║
 ║  Cache: ${CACHE_DIR}       ║

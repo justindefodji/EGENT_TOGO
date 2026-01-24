@@ -631,7 +631,7 @@
                 required
               />
               <label for="terms" class="text-[#016E98] text-sm cursor-pointer leading-relaxed">
-                J'accepte les <span class="font-bold">conditions d'utilisation</span> et la <span class="font-bold">politique de confidentialité</span> de EGENT-TOGO.
+                J'accepte les <span class="font-bold">conditions d'utilisation</span> et la <span class="font-bold">politique de confidentialité</span> de EGENT TOGO.
               </label>
             </div>
 
@@ -957,8 +957,8 @@ onMounted(() => {
   
   // Définir les métadonnées Open Graph pour la page Devis
   setMeta(
-    'Devis - EGENT-TOGO',
-    'Demandez un devis personnalisé pour vos projets énergétiques. Réponse rapide et professionnelle d\'EGENT-TOGO.',
+    'Devis - EGENT TOGO',
+    'Demandez un devis personnalisé pour vos projets énergétiques. Réponse rapide et professionnelle d\'EGENT TOGO.',
     '/src/assets/images/panneau4.jpg',
     '/devis'
   )

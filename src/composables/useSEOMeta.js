@@ -106,7 +106,7 @@ export function useSEOMeta() {
     const imageWidth = options.imageWidth || '1200'
     const imageHeight = options.imageHeight || '630'
     const locale = options.locale || 'fr_FR'
-    const siteName = options.siteName || 'EGENT-TOGO'
+    const siteName = options.siteName || 'EGENT TOGO'
 
     // ✅ Open Graph Tags - OPTIMISÉ POUR TOUS LES RÉSEAUX SOCIAUX
     const ogTags = [

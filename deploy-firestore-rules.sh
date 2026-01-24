@@ -3,7 +3,7 @@
 # Script pour appliquer les règles Firestore
 # Utilise Firebase CLI
 
-echo "🔐 Configuration des Règles Firestore - EGENT-TOGO"
+echo "🔐 Configuration des Règles Firestore - EGENT TOGO"
 echo "=================================================="
 echo ""
 
@@ -26,7 +26,7 @@ firebase login
 
 echo ""
 echo "📂 Configuration du projet..."
-firebase use EGENT-TOGO
+firebase use EGENT TOGO
 
 echo ""
 echo "🔐 Application des règles Firestore..."

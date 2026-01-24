@@ -206,7 +206,7 @@
    └─ SEO optimization with JSON-LD
 
    Design:
-   ├─ EGENT-TOGO brand colors preserved
+   ├─ EGENT TOGO brand colors preserved
    ├─ Consistent styling
    ├─ Smooth animations
    ├─ Professional layout

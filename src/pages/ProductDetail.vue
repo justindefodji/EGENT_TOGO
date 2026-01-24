@@ -57,7 +57,7 @@
             <!-- Header -->
             <div>
               <p class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest mb-3 animate-slideInDown animation-delay-400">{{ product.category }}</p>
-              <h1 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight animate-slideInDown animation-delay-500">{{ product.name }} - EGENT-TOGO</h1>
+              <h1 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight animate-slideInDown animation-delay-500">{{ product.name }} - EGENT TOGO</h1>
               
               <!-- Price -->
               <div class="bg-blue-50 rounded-2xl p-6 mb-8 animate-fadeInUp animation-delay-500">
@@ -670,13 +670,13 @@ const loadProduct = async () => {
     
     // ✅ SEO OPTIMISÉ POUR LA PAGE PRODUIT
     setMeta(
-      `${product.value.name} - ${product.value.category} EGENT-TOGO`,
-      product.value.shortDescription || product.value.description || `Découvrez ${product.value.name}, une solution ${product.value.category} de qualité d\'EGENT-TOGO. Livré avec garantie et support technique.`,
+      `${product.value.name} - ${product.value.category} EGENT TOGO`,
+      product.value.shortDescription || product.value.description || `Découvrez ${product.value.name}, une solution ${product.value.category} de qualité d\'EGENT TOGO. Livré avec garantie et support technique.`,
       product.value.mainImage,
       `/produits/${productSlug}`,
       {
         type: 'product',
-        siteName: 'EGENT-TOGO',
+        siteName: 'EGENT TOGO',
         imageWidth: '1200',
         imageHeight: '630'
       }

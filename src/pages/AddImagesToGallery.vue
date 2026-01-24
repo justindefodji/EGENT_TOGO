@@ -141,7 +141,7 @@
 
       <!-- Footer Info -->
       <div class="mt-8 text-center text-white/70 text-sm">
-        <p>© 2026 EGENT-TOGO Admin • Galerie d'images</p>
+        <p>© 2026 EGENT TOGO Admin • Galerie d'images</p>
       </div>
     </div>
   </div>

@@ -286,7 +286,7 @@
 
       <!-- Footer -->
       <div class="mt-8 text-center text-gray-600 text-sm">
-        <p>© EGENT-TOGO - Import automatique d'articles</p>
+        <p>© EGENT TOGO - Import automatique d'articles</p>
       </div>
     </div>
   </div>
@@ -439,7 +439,7 @@ const importArticles = async () => {
         image: article.image,
         excerpt: article.excerpt,
         content: article.content,
-        author: 'EGENT-TOGO'
+        author: 'EGENT TOGO'
       })
 
       importStatus.value[idx] = 'success'

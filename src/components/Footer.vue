@@ -49,10 +49,10 @@
         <div>
           <h3 class="font-black text-xl text-white mb-6">Nous Suivre</h3>
           <p class="text-blue-50 mb-6 text-sm leading-relaxed">
-            Suivez EGENT-TOGO sur les réseaux sociaux pour les actualités et nouveautés.
+            Suivez EGENT TOGO sur les réseaux sociaux pour les actualités et nouveautés.
           </p>
           <div class="flex items-center space-x-4">
-            <a href="https://www.facebook.com/people/EGENT-TOGO/100036214345608/" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Facebook">
+            <a href="https://www.facebook.com/people/EGENT TOGO/100036214345608/" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Facebook">
               <i class="fab fa-facebook"></i>
             </a>
             <a href="https://twitter.com/EgentTogo" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-[#EE6D08] transition-colors duration-300 text-2xl hover:scale-110 transform duration-300" title="Twitter/X">
@@ -85,7 +85,7 @@
       <div class="border-t border-blue-700 pt-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
           <p class="text-blue-50 text-sm">
-            &copy; 2026 EGENT-TOGO. Tous droits réservés.
+            &copy; 2026 EGENT TOGO. Tous droits réservés.
           </p>
           <!-- <div class="flex justify-center space-x-6 text-blue-300 text-sm">
             <a href="#" class="hover:text-secondary transition-colors duration-300">Politique de confidentialité</a>

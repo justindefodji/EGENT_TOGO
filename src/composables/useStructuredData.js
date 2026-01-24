@@ -40,7 +40,7 @@ export function useStructuredData() {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       '@id': `${baseUrl}/#organization`,
-      name: options.name || 'EGENT-TOGO',
+      name: options.name || 'EGENT TOGO',
       alternateName: 'EGENT TOGO',
       description: options.description || 'Solutions innovantes en électricité, énergie solaire et climatisation au Togo',
       url: baseUrl,
@@ -49,7 +49,7 @@ export function useStructuredData() {
       sameAs: [
         'https://www.facebook.com/EGENTTOGO',
         'https://www.instagram.com/egenttogo',
-        'https://www.linkedin.com/company/egent-togo'
+        'https://www.linkedin.com/company/EGENT TOGO'
       ],
       address: {
         '@type': 'PostalAddress',
@@ -116,7 +116,7 @@ export function useStructuredData() {
       image: product.image,
       brand: {
         '@type': 'Brand',
-        name: 'EGENT-TOGO'
+        name: 'EGENT TOGO'
       },
       offers: {
         '@type': 'Offer',
@@ -152,7 +152,7 @@ export function useStructuredData() {
       serviceType: service.serviceType || 'Installation',
       provider: {
         '@type': 'LocalBusiness',
-        name: 'EGENT-TOGO',
+        name: 'EGENT TOGO',
         url: baseUrl
       },
       areaServed: {
@@ -186,12 +186,12 @@ export function useStructuredData() {
       dateModified: article.dateModified || article.datePublished,
       author: {
         '@type': 'Organization',
-        name: 'EGENT-TOGO',
+        name: 'EGENT TOGO',
         url: baseUrl
       },
       publisher: {
         '@type': 'Organization',
-        name: 'EGENT-TOGO',
+        name: 'EGENT TOGO',
         logo: {
           '@type': 'ImageObject',
           url: `${baseUrl}/src/assets/images/logo.png`

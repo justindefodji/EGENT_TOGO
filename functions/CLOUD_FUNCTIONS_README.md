@@ -66,7 +66,7 @@ Contient les dépendances:
 ### Prérequis
 - ✅ `firebase-tools` installé globalement: `npm install -g firebase-tools`
 - ✅ Authentifié avec Firebase: `firebase login`
-- ✅ Sélectionné le bon projet: `firebase use egent-togo` (ou votre project ID)
+- ✅ Sélectionné le bon projet: `firebase use EGENT TOGO` (ou votre project ID)
 
 ### Étapes de déploiement
 

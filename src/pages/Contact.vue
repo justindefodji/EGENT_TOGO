@@ -17,7 +17,7 @@
         <div id="hero-title" class="text-center">
           <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown">Contactez-nous</p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
-            Contactez <span class="text-[#EE6D08]">EGENT-TOGO</span> pour vos projets énergétiques
+            Contactez <span class="text-[#EE6D08]">EGENT TOGO</span> pour vos projets énergétiques
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
             Vous avez une question ou un projet ? Notre équipe est à votre écoute pour vous aider à réaliser votre transition énergétique.
@@ -236,14 +236,14 @@
     <section id="map-section" class="bg-white py-20 md:py-32 animate-fadeInUp">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Visitez-nous</h2>
+          <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Visualisez quelqu'unes de nos réalisations</h2>
           <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-200">Trouvez notre localisation sur la carte</p>
         </div>
         <div class="rounded-3xl overflow-hidden shadow-2xl h-96 md:h-96 border-4 border-gray-100 hover:shadow-3xl transition-all duration-300 animate-fadeInUp animation-delay-400">
           <iframe 
             width="100%" 
             height="100%" 
-            src="https://www.google.com/maps/d/u/0/embed?mid=1y_tbAMeuz_ifDLafJ3l6Y68Rn0bB8k0" 
+            src="https://maps.google.com/maps?q=6.1883906,1.1854836&hl=fr&z=17&output=embed" 
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
@@ -391,13 +391,13 @@ onMounted(() => {
   
   // ✅ SEO OPTIMISÉ POUR LA PAGE CONTACT
   setMeta(
-    'Contactez EGENT-TOGO - Solutions Énergétiques au Togo',
-    'Contactez EGENT-TOGO pour vos projets d\'énergie solaire et climatisation. Formulaire de contact, adresse à Lomé, téléphone et email. Devis gratuit sans engagement.',
+    'Contactez EGENT TOGO - Solutions Énergétiques au Togo',
+    'Contactez EGENT TOGO pour vos projets d\'énergie solaire et climatisation. Formulaire de contact, adresse à Lomé, téléphone et email. Devis gratuit sans engagement.',
     '/src/assets/images/logo_marque.png',
     '/contact',
     {
       type: 'website',
-      siteName: 'EGENT-TOGO',
+      siteName: 'EGENT TOGO',
       imageWidth: '1200',
       imageHeight: '630'
     }

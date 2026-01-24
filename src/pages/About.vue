@@ -24,7 +24,7 @@
             <div class="inline-block">
               <div class="px-2 sm:px-3 py-0.5 sm:py-1 md:px-4 md:py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-secondary font-bold text-xs inline-flex items-center gap-1 sm:gap-2 hover:bg-white/20 transition-all duration-300 animate-slideInDown" style="animation-delay: 0s">
                 <i class="fas fa-star text-xs sm:text-lg"></i>
-                <span class="hidden sm:inline">À PROPOS D'EGENT-TOGO</span>
+                <span class="hidden sm:inline">À PROPOS D'EGENT TOGO</span>
                 <span class="sm:hidden">À PROPOS</span>
               </div>
             </div>
@@ -33,7 +33,7 @@
             <div>
               <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight animate-slideInDown" style="animation-delay: 0.1s">
                 <span class="text-[#016E98]">
-                  DÉCOUVREZ EGENT-TOGO
+                  DÉCOUVREZ EGENT TOGO
                 </span>
                 <br />
                 <span class="bg-gradient-to-r from-[#EE6D08] to-orange-400 bg-clip-text text-transparent inline-block animate-pulse">
@@ -511,13 +511,13 @@ onMounted(() => {
   
   // ✅ SEO OPTIMISÉ POUR LA PAGE À PROPOS
   setMeta(
-    'À Propos d\'EGENT-TOGO - Leader en Solutions Énergétiques Durables',
-    'EGENT-TOGO: solutions d\'énergie solaire et climatisation innovantes au Togo. Découvrez notre mission, nos services et notre engagement envers l\'énergie durable.',
+    'À Propos d\'EGENT TOGO - Leader en Solutions Énergétiques Durables',
+    'EGENT TOGO: solutions d\'énergie solaire et climatisation innovantes au Togo. Découvrez notre mission, nos services et notre engagement envers l\'énergie durable.',
     '/src/assets/images/egent_reception.jpg',
     '/a-propos',
     {
       type: 'website',  // ✅ Page statique, pas un article
-      siteName: 'EGENT-TOGO',
+      siteName: 'EGENT TOGO',
       imageWidth: '1200',
       imageHeight: '630'
     }
