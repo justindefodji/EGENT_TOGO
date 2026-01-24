@@ -256,6 +256,75 @@
       </div>
     </section>
 
+    <!-- Partners Section -->
+    <section id="partners-section" class="bg-gradient-to-br from-white to-gray-50 py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20 animate-fadeInUp">
+          <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-pulse">Nos partenaires</p>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">NOS PARTENAIRES DE CONFIANCE</h2>
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            Nous travaillons avec les meilleures marques et fournisseurs du secteur pour garantir la qualité et la fiabilité de nos solutions énergétiques.
+          </p>
+        </div>
+
+        <!-- Partners Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center">
+          <!-- Partner 1 - TotalEnergies -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0s">
+            <img 
+              src="/src/assets/images/totalenergies.svg"
+              alt="TotalEnergies"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Partner 2 - Ecobank -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.1s">
+            <img 
+              src="/src/assets/images/Ecobank_logo1.png" 
+              alt="Ecobank"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Partner 3 - OIM -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.2s">
+            <img 
+              src="/src/assets/images/Logo_OIM.png" 
+              alt="OIM"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Partner 4 - FAO -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.3s">
+            <img 
+              src="/src/assets/images/FAO2.png" 
+              alt="FAO"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Partner 5 - CREFERL -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+            <img 
+              src="/src/assets/images/crefer2.png" 
+              alt="CREFER"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+        </div>
+
+        <!-- Partnership CTA -->
+        <div class="text-center mt-20">
+          <p class="text-gray-600 text-lg mb-6">Intéressé par un partenariat ?</p>
+          <button @click="navigateTo('/contact')" class="btn-primary rounded-lg px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-300">
+            Nous contacter
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- Products Section -->
     <section id="products-section" class="bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
