@@ -27,12 +27,10 @@ export const services = [
       <li>Augmentation de la valeur de votre bien</li>
     </ul>
     `,
-    image: new URL('../assets/images/montage_panneau.jpg', import.meta.url).href,
-    mainImage: new URL('../assets/images/panneau_montés.jpg', import.meta.url).href,
+    image: new URL('../assets/images/energysolaire.webp', import.meta.url).href,
+    mainImage: new URL('../assets/images/energysolaire.webp', import.meta.url).href,
     images: [
-      new URL('../assets/images/panneau_montés.jpg', import.meta.url).href,
-      new URL('../assets/images/montage_panneau.jpg', import.meta.url).href,
-      new URL('../assets/images/montage_panneau2.jpg', import.meta.url).href
+      new URL('../assets/images/energysolaire.webp', import.meta.url).href
     ],
     features: [
       { title: 'Rendement optimal', description: 'Panneaux haute performance jusqu\'à 22% de rendement' },
@@ -83,11 +81,10 @@ export const services = [
       <li>Respect des délais</li>
     </ul>
     `,
-    image: new URL('../assets/images/chauffage_egent.jpg', import.meta.url).href,
-    mainImage: new URL('../assets/images/chauffage_egent.jpg', import.meta.url).href,
+    image: new URL('../assets/images/electricitegen.webp', import.meta.url).href,
+    mainImage: new URL('../assets/images/electricitegen.webp', import.meta.url).href,
     images: [
-      new URL('../assets/images/chauffage_egent.jpg', import.meta.url).href,
-      new URL('../assets/images/photo_chantier.jpg', import.meta.url).href
+      new URL('../assets/images/electricitegen.webp', import.meta.url).href
     ],
     features: [
       { title: 'Électriciens certifiés', description: 'Équipe qualifiée et expérimentée' },
@@ -137,11 +134,10 @@ export const services = [
       <li>Garantie constructeur</li>
     </ul>
     `,
-    image: new URL('../assets/images/photo_chantier.jpg', import.meta.url).href,
-    mainImage: new URL('../assets/images/photo_chantier.jpg', import.meta.url).href,
+    image: new URL('../assets/images/friod.webp', import.meta.url).href,
+    mainImage: new URL('../assets/images/friod.webp', import.meta.url).href,
     images: [
-      new URL('../assets/images/photo_chantier.jpg', import.meta.url).href,
-      new URL('../assets/images/chauffage_egent.jpg', import.meta.url).href
+      new URL('../assets/images/friod.webp', import.meta.url).href
     ],
     features: [
       { title: 'Systèmes performants', description: 'Climatiseurs dernière génération économes' },

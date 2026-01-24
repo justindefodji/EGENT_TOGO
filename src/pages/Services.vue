@@ -120,7 +120,7 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/panneau_montés.jpg" 
+                src="/src/assets/images/Energysolaire.webp" 
                 alt="Énergie solaire"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -147,7 +147,7 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/photo_chantier.jpg" 
+                src="/src/assets/images/electricitegen.webp" 
                 alt="Électricité générale"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -174,7 +174,7 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/chauffage_egent.jpg" 
+                src="/src/assets/images/friod.webp" 
                 alt="Climatisation & Froid"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />

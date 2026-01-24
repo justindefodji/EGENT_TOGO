@@ -128,30 +128,44 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section class="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50 to-blue-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-black text-[#016E98] mb-12 text-center">Avantages et Bénéfices</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
           <div 
             v-for="(benefit, index) in service.benefits"
             :key="index"
-            class="flex gap-4 items-start animate-fadeInUp"
+            class="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-blue-100 hover:border-[#FF9D35] animate-fadeInUp overflow-hidden"
             :style="{ animationDelay: `${200 + index * 100}ms` }"
           >
-            <div class="w-8 h-8 rounded-full bg-[#2F7914] flex items-center justify-center flex-shrink-0 mt-1">
-              <i class="fas fa-check text-white text-sm"></i>
+            <!-- Background Gradient Accent -->
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-[#FF9D35] to-transparent transition-opacity duration-300"></div>
+            
+            <!-- Content -->
+            <div class="relative flex gap-4 items-start">
+              <!-- Icon -->
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF9D35] to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
+                <i class="fas fa-check-circle text-white text-lg"></i>
+              </div>
+              
+              <!-- Text -->
+              <div class="flex-1 pt-1">
+                <p class="text-gray-700 text-base font-semibold leading-relaxed group-hover:text-[#016E98] transition-colors duration-300">{{ benefit }}</p>
+              </div>
             </div>
-            <p class="text-gray-700 text-lg">{{ benefit }}</p>
+            
+            <!-- Bottom accent bar -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FF9D35] to-orange-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Full Description Section -->
-    <section class="py-16 md:py-24 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="prose prose-lg max-w-none text-gray-700" v-html="service.longDescription"></div>
+        <!-- Full Description Section attached -->
+        <div class="w-full">
+          <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 md:p-12 border border-blue-100 animate-fadeInUp" style="animation-delay: 600ms">
+            <div class="prose prose-lg max-w-none text-gray-700 prose-headings:text-[#016E98] prose-headings:font-black prose-a:text-[#0392C7] hover:prose-a:text-[#FF9D35]" v-html="service.longDescription"></div>
+          </div>
+        </div>
       </div>
     </section>
 

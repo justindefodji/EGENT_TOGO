@@ -114,7 +114,7 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/chauffage_egent.jpg" 
+                src="/src/assets/images/Energysolaire.webp" 
                 alt="Électricité générale"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -139,7 +139,7 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/photo_chantier.jpg" 
+                src="/src/assets/images/electricitegen.webp" 
                 alt="Climatisation"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -164,7 +164,7 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/panneau_montés.jpg" 
+                src="/src/assets/images/friod.webp" 
                 alt="Énergie solaire"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -260,103 +260,82 @@
     <section id="products-section" class="bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20 animate-fadeInUp">
-          <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-pulse">Nos produits</p>
+          <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-pulse">Nos produits phares</p>
           <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">DÉCOUVREZ NOS PRODUITS PHARES</h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Nous proposons une gamme complète de solutions énergétiques pour particuliers et entreprises, conçues pour optimiser votre consommation et maximiser vos économies.
           </p>
         </div>
 
-        <!-- Products Grid - 3 Column Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16 items-end justify-items-center md:justify-items-start">
-          <!-- Product 1: Kit Zoklin -->
-          <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0s">
-            <div class="relative bg-orange-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+        <!-- Products Grid - Dynamic from Firebase (Kit Zoklin en premier) -->
+        <div v-if="products && products.length > 0" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 items-stretch">
+          <div 
+            v-for="(product, index) in getSortedProducts()" 
+            :key="product.id" 
+            class="flex flex-col h-full transition-all duration-500 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group" 
+            :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" 
+            :style="{ transitionDelay: `${index * 0.15}s` }"
+            @click="navigateTo(`/produits/${product.slug || product.id}`)"
+          >
+            <!-- Product Image Section -->
+            <div v-if="product.image || product.mainImage" class="relative w-full h-72 overflow-hidden bg-gray-200">
               <img 
-                src="/src/assets/images/montage_panneau2.jpg" 
-                alt="Kit Zoklin"
-                class="w-full md:w-[389px] h-auto md:h-[446px] object-cover hover:scale-110 transition-transform duration-500"
+                :src="product.image || product.mainImage" 
+                :alt="product.name || product.title || 'Produit'"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                @error="(e) => e.target.src = '/images/montage_panneau.jpg'"
               />
-              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
-                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Kit Zoklin</h3>
-                <p class="text-gray-700 text-sm leading-relaxed mb-4">
-                  Kit solaire préconçu et complet pour une installation rapide et facile. Parfait pour débuter votre transition énergétique en toute confiance.
-                </p>
-                <button @click="navigateTo('/produits/kit-zoklin')" class="w-full bg-[#0392C7] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#016E98] transition-colors duration-300 cursor-pointer">
-                  Détail
-                </button>
+              <!-- Hover Overlay -->
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+            </div>
+            <!-- Placeholder if no image -->
+            <div v-else class="w-full h-72 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-image text-gray-400 text-4xl mb-2 block"></i>
+                <p class="text-gray-500 text-sm">Image à venir</p>
               </div>
             </div>
-          </div>
 
-          <!-- Product 2: Free Water - CENTER/LARGER -->
-          <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.15s">
-            <div class="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300">
-              <img 
-                src="/src/assets/images/freewater.jpeg" 
-                alt="Free Water"
-                class="w-full md:w-[389px] h-auto md:h-[446px] object-cover hover:scale-110 transition-transform duration-500"
-              />
-              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
-                <h3 class="text-2xl font-black text-[#0392C7] mb-2">FreeWater</h3>
-                <p class="text-gray-700 text-sm leading-relaxed mb-4">
-                  Solution innovante de purification d'eau solaire autonome et écologique. Fournit de l'eau potable sans coût énergétique pour vos communautés.
-                </p>
-                <button @click="navigateTo('/produits/free-water')" class="w-full bg-[#0392C7] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#016E98] transition-colors duration-300 cursor-pointer">
-                  Détail
-                </button>
+            <!-- Product Info Card -->
+            <div class="bg-white p-6 flex flex-col flex-grow">
+              <div class="flex items-start justify-between mb-3">
+                <h3 class="text-xl font-black text-[#0392C7] group-hover:text-[#EE6D08] transition-colors flex-grow">{{ product.name || product.title || 'Produit' }}</h3>
+                <span v-if="product.featured" class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold whitespace-nowrap ml-2">⭐ Phare</span>
               </div>
-            </div>
-          </div>
+              
+              <!-- Clean Description Text -->
+              <p class="text-gray-700 text-sm leading-relaxed mb-4 flex-grow line-clamp-2">
+                {{ cleanHtml(product.description || product.shortDescription) || 'Découvrez ce produit innovant.' }}
+              </p>
 
-          <!-- Product 3: Lampadaires EGENT Solar -->
-          <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.3s">
-            <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-              <img 
-                src="/src/assets/images/lampendaire_monté.jpg" 
-                alt="Lampadaires EGENT Solar"
-                class="w-full md:w-[389px] h-auto md:h-[446px] object-cover hover:scale-110 transition-transform duration-500"
-              />
-              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
-                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Lampadaires EGENT SOLAR</h3>
-                <p class="text-gray-700 text-sm leading-relaxed mb-4">
-                  Lampadaires solaires autonomes et écologiques pour illuminer vos routes, places publiques et espaces extérieurs sans coût d'électricité.
-                </p>
-                <button @click="navigateTo('/produits/lampadaires-egent-solar')" class="w-full bg-[#0392C7] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#016E98] transition-colors duration-300 cursor-pointer">
-                  Détail
-                </button>
-              </div>
+              <!-- Price if available -->
+              <p v-if="product.price" class="text-[#FF9D35] font-black text-lg mb-4">{{ product.price }}</p>
+
+              <!-- Detail Button -->
+              <button 
+                @click.stop="navigateTo(`/produits/${product.slug || product.id}`)"
+                class="w-full bg-[#0392C7] text-white font-semibold py-3 px-4 rounded-lg hover:bg-[#016E98] transition-colors duration-300 cursor-pointer mt-auto"
+              >
+                Détail
+              </button>
             </div>
           </div>
         </div>
-
         
-
-        <!-- Additional Product - Armoire Billy -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16 items-center justify-items-center md:justify-items-start">
-          <div class="flex flex-col h-full transition-all duration-500" :class="productsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'" style="transition-delay: 0.45s">
-            <div class="relative bg-blue-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-              <img 
-                src="/src/assets/images/armoireBilly_monté.jpg" 
-                alt="Armoire Billy"
-                class="w-full md:w-[389px] h-auto md:h-[446px] object-cover hover:scale-110 transition-transform duration-500"
-              />
-              <div class="absolute inset-x-0 bottom-0 bg-white p-6 rounded-b-3xl">
-                <h3 class="text-2xl font-black text-[#0392C7] mb-2">Armoire Billy</h3>
-                <p class="text-gray-700 text-sm leading-relaxed mb-4">
-                  Solution anti délestage performante pour éviter les coupures de courant. Remplace efficacement les groupes électrogènes avec zéro émission.
-                </p>
-                <button @click="navigateTo('/produits/armoire-billy')" class="w-full bg-[#0392C7] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#016E98] transition-colors duration-300 cursor-pointer">
-                  Détail
-                </button>
-              </div>
-            </div>
-          </div>
+        <!-- No Products Message -->
+        <div v-else class="text-center py-12">
+          <p class="text-gray-500 text-lg">Chargement des produits en cours...</p>
         </div>
 
-        <!-- CTA Button -->
+        <!-- View All CTA Button -->
         <div class="text-center">
-          <button @click="navigateTo('/produits')" class="btn-primary rounded-lg px-8 py-3 text-lg font-semibold">En savoir plus</button>
+          <router-link 
+            to="/produits" 
+            class="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF9D35] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-10 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+          >
+            <span>Voir tous nos produits</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+          </router-link>
         </div>
       </div>
     </section>
@@ -374,19 +353,20 @@
         </div>
 
         <!-- Testimonials Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <!-- Testimonial 1 -->
           <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fadeInUp" style="animation-delay: 0s">
             <!-- Top Gradient Bar -->
             <div class="h-1 bg-gradient-to-r from-[#EE6D08] via-[#FF9D35] to-[#016E98] rounded-t-3xl"></div>
             
             <!-- Profile Image -->
+            <!-- Profile Image -->
             <div class="flex justify-center -mt-12 relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" 
-                alt="Amavi Kwame"
-                @click="openLightbox('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop')"
-                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image"
+                src="/src/assets/images/testimonials/testimony-01.png" 
+                alt="VON WALTER"
+                
+                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image cursor-pointer hover:scale-110 transition-transform duration-300"
               />
             </div>
             
@@ -402,29 +382,29 @@
 
               <!-- Quote -->
               <p class="text-gray-700 text-base leading-relaxed mb-8 italic text-center">
-                "EGENT TOGO a complètement transformé ma maison. Depuis l'installation des panneaux solaires, ma facture d'électricité a baissé de 80%. Leur équipe est professionnelle et à l'écoute."
+                "L'argent c'est important, mais le plus important est de bien dormir. Avec l'installation de EGENT TOGO depuis 4ans, je dors sans soucis parce que j'ai de l'énergie à tout moment. Je suis satisfait, et j'ai déjà recommandé EGENT TOGO à mes contacts."
               </p>
 
               <!-- Client Info -->
               <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
-                <h4 class="font-black text-[#016E98] text-base">Amavi Kwame</h4>
-                <p class="text-gray-500 text-sm">Propriétaire, Lomé</p>
+                <h4 class="font-black text-[#016E98] text-base">VON WALTER</h4>
+                <p class="text-gray-500 text-sm">Retraité électricien</p>
               </div>
             </div>
           </div>
 
           <!-- Testimonial 2 -->
-          <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fadeInUp md:-mt-8" style="animation-delay: 0.15s">
+          <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fadeInUp" style="animation-delay: 0.15s">
             <!-- Top Gradient Bar -->
             <div class="h-1 bg-gradient-to-r from-[#016E98] via-[#EE6D08] to-[#2F7914] rounded-t-3xl"></div>
             
             <!-- Profile Image -->
             <div class="flex justify-center -mt-12 relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop" 
-                alt="Mawuena Coffie"
-                @click="openLightbox('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop')"
-                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image"
+                src="/src/assets/images/testimonials/testimony-02.png" 
+                alt="Famille ALOMASSOR"
+                
+                class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image cursor-pointer hover:scale-110 transition-transform duration-300"
               />
             </div>
             
@@ -440,54 +420,54 @@
 
               <!-- Quote -->
               <p class="text-gray-700 text-base leading-relaxed mb-8 italic text-center">
-                "Nous avons choisi EGENT TOGO pour équiper notre entreprise. L'armoire Billy nous a sauvé pendant les délestages. Un investissement vraiment rentable et une équipe d'experts exceptionnels."
+                "Nous sommes autonomes en énergie électrique grace à EGENT TOGO. Après le choix de notre kit Zoklin, l'équipe EGENT TOGO a réalisé les travaux en 48h, nous sommes autonomes en énergie électrique."
               </p>
 
               <!-- Client Info -->
               <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
-                <h4 class="font-black text-[#016E98] text-base">Mawuena Coffie</h4>
-                <p class="text-gray-500 text-sm">Directeur Entreprise, Sokodé</p>
+                <h4 class="font-black text-[#016E98] text-base">Famille ALOMASSOR</h4>
+                <p class="text-gray-500 text-sm">Couple retraité</p>
               </div>
             </div>
           </div>
 
           <!-- Testimonial 3 -->
-          <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fadeInUp" style="animation-delay: 0.3s">
+          <!-- <div class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fadeInUp" style="animation-delay: 0.3s"> -->
             <!-- Top Gradient Bar -->
-            <div class="h-1 bg-gradient-to-r from-[#2F7914] via-[#8AB00D] to-[#EE6D08] rounded-t-3xl"></div>
+            <!-- <div class="h-1 bg-gradient-to-r from-[#2F7914] via-[#8AB00D] to-[#EE6D08] rounded-t-3xl"></div> -->
             
             <!-- Profile Image -->
-            <div class="flex justify-center -mt-12 relative z-10">
+            <!-- <div class="flex justify-center -mt-12 relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" 
-                alt="Ekué Laurent"
-                @click="openLightbox('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop')"
+                src="/src/assets/images/testimony-01.png" 
+                alt="VON WALTER"
+                @click="openLightbox('/src/assets/images/testimony-01.png')"
                 class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image"
               />
-            </div>
+            </div> -->
             
-            <div class="p-8 pt-6">
+            <!-- <div class="p-8 pt-6"> -->
               <!-- Stars -->
-              <div class="flex items-center gap-1 mb-8 justify-center">
+              <!-- <div class="flex items-center gap-1 mb-8 justify-center">
                 <i class="fas fa-star text-[#FF9D35] text-xl"></i>
                 <i class="fas fa-star text-[#FF9D35] text-xl"></i>
                 <i class="fas fa-star text-[#FF9D35] text-xl"></i>
                 <i class="fas fa-star text-[#FF9D35] text-xl"></i>
                 <i class="fas fa-star text-[#FF9D35] text-xl"></i>
-              </div>
+              </div> -->
 
               <!-- Quote -->
-              <p class="text-gray-700 text-base leading-relaxed mb-8 italic text-center">
+              <!-- <p class="text-gray-700 text-base leading-relaxed mb-8 italic text-center">
                 "Les lampadaires EGENT Solar ont illuminé notre quartier sans aucun coût d'électricité. C'est écologique, fiable et vraiment innovant. Bravo à EGENT TOGO pour cette solution!"
-              </p>
+              </p> -->
 
               <!-- Client Info -->
-              <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
+              <!-- <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
                 <h4 class="font-black text-[#016E98] text-base">Ekué Laurent</h4>
                 <p class="text-gray-500 text-sm">Syndic, Kpalimé</p>
               </div>
-            </div>
-          </div>
+            </div> -->
+          <!-- </div> -->
         </div>
 
         <!-- Stats Section -->
@@ -582,7 +562,15 @@
         <i class="fas fa-times"></i>
       </button>
       <div class="lightbox-content" @click.stop>
-        <img :src="selectedImage" alt="Image agrandie" class="lightbox-image" />
+        <img 
+          :src="selectedImage" 
+          alt="Image agrandie" 
+          class="lightbox-image"
+          @error="(e) => {
+            console.error('Erreur chargement image:', selectedImage)
+            e.target.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23ccc%22 width=%22400%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22sans-serif%22 font-size=%2220%22 fill=%22%23999%22%3EImage non trouvée%3C/text%3E%3C/svg%3E'
+          }"
+        />
       </div>
     </div>
   </div>
@@ -590,9 +578,10 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
+import { useFirebaseData } from '../composables/useFirebaseData'
 import hero1 from '/src/assets/images/headepage.webp?url'
 
 // Initialize Google Analytics
@@ -605,6 +594,7 @@ if (typeof window !== 'undefined') {
 
 const router = useRouter()
 const { setMeta } = useSEOMeta()
+const { products, listenToProducts, unlistenToProducts } = useFirebaseData()
 
 useCursorFollowText()
 const aboutInView = ref(false)
@@ -619,6 +609,7 @@ const closeModal = () => {
 }
 
 const openLightbox = (imageSrc) => {
+  console.log('Opening lightbox with image:', imageSrc)
   selectedImage.value = imageSrc
 }
 
@@ -661,6 +652,9 @@ const setupObserver = () => {
 onMounted(() => {
   setupObserver()
   
+  // 🔄 Activer le listener en temps réel pour les produits
+  listenToProducts()
+  
   // ✅ SEO OPTIMISÉ POUR LA PAGE D'ACCUEIL
   setMeta(
     'EGENT-TOGO - Solutions Énergie Solaire & Climatisation au Togo',
@@ -683,6 +677,11 @@ onMounted(() => {
   })
 })
 
+// 🛑 Nettoyer le listener au démontage du composant
+onUnmounted(() => {
+  unlistenToProducts()
+})
+
 // Navigation vers une route
 const navigateTo = (path) => {
   router.push(path)
@@ -694,6 +693,46 @@ const scrollToContact = () => {
   if (footer) {
     footer.scrollIntoView({ behavior: 'smooth' })
   }
+}
+
+// 🧹 Nettoyer le HTML depuis l'éditeur Quill
+const cleanHtml = (html) => {
+  if (!html) return ''
+  
+  // Enlever tous les tags HTML
+  let text = html
+    .replace(/<[^>]*>/g, ' ') // Enlever tous les tags
+    .replace(/&nbsp;/g, ' ') // Remplacer &nbsp;
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ') // Remplacer les espaces multiples
+    .trim()
+  
+  // Limiter à 150 caractères max pour l'affichage
+  return text.length > 150 ? text.substring(0, 150) + '...' : text
+}
+
+// 🎯 Trier les produits pour mettre Kit Zoklin en premier
+const getSortedProducts = () => {
+  if (!products.value || products.value.length === 0) return []
+  
+  const sorted = [...products.value]
+  const kitZoklin = sorted.find(p => 
+    p.name?.toLowerCase().includes('zoklin') || 
+    p.title?.toLowerCase().includes('zoklin')
+  )
+  
+  if (kitZoklin) {
+    // Enlever Kit Zoklin de la liste
+    const filteredProducts = sorted.filter(p => p.id !== kitZoklin.id)
+    // Remettre Kit Zoklin en premier
+    return [kitZoklin, ...filteredProducts].slice(0, 3)
+  }
+  
+  return sorted.slice(0, 3)
 }
 </script>
 

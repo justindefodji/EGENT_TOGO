@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { collection, getDocs, query, orderBy, where, addDoc, updateDoc, deleteDoc, doc, serverTimestamp } from 'firebase/firestore'
+import { collection, getDocs, query, orderBy, where, addDoc, updateDoc, deleteDoc, doc, serverTimestamp, onSnapshot } from 'firebase/firestore'
 import { db } from '../lib/firebase'
 
 export function useFirebaseData() {
@@ -9,6 +9,7 @@ export function useFirebaseData() {
   const gallery = ref([])
   const loading = ref(false)
   const error = ref(null)
+  let unsubscribeProducts = null
 
   const initializeProducts = async () => {
     try {
@@ -26,6 +27,34 @@ export function useFirebaseData() {
       products.value = []
     } finally {
       loading.value = false
+    }
+  }
+
+  // Listener en temps réel pour les produits (mise à jour automatique)
+  const listenToProducts = () => {
+    try {
+      const q = query(collection(db, 'products'), orderBy('createdAt', 'desc'))
+      
+      unsubscribeProducts = onSnapshot(q, (querySnapshot) => {
+        products.value = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+      }, (err) => {
+        console.error('Erreur listener produits:', err)
+        error.value = err.message
+      })
+    } catch (err) {
+      console.error('Erreur setup listener produits:', err)
+      error.value = err.message
+    }
+  }
+
+  // Arrêter le listener
+  const unlistenToProducts = () => {
+    if (unsubscribeProducts) {
+      unsubscribeProducts()
+      unsubscribeProducts = null
     }
   }
 
@@ -419,6 +448,8 @@ export function useFirebaseData() {
     loading,
     error,
     initializeProducts,
+    listenToProducts,
+    unlistenToProducts,
     initializeArticles,
     initializeGallery,
     addProduct,

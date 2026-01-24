@@ -35,9 +35,9 @@
           <!-- Main Project Section -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <!-- Images Section -->
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 animate-fadeInUp animation-delay-300">
               <!-- Main Image -->
-              <div class="relative bg-gray-100 rounded-3xl overflow-hidden h-96">
+              <div class="relative bg-gray-100 rounded-3xl overflow-hidden w-full h-72 sm:h-80 md:h-96 lg:h-[28rem]">
                 <img 
                   :src="currentImage" 
                   :alt="project.title"
@@ -46,13 +46,13 @@
               </div>
               
               <!-- Thumbnails -->
-              <div v-if="project.images && project.images.length > 1" class="grid grid-cols-3 gap-4">
+              <div v-if="project.images && project.images.length > 1" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
                 <img 
                   v-for="(image, index) in project.images"
                   :key="index"
                   :src="image"
                   :alt="`${project.title} - Image ${index + 1}`"
-                  class="w-full h-24 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                  class="w-full h-20 sm:h-24 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent hover:border-[#FF9D35]"
                   @click="currentImage = image"
                 />
               </div>
