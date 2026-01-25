@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full overflow-x-hidden">
+  <div>
     <!-- Hero Section -->
     <div class="flex justify-center pt-8 pb-4 animate-pulse">
       <span class="text-xl md:text-2xl font-black text-[#2F7914] tracking-widest uppercase animate-bounce"></span>
@@ -261,9 +261,9 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20 animate-fadeInUp">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-pulse">Nos partenaires</p>
-          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">NOS PARTENAIRES DE CONFIANCE</h2>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">Ils nous font confiance</h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            Nous travaillons avec les meilleures marques et fournisseurs du secteur pour garantir la qualité et la fiabilité de nos solutions énergétiques.
+            Ils sont nombreux à nous faire confiance
           </p>
         </div>
 
@@ -726,13 +726,13 @@ onMounted(() => {
   
   // ✅ SEO OPTIMISÉ POUR LA PAGE D'ACCUEIL
   setMeta(
-    'EGENT-TOGO - Solutions Énergie Solaire & Climatisation au Togo',
-    'EGENT-TOGO: leader des solutions d\'énergie solaire, climatisation et électricité durable au Togo. 500+ projets réalisés, 10K+ clients. Devis gratuit.',
+    'EGENT TOGO - Solutions Énergie Solaire & Climatisation au Togo',
+    'EGENT TOGO: leader des solutions d\'énergie solaire, climatisation et électricité durable au Togo. 500+ projets réalisés, 10K+ clients. Devis gratuit.',
     '/src/assets/images/montage_panneau.jpg',
     '/',
     {
       type: 'website',
-      siteName: 'EGENT-TOGO',
+      siteName: 'EGENT TOGO',
       imageWidth: '1200',
       imageHeight: '630'
     }

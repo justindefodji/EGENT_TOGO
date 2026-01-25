@@ -278,14 +278,14 @@
         </div>
 
         <!-- Grille d'équipes -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
           <!-- Membre 1 -->
           <div class="group animate-fadeInUp" style="animation-delay: 0s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="/src/assets/images/egent_reception.jpg" 
+                src="/src/assets/images/DO.jpeg" 
                 alt="Professionnelle de l'équipe"
-                class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                class="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-500"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/60 transition-all duration-300"></div>
               <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -293,13 +293,13 @@
               </div>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">Koffi Diabaté</h3>
-              <p class="text-[#EE6D08] font-bold text-sm">Chef du département énergie solaire</p>
+              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">KLOUTSE Kokou Achille</h3>
+              <p class="text-[#EE6D08] font-bold text-sm">Direceur des Opérations</p>
             </div>
           </div>
 
           <!-- Membre 2 -->
-          <div class="group animate-fadeInUp" style="animation-delay: 0.1s">
+          <!-- <div class="group animate-fadeInUp" style="animation-delay: 0.1s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
                 src="/src/assets/images/chauffage_egent.jpg" 
@@ -315,10 +315,10 @@
               <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">Solim Gnitou</h3>
               <p class="text-[#EE6D08] font-bold text-sm">Chef du département climatisation</p>
             </div>
-          </div>
+          </div> -->
 
           <!-- Membre 3 -->
-          <div class="group animate-fadeInUp" style="animation-delay: 0.2s">
+          <!-- <div class="group animate-fadeInUp" style="animation-delay: 0.2s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
                 src="/src/assets/images/photo_chantier.jpg" 
@@ -334,7 +334,7 @@
               <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">Yacine Diallo</h3>
               <p class="text-[#EE6D08] font-bold text-sm">Chef du département installation</p>
             </div>
-          </div>
+          </div> -->
 
           <!-- Membre 4 -->
           <div class="group animate-fadeInUp" style="animation-delay: 0.3s">
@@ -342,7 +342,7 @@
               <img 
                 src="/src/assets/images/montage_panneau2.jpg" 
                 alt="Professionnelle de l'équipe"
-                class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                class="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-500"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/60 transition-all duration-300"></div>
               <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -350,8 +350,8 @@
               </div>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">Ama Mensah</h3>
-              <p class="text-[#EE6D08] font-bold text-sm">Chef du département maintenance</p>
+              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">AWUTE Komla</h3>
+              <p class="text-[#EE6D08] font-bold text-sm">Directeur Géréral</p>
             </div>
           </div>
         </div>
