@@ -283,7 +283,7 @@
           <div class="group animate-fadeInUp" style="animation-delay: 0s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="/src/assets/images/DO.jpeg" 
+                src="/src/assets/images/passeportDG.png" 
                 alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-500"
               />
@@ -293,8 +293,8 @@
               </div>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">KLOUTSE Kokou Achille</h3>
-              <p class="text-[#EE6D08] font-bold text-sm">Direceur des Opérations</p>
+              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">AWUTE Komla</h3>
+              <p class="text-[#EE6D08] font-bold text-sm">Direceur Gérérals</p>
             </div>
           </div>
 
@@ -340,7 +340,7 @@
           <div class="group animate-fadeInUp" style="animation-delay: 0.3s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="/src/assets/images/montage_panneau2.jpg" 
+                src="/src/assets/images/DO.jpeg" 
                 alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-500"
               />
@@ -350,8 +350,8 @@
               </div>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">AWUTE Komla</h3>
-              <p class="text-[#EE6D08] font-bold text-sm">Directeur Géréral</p>
+              <h3 class="text-xl font-black text-[#016E98] group-hover:text-[#EE6D08] transition-colors duration-300">KLOUTSE Kokou Achille</h3>
+              <p class="text-[#EE6D08] font-bold text-sm">Directeur des Opérations</p>
             </div>
           </div>
         </div>

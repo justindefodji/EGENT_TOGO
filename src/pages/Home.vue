@@ -13,7 +13,7 @@
         <div class="flex items-start justify-center w-full">
           <!-- Content -->
           <div class="z-10 max-w-4xl text-center pt-16 md:pt-40 px-2 sm:px-4">
-            <h1 class="text-4xl md:text-5xl lg:text-5xl font-black leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
+            <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
               <span class="text-white">Écrivons l'Avenir de </span>
               <span class="text-white">l'Énergie</span>
               <br />
@@ -261,7 +261,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20 animate-fadeInUp">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-pulse">Nos partenaires</p>
-          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">Ils nous font confiance</h2>
+          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">Ils nous ont fait confiance.</h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Ils sont nombreux à nous faire confiance
           </p>
