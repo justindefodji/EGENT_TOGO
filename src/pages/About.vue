@@ -62,7 +62,7 @@
             <!-- Main image -->
             <div class="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl group">
               <img 
-                src="/src/assets/images/montage_panneau.jpg" 
+                src="/src/assets/images/EGENT.webp" 
                 alt="À propos d'EGENT TOGO"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

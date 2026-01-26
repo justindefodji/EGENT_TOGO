@@ -53,7 +53,7 @@
           <div class="relative h-80 md:h-[450px] lg:h-[500px] animate-fadeInUp animation-delay-400">
             <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group animate-fadeInUp animation-delay-500">
               <img 
-                src="/images/panneau_montés.jpg" 
+                src="/src/assets/images/DC.webp" 
                 alt="Nos projets"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -135,13 +135,13 @@
     <!-- Stats Section -->
     <section class="py-16 md:py-24 bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          <div class="animate-fadeInUp animation-delay-200">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+          <!-- <div class="animate-fadeInUp animation-delay-200">
             <div class="text-4xl md:text-5xl font-black text-[#FF9D35] mb-2">{{ projects.length }}+</div>
             <p class="text-white text-lg">Projets réalisés</p>
-          </div>
+          </div> -->
           <div class="animate-fadeInUp animation-delay-300">
-            <div class="text-4xl md:text-5xl font-black text-[#FF9D35] mb-2">50+</div>
+            <div class="text-4xl md:text-5xl font-black text-[#FF9D35] mb-2">200</div>
             <p class="text-white text-lg">Clients satisfaits</p>
           </div>
           <div class="animate-fadeInUp animation-delay-400">

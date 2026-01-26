@@ -15,12 +15,12 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
         <!-- Section Titre Hero -->
         <div id="hero-title" class="text-center">
-          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown">Explorez nos réalisations</p>
+          <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown"></p>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
-            Galerie de nos <span class="text-[#EE6D08]">réalisations</span> en énergie solaire et climatisation
+             <span class="text-[#EE6D08]">Galerie de quelques réalisations</span> 
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
-            Explorez notre galerie de projets d'énergie solaire, installations de climatisation et solutions durables. Découvrez les réalisations concrètes d'EGENT TOGO au Togo et en Afrique de l'Ouest.
+             Découvrez les réalisations concrètes d'EGENT TOGO au Togo et en Afrique de l'Ouest.
           </p>
         </div>
       </div>
@@ -178,14 +178,14 @@
         </div>
 
         <!-- Stats Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-          <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0s">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <!-- <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0s">
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
               <i class="fas fa-check text-white text-3xl"></i>
             </div>
             <h3 class="text-4xl font-black text-[#EE6D08] mb-2">2K</h3>
             <p class="text-gray-100 font-semibold">Projets réalisés</p>
-          </div>
+          </div> -->
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0.1s">
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
@@ -219,7 +219,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Visualisez quelqu'unes de nos réalisations</h2>
-          <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-200">Trouvez notre localisation sur la carte</p>
+          <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-200">Trouvez les localisations sur la carte</p>
         </div>
         <div class="rounded-3xl overflow-hidden shadow-2xl h-96 md:h-96 border-4 border-gray-100 hover:shadow-3xl transition-all duration-300 animate-fadeInUp animation-delay-400">
           <iframe 

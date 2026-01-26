@@ -288,11 +288,24 @@
             />
           </div>
 
-          <!-- Description -->
+          <!-- Description Courte -->
           <div>
-            <label class="block text-sm font-bold text-gray-700 mb-2">Description</label>
+            <label class="block text-sm font-bold text-gray-700 mb-2">Description Courte</label>
+            <textarea 
+              v-model="editForm.shortDescription"
+              placeholder="Brève description du projet (max 300 caractères)"
+              rows="2"
+              maxlength="300"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 resize-none"
+            ></textarea>
+            <p class="text-xs text-gray-500 mt-1">{{ editForm.shortDescription.length }}/300 caractères</p>
+          </div>
+
+          <!-- Détails du Projet (Description Complète) -->
+          <div>
+            <label class="block text-sm font-bold text-gray-700 mb-2">Détails du Projet (Description Complète)</label>
             <QuillEditor 
-              v-model="editForm.description"
+              v-model="editForm.details"
               class="rounded-lg border border-gray-300"
             />
             <p class="text-xs text-gray-500 mt-2">
@@ -668,7 +681,7 @@ const editForm = ref({
   location: '',
   date: '',
   slug: '',
-  description: '',
+  shortDescription: '',
   details: '',
   mainImage: '',
   images: [],
@@ -769,7 +782,7 @@ const openEditModal = () => {
     location: project.value.location || '',
     date: project.value.date || '',
     slug: project.value.slug || '',
-    description: project.value.description || '',
+    shortDescription: project.value.shortDescription || '',
     details: project.value.details || '',
     mainImage: project.value.mainImage || '',
     images: project.value.images ? JSON.parse(JSON.stringify(project.value.images)) : [],
@@ -789,7 +802,7 @@ const closeEditModal = () => {
     location: '',
     date: '',
     slug: '',
-    description: '',
+    shortDescription: '',
     details: '',
     mainImage: '',
     images: [],
@@ -910,7 +923,7 @@ const saveProject = async () => {
       location: editForm.value.location,
       date: editForm.value.date,
       slug: editForm.value.slug,
-      description: editForm.value.description,
+      shortDescription: editForm.value.shortDescription,
       details: editForm.value.details,
       mainImage: editForm.value.mainImage,
       results: editForm.value.results,
