@@ -196,13 +196,49 @@
     <section id="why-choose-section" class="bg-gradient-to-br from-blue-50 to-blue-100 py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <!-- Image -->
-          <div class="order-2 md:order-1 transition-all duration-1000" :class="whyChooseInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'">
-            <img 
-              src="/src/assets/images/FP.png" 
-              alt="Pourquoi nous choisir"
-              class="w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
-            />
+          <!-- Carousel Image -->
+          <div class="order-2 md:order-1 transition-all duration-4000" :class="whyChooseInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'">
+            <div class="relative w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden group">
+              <!-- Carousel Images -->
+              <div class="relative w-full aspect-square bg-gray-200 flex items-center justify-center">
+                <img 
+                  :src="currentSlideImage" 
+                  :alt="`Produit EGENT TOGO - ${currentSlideIndex + 1}`"
+                  class="w-full h-full object-contain transition-opacity duration-500"
+                />
+              </div>
+
+              <!-- Navigation Buttons -->
+              <button 
+                @click="prevSlide"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+                title="Image précédente"
+              >
+                <i class="fas fa-chevron-left text-[#016E98] text-lg"></i>
+              </button>
+
+              <button 
+                @click="nextSlide"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+                title="Image suivante"
+              >
+                <i class="fas fa-chevron-right text-[#016E98] text-lg"></i>
+              </button>
+
+              <!-- Slide Indicators -->
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                <button 
+                  v-for="(_, index) in carouselImages" 
+                  :key="index"
+                  @click="currentSlideIndex = index"
+                  :class="[
+                    'w-3 h-3 rounded-full transition-all duration-300',
+                    index === currentSlideIndex ? 'bg-[#FF9D35] w-8' : 'bg-white/60 hover:bg-white'
+                  ]"
+                  :title="`Aller à l'image ${index + 1}`"
+                ></button>
+              </div>
+            </div>
           </div>
 
           <!-- Content -->
@@ -313,7 +349,79 @@
               class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
             />
           </div>
+          <!-- Partner 6 - CREFERL -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+            <img 
+              src="/src/assets/images/kekeli.jpg" 
+              alt="kekeli"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Partner 7 - CREFERL -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+            <img 
+              src="/src/assets/images/ojedd.png" 
+              alt="ojedd"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+          <!-- Partner 8 - CREFERL -->
+          
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+            <img 
+              src="/src/assets/images/solafrica.png" 
+              alt="solafrica"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+          <!-- Partner 9 - CREFERL -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+            <img 
+              src="/src/assets/images/téléchargement.jpg" 
+              alt="organic"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Partner 7 - CREFERL -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+            <img 
+              src="/src/assets/images/cerme.jpg" 
+              alt="cerme"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Partner 7 - CREFERL -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+            <img 
+              src="/src/assets/images/sethi.jpg" 
+              alt="sethi"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Partner 8 - CREFERL -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+            <img 
+              src="/src/assets/images/logob.jpg" 
+              alt="logob"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+          <!-- Partner 9 - CREFERL -->
+          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+            <img 
+              src="/src/assets/images/main.jpeg" 
+              alt="logob"
+              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+          
         </div>
+
+        
 
         <!-- Partnership CTA -->
         <div class="text-center mt-20">
@@ -647,11 +755,17 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 import hero1 from '/src/assets/images/headepage.webp?url'
+
+// Import images du diaporama
+import zoklin from '/src/assets/images/zoklin.webp?url'
+import lampadaire from '/src/assets/images/lampadaire.webp?url'
+import freewater from '/src/assets/images/freewater.webp?url'
+import armoirbilly from '/src/assets/images/armoirbilly.webp?url'
 
 // Initialize Google Analytics
 if (typeof window !== 'undefined') {
@@ -673,6 +787,15 @@ const testimonialsInView = ref(false)
 const ctaInView = ref(false)
 const selectedImage = ref(null)
 
+// Carousel state
+const carouselImages = [zoklin, lampadaire, freewater, armoirbilly]
+const currentSlideIndex = ref(0)
+const carouselInterval = ref(null)
+
+const currentSlideImage = computed(() => {
+  return carouselImages[currentSlideIndex.value] || carouselImages[0]
+})
+
 const closeModal = () => {
   selectedImage.value = null
 }
@@ -680,6 +803,28 @@ const closeModal = () => {
 const openLightbox = (imageSrc) => {
   console.log('Opening lightbox with image:', imageSrc)
   selectedImage.value = imageSrc
+}
+
+// Carousel functions
+const nextSlide = () => {
+  currentSlideIndex.value = (currentSlideIndex.value + 1) % carouselImages.length
+}
+
+const prevSlide = () => {
+  currentSlideIndex.value = (currentSlideIndex.value - 1 + carouselImages.length) % carouselImages.length
+}
+
+const startCarousel = () => {
+  carouselInterval.value = setInterval(() => {
+    nextSlide()
+  }, 2000) // Change image every 2 seconds
+}
+
+const stopCarousel = () => {
+  if (carouselInterval.value) {
+    clearInterval(carouselInterval.value)
+    carouselInterval.value = null
+  }
 }
 
 // Intersection Observer pour les animations
@@ -724,6 +869,9 @@ onMounted(() => {
   // 🔄 Activer le listener en temps réel pour les produits
   listenToProducts()
   
+  // 🎠 Démarrer le carrousel automatique
+  startCarousel()
+  
   // ✅ SEO OPTIMISÉ POUR LA PAGE D'ACCUEIL
   setMeta(
     'EGENT TOGO - Solutions Énergie Solaire & Climatisation au Togo',
@@ -749,6 +897,7 @@ onMounted(() => {
 // 🛑 Nettoyer le listener au démontage du composant
 onUnmounted(() => {
   unlistenToProducts()
+  stopCarousel() // Arrêter le carrousel
 })
 
 // Navigation vers une route
@@ -957,5 +1106,19 @@ const getSortedProducts = () => {
 
 .testimonial-image:hover {
   transform: scale(1.05);
+}
+
+/* Carousel Transitions */
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.carousel-image {
+  animation: fadeInImage 0.5s ease-in-out;
 }
 </style>
