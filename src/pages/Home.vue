@@ -806,8 +806,8 @@ import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 import hero1 from '/src/assets/images/headepage.webp?url'
-import daurevoir from '/src/assets/images/DAUREVOIR.png?url'
-import dji from '/src/assets/images/hero1.jpg?url'
+import daurevoir from '/src/assets/images/couv1.jpeg?url'
+import dji from '/src/assets/images/couv2.jpeg?url'
 
 // Import images du diaporama
 import zoklin from '/src/assets/images/zoklin.webp?url'
