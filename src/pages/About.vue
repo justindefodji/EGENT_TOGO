@@ -62,7 +62,7 @@
             <!-- Main image -->
             <div class="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl group">
               <img 
-                src="/src/assets/images/EGENT.webp" 
+                :src="EgentImage" 
                 alt="À propos d'EGENT TOGO"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -186,15 +186,53 @@
       <!-- Section Pourquoi choisir EGENT TOGO -->
       <div id="advantages-section" class="mb-16 md:mb-24 py-16 md:py-24">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-          <!-- Image gauche -->
-          <div class="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group transition-all duration-1000" :class="advantagesInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'">
-            <img 
-              src="/src/assets/images/FP.png" 
-              alt="Équipe EGENT TOGO"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            />
+          <!-- Diaporama produits gauche -->
+          <div class="relative aspect-square rounded-3xl overflow-hidden shadow-2xl group transition-all duration-1000" :class="advantagesInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'">
+            <!-- Carousel Images -->
+            <div class="relative w-full h-full bg-gray-200 flex items-center justify-center overflow-hidden">
+              <transition name="carousel-fade" mode="out-in">
+                <img 
+                  :src="currentAdvantageImage()" 
+                  :alt="`Produit EGENT TOGO - ${advantageSlideIndex + 1}`"
+                  :key="advantageSlideIndex"
+                  class="w-full h-full object-contain"
+                />
+              </transition>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button 
+              @click="prevAdvantageSlide"
+              class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              title="Image précédente"
+            >
+              <i class="fas fa-chevron-left text-[#016E98] text-lg"></i>
+            </button>
+
+            <button 
+              @click="nextAdvantageSlide"
+              class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              title="Image suivante"
+            >
+              <i class="fas fa-chevron-right text-[#016E98] text-lg"></i>
+            </button>
+
+            <!-- Slide Indicators -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              <button 
+                v-for="(_, index) in advantageCarouselImages" 
+                :key="index"
+                @click="advantageSlideIndex = index"
+                :class="[
+                  'w-3 h-3 rounded-full transition-all duration-300',
+                  index === advantageSlideIndex ? 'bg-[#FF9D35] w-8' : 'bg-white/60 hover:bg-white'
+                ]"
+                :title="`Aller à l'image ${index + 1}`"
+              ></button>
+            </div>
+
             <!-- Gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/30 transition-all duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent group-hover:from-black/20 transition-all duration-300"></div>
           </div>
 
           <!-- Contenu droite avec cartes -->
@@ -271,7 +309,7 @@
       <div id="team-section" class="mb-16 md:mb-24 py-16 md:py-24 bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl px-8 md:px-16">
         <div class="text-center mb-16 md:mb-20">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-slideInDown">Notre Équipe</p>
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#016E98] mb-6 animate-slideInDown animation-delay-200">NOTRE <span class="text-[#FF9D35]">ÉQUIPES</span></h2>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#016E98] mb-6 animate-slideInDown animation-delay-200">NOTRE <span class="text-[#FF9D35]">EQUIPES</span></h2>
           <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
             Nos experts passionnés sont au cœur de notre succès. Avec une expérience approfondie dans les énergies renouvelables et l'électricité générale, notre équipe s'engage à fournir des solutions innovantes et durables pour transformer votre accès à l'énergie.
           </p>
@@ -283,7 +321,7 @@
           <div class="group animate-fadeInUp" style="animation-delay: 0s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="/src/assets/images/passeportDG.png" 
+                :src="PasseportDGImage" 
                 alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-500"
               />
@@ -302,7 +340,7 @@
           <!-- <div class="group animate-fadeInUp" style="animation-delay: 0.1s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="/src/assets/images/chauffage_egent.jpg" 
+                :src="ChauffageEgentImage" 
                 alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -321,7 +359,7 @@
           <!-- <div class="group animate-fadeInUp" style="animation-delay: 0.2s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="/src/assets/images/photo_chantier.jpg" 
+                :src="PhotoChantierImage" 
                 alt="Professionnel de l'équipe"
                 class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -340,7 +378,7 @@
           <div class="group animate-fadeInUp" style="animation-delay: 0.3s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                src="/src/assets/images/DO.jpeg" 
+                :src="DOImage" 
                 alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-500"
               />
@@ -360,7 +398,7 @@
       <!-- Section Nos Valeurs -->
       <!-- <div class="mb-16 md:mb-24">
         <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-black text-dark mb-4">Nos Valeurs</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Nos Valeurs</h2>
           <p class="text-lg text-gray-600">Les principes qui guident nos actions</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> -->
@@ -416,7 +454,7 @@
           <!-- Image droite -->
           <div class="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group transition-all duration-1000" :class="ctaAboutInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'">
             <img 
-              src="/src/assets/images/DAUREVOIR.png" 
+              :src="DaureVoirImage" 
               alt="Solutions d'énergie renouvelable"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
@@ -441,10 +479,23 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import VisualContentSection from '../components/VisualContentSection.vue'
+
+// Import des images
+import EgentImage from '../assets/images/EGENT.webp'
+import PasseportDGImage from '../assets/images/passeportDG.png'
+import ChauffageEgentImage from '../assets/images/chauffage_egent.jpg'
+import PhotoChantierImage from '../assets/images/photo_chantier.jpg'
+import DOImage from '../assets/images/DO.jpeg'
+import DaureVoirImage from '../assets/images/DAUREVOIR.png'
+import ZoklinImage from '../assets/images/zoklin.webp'
+import LampadaireImage from '../assets/images/lampadaire.webp'
+import FreeWaterImage from '../assets/images/freewater.webp'
+import ArmoirBillyImage from '../assets/images/armoirbilly.webp'
+import EgentReceptionImage from '../assets/images/egent_reception.jpg'
 
 // Initialize Google Analytics
 if (typeof window !== 'undefined') {
@@ -469,6 +520,48 @@ const objectivesInView = ref(false)
 const advantagesInView = ref(false)
 const teamInView = ref(false)
 const ctaAboutInView = ref(false)
+
+// Advantages carousel state
+const advantageCarouselImages = [
+  ZoklinImage,
+  LampadaireImage,
+  FreeWaterImage,
+  ArmoirBillyImage
+]
+const advantageSlideIndex = ref(0)
+const advantageCarouselInterval = ref(null)
+
+const currentAdvantageImage = () => {
+  return advantageCarouselImages[advantageSlideIndex.value] || advantageCarouselImages[0]
+}
+
+const nextAdvantageSlide = () => {
+  advantageSlideIndex.value = (advantageSlideIndex.value + 1) % advantageCarouselImages.length
+  resetCarouselTimer()
+}
+
+const prevAdvantageSlide = () => {
+  advantageSlideIndex.value = (advantageSlideIndex.value - 1 + advantageCarouselImages.length) % advantageCarouselImages.length
+  resetCarouselTimer()
+}
+
+const startAdvantageCarousel = () => {
+  advantageCarouselInterval.value = setInterval(() => {
+    nextAdvantageSlide()
+  }, 5000) // Change image every 5 seconds
+}
+
+const stopAdvantageCarousel = () => {
+  if (advantageCarouselInterval.value) {
+    clearInterval(advantageCarouselInterval.value)
+    advantageCarouselInterval.value = null
+  }
+}
+
+const resetCarouselTimer = () => {
+  stopAdvantageCarousel()
+  startAdvantageCarousel()
+}
 
 // Setup Intersection Observer
 const setupObserver = () => {
@@ -513,7 +606,7 @@ onMounted(() => {
   setMeta(
     'À Propos d\'EGENT TOGO - Leader en Solutions Énergétiques Durables',
     'EGENT TOGO: solutions d\'énergie solaire et climatisation innovantes au Togo. Découvrez notre mission, nos services et notre engagement envers l\'énergie durable.',
-    '/src/assets/images/egent_reception.jpg',
+    EgentReceptionImage,
     '/a-propos',
     {
       type: 'website',  // ✅ Page statique, pas un article
@@ -522,6 +615,13 @@ onMounted(() => {
       imageHeight: '630'
     }
   )
+  
+  // Start advantage carousel
+  startAdvantageCarousel()
+})
+
+onUnmounted(() => {
+  stopAdvantageCarousel()
 })
 
 

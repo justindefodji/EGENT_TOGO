@@ -7,9 +7,21 @@
     <section 
       id="home" 
       class="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-start justify-center overflow-hidden -mt-24 md:-mt-48 pt-0"
-      :style="{ backgroundImage: `url(${hero1})` }"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-start justify-center">
+      <!-- Hero Carousel Background -->
+      <transition name="hero-carousel" mode="out-in">
+        <img 
+          :src="currentHeroImage" 
+          :key="heroSlideIndex"
+          alt="Carrousel EGENT TOGO"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </transition>
+
+      <!-- Dark Overlay for Content Readability -->
+      <div class="absolute inset-0 bg-black/30"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-start justify-center relative z-10">
         <div class="flex items-start justify-center w-full">
           <!-- Content -->
           <div class="z-10 max-w-4xl text-center pt-16 md:pt-40 px-2 sm:px-4">
@@ -28,6 +40,37 @@
             </div> -->
           </div>
         </div>
+      </div>
+
+      <!-- Hero Carousel Navigation Buttons -->
+      <button 
+        @click="heroSlideIndex = (heroSlideIndex - 1 + heroCarouselImages.length) % heroCarouselImages.length"
+        class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-20"
+        title="Image précédente"
+      >
+        <i class="fas fa-chevron-left text-[#016E98] text-lg"></i>
+      </button>
+
+      <button 
+        @click="heroSlideIndex = (heroSlideIndex + 1) % heroCarouselImages.length"
+        class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-20"
+        title="Image suivante"
+      >
+        <i class="fas fa-chevron-right text-[#016E98] text-lg"></i>
+      </button>
+
+      <!-- Hero Carousel Indicators -->
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        <button 
+          v-for="(_, index) in heroCarouselImages" 
+          :key="index"
+          @click="heroSlideIndex = index"
+          :class="[
+            'w-3 h-3 rounded-full transition-all duration-300',
+            index === heroSlideIndex ? 'bg-[#FF9D35] w-8' : 'bg-white/60 hover:bg-white'
+          ]"
+          :title="`Aller à l'image ${index + 1}`"
+        ></button>
       </div>
     </section>
     <!-- Contact Info Section - déborde sur la section blanche -->
@@ -197,15 +240,18 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <!-- Carousel Image -->
-          <div class="order-2 md:order-1 transition-all duration-4000" :class="whyChooseInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'">
+          <div class="order-2 md:order-1 transition-all duration-9000" :class="whyChooseInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'">
             <div class="relative w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden group">
               <!-- Carousel Images -->
-              <div class="relative w-full aspect-square bg-gray-200 flex items-center justify-center">
-                <img 
-                  :src="currentSlideImage" 
-                  :alt="`Produit EGENT TOGO - ${currentSlideIndex + 1}`"
-                  class="w-full h-full object-contain transition-opacity duration-500"
-                />
+              <div class="relative w-full aspect-square bg-gray-200 flex items-center justify-center overflow-hidden">
+                <transition name="carousel-fade" mode="out-in">
+                  <img 
+                    :src="currentSlideImage" 
+                    :alt="`Produit EGENT TOGO - ${currentSlideIndex + 1}`"
+                    :key="currentSlideIndex"
+                    class="w-full h-full object-contain"
+                  />
+                </transition>
               </div>
 
               <!-- Navigation Buttons -->
@@ -760,6 +806,8 @@ import { useCursorFollowText } from '../composables/useCursorFollowText'
 import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 import hero1 from '/src/assets/images/headepage.webp?url'
+import daurevoir from '/src/assets/images/DAUREVOIR.png?url'
+import dji from '/src/assets/images/hero1.jpg?url'
 
 // Import images du diaporama
 import zoklin from '/src/assets/images/zoklin.webp?url'
@@ -796,6 +844,15 @@ const currentSlideImage = computed(() => {
   return carouselImages[currentSlideIndex.value] || carouselImages[0]
 })
 
+// Hero Carousel state
+const heroCarouselImages = [hero1, daurevoir, dji]
+const heroSlideIndex = ref(0)
+const heroCarouselInterval = ref(null)
+
+const currentHeroImage = computed(() => {
+  return heroCarouselImages[heroSlideIndex.value] || heroCarouselImages[0]
+})
+
 const closeModal = () => {
   selectedImage.value = null
 }
@@ -817,13 +874,27 @@ const prevSlide = () => {
 const startCarousel = () => {
   carouselInterval.value = setInterval(() => {
     nextSlide()
-  }, 2000) // Change image every 2 seconds
+  }, 5000) // Change image every 5 seconds
 }
 
 const stopCarousel = () => {
   if (carouselInterval.value) {
     clearInterval(carouselInterval.value)
     carouselInterval.value = null
+  }
+}
+
+// Hero Carousel functions
+const startHeroCarousel = () => {
+  heroCarouselInterval.value = setInterval(() => {
+    heroSlideIndex.value = (heroSlideIndex.value + 1) % heroCarouselImages.length
+  }, 8000) // Change image every 8 seconds (slower)
+}
+
+const stopHeroCarousel = () => {
+  if (heroCarouselInterval.value) {
+    clearInterval(heroCarouselInterval.value)
+    heroCarouselInterval.value = null
   }
 }
 
@@ -872,6 +943,9 @@ onMounted(() => {
   // 🎠 Démarrer le carrousel automatique
   startCarousel()
   
+  // 🎠 Démarrer le carrousel Hero automatique
+  startHeroCarousel()
+  
   // ✅ SEO OPTIMISÉ POUR LA PAGE D'ACCUEIL
   setMeta(
     'EGENT TOGO - Solutions Énergie Solaire & Climatisation au Togo',
@@ -898,6 +972,7 @@ onMounted(() => {
 onUnmounted(() => {
   unlistenToProducts()
   stopCarousel() // Arrêter le carrousel
+  stopHeroCarousel() // Arrêter le carrousel Hero
 })
 
 // Navigation vers une route
