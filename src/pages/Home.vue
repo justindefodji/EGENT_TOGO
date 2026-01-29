@@ -393,7 +393,7 @@
             />
           </div>
           <!-- Partner 6 - CREFERL -->
-          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+          <div class="flex items-center justify-center h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.5s">
             <img 
               src="/src/assets/images/kekeli.jpg" 
               alt="kekeli"
@@ -402,7 +402,7 @@
           </div>
 
           <!-- Partner 7 - CREFERL -->
-          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+          <div class="flex items-center justify-center h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.6s">
             <img 
               src="/src/assets/images/ojedd.png" 
               alt="ojedd"
@@ -411,7 +411,7 @@
           </div>
           <!-- Partner 8 - CREFERL -->
           
-          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+          <div class="flex items-center justify-center h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.7s">
             <img 
               src="/src/assets/images/solafrica.png" 
               alt="solafrica"
@@ -419,7 +419,7 @@
             />
           </div>
           <!-- Partner 9 - CREFERL -->
-          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+          <div class="flex items-center justify-center h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.8s">
             <img 
               src="/src/assets/images/téléchargement.jpg" 
               alt="organic"
@@ -427,8 +427,8 @@
             />
           </div>
 
-          <!-- Partner 7 - CREFERL -->
-          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+          <!-- Partner 10 - CREFERL -->
+          <div class="flex items-center justify-center h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.9s">
             <img 
               src="/src/assets/images/cerme.jpg" 
               alt="cerme"
@@ -436,8 +436,8 @@
             />
           </div>
 
-          <!-- Partner 7 - CREFERL -->
-          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+          <!-- Partner 11 - CREFERL -->
+          <div class="flex items-center justify-center h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 1s">
             <img 
               src="/src/assets/images/sethi.jpg" 
               alt="sethi"
@@ -445,16 +445,16 @@
             />
           </div>
 
-          <!-- Partner 8 - CREFERL -->
-          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+          <!-- Partner 12 - CREFERL -->
+          <div class="flex items-center justify-center h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 1.1s">
             <img 
               src="/src/assets/images/logob.jpg" 
               alt="logob"
               class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
             />
           </div>
-          <!-- Partner 9 - CREFERL -->
-          <div class="flex items-center justify-center h-40 w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-4" style="animation-delay: 0.4s">
+          <!-- Partner 13 - CREFERL -->
+          <div class="flex items-center justify-center h-20 w-20 sm:h-28 sm:w-28 md:h-40 md:w-40 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 1.2s">
             <img 
               src="/src/assets/images/main.jpeg" 
               alt="logob"
