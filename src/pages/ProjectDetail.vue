@@ -608,7 +608,7 @@
         </div>
       </div>
     </div>
-    <section class="bg-gradient-to-r from-[#016E98] to-[#0392C7] py-16 md:py-24">
+    <section class="bg-gradient-to-r from-[#016E98] to-[#0392C7] py-16 md:py-24 mx-4 md:mx-8 rounded-3xl my-16 md:my-24 shadow-2xl border border-blue-800/50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-black text-white mb-8">PRÊT À PASSER À L'ACTION ?</h2>
         <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">

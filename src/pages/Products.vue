@@ -187,7 +187,7 @@
     </section>
 
     <!-- CTA Section: Main d'oeuvre qualifiée -->
-    <section id="qualifiee-section" class="relative overflow-hidden h-auto md:h-[371px] bg-gradient-to-r from-[#1a2b5a] via-[#2c3e7a] to-[#1a2b5a] py-12 md:py-0">
+    <section id="qualifiee-section" class="relative overflow-hidden h-auto md:h-[371px] bg-[#016E98] py-12 md:py-0">
       <!-- Background Image Overlay -->
       <div class="absolute inset-0 opacity-40 hidden md:block">
         <img 
@@ -198,7 +198,7 @@
       </div>
 
       <!-- Gradient Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#1a2b5a]/95 via-[#2c3e7a]/85 to-[#1a2b5a]/70"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#016E98]/95 via-[#016E98]/85 to-[#016E98]/70"></div>
 
       <!-- Content - Centered -->
       <div class="relative w-full max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">

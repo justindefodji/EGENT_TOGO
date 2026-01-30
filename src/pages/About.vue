@@ -465,7 +465,7 @@
       </div>
 
       <!-- CTA Section -->
-      <div class="bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-900 rounded-3xl p-12 md:p-16 text-center shadow-2xl border border-blue-800/50 animate-fadeInUp">
+      <div class="bg-[#016E98] rounded-3xl p-12 md:p-16 text-center shadow-2xl border border-blue-800/50 animate-fadeInUp">
         <h2 class="text-3xl md:text-4xl font-black text-white mb-6 animate-slideInDown">Prêt à Rejoindre Notre Mission ?</h2>
         <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto animate-fadeInUp animation-delay-200">Contactez-nous pour découvrir comment nous pouvons transformer votre accès à l'énergie.</p>
         <button @click="navigateTo('/Contact')" class="bg-[#EE6D08] hover:bg-orange-600 text-white font-black px-8 py-4 rounded-full transition-all duration-300 text-lg transform hover:scale-105 hover:shadow-lg animate-fadeInUp animation-delay-400">

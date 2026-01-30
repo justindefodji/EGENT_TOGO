@@ -133,7 +133,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-16 md:py-24 bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-900">
+    <section class="py-16 md:py-24 bg-[#016E98] mx-4 md:mx-8 rounded-3xl my-16 md:my-24 shadow-2xl border border-blue-800/50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
           <!-- <div class="animate-fadeInUp animation-delay-200">

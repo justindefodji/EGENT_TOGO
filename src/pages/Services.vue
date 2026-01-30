@@ -288,7 +288,7 @@
 
 
     <!-- CTA Section: Main d'oeuvre qualifiée -->
-    <section id="maindoeuvre-section" class="relative overflow-hidden bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-900 shadow-2xl border border-blue-800/50 mx-4 md:mx-8 rounded-3xl my-8 md:my-12">
+    <section id="maindoeuvre-section" class="relative overflow-hidden bg-[#016E98] shadow-2xl border border-blue-800/50 mx-4 md:mx-8 rounded-3xl my-8 md:my-12">
       <!-- Background Image Overlay -->
       <div class="absolute inset-0 opacity-40">
         <img 
@@ -299,7 +299,7 @@
       </div>
 
       <!-- Gradient Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/85 to-blue-950/70"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#016E98]/95 via-[#016E98]/85 to-[#016E98]/70"></div>
 
       <!-- Content - Centered -->
       <div class="relative w-full max-w-7xl mx-auto h-auto md:h-full px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center py-12 md:py-16 space-y-6 animate-fadeInUp animation-delay-400">
