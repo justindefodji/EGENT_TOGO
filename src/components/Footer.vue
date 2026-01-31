@@ -41,7 +41,7 @@
             <li><RouterLink to="/service/climatisation-froid" class="hover:text-[#EE6D08] transition-colors duration-300">Climatisation & Froid</RouterLink></li>
             <li><RouterLink to="/service/plomberie" class="hover:text-[#EE6D08] transition-colors duration-300">Plomberie</RouterLink></li>
             <li><RouterLink to="/service/fourniture-equipements" class="hover:text-[#EE6D08] transition-colors duration-300">Fourniture d'Équipements</RouterLink></li>
-            <li><RouterLink to="/service/consulting" class="hover:text-[#EE6D08] transition-colors duration-300">consulting</RouterLink></li>
+            <li><RouterLink to="/service/consulting" class="hover:text-[#EE6D08] transition-colors duration-300">Consulting</RouterLink></li>
           </ul>
         </div>
 
