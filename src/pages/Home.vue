@@ -346,128 +346,64 @@
           </p>
         </div>
 
-        <!-- Partners Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 items-center justify-items-center">
-          <!-- Partner 1 - TotalEnergies -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0s">
-            <img 
-              src="/src/assets/images/totalenergies.svg"
-              alt="TotalEnergies"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
+        <!-- Partners Carousel -->
+        <div class="relative px-12 sm:px-16 md:px-20">
+          <!-- Carousel Container -->
+          <div class="overflow-hidden rounded-2xl">
+            <transition-group 
+              tag="div" 
+              name="partners-slide"
+              class="flex gap-4 sm:gap-6 md:gap-8 justify-center items-center"
+            >
+              <!-- Partner Items - Show 3 on all screens -->
+              <div
+                v-for="(partner, index) in getVisiblePartners()"
+                :key="partner.name"
+                class="flex-shrink-0 w-[calc(33.333%-16px)] flex items-center justify-center h-24 sm:h-32 md:h-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group p-2 sm:p-3 md:p-4"
+              >
+                <img 
+                  :src="partner.src"
+                  :alt="partner.name"
+                  class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+                />
+              </div>
+            </transition-group>
           </div>
 
-          <!-- Partner 2 - Ecobank -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.1s">
-            <img 
-              src="/src/assets/images/Ecobank_logo1.png" 
-              alt="Ecobank"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
+          <!-- Navigation Buttons -->
+          <button 
+            @click="prevPartnersSlide"
+            class="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#016E98] hover:bg-[#014f78] text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+            title="Partenaires précédents"
+          >
+            <i class="fas fa-chevron-left text-lg"></i>
+          </button>
 
-          <!-- Partner 3 - OIM -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.2s">
-            <img 
-              src="/src/assets/images/Logo_OIM.png" 
-              alt="OIM"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
+          <button 
+            @click="nextPartnersSlide"
+            class="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#016E98] hover:bg-[#014f78] text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+            title="Partenaires suivants"
+          >
+            <i class="fas fa-chevron-right text-lg"></i>
+          </button>
 
-          <!-- Partner 4 - FAO -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.3s">
-            <img 
-              src="/src/assets/images/FAO2.png" 
-              alt="FAO"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
+          <!-- Slide Indicators -->
+          <div class="flex justify-center gap-2 mt-8">
+            <button 
+              v-for="(_, index) in totalPartnerSlides"
+              :key="index"
+              @click="partnersSlideIndex = index"
+              :class="[
+                'w-3 h-3 rounded-full transition-all duration-300',
+                index === partnersSlideIndex ? 'bg-[#FF9D35] w-8' : 'bg-[#016E98]/30 hover:bg-[#016E98]/60'
+              ]"
+              :title="`Aller au groupe ${index + 1}`"
+            ></button>
           </div>
-
-          <!-- Partner 5 - CREFERL -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.4s">
-            <img 
-              src="/src/assets/images/crefer2.png" 
-              alt="CREFER"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-          <!-- Partner 6 - CREFERL -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.5s">
-            <img 
-              src="/src/assets/images/kekeli.jpg" 
-              alt="kekeli"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Partner 7 - CREFERL -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.6s">
-            <img 
-              src="/src/assets/images/ojedd.png" 
-              alt="ojedd"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-          <!-- Partner 8 - CREFERL -->
-          
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.7s">
-            <img 
-              src="/src/assets/images/solafrica.png" 
-              alt="solafrica"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-          <!-- Partner 9 - CREFERL -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.8s">
-            <img 
-              src="/src/assets/images/téléchargement.jpg" 
-              alt="organic"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Partner 10 - CREFERL -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 0.9s">
-            <img 
-              src="/src/assets/images/cerme.jpg" 
-              alt="cerme"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Partner 11 - CREFERL -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 1s">
-            <img 
-              src="/src/assets/images/sethi.jpg" 
-              alt="sethi"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Partner 12 - CREFERL -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 1.1s">
-            <img 
-              src="/src/assets/images/logob.jpg" 
-              alt="logob"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-          <!-- Partner 13 - CREFERL -->
-          <div class="flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 md:h-48 md:w-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group animate-fadeInUp p-2 sm:p-3 md:p-4" style="animation-delay: 1.2s">
-            <img 
-              src="/src/assets/images/main.jpeg" 
-              alt="logob"
-              class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-          
         </div>
 
-        
-
         <!-- Partnership CTA -->
-        <div class="text-center mt-20">
+        <div class="text-center mt-12 md:mt-20">
           <p class="text-gray-600 text-lg mb-6">Intéressé par un partenariat ?</p>
           <button @click="navigateTo('/contact')" class="btn-primary rounded-lg px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-300">
             Nous contacter
@@ -846,6 +782,37 @@ const heroCarouselImages = [hero1, daurevoir, dji]
 const heroSlideIndex = ref(0)
 const heroCarouselInterval = ref(null)
 
+// Partners Carousel state
+const partnersData = [
+  { name: 'TotalEnergies', src: new URL('../assets/images/totalenergies.svg', import.meta.url).href },
+  { name: 'Ecobank', src: new URL('../assets/images/Ecobank_logo1.png', import.meta.url).href },
+  { name: 'OIM', src: new URL('../assets/images/Logo_OIM.png', import.meta.url).href },
+  { name: 'FAO', src: new URL('../assets/images/FAO2.png', import.meta.url).href },
+  { name: 'CREFER', src: new URL('../assets/images/crefer2.png', import.meta.url).href },
+  { name: 'Kekeli', src: new URL('../assets/images/kekeli.jpg', import.meta.url).href },
+  { name: 'OJEDD', src: new URL('../assets/images/ojedd.png', import.meta.url).href },
+  { name: 'SolAfrica', src: new URL('../assets/images/solafrica.png', import.meta.url).href },
+  { name: 'Organic', src: new URL('../assets/images/téléchargement.jpg', import.meta.url).href },
+  { name: 'CERME', src: new URL('../assets/images/cerme.jpg', import.meta.url).href },
+  { name: 'SETHI', src: new URL('../assets/images/sethi.jpg', import.meta.url).href },
+  { name: 'Logo B', src: new URL('../assets/images/logob.jpg', import.meta.url).href },
+  { name: 'Main', src: new URL('../assets/images/main.jpeg', import.meta.url).href },
+]
+const partnersSlideIndex = ref(0)
+const partnersPerSlide = computed(() => {
+  // Déterminer le nombre de partenaires à afficher par slide selon la taille de l'écran
+  // On laisse ça pour plus tard, on va utiliser une valeur fixe de 3
+  return 3
+})
+const totalPartnerSlides = computed(() => {
+  return Math.ceil(partnersData.length / partnersPerSlide.value)
+})
+const getVisiblePartners = () => {
+  const start = partnersSlideIndex.value * partnersPerSlide.value
+  return partnersData.slice(start, start + partnersPerSlide.value)
+}
+const partnersCarouselInterval = ref(null)
+
 const currentHeroImage = computed(() => {
   return heroCarouselImages[heroSlideIndex.value] || heroCarouselImages[0]
 })
@@ -892,6 +859,28 @@ const stopHeroCarousel = () => {
   if (heroCarouselInterval.value) {
     clearInterval(heroCarouselInterval.value)
     heroCarouselInterval.value = null
+  }
+}
+
+// Partners Carousel functions
+const nextPartnersSlide = () => {
+  partnersSlideIndex.value = (partnersSlideIndex.value + 1) % totalPartnerSlides.value
+}
+
+const prevPartnersSlide = () => {
+  partnersSlideIndex.value = (partnersSlideIndex.value - 1 + totalPartnerSlides.value) % totalPartnerSlides.value
+}
+
+const startPartnersCarousel = () => {
+  partnersCarouselInterval.value = setInterval(() => {
+    nextPartnersSlide()
+  }, 3000) // Change every 3 seconds
+}
+
+const stopPartnersCarousel = () => {
+  if (partnersCarouselInterval.value) {
+    clearInterval(partnersCarouselInterval.value)
+    partnersCarouselInterval.value = null
   }
 }
 
@@ -943,6 +932,9 @@ onMounted(() => {
   // 🎠 Démarrer le carrousel Hero automatique
   startHeroCarousel()
   
+  // 🎠 Démarrer le carrousel des partenaires automatique
+  startPartnersCarousel()
+  
   // ✅ SEO OPTIMISÉ POUR LA PAGE D'ACCUEIL
   setMeta(
     'EGENT TOGO - Solutions Énergie Solaire & Climatisation au Togo',
@@ -970,6 +962,7 @@ onUnmounted(() => {
   unlistenToProducts()
   stopCarousel() // Arrêter le carrousel
   stopHeroCarousel() // Arrêter le carrousel Hero
+  stopPartnersCarousel() // Arrêter le carrousel des partenaires
 })
 
 // Navigation vers une route
@@ -1192,5 +1185,27 @@ const getSortedProducts = () => {
 
 .carousel-image {
   animation: fadeInImage 0.5s ease-in-out;
+}
+
+/* Partners Carousel Transitions */
+.partners-slide-enter-active,
+.partners-slide-leave-active {
+  transition: all 0.5s ease;
+}
+
+.partners-slide-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.partners-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.partners-slide-enter-to,
+.partners-slide-leave-from {
+  opacity: 1;
+  transform: translateX(0);
 }
 </style>
