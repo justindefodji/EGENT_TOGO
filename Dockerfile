@@ -1,20 +1,37 @@
-# Dockerfile pour EGENT TOGO
-FROM node:20-alpine
+# Dockerfile pour EGENT TOGO - Production
 
-# Définir le répertoire de travail
+# Stage 1: Build
+FROM node:20-alpine AS builder
+
 WORKDIR /app
 
-# Copier package.json et package-lock.json
 COPY package.json package-lock.json* ./
+RUN npm ci --only=production && npm cache clean --force
 
-# Installer les dépendances
-RUN npm install
-
-# Copier le code source
 COPY . .
+RUN npm run build
 
-# Exposer le port Vite
-EXPOSE 5173
+# Stage 2: Production
+FROM node:20-alpine
 
-# Commande de démarrage
-CMD ["npm", "run", "dev"]
+WORKDIR /app
+
+# Installer Express et dépendances runtime uniquement
+COPY package.json package-lock.json* ./
+RUN npm ci --only=production && npm cache clean --force
+
+# Copier les fichiers compilés depuis le builder
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/public ./public
+COPY server.js .
+COPY .env* ./
+
+# Exposer le port production
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+    CMD node -e "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+
+# Commande de démarrage production
+CMD ["npm", "start"]
