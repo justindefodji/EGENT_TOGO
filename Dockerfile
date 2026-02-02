@@ -6,7 +6,7 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
-RUN npm ci --only=production && npm cache clean --force
+RUN npm ci && npm cache clean --force
 
 COPY . .
 RUN npm run build
@@ -16,9 +16,9 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Installer Express et dépendances runtime uniquement
+# Installer toutes les dépendances (dev et prod)
 COPY package.json package-lock.json* ./
-RUN npm ci --only=production && npm cache clean --force
+RUN npm ci && npm cache clean --force
 
 # Copier les fichiers compilés depuis le builder
 COPY --from=builder /app/dist ./dist
@@ -34,4 +34,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
     CMD node -e "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
 
 # Commande de démarrage production
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
