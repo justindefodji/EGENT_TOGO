@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  # Mode développement
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILD_ENV: dev
+        NODE_VERSION: 20
+        NODE_VARIANT: alpine
+        PORT: 3000
+    container_name: egent-togo-dev
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+      - "5173:5173"  # Vite dev server
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
+
+  # Mode production
+  app-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILD_ENV: prod
+        NODE_VERSION: 20
+        NODE_VARIANT: alpine
+        PORT: 3000
+    container_name: egent-togo-prod
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
