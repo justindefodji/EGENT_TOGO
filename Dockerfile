@@ -5,6 +5,9 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Désactiver le téléchargement du navigateur Puppeteer lors de l'installation des dépendances
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+
 COPY package.json package-lock.json* ./
 RUN npm ci && npm cache clean --force
 
@@ -12,12 +15,26 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Production
-FROM node:20-alpine
+FROM node:20-alpine AS production
+
+# Installer les dépendances système pour Puppeteer et Chromium
+RUN apk add --no-cache \
+      chromium \
+      nss \
+      freetype \
+      harfbuzz \
+      ca-certificates \
+      ttf-freefont
+
+# Informer Puppeteer d'utiliser le Chromium installé par le système
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 WORKDIR /app
 
 # Installer toutes les dépendances (dev et prod)
 COPY package.json package-lock.json* ./
+# Désactiver le téléchargement automatique de Puppeteer ici aussi
+ENV PUPPETEER_SKIP_DOWNLOAD=true
 RUN npm ci && npm cache clean --force
 
 # Copier les fichiers compilés depuis le builder
@@ -29,9 +46,6 @@ COPY .env* ./
 # Exposer le port production
 EXPOSE 3000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-    CMD node -e "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
 
 # Commande de démarrage production
 CMD ["node", "server.js"]
