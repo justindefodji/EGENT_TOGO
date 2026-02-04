@@ -1,12 +1,12 @@
 <template>
   <div class="min-h-screen bg-gray-50 p-8">
     <div class="max-w-6xl mx-auto">
-      <h1 class="text-4xl font-black mb-8">🔧 Débogage Firebase</h1>
+      <h1 class="text-3xl font-bold mb-8">🔧 Débogage Firebase</h1>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <!-- Statut Firebase -->
         <div class="bg-white p-6 rounded-lg shadow">
-          <h2 class="text-xl font-bold mb-4">📊 Statut</h2>
+          <h2 class="text-xl font-normal mb-4">📊 Statut</h2>
           <div class="space-y-2 text-sm font-mono">
             <p><strong>Chargement:</strong> {{ loading ? '🟡 Oui' : '🟢 Non' }}</p>
             <p><strong>Erreur:</strong> {{ error ? '🔴 ' + error : '🟢 Aucune' }}</p>
@@ -16,7 +16,7 @@
 
         <!-- Actions -->
         <div class="bg-white p-6 rounded-lg shadow">
-          <h2 class="text-xl font-bold mb-4">🎯 Actions</h2>
+          <h2 class="text-xl font-normal mb-4">🎯 Actions</h2>
           <div class="space-y-2">
             <button 
               @click="reloadProducts"
@@ -36,7 +36,7 @@
 
       <!-- Produits JSON -->
       <div class="bg-white p-6 rounded-lg shadow mb-8">
-        <h2 class="text-xl font-bold mb-4">📦 Produits (JSON)</h2>
+        <h2 class="text-xl font-normal mb-4">📦 Produits (JSON)</h2>
         <div class="bg-gray-100 p-4 rounded overflow-x-auto">
           <pre class="text-xs">{{ JSON.stringify(products, null, 2) }}</pre>
         </div>
@@ -51,7 +51,7 @@
             class="w-full h-40 object-cover rounded mb-2"
             @error="(e) => e.target.src = '/images/montage_panneau.jpg'"
           />
-          <h3 class="font-bold text-lg">{{ product.name }}</h3>
+          <h3 class="font-normal text-lg">{{ product.name }}</h3>
           <p class="text-gray-600 text-sm">{{ product.shortDescription }}</p>
           <p class="font-bold text-blue-600 mt-2">{{ product.price }}</p>
         </div>

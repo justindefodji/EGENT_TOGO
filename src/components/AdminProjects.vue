@@ -2,7 +2,7 @@
   <div class="space-y-6 p-6">
     <!-- Header -->
     <div class="flex items-center justify-between">
-      <h2 class="text-3xl font-bold text-gray-900">Gestion des Projets</h2>
+      <h2 class="text-2xl font-normal text-gray-900">Gestion des Projets</h2>
       <button
         @click="showForm = !showForm"
         class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition flex items-center gap-2"
@@ -26,7 +26,7 @@
 
     <!-- Formulaire -->
     <div v-if="showForm" class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-      <h3 class="text-xl font-bold text-gray-900 mb-6">
+      <h3 class="text-xl font-normal text-gray-900 mb-6">
         {{ isEditing ? '✏️ Modifier Projet' : '➕ Créer Nouveau Projet' }}
       </h3>
       
@@ -228,7 +228,7 @@
 
           <!-- Images existantes -->
           <div v-if="formData.images && formData.images.length > 0" class="mt-6">
-            <h4 class="text-sm font-bold text-gray-700 mb-3">Images existantes</h4>
+            <h4 class="text-sm font-normal text-gray-700 mb-3">Images existantes</h4>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
               <div v-for="(image, idx) in formData.images" :key="idx" class="relative group">
                 <img 
@@ -289,7 +289,7 @@
 
         <!-- Caractéristiques et Avantages -->
         <div>
-          <h4 class="text-lg font-bold text-gray-800 mb-4">À propos du projet</h4>
+          <h4 class="text-lg font-normal text-gray-800 mb-4">À propos du projet</h4>
           
           <!-- Caractéristiques principales -->
           <div class="mb-6">
@@ -379,7 +379,7 @@
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <!-- Header du Tableau -->
       <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
-        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+        <h3 class="text-lg font-normal text-white flex items-center gap-2">
           <i class="fas fa-briefcase"></i>
           Projets ({{ projects.length }})
         </h3>

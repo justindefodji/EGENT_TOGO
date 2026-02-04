@@ -1,7 +1,7 @@
 <template>
   <div class="import-container">
     <div class="bg-white rounded-lg shadow-lg p-8">
-      <h1 class="text-4xl font-bold text-gray-800 mb-2">Import de Données</h1>
+      <h1 class="text-3xl font-normal text-gray-800 mb-2">Import de Données</h1>
       <p class="text-gray-600 mb-8">
         Importe les produits, articles et projets existants dans Firebase
       </p>
@@ -89,7 +89,7 @@
 
       <!-- Info Box -->
       <div class="mt-8 p-6 bg-amber-50 border-l-4 border-amber-500 rounded">
-        <h3 class="font-bold text-amber-900 mb-2">⚠️ Important</h3>
+        <h3 class="font-normal text-amber-900 mb-2">⚠️ Important</h3>
         <ul class="text-sm text-amber-800 space-y-1">
           <li>✓ Assurez-vous que les règles de sécurité Firebase sont en mode TEST</li>
           <li>✓ Vérifiez votre connexion à Firebase dans la console</li>

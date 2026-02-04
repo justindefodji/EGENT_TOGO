@@ -18,7 +18,7 @@
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <div class="text-white text-center">
                 <span class="text-5xl mb-2">⚡</span>
-                <h3 class="text-2xl font-bold">L'ÉLECTRICITÉ GÉNÉRALE</h3>
+                <h3 class="text-xl font-normal">L'ÉLECTRICITÉ GÉNÉRALE</h3>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <div class="text-white text-center">
                 <span class="text-5xl mb-2">❄️</span>
-                <h3 class="text-2xl font-bold">CLIMATISATION À FROID</h3>
+                <h3 class="text-xl font-normal">CLIMATISATION À FROID</h3>
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <div class="text-white text-center">
                 <span class="text-5xl mb-2">☀️</span>
-                <h3 class="text-2xl font-bold">ÉNERGIE SOLAIRE</h3>
+                <h3 class="text-xl font-normal">ÉNERGIE SOLAIRE</h3>
               </div>
             </div>
           </div>

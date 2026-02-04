@@ -16,7 +16,7 @@
         <!-- Section Titre Hero -->
         <div class="text-center">
           <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest">Restez informé</p>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             Actualités EGENT TOGO  
           </h1>
           <!-- <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
@@ -71,7 +71,7 @@
     <section class="bg-white py-20 md:py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-20">
-          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-4">Dernières shorts</h2>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#016E98] leading-tight mb-4">Dernières shorts</h2>
           <div class="w-24 h-1.5 bg-gradient-to-r from-[#EE6D08] to-orange-500 rounded-full"></div>
         </div>
 
@@ -146,7 +146,7 @@
 
         <!-- Full Videos -->
         <div>
-          <h3 class="text-2xl md:text-3xl font-black text-[#016E98] mb-10">Nos vidéos</h3>
+          <h3 class="text-2xl md:text-3xl font-bold text-[#016E98] mb-10">Nos vidéos</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             <!-- Video 1 -->
             <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
@@ -222,7 +222,7 @@
     <section class="bg-white py-20 md:py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-20">
-          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-4">Derniers articles</h2>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#016E98] leading-tight mb-4">Derniers articles</h2>
           <div class="w-24 h-1.5 bg-gradient-to-r from-[#EE6D08] to-orange-500 rounded-full"></div>
         </div>
 
@@ -293,7 +293,7 @@
       </div>
 
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">Restez Informé</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Restez Informés</h2>
         <p class="text-lg md:text-xl text-gray-100 mb-12">
           Abonnez-vous à notre newsletter pour recevoir les dernières actualités, innovations et opportunités du groupe EGENT TOGO.
         </p>
@@ -303,7 +303,7 @@
             placeholder="Votre adresse email" 
             class="flex-1 px-6 py-4 rounded-lg text-dark font-semibold placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-blue-900"
           />
-          <button class="bg-[#EE6D08] hover:bg-orange-600 text-white font-black px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap">
+          <button class="bg-[#EE6D08] hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap">
             S'abonner
           </button>
         </div>

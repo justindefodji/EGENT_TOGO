@@ -15,7 +15,7 @@
 
         <!-- Quick Links -->
         <div>
-          <h3 class="font-black text-xl text-white mb-6">Navigation</h3>
+          <h3 class="font-bold text-xl text-white mb-6">Navigation</h3>
           <ul class="space-y-3 text-blue-50">
             <li><RouterLink to="/" class="hover:text-[#EE6D08] transition-colors duration-300">Accueil</RouterLink></li>
             <li><RouterLink to="/a-propos" class="hover:text-[#EE6D08] transition-colors duration-300">À Propos</RouterLink></li>
@@ -33,7 +33,7 @@
 
         <!-- Services -->
         <div>
-          <h3 class="font-black text-xl text-white mb-6">Services</h3>
+          <h3 class="font-bold text-xl text-white mb-6">Services</h3>
           <ul class="space-y-3 text-blue-50">
             <li><RouterLink to="/services" class="hover:text-[#EE6D08] transition-colors duration-300">Tous les Services</RouterLink></li>
             <li><RouterLink to="/service/energie-solaire" class="hover:text-[#EE6D08] transition-colors duration-300">Énergie Solaire</RouterLink></li>
@@ -47,7 +47,7 @@
 
         <!-- Follow Us -->
         <div>
-          <h3 class="font-black text-xl text-white mb-6">Nous Suivre</h3>
+          <h3 class="font-bold text-xl text-white mb-6">Nous Suivre</h3>
           <p class="text-blue-50 mb-6 text-sm leading-relaxed">
             Suivez EGENT TOGO sur les réseaux sociaux pour les actualités et nouveautés.
           </p>

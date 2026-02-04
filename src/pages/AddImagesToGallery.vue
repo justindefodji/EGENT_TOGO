@@ -10,7 +10,7 @@
           <i class="fas fa-arrow-left"></i>
           Retour
         </router-link>
-        <h1 class="text-4xl font-black text-white flex items-center gap-3">
+        <h1 class="text-3xl font-bold text-white flex items-center gap-3">
           <i class="fas fa-images text-orange-400"></i>
           Importer Galerie
         </h1>
@@ -21,7 +21,7 @@
       <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden">
         <!-- Header Card -->
         <div class="bg-gradient-to-r from-blue-600 to-orange-500 p-8 text-white">
-          <h2 class="text-2xl font-bold mb-2">🚀 Ajouter les Images à la Galerie</h2>
+          <h2 class="text-2xl font-normal mb-2">🚀 Ajouter les Images à la Galerie</h2>
           <p class="text-blue-100 text-sm">Importez automatiquement toutes les images du dossier assets/images vers Firestore</p>
         </div>
 
@@ -32,7 +32,7 @@
             <div class="flex items-start gap-4">
               <i class="fas fa-circle-info text-blue-600 text-2xl mt-1"></i>
               <div>
-                <h3 class="font-bold text-blue-900 mb-2">Ici's comment ça fonctionne:</h3>
+                <h3 class="font-normal text-blue-900 mb-2">Ici's comment ça fonctionne:</h3>
                 <ul class="text-blue-800 text-sm space-y-1">
                   <li>✅ <strong>Étape 1:</strong> Cliquez sur "Nettoyer et Réimporter"</li>
                   <li>✅ <strong>Étape 2:</strong> L'ancienne galerie sera vidée</li>
@@ -83,7 +83,7 @@
           >
             <div v-if="results.length > 0" class="space-y-4">
               <div class="flex items-center justify-between">
-                <h3 class="text-2xl font-bold text-gray-800">📋 Résultats d'Import</h3>
+                <h3 class="text-2xl font-normal text-gray-800">📋 Résultats d'Import</h3>
                 <span class="text-sm font-semibold px-4 py-2 bg-gray-100 rounded-full text-gray-700">
                   {{ results.length }} images
                 </span>
@@ -93,11 +93,11 @@
               <div class="grid grid-cols-2 gap-4 mb-6">
                 <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-300 rounded-lg p-4">
                   <p class="text-green-700 text-sm font-semibold uppercase mb-1">Succès</p>
-                  <p class="text-3xl font-black text-green-600">{{ results.filter(r => r.success).length }}</p>
+                  <p class="text-3xl font-bold text-green-600">{{ results.filter(r => r.success).length }}</p>
                 </div>
                 <div class="bg-gradient-to-br from-red-50 to-red-100 border border-red-300 rounded-lg p-4">
                   <p class="text-red-700 text-sm font-semibold uppercase mb-1">Erreurs</p>
-                  <p class="text-3xl font-black text-red-600">{{ results.filter(r => !r.success).length }}</p>
+                  <p class="text-3xl font-bold text-red-600">{{ results.filter(r => !r.success).length }}</p>
                 </div>
               </div>
 
@@ -125,7 +125,7 @@
 
           <!-- Tips Section -->
           <div class="bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 rounded-lg p-6">
-            <h4 class="font-bold text-orange-900 mb-3 flex items-center gap-2">
+            <h4 class="font-normal text-orange-900 mb-3 flex items-center gap-2">
               <i class="fas fa-lightbulb"></i>
               Conseils
             </h4>

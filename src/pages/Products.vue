@@ -28,7 +28,7 @@
 
             <!-- Main heading with gradient -->
             <div class="animate-slideInDown animation-delay-400">
-              <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span class="text-[#016E98]">
                   SOLUTIONS
                 </span>
@@ -46,7 +46,7 @@
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 pt-6 animate-fadeInUp animation-delay-800">
-              <button @click="scrollToProduits" class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+              <button @click="scrollToProduits" class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
                 <span>Découvrir les Produits</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
               </button>
@@ -72,7 +72,7 @@
                 <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-[#EE6D08] to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-box text-lg md:text-xl"></i>
                 </div>
-                <h3 class="font-black text-[#016E98] text-base md:text-lg">Premium</h3>
+                <h3 class="font-bold text-[#016E98] text-base md:text-lg">Premium</h3>
               </div>
               <p class="text-xs md:text-sm text-black">Produits de qualité supérieure</p>
             </div> -->
@@ -83,7 +83,7 @@
                 <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-[#016E98] to-[#016E98] rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-shield-alt text-lg md:text-xl"></i>
                 </div>
-                <h3 class="font-black text-[#EE6D08] text-base md:text-lg">Garantie</h3>
+                <h3 class="font-bold text-[#EE6D08] text-base md:text-lg">Garantie</h3>
               </div>
               <p class="text-xs md:text-sm text-black">Service client disponible 24/7</p>
             </div>
@@ -108,7 +108,7 @@
         <!-- Section Header -->
         <div class="text-center mb-20">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-slideInDown animation-delay-200">Nos produits phares</p>
-          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6 animate-slideInDown animation-delay-400">DÉCOUVREZ NOS MEILLEURES SOLUTIONS</h2>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#016E98] leading-tight mb-6 animate-slideInDown animation-delay-400">DÉCOUVREZ NOS MEILLEURES SOLUTIONS</h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-600">
             Nos solutions énergétiques sont conçues avec les meilleures technologies disponibles pour vous garantir performance, durabilité et économies d'énergie.
           </p>
@@ -152,7 +152,7 @@
               <!-- Content -->
               <div class="bg-white p-6 flex flex-col flex-grow">
                 <div class="flex items-start justify-between mb-2">
-                  <router-link :to="'/produits/' + (product.slug || product.id)" class="text-2xl font-black text-[#0392C7] hover:text-[#EE6D08] transition-colors block">{{ product.name || product.title }}</router-link>
+                  <router-link :to="'/produits/' + (product.slug || product.id)" class="text-2xl font-bold text-[#0392C7] hover:text-[#EE6D08] transition-colors block">{{ product.name || product.title }}</router-link>
                   <span v-if="product.featured" class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold">⭐ Phare</span>
                 </div>
                 
@@ -161,7 +161,7 @@
                 </p>
                 
                 <div class="space-y-4 mt-auto">
-                  <p class="text-[#FF9D35] font-black text-lg">{{ product.price }}</p>
+                  <p class="text-[#FF9D35] font-bold text-lg">{{ product.price }}</p>
                   <button @click="navigateTo('/produits/' + (product.slug || product.id))" class="w-full bg-[#0392C7] hover:bg-[#016E98] text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-300 cursor-pointer">
                     Détail
                   </button>
@@ -202,7 +202,7 @@
 
       <!-- Content - Centered -->
       <div class="relative w-full max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
-        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-6 animate-slideInDown animation-delay-200">
+        <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6 animate-slideInDown animation-delay-200">
           UNE MAIN D'ŒUVRE QUALIFIÉE DISPONIBLE 7/7
         </h2>
         
@@ -222,7 +222,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
           <div>
-            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6 animate-slideInDown animation-delay-200">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#016E98] leading-tight mb-6 animate-slideInDown animation-delay-200">
               COMMANDEZ VOTRE SOLUTION ÉNERGÉTIQUE DÈS AUJOURD'HUI
             </h2>
             

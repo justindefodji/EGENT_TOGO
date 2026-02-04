@@ -16,7 +16,7 @@
         <!-- Section Titre Hero -->
         <div id="hero-title" class="text-center">
           <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown"></p>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
              <span class="text-[#EE6D08]">Galerie de quelques réalisations</span> 
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
@@ -83,7 +83,7 @@
             <!-- Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
               <div>
-                <h3 class="text-white font-bold text-lg mb-1">{{ image.title }}</h3>
+                <h3 class="text-white font-normal text-lg mb-1">{{ image.title }}</h3>
                 <p class="text-orange-400 text-sm font-semibold">{{ image.category }}</p>
               </div>
             </div>
@@ -117,7 +117,7 @@
 
               <!-- Image Info -->
               <div class="text-center mt-8 text-white">
-                <h3 class="text-xl font-black mb-2">{{ currentLightboxImage.title }}</h3>
+                <h3 class="text-xl font-bold mb-2">{{ currentLightboxImage.title }}</h3>
                 <p class="text-secondary text-xs font-bold uppercase tracking-widest mb-2">{{ currentLightboxImage.category }}</p>
                 <p class="text-gray-400 text-sm">{{ currentLightboxIndex + 1 }} / {{ filteredGallery.length }}</p>
               </div>
@@ -173,7 +173,7 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight animate-slideInDown">Nos <span class="text-[#EE6D08]">Réalisations</span></h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight animate-slideInDown">Nos <span class="text-[#EE6D08]">Réalisations</span></h2>
           <div class="w-24 h-1.5 bg-gradient-to-r from-[#EE6D08] to-orange-500 rounded-full mx-auto animate-fadeInUp animation-delay-200"></div>
         </div>
 
@@ -183,7 +183,7 @@
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
               <i class="fas fa-check text-white text-3xl"></i>
             </div>
-            <h3 class="text-4xl font-black text-[#EE6D08] mb-2">2K</h3>
+            <h3 class="text-3xl font-bold text-[#EE6D08] mb-2">2K</h3>
             <p class="text-gray-100 font-semibold">Projets réalisés</p>
           </div> -->
 
@@ -191,7 +191,7 @@
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
               <i class="fas fa-users text-white text-3xl"></i>
             </div>
-            <h3 class="text-4xl font-black text-[#EE6D08] mb-2">200</h3>
+            <h3 class="text-3xl font-bold text-[#EE6D08] mb-2">200</h3>
             <p class="text-gray-100 font-semibold">Clients satisfaits</p>
           </div>
 
@@ -199,7 +199,7 @@
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
               <i class="fas fa-star text-white text-3xl"></i>
             </div>
-            <h3 class="text-4xl font-black text-[#EE6D08] mb-2">7</h3>
+            <h3 class="text-3xl font-bold text-[#EE6D08] mb-2">7</h3>
             <p class="text-gray-100 font-semibold">Années d'expérience</p>
           </div>
 
@@ -207,7 +207,7 @@
             <div class="inline-block bg-[#EE6D08] rounded-full p-4 mb-4">
               <i class="fas fa-trophy text-white text-3xl"></i>
             </div>
-            <h3 class="text-4xl font-black text-[#EE6D08] mb-2">100%</h3>
+            <h3 class="text-3xl font-bold text-[#EE6D08] mb-2">100%</h3>
             <p class="text-gray-100 font-semibold">Garantie qualité</p>
           </div>
         </div>
@@ -218,7 +218,7 @@
     <section id="map-section" class="bg-white py-20 md:py-32 animate-fadeInUp">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Visualisez quelqu'unes de nos réalisations</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Visualisez quelqu'unes de nos réalisations</h2>
           <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-200">Trouvez les localisations sur la carte</p>
         </div>
         <div class="rounded-3xl overflow-hidden shadow-2xl h-96 md:h-96 border-4 border-gray-100 hover:shadow-3xl transition-all duration-300 animate-fadeInUp animation-delay-400">
@@ -238,7 +238,7 @@
     <!-- CTA Section -->
     <section id="cta-section" class="bg-white py-20 md:py-32">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fadeInUp">
-        <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-6 leading-tight animate-slideInDown">Prêt à concrétiser votre projet ?</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#EE6D08] mb-6 leading-tight animate-slideInDown">Prêt à concrétiser votre projet ?</h2>
         <p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed animate-fadeInUp animation-delay-200">
           Découvrez comment EGENT TOGO peut transformer votre vision en réalité avec des solutions innovantes et durables.
         </p>

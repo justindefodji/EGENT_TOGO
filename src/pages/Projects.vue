@@ -24,7 +24,7 @@
 
             <!-- Main heading with gradient -->
             <div>
-              <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight animate-slideInDown animation-delay-400">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slideInDown animation-delay-400">
                 <span class="text-[#016E98]">
                   RÉALISATIONS
                 </span>
@@ -42,7 +42,7 @@
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 pt-6 animate-fadeInUp animation-delay-800">
-              <button @click="scrollToProjects" class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+              <button @click="scrollToProjects" class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
                 <span>Découvrez nos projets</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
               </button>
@@ -78,7 +78,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 md:mb-16 lg:mb-20 animate-fadeInUp animation-delay-200">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-slideInDown animation-delay-200">Nos réalisations</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#016E98] leading-tight mb-4 animate-slideInDown animation-delay-400">PROJETS <span class="text-secondary">RÉUSSIS</span></h2>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#016E98] leading-tight mb-4 animate-slideInDown animation-delay-400">PROJETS <span class="text-secondary">RÉUSSIS</span></h2>
           <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed animate-fadeInUp animation-delay-600">Explorez nos réalisations les plus remarquables et découvrez comment nous transformons les projets en succès</p>
         </div>
 
@@ -109,7 +109,7 @@
                 <span class="inline-block px-3 py-1 bg-[#FF9D35] text-white text-xs font-bold rounded-full">{{ project.category }}</span>
               </div>
               <div class="w-full">
-                <router-link :to="'/projets/' + project.slug" class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight mb-2 hover:text-[#EE6D08] transition-colors block">{{ project.title }}</router-link>
+                <router-link :to="'/projets/' + project.slug" class="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight mb-2 hover:text-[#EE6D08] transition-colors block">{{ project.title }}</router-link>
                 <p class="text-white/80 text-sm">{{ project.location }}</p>
               </div>
             </div>
@@ -137,19 +137,19 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
           <!-- <div class="animate-fadeInUp animation-delay-200">
-            <div class="text-4xl md:text-5xl font-black text-[#FF9D35] mb-2">{{ projects.length }}+</div>
+            <div class="text-4xl md:text-5xl font-bold text-[#FF9D35] mb-2">{{ projects.length }}+</div>
             <p class="text-white text-lg">Projets réalisés</p>
           </div> -->
           <div class="animate-fadeInUp animation-delay-300">
-            <div class="text-4xl md:text-5xl font-black text-[#FF9D35] mb-2">200</div>
+            <div class="text-4xl md:text-5xl font-bold text-[#FF9D35] mb-2">200</div>
             <p class="text-white text-lg">Clients satisfaits</p>
           </div>
           <div class="animate-fadeInUp animation-delay-400">
-            <div class="text-4xl md:text-5xl font-black text-[#FF9D35] mb-2">100%</div>
+            <div class="text-4xl md:text-5xl font-bold text-[#FF9D35] mb-2">100%</div>
             <p class="text-white text-lg">Réussite de projets</p>
           </div>
           <div class="animate-fadeInUp animation-delay-500">
-            <div class="text-4xl md:text-5xl font-black text-[#FF9D35] mb-2">7 ans</div>
+            <div class="text-4xl md:text-5xl font-bold text-[#FF9D35] mb-2">7 ans</div>
             <p class="text-white text-lg">D'expérience</p>
           </div>
         </div>

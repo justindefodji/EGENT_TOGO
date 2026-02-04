@@ -3,13 +3,13 @@
     <div class="max-w-4xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl font-black text-[#016E98] mb-4">🧪 Test Meta Tags Open Graph</h1>
+        <h1 class="text-3xl font-bold text-[#016E98] mb-4">🧪 Test Meta Tags Open Graph</h1>
         <p class="text-gray-600 text-lg">Vérifiez les métadonnées avant de partager sur les réseaux sociaux</p>
       </div>
 
       <!-- Form to test -->
       <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
-        <h2 class="text-2xl font-bold text-[#016E98] mb-6">📝 Configuration de test</h2>
+        <h2 class="text-2xl font-normal text-[#016E98] mb-6">📝 Configuration de test</h2>
         
         <div class="space-y-6">
           <!-- Article Slug Input -->
@@ -81,7 +81,7 @@
 
       <!-- Meta Tags Validation -->
       <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
-        <h2 class="text-2xl font-bold text-[#016E98] mb-6">✅ Validation des Meta Tags</h2>
+        <h2 class="text-2xl font-normal text-[#016E98] mb-6">✅ Validation des Meta Tags</h2>
         
         <div class="space-y-4">
           <div v-for="(valid, tag) in validationResults" :key="tag" class="flex items-center gap-3 p-4 rounded-lg border-2" :class="valid ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'">
@@ -94,7 +94,7 @@
 
         <!-- Current Meta Tags Display -->
         <div class="mt-8 pt-8 border-t-2 border-gray-200">
-          <h3 class="text-lg font-bold text-gray-700 mb-4">📋 Meta tags actuels dans le DOM</h3>
+          <h3 class="text-lg font-normal text-gray-700 mb-4">📋 Meta tags actuels dans le DOM</h3>
           <div class="bg-gray-50 rounded-lg p-4 overflow-x-auto max-h-96 overflow-y-auto">
             <pre class="text-xs text-gray-700 whitespace-pre-wrap break-words">{{ currentMetaTags }}</pre>
           </div>
@@ -103,7 +103,7 @@
 
       <!-- Preview -->
       <div class="bg-white rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-bold text-[#016E98] mb-6">👁️ Aperçu du partage</h2>
+        <h2 class="text-2xl font-semibold text-[#016E98] mb-6">👁️ Aperçu du partage</h2>
         
         <div class="bg-gray-100 rounded-lg p-6 space-y-6">
           <!-- Facebook Preview -->

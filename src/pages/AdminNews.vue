@@ -4,7 +4,7 @@
       <!-- Header -->
       <div class="flex justify-between items-center mb-8">
         <div>
-          <h1 class="text-4xl font-black text-blue-800">📰 Administration des Articles</h1>
+          <h1 class="text-3xl font-bold text-blue-800">📰 Administration des Articles</h1>
           <p class="text-gray-600 mt-2">Gérez tous les articles de votre blog</p>
         </div>
         <button 

@@ -174,16 +174,16 @@
               CONTACT
             </RouterLink>
             <div class="space-y-2 mt-4">
-              <button class="w-full bg-[#016E98] hover:bg-[#EE6D08] text-white font-black px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" @click="navigateTo('/projets'); mobileMenuOpen = false">
+              <button class="w-full bg-[#016E98] hover:bg-[#EE6D08] text-white font-bold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" @click="navigateTo('/projets'); mobileMenuOpen = false">
                 Voir nos projets
               </button>
-              <button class="w-full bg-[#EE6D08] hover:bg-[#016E98] text-white font-black px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" @click="navigateTo('/devis'); mobileMenuOpen = false">
+              <button class="w-full bg-[#EE6D08] hover:bg-[#016E98] text-white font-bold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" @click="navigateTo('/devis'); mobileMenuOpen = false">
                 Demander un devis
               </button>
               <button 
                 v-if="isAuthenticated"
                 @click="handleLogout; mobileMenuOpen = false"
-                class="w-full bg-red-600 hover:bg-red-700 text-white font-black px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Se déconnecter
               </button>

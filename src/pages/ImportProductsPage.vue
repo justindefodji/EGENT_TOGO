@@ -3,7 +3,7 @@
     <div class="max-w-2xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-8">
-        <h1 class="text-4xl font-black text-blue-800 mb-2">🚀 Import de Produits</h1>
+        <h1 class="text-4xl font-bold text-blue-800 mb-2">🚀 Import de Produits</h1>
         <p class="text-gray-600">Importez les 4 produits principaux dans Firebase</p>
       </div>
 
@@ -11,7 +11,7 @@
       <div class="bg-white rounded-lg shadow-xl p-8 space-y-6">
         <!-- Liste des produits à importer -->
         <div>
-          <h2 class="text-xl font-bold text-gray-800 mb-4">Produits à importer:</h2>
+          <h2 class="text-xl font-normal text-gray-800 mb-4">Produits à importer:</h2>
           <div class="space-y-2">
             <div v-for="(product, idx) in productsToImport" :key="idx" class="flex items-start gap-3 p-3 bg-blue-50 rounded">
               <span class="text-blue-600 font-bold">{{ idx + 1 }}.</span>

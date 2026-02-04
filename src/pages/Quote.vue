@@ -16,7 +16,7 @@
         <!-- Section Titre Hero -->
         <div class="text-center">
           <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown animation-delay-200">Obtenir un tarif personnalisé</p>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-400">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight animate-slideInDown animation-delay-400">
             Demande de <span class="text-[#EE6D08]">Devis</span>
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-600">
@@ -36,7 +36,7 @@
             <div class="inline-block mb-4">
               <span class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest">Commençons</span>
             </div>
-            <h2 class="text-5xl md:text-6xl font-black text-[#016E98] mb-6 leading-tight">
+            <h2 class="text-5xl md:text-6xl font-bold text-[#016E98] mb-6 leading-tight">
               Quel service vous <span class="bg-gradient-to-r from-[#FF9D35] to-orange-500 bg-clip-text text-transparent">intéresse</span> ?
             </h2>
             <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -124,7 +124,7 @@
             <div v-for="(step, index) in steps" :key="index" class="flex items-center flex-1 animate-fadeInUp" :style="{ animationDelay: `${0.3 + index * 0.1}s` }">
               <div 
                 :class="[
-                  'w-14 h-14 rounded-full flex items-center justify-center font-black text-lg transition-all duration-300 shadow-md',
+                  'w-14 h-14 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-300 shadow-md',
                   currentStep === index 
                     ? 'bg-[#EE6D08] text-white scale-110 shadow-lg' 
                     : index < currentStep 
@@ -158,7 +158,7 @@
           <!-- Step 1: General Info -->
           <div v-if="currentStep === 0" class="space-y-6 animate-fadeInUp animation-delay-300">
             <div class="mb-8 animate-slideInDown animation-delay-300">
-              <h2 class="text-4xl font-black text-[#EE6D08] mb-2">{{ steps[0].title }}</h2>
+              <h2 class="text-4xl font-bold text-[#EE6D08] mb-2">{{ steps[0].title }}</h2>
               <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">Commençons par vos informations personnelles</p>
             </div>
 
@@ -265,7 +265,7 @@
           <!-- Step 2: Service-specific fields -->
           <div v-if="currentStep === 1" class="space-y-6 animate-fadeInUp animation-delay-300">
             <div class="mb-8 animate-slideInDown animation-delay-300">
-              <h2 class="text-4xl font-black text-[#016E98] mb-2">{{ steps[1].title }}</h2>
+              <h2 class="text-4xl font-bold text-[#016E98] mb-2">{{ steps[1].title }}</h2>
               <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">{{ getServiceDescription() }}</p>
             </div>
 
@@ -586,7 +586,7 @@
           <!-- Step 3: Final Confirmation -->
           <div v-if="currentStep === 2" class="space-y-6 animate-fadeInUp animation-delay-300">
             <div class="mb-8 animate-slideInDown animation-delay-300">
-              <h2 class="text-4xl font-black text-[#016E98] mb-2">{{ steps[2].title }}</h2>
+              <h2 class="text-4xl font-bold text-[#016E98] mb-2">{{ steps[2].title }}</h2>
               <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-400">Confirmez vos informations et validez votre demande</p>
             </div>
 
@@ -711,19 +711,19 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animation-delay-400">
             <i class="fas fa-clock text-[#EE6D08] text-4xl mb-4"></i>
-            <h3 class="text-xl font-black text-white mb-2">Réponse Rapide</h3>
+            <h3 class="text-xl font-bold text-white mb-2">Réponse Rapide</h3>
             <p class="text-gray-100">Nous répondons généralement dans les 24 heures</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animation-delay-500">
             <i class="fas fa-money-bill text-[#EE6D08] text-4xl mb-4"></i>
-            <h3 class="text-xl font-black text-white mb-2">Gratuit & Sans Engagement</h3>
+            <h3 class="text-xl font-bold text-white mb-2">Gratuit & Sans Engagement</h3>
             <p class="text-gray-100">Tous nos devis sont gratuits et sans frais</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animation-delay-600">
             <i class="fas fa-headset text-[#EE6D08] text-4xl mb-4"></i>
-            <h3 class="text-xl font-black text-white mb-2">Support Personnalisé</h3>
+            <h3 class="text-xl font-bold text-white mb-2">Support Personnalisé</h3>
             <p class="text-gray-100">Une équipe dédiée pour vos questions</p>
           </div>
         </div>

@@ -5,7 +5,7 @@
       <!-- Logo/Header -->
       <div class="p-6 border-b border-[#014d6a]">
         <img src="@/assets/images/logo.png" alt="EGENT TOGO" class="h-10 w-auto mb-3">
-        <h2 class="text-2xl font-black">EGENT ADMIN</h2>
+        <h2 class="text-xl font-bold">EGENT ADMIN</h2>
         <p class="text-blue-100 text-sm mt-1">Tableau de bord</p>
       </div>
 
@@ -131,7 +131,7 @@
       <header class="bg-white border-b border-gray-200 px-8 py-4 shadow-md flex items-center justify-between">
         <div class="flex items-center gap-4">
           <img src="@/assets/images/logo.png" alt="EGENT TOGO" class="h-8 w-auto">
-          <h1 class="text-3xl font-black text-[#016E98]">
+          <h1 class="text-2xl font-bold text-[#016E98]">
             <i v-if="currentSection === 'dashboard'" class="fas fa-chart-bar mr-2"></i>
             <i v-if="currentSection === 'products'" class="fas fa-box mr-2"></i>
             <i v-if="currentSection === 'articles'" class="fas fa-newspaper mr-2"></i>
@@ -159,7 +159,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Produits</p>
-                  <p class="text-4xl font-black text-[#016E98] mt-2">{{ products.length }}</p>
+                  <p class="text-4xl font-bold text-[#016E98] mt-2">{{ products.length }}</p>
                 </div>
                 <i class="fas fa-box text-[#EE6D08] text-4xl opacity-20"></i>
               </div>
@@ -170,7 +170,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Articles</p>
-                  <p class="text-4xl font-black text-[#016E98] mt-2">{{ articles.length }}</p>
+                  <p class="text-4xl font-bold text-[#016E98] mt-2">{{ articles.length }}</p>
                 </div>
                 <i class="fas fa-newspaper text-[#016E98] text-4xl opacity-20"></i>
               </div>
@@ -181,7 +181,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Photos</p>
-                  <p class="text-4xl font-black text-[#016E98] mt-2">{{ gallery.length }}</p>
+                  <p class="text-4xl font-bold text-[#016E98] mt-2">{{ gallery.length }}</p>
                 </div>
                 <i class="fas fa-images text-[#2F7914] text-4xl opacity-20"></i>
               </div>
@@ -192,7 +192,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Projets</p>
-                  <p class="text-4xl font-black text-[#016E98] mt-2">{{ projects.length }}</p>
+                  <p class="text-4xl font-bold text-[#016E98] mt-2">{{ projects.length }}</p>
                 </div>
                 <i class="fas fa-building text-[#EE6D08] text-4xl opacity-20"></i>
               </div>
@@ -203,7 +203,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Formulaires</p>
-                  <p class="text-4xl font-black text-[#016E98] mt-2">{{ contactForms.length }}</p>
+                  <p class="text-4xl font-bold text-[#016E98] mt-2">{{ contactForms.length }}</p>
                 </div>
                 <i class="fas fa-envelope text-[#EE6D08] text-4xl opacity-20"></i>
               </div>
@@ -214,7 +214,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-gray-600 text-sm font-semibold uppercase tracking-wide">Devis</p>
-                  <p class="text-4xl font-black text-[#016E98] mt-2">{{ quotes.length }}</p>
+                  <p class="text-4xl font-bold text-[#016E98] mt-2">{{ quotes.length }}</p>
                 </div>
                 <i class="fas fa-file-invoice-dollar text-[#2F7914] text-4xl opacity-20"></i>
               </div>
@@ -226,7 +226,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Produits Récents -->
             <div class="bg-white rounded-lg shadow p-6">
-              <h3 class="text-xl font-black text-[#016E98] mb-4 flex items-center gap-2">
+              <h3 class="text-xl font-bold text-[#016E98] mb-4 flex items-center gap-2">
                 <i class="fas fa-box text-[#EE6D08]"></i>
                 Produits Récents
               </h3>
@@ -250,7 +250,7 @@
 
             <!-- Articles Récents -->
             <div class="bg-white rounded-lg shadow p-6">
-              <h3 class="text-xl font-black text-[#016E98] mb-4 flex items-center gap-2">
+              <h3 class="text-xl font-bold text-[#016E98] mb-4 flex items-center gap-2">
                 <i class="fas fa-newspaper text-[#016E98]"></i>
                 Articles Récents
               </h3>

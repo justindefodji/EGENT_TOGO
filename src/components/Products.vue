@@ -18,7 +18,7 @@
             />
           </div>
           <div class="p-4">
-            <h3 class="font-bold text-dark mb-2">Lampadaires Billy</h3>
+            <h3 class="font-normal text-dark mb-2">Lampadaires Billy</h3>
             <p class="text-sm text-gray-600">Lampadaire intelligemment conçu pour éclairer les routes et accès routiers.</p>
           </div>
         </div>
@@ -33,7 +33,7 @@
             />
           </div>
           <div class="p-4">
-            <h3 class="font-bold text-dark mb-2">Lampadaires EGENT Solar</h3>
+            <h3 class="font-normal text-dark mb-2">Lampadaires EGENT Solar</h3>
             <p class="text-sm text-gray-600">Éclairage alimenté à l'énergie solaire pour les routes et zones publiques.</p>
           </div>
         </div>
@@ -48,7 +48,7 @@
             />
           </div>
           <div class="p-4">
-            <h3 class="font-bold text-dark mb-2">Kit Zoklin</h3>
+            <h3 class="font-normal text-dark mb-2">Kit Zoklin</h3>
             <p class="text-sm text-gray-600">Solution solaire préconçue pour une installation rapide et facile.</p>
           </div>
         </div>
@@ -63,7 +63,7 @@
             />
           </div>
           <div class="p-4">
-            <h3 class="font-bold text-dark mb-2">Autres Solutions</h3>
+            <h3 class="font-normal text-dark mb-2">Autres Solutions</h3>
             <p class="text-sm text-gray-600">Découvrez nos autres solutions énergétiques et produits innovants.</p>
           </div>
         </div>

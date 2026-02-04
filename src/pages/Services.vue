@@ -28,7 +28,7 @@
 
             <!-- Main heading with gradient -->
             <div>
-              <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight animate-slideInDown animation-delay-400">
+              <h1 class="text-2xl md:text-3xl lg:text-5xl font-bold leading-tight animate-slideInDown animation-delay-400">
                 <span class="text-[#016E98]">
                   SOLUTIONS
                 </span>
@@ -46,7 +46,7 @@
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 pt-6 animate-fadeInUp animation-delay-800">
-              <button @click="scrollToServices" class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+              <button @click="scrollToServices" class="group bg-gradient-to-r from-[#EE6D08] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
                 <span>Explorez nos services</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
               </button>
@@ -72,7 +72,7 @@
                 <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-[#EE6D08] to-orange-400 rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-sun text-lg md:text-xl"></i>
                 </div>
-                <h3 class="font-black text-[#016E98] text-base md:text-lg">Solaire</h3>
+                <h3 class="font-bold text-[#016E98] text-base md:text-lg">Solaire</h3>
               </div>
               <p class="text-xs md:text-sm text-black">Énergie renouvelable et durable</p>
             </div>
@@ -83,7 +83,7 @@
                 <div class="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-blue-500 to-blue-500 rounded-lg flex items-center justify-center text-white shadow-lg">
                   <i class="fas fa-tools text-lg md:text-xl"></i>
                 </div>
-                <h3 class="font-black text-[#EE6D08] text-base md:text-lg">Expertise</h3>
+                <h3 class="font-bold text-[#EE6D08] text-base md:text-lg">Expertise</h3>
               </div>
               <p class="text-xs md:text-sm text-black">Installation et maintenance</p>
             </div>
@@ -107,7 +107,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 md:mb-16 lg:mb-20 animate-fadeInUp animation-delay-200">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-slideInDown animation-delay-200">Nos services</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#016E98] leading-tight mb-4 animate-slideInDown animation-delay-400">NOUS OFFRONS DES SOLUTIONS ÉNERGÉTIQUES <span class="text-secondary">DURABLES</span></h2>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#016E98] leading-tight mb-4 animate-slideInDown animation-delay-400">NOUS OFFRONS DES SOLUTIONS ÉNERGÉTIQUES <span class="text-secondary">DURABLES</span></h2>
           <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed animate-fadeInUp animation-delay-600">Découvrez nos services spécialisés en énergie renouvelable et solutions innovantes</p>
         </div>
 
@@ -131,7 +131,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-4 sm:p-6 rounded-3xl">
-              <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">ÉNERGIE<br>SOLAIRE</h3>
+              <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight">ÉNERGIE<br>SOLAIRE</h3>
             </div>
             
             <!-- Button -->
@@ -158,7 +158,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-4 sm:p-6 rounded-3xl">
-              <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">ÉLECTRICITÉ<br>GÉNERALE</h3>
+              <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight">ÉLECTRICITÉ<br>GÉNERALE</h3>
             </div>
             
             <!-- Button -->
@@ -185,7 +185,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-4 sm:p-6 rounded-3xl">
-              <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">CLIMATISATION <br>& FROID</h3>
+              <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight">CLIMATISATION <br>& FROID</h3>
             </div>
             
             <!-- Button -->
@@ -212,7 +212,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-4 sm:p-6 rounded-3xl">
-              <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">PLOMBERIE</h3>
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">PLOMBERIE</h3>
             </div>
             
             <!-- Button -->
@@ -239,7 +239,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-4 sm:p-6 rounded-3xl">
-              <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">FOURNITURE<br>D'ÉQUIPEMENTS</h3>
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">FOURNITURE<br>D'ÉQUIPEMENTS</h3>
             </div>
             
             <!-- Button -->
@@ -266,7 +266,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-4 sm:p-6 rounded-3xl">
-              <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">CONSULTING</h3>
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">CONSULTING</h3>
             </div>
             
             <!-- Button -->
@@ -303,7 +303,7 @@
 
       <!-- Content - Centered -->
       <div class="relative w-full max-w-7xl mx-auto h-auto md:h-full px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center py-12 md:py-16 space-y-6 animate-fadeInUp animation-delay-400">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-white leading-tight mb-4 md:mb-6 animate-slideInDown animation-delay-400">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-white leading-tight mb-4 md:mb-6 animate-slideInDown animation-delay-400">
           UNE MAIN D'ŒUVRE <span class="text-[#EE6D08]">QUALIFIÉE</span> DISPONIBLE 7/7
         </h2>
         
@@ -323,7 +323,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <!-- Left Content -->
           <div class="space-y-6 animate-fadeInUp animation-delay-400">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-4 md:mb-6 animate-slideInDown animation-delay-400">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#016E98] leading-tight mb-4 md:mb-6 animate-slideInDown animation-delay-400">
               DITES AU REVOIR AUX <span class="text-secondary">PANNES</span> D'ÉLECTRICITÉ
             </h2>
             

@@ -1,6 +1,6 @@
 <template>
   <div class="p-6">
-    <h2 class="text-2xl font-bold mb-6" style="color: #016E98">Demandes de Devis</h2>
+    <h2 class="text-2xl font-normal mb-6" style="color: #016E98">Demandes de Devis</h2>
     
     <div class="mb-4 flex gap-2">
       <button
@@ -94,7 +94,7 @@
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 overflow-y-auto"
     >
       <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full p-6 my-8">
-        <h3 class="text-2xl font-bold mb-6" style="color: #016E98">
+        <h3 class="text-2xl font-normal mb-6" style="color: #016E98">
           Devis de {{ selectedQuote.firstName }} {{ selectedQuote.lastName }}
         </h3>
 
@@ -165,7 +165,7 @@
 
         <!-- Détails du service -->
         <div class="bg-gray-50 rounded-lg p-4 mb-6">
-          <h4 class="font-bold mb-4" style="color: #016E98">Détails du service</h4>
+          <h4 class="font-normal mb-4" style="color: #016E98">Détails du service</h4>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div v-if="selectedQuote.energyConsumption">
               <p class="text-gray-600"><strong>Consommation d'énergie :</strong> {{ selectedQuote.energyConsumption }} kWh/mois</p>
@@ -214,7 +214,7 @@
 
         <!-- Message additionnel -->
         <div v-if="selectedQuote.message" class="bg-gray-50 rounded-lg p-4 mb-6">
-          <h4 class="font-bold mb-2" style="color: #016E98">Message additionnel</h4>
+          <h4 class="font-normal mb-2" style="color: #016E98">Message additionnel</h4>
           <p class="text-gray-700 whitespace-pre-wrap text-sm">{{ selectedQuote.message }}</p>
         </div>
 

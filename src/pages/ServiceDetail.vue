@@ -45,7 +45,7 @@
             <!-- Header -->
             <div>
               <p class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest mb-3 animate-slideInDown animation-delay-400">{{ service.category }}</p>
-              <h1 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight animate-slideInDown animation-delay-500">{{ service.name }}</h1>
+              <h1 class="text-4xl md:text-5xl font-bold text-[#016E98] mb-6 leading-tight animate-slideInDown animation-delay-500">{{ service.name }}</h1>
               
               <!-- Description -->
               <p class="text-gray-700 text-lg leading-relaxed mb-8 animate-fadeInUp animation-delay-600">
@@ -88,7 +88,7 @@
     <!-- Features Section -->
     <section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-black text-[#016E98] mb-12 text-center">Nos Points Forts</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#016E98] mb-12 text-center">Nos Points Forts</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div 
@@ -110,7 +110,7 @@
     <!-- Specifications Section -->
     <section class="py-16 md:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-black text-[#016E98] mb-12 text-center">Spécifications</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#016E98] mb-12 text-center">Spécifications</h2>
         
         <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 md:p-12">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -130,7 +130,7 @@
     <!-- Benefits Section -->
     <section class="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50 to-blue-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-black text-[#016E98] mb-12 text-center">Avantages et Bénéfices</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#016E98] mb-12 text-center">Avantages et Bénéfices</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
           <div 
@@ -163,7 +163,7 @@
         <!-- Full Description Section attached -->
         <div class="w-full">
           <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 md:p-12 border border-blue-100 animate-fadeInUp" style="animation-delay: 600ms">
-            <div class="prose prose-lg max-w-none text-gray-700 prose-headings:text-[#016E98] prose-headings:font-black prose-a:text-[#0392C7] hover:prose-a:text-[#FF9D35]" v-html="service.longDescription"></div>
+            <div class="prose prose-lg max-w-none text-gray-700 prose-headings:text-[#016E98] prose-headings:font-bold prose-a:text-[#0392C7] hover:prose-a:text-[#FF9D35]" v-html="service.longDescription"></div>
           </div>
         </div>
       </div>
@@ -185,7 +185,7 @@
 
       <!-- Content -->
       <div class="relative w-full max-w-7xl mx-auto h-auto md:h-full px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center py-12 md:py-16 space-y-6 animate-fadeInUp animation-delay-400">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight mb-4 md:mb-6 animate-slideInDown animation-delay-400">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4 md:mb-6 animate-slideInDown animation-delay-400">
           Prêt à transformer votre projet ?
         </h2>
         
@@ -213,7 +213,7 @@
     <!-- Related Services Section -->
     <section class="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-black text-[#016E98] mb-12 text-center">Services Complémentaires</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#016E98] mb-12 text-center">Services Complémentaires</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div 

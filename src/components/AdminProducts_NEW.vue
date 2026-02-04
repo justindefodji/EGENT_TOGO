@@ -2,7 +2,7 @@
   <div class="space-y-6 p-6">
     <!-- Header -->
     <div class="flex items-center justify-between">
-      <h2 class="text-3xl font-bold text-gray-900">Gestion des Produits</h2>
+      <h2 class="text-2xl font-normal text-gray-900">Gestion des Produits</h2>
       <button
         @click="showForm = !showForm"
         class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition flex items-center gap-2"
@@ -26,7 +26,7 @@
 
     <!-- Formulaire -->
     <div v-if="showForm" class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-      <h3 class="text-xl font-bold text-gray-900 mb-6">
+      <h3 class="text-xl font-normal text-gray-900 mb-6">
         {{ isEditing ? '✏️ Modifier Produit' : '➕ Créer Nouveau Produit' }}
       </h3>
       
@@ -357,7 +357,7 @@
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <!-- Header du Tableau -->
       <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
-        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+        <h3 class="text-lg font-normal text-white flex items-center gap-2">
           <i class="fas fa-box"></i>
           Produits ({{ products.length }})
         </h3>

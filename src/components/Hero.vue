@@ -4,9 +4,9 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <!-- Content -->
         <div class="z-10">
-          <h1 class="text-5xl md:text-6xl font-bold text-dark mb-6 leading-tight">
+          <h1 class="text-4xl md:text-5xl font-normal text-dark mb-6 leading-tight">
             ÉCRIVONS L'AVENIR DE
-            <span class="text-secondary font-bold">L'ÉNERGIE</span>
+            <span class="text-secondary font-normal">L'ÉNERGIE</span>
             AU TOGO
           </h1>
           <p class="text-gray-600 text-lg mb-8">

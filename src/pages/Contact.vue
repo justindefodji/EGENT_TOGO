@@ -16,7 +16,7 @@
         <!-- Section Titre Hero -->
         <div id="hero-title" class="text-center">
           <p class="text-[#EE6D08] font-semibold mb-4 text-sm uppercase tracking-widest animate-slideInDown">Contactez-nous</p>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight animate-slideInDown animation-delay-200">
             Contactez <span class="text-[#EE6D08]">EGENT TOGO</span> pour vos projets énergétiques
           </h1>
           <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
@@ -36,7 +36,7 @@
               <div class="w-16 h-16 rounded-full bg-[#EE6D08]/10 flex items-center justify-center group-hover:bg-[#EE6D08] transition-all duration-300">
                 <i class="fas fa-map-marker-alt text-[#EE6D08] text-2xl group-hover:text-white transition-all duration-300"></i>
               </div>
-              <h3 class="text-xl font-black text-[#016E98]">Adresse</h3>
+              <h3 class="text-xl font-bold text-[#016E98]">Adresse</h3>
             </div>
             <p class="text-gray-600 leading-relaxed">
               Rue des Ouvriers, Imm. à deux étages<br>
@@ -51,7 +51,7 @@
               <div class="w-16 h-16 rounded-full bg-[#EE6D08]/10 flex items-center justify-center group-hover:bg-[#EE6D08] transition-all duration-300">
                 <i class="fas fa-phone text-[#EE6D08] text-2xl group-hover:text-white transition-all duration-300"></i>
               </div>
-              <h3 class="text-xl font-black text-[#016E98]">Téléphone</h3>
+              <h3 class="text-xl font-bold text-[#016E98]">Téléphone</h3>
             </div>
             <div class="space-y-3">
               <a href="tel:+22892531455" class="text-gray-600 hover:text-secondary transition-colors block font-semibold">
@@ -68,7 +68,7 @@
               <div class="w-16 h-16 rounded-full bg-[#EE6D08]/10 flex items-center justify-center group-hover:bg-[#EE6D08] transition-all duration-300">
                 <i class="fas fa-envelope text-[#EE6D08] text-2xl group-hover:text-white transition-all duration-300"></i>
               </div>
-              <h3 class="text-xl font-black text-[#016E98]">Email</h3>
+              <h3 class="text-xl font-bold text-[#016E98]">Email</h3>
             </div>
             <div class="space-y-3">
               <a href="mailto:infos@egenttogo.com" class="text-gray-600 hover:text-secondary transition-colors block font-semibold break-all">
@@ -82,7 +82,7 @@
         <!-- Contact Form Section -->
         <div id="contact-form" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-16 animate-fadeInUp animation-delay-400">
           <div class="max-w-2xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight">Envoyez-nous un message</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#EE6D08] mb-4 leading-tight">Envoyez-nous un message</h2>
             <p class="text-gray-600 text-lg mb-12">Remplissez le formulaire ci-dessous et notre équipe vous répondra au plus vite.</p>
             
             <form @submit.prevent="handleSubmit" class="space-y-6">
@@ -168,7 +168,7 @@
               <button 
                 type="submit"
                 :disabled="isSubmitting"
-                class="w-full bg-secondary hover:bg-orange-600 disabled:bg-gray-400 text-white font-black py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase tracking-widest text-sm inline-flex items-center justify-center gap-2"
+                class="w-full bg-secondary hover:bg-orange-600 disabled:bg-gray-400 text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase tracking-widest text-sm inline-flex items-center justify-center gap-2"
               >
                 <i v-if="!isSubmitting" class="fas fa-paper-plane"></i>
                 <i v-else class="fas fa-spinner fa-spin"></i>
@@ -203,30 +203,30 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight animate-slideInDown">Nos <span class="text-[#EE6D08]">Horaires</span></h2>
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight animate-slideInDown">Nos <span class="text-[#EE6D08]">Horaires</span></h2>
           <div class="w-24 h-1.5 bg-gradient-to-r from-[#EE6D08] to-orange-500 rounded-full mx-auto animate-fadeInUp animation-delay-200"></div>
         </div>
 
         <div id="horaire-cards" class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0s">
             <i class="fas fa-calendar-days text-[#EE6D08] text-4xl mb-4"></i>
-            <h3 class="text-xl font-black text-white mb-4">Jours de Semaine</h3>
+            <h3 class="text-xl font-bold text-white mb-4">Jours de Semaine</h3>
             <p class="text-gray-100 font-semibold text-lg">Lundi - Vendredi</p>
-            <p class="text-[#EE6D08] font-black text-2xl mt-2">08:00 - 18:00</p>
+            <p class="text-[#EE6D08] font-bold text-2xl mt-2">08:00 - 18:00</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0.1s">
             <i class="fas fa-sun text-[#EE6D08] text-4xl mb-4"></i>
-            <h3 class="text-xl font-black text-white mb-4">Samedi</h3>
+            <h3 class="text-xl font-bold text-white mb-4">Samedi</h3>
             <p class="text-gray-100 font-semibold text-lg">Samedi</p>
-            <p class="text-[#EE6D08] font-black text-2xl mt-2">09:00 - 15:00</p>
+            <p class="text-[#EE6D08] font-bold text-2xl mt-2">09:00 - 15:00</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fadeInUp" style="animation-delay: 0.2s">
             <i class="fas fa-moon text-[#EE6D08] text-4xl mb-4"></i>
-            <h3 class="text-xl font-black text-white mb-4">Dimanche</h3>
+            <h3 class="text-xl font-bold text-white mb-4">Dimanche</h3>
             <p class="text-gray-100 font-semibold text-lg">Fermé</p>
-            <p class="text-[#EE6D08] font-black text-2xl mt-2">-</p>
+            <p class="text-[#EE6D08] font-bold text-2xl mt-2">-</p>
           </div>
         </div>
       </div>
@@ -236,7 +236,7 @@
     <section id="map-section" class="bg-white py-20 md:py-32 animate-fadeInUp">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Retrouvez nous à Lomé, quartier Totsi</h2>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Retrouvez nous à Lomé, quartier Totsi</h2>
           <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-200">Trouvez notre localisation sur la carte</p>
         </div>
         <div class="rounded-3xl overflow-hidden shadow-2xl h-96 md:h-96 border-4 border-gray-100 hover:shadow-3xl transition-all duration-300 animate-fadeInUp animation-delay-400">
@@ -257,7 +257,7 @@
     <section id="faq-section" class="bg-gray-50 py-20 md:py-32">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Questions <span class="text-secondary">Fréquentes</span></h2>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#EE6D08] mb-4 leading-tight animate-slideInDown">Questions <span class="text-secondary">Fréquentes</span></h2>
           <p class="text-gray-600 text-lg animate-fadeInUp animation-delay-200">Trouvez les réponses à vos questions</p>
         </div>
 
@@ -267,7 +267,7 @@
               @click="toggleFAQ(index)"
               class="w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
             >
-              <h3 class="text-lg font-black text-[#016E98] text-left">{{ faq.question }}</h3>
+              <h3 class="text-lg font-bold text-[#016E98] text-left">{{ faq.question }}</h3>
               <i :class="['fas transition-transform duration-300', expandedFAQ === index ? 'fa-chevron-up' : 'fa-chevron-down']" style="color: var(--secondary)"></i>
             </button>
             <transition name="expand">

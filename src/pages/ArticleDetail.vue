@@ -57,13 +57,13 @@
               <p class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest mb-3">
                 {{ article.category }}
               </p>
-              <h1 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6">
+              <h1 class="text-4xl md:text-5xl font-bold text-[#016E98] mb-6">
                 {{ article.title }}
               </h1>
               
               <div class="bg-blue-50 rounded-2xl p-6 mb-8">
                 <p class="text-gray-600 text-sm mb-2">Publié le</p>
-                <p class="text-2xl font-black text-[#0392C7]">{{ article.date }}</p>
+                <p class="text-2xl font-bold text-[#0392C7]">{{ article.date }}</p>
               </div>
 
               <p class="text-gray-700 text-lg leading-relaxed mb-8">
@@ -109,7 +109,7 @@
 
             <!-- Galerie d'images supplémentaires -->
             <div v-if="article && article.images && article.images.length > 0" class="mt-12">
-              <h2 class="text-3xl font-black text-[#016E98] mb-8">Galerie photos</h2>
+              <h2 class="text-3xl font-bold text-[#016E98] mb-8">Galerie photos</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div 
                   v-for="(image, idx) in article.images"
@@ -131,7 +131,7 @@
 
             <!-- Related Articles -->
             <div v-if="relatedArticles.length > 0" class="mt-16">
-              <h2 class="text-3xl font-black text-[#016E98] mb-8">Articles liés</h2>
+              <h2 class="text-3xl font-bold text-[#016E98] mb-8">Articles liés</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <router-link
                   v-for="relatedArticle in relatedArticles"
@@ -151,7 +151,7 @@
                     <p class="text-[#FF9D35] font-semibold text-xs uppercase tracking-widest mb-2">
                       {{ relatedArticle.category }}
                     </p>
-                    <h3 class="text-xl font-bold text-[#016E98] mb-3 group-hover:text-[#FF9D35] transition-colors line-clamp-2">
+                    <h3 class="text-xl font-normal text-[#016E98] mb-3 group-hover:text-[#FF9D35] transition-colors line-clamp-2">
                       {{ relatedArticle.title }}
                     </h3>
                     <p class="text-gray-600 text-sm line-clamp-2">
@@ -169,7 +169,7 @@
           <!-- Right: Info -->
           <div>
             <div class="bg-white rounded-3xl p-8 shadow-lg sticky top-20">
-              <h3 class="text-2xl font-black text-[#016E98] mb-8">Informations</h3>
+              <h3 class="text-2xl font-bold text-[#016E98] mb-8">Informations</h3>
               <div v-if="article" class="space-y-6">
                 <!-- Category -->
                 <div class="border-b border-gray-200 pb-4">

@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto">
       <!-- Header -->
       <div class="mb-8">
-        <h1 class="text-4xl font-bold text-gray-800 mb-2">📰 Gestion des Articles</h1>
+        <h1 class="text-3xl font-normal text-gray-800 mb-2">📰 Gestion des Articles</h1>
         <p class="text-gray-600">Créez, modifiez et supprimez les articles du blog</p>
       </div>
 

@@ -63,7 +63,7 @@
               <!-- Header -->
               <div>
                 <p class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest mb-3">{{ project.category }}</p>
-                <h1 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight">{{ project.title }}</h1>
+                <h1 class="text-4xl md:text-5xl font-bold text-[#016E98] mb-6 leading-tight">{{ project.title }}</h1>
                 
                 <!-- Project Info -->
                 <div class="bg-blue-50 rounded-2xl p-6 mb-8">
@@ -113,12 +113,12 @@
             <!-- Left: Description -->
             <div class="md:col-span-2">
               <div class="bg-white rounded-3xl p-8 shadow-lg">
-                <h2 class="text-3xl font-black text-[#016E98] mb-8">À propos de ce projet</h2>
+                <h2 class="text-3xl font-bold text-[#016E98] mb-8">À propos de ce projet</h2>
                 <div v-if="project.details" class="prose prose-lg max-w-none text-gray-700 mb-8" v-html="project.details"></div>
 
                 <!-- Caractéristiques principales -->
                 <div v-if="project.mainCharacteristics && project.mainCharacteristics.length > 0" class="mt-12 pt-8 border-t-2 border-gray-200">
-                  <h3 class="text-2xl font-black text-[#016E98] mb-6">Caractéristiques principales:</h3>
+                  <h3 class="text-2xl font-bold text-[#016E98] mb-6">Caractéristiques principales:</h3>
                   <ul class="space-y-3">
                     <li v-for="(char, idx) in project.mainCharacteristics" :key="idx" class="flex items-start gap-3">
                       <i class="fas fa-check-circle text-[#2F7914] text-lg mt-1 flex-shrink-0"></i>
@@ -129,7 +129,7 @@
 
                 <!-- Avantages -->
                 <div v-if="project.advantages && project.advantages.length > 0" class="mt-12 pt-8 border-t-2 border-gray-200">
-                  <h3 class="text-2xl font-black text-[#016E98] mb-6">Avantages:</h3>
+                  <h3 class="text-2xl font-bold text-[#016E98] mb-6">Avantages:</h3>
                   <ul class="space-y-3">
                     <li v-for="(adv, idx) in project.advantages" :key="idx" class="flex items-start gap-3">
                       <i class="fas fa-star text-[#FF9D35] text-lg mt-1 flex-shrink-0"></i>
@@ -143,7 +143,7 @@
             <!-- Right: Additional Info -->
             <div>
               <div class="bg-white rounded-3xl p-8 shadow-lg sticky top-20">
-                <h3 class="text-2xl font-black text-[#016E98] mb-8">Résumé</h3>
+                <h3 class="text-2xl font-bold text-[#016E98] mb-8">Résumé</h3>
                 <div class="space-y-6">
                   <div class="border-b border-gray-200 pb-4 last:border-b-0">
                     <p class="text-sm text-[#FF9D35] font-semibold uppercase tracking-widest mb-2">Catégorie</p>
@@ -181,13 +181,13 @@
       <section v-if="project.results && project.results.length > 0" class="bg-gradient-to-r from-[#016E98] to-[#0392C7] py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Résultats Clés</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Résultats Clés</h2>
             <p class="text-white/90 text-lg">Les chiffres qui parlent</p>
           </div>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div v-for="(result, index) in project.results" :key="index" class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/20 hover:bg-white/15 hover:border-[#FF9D35]/50 transition-all duration-300 text-center hover:scale-105 cursor-default">
-              <div class="text-5xl font-black text-[#FF9D35] mb-4">{{ result.metric }}</div>
+              <div class="text-5xl font-bold text-[#FF9D35] mb-4">{{ result.metric }}</div>
               <div class="text-white font-semibold text-lg">{{ result.description }}</div>
             </div>
           </div>
@@ -198,7 +198,7 @@
       <section v-if="relatedProjects.length > 0" class="bg-white py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">AUTRES PROJETS</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-[#016E98] leading-tight mb-6">AUTRES PROJETS</h2>
             <p class="text-gray-600 text-lg max-w-2xl mx-auto">
               Découvrez nos autres réalisations
             </p>
@@ -219,9 +219,9 @@
                 />
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-black text-[#0392C7] mb-2">{{ proj.title }}</h3>
+                <h3 class="text-xl font-bold text-[#0392C7] mb-2">{{ proj.title }}</h3>
                 <p class="text-gray-600 text-sm mb-4 line-clamp-2">{{ proj.description }}</p>
-                <p class="text-[#FF9D35] font-black text-sm">{{ proj.date }}</p>
+                <p class="text-[#FF9D35] font-bold text-sm">{{ proj.date }}</p>
               </div>
             </router-link>
           </div>
@@ -497,7 +497,7 @@
 
           <!-- À propos du projet -->
           <div>
-            <h3 class="text-lg font-black text-[#016E98] mb-6 flex items-center gap-2">
+            <h3 class="text-lg font-bold text-[#016E98] mb-6 flex items-center gap-2">
               <i class="fas fa-info-circle text-[#0392C7]"></i>
               À propos du projet
             </h3>
@@ -610,7 +610,7 @@
     </div>
     <section class="bg-gradient-to-r from-[#016E98] to-[#0392C7] py-16 md:py-24 mx-4 md:mx-8 rounded-3xl my-16 md:my-24 shadow-2xl border border-blue-800/50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-black text-white mb-8">PRÊT À PASSER À L'ACTION ?</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">PRÊT À PASSER À L'ACTION ?</h2>
         <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
           Nos experts sont disponibles pour discuter de votre prochain projet.
         </p>

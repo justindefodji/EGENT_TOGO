@@ -1,6 +1,6 @@
 <template>
   <div class="p-6">
-    <h2 class="text-2xl font-bold mb-6" style="color: #016E98">Formulaires de Contact</h2>
+    <h2 class="text-2xl font-normal mb-6" style="color: #016E98">Formulaires de Contact</h2>
     
     <div class="mb-4 flex gap-2">
       <button
@@ -102,7 +102,7 @@
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
     >
       <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full p-6">
-        <h3 class="text-2xl font-bold mb-4" style="color: #016E98">
+        <h3 class="text-2xl font-normal mb-4" style="color: #016E98">
           Message de {{ selectedForm.name }}
         </h3>
 

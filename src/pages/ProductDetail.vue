@@ -57,12 +57,12 @@
             <!-- Header -->
             <div>
               <p class="text-[#FF9D35] font-semibold text-sm uppercase tracking-widest mb-3 animate-slideInDown animation-delay-400">{{ product.category }}</p>
-              <h1 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight animate-slideInDown animation-delay-500">{{ product.name }} - EGENT TOGO</h1>
+              <h1 class="text-4xl md:text-5xl font-bold text-[#016E98] mb-6 leading-tight animate-slideInDown animation-delay-500">{{ product.name }} - EGENT TOGO</h1>
               
               <!-- Price -->
               <div class="bg-blue-50 rounded-2xl p-6 mb-8 animate-fadeInUp animation-delay-500">
                 <p class="text-gray-600 text-sm mb-2">À partir de</p>
-                <p class="text-4xl font-black text-[#0392C7]">{{ product.price }}</p>
+                <p class="text-4xl font-bold text-[#0392C7]">{{ product.price }}</p>
               </div>
 
               <!-- Description -->
@@ -100,7 +100,7 @@
 
               <!-- Free Water CTA -->
               <div v-if="product.slug !== 'free-water'" class="mt-8 pt-8 border-t-2 border-gray-200">
-                <h3 class="text-xl font-black text-[#016E98] mb-4">Découvrez aussi Free Water</h3>
+                <h3 class="text-xl font-bold text-[#016E98] mb-4">Découvrez aussi Free Water</h3>
                 <p class="text-gray-600 mb-4">Solution innovante de purification d'eau solaire autonome et écologique.</p>
                 <button @click="navigateToProduct('free-water')" class="bg-[#0392C7] hover:bg-[#016E98] text-white px-8 py-3 text-lg font-semibold rounded-lg transition-colors flex items-center justify-center gap-2 w-full sm:w-auto">
                   <i class="fas fa-info-circle"></i>
@@ -120,12 +120,12 @@
           <!-- Left: Description -->
           <div class="md:col-span-2">
             <div class="bg-white rounded-3xl p-8 shadow-lg animate-fadeInUp animation-delay-300">
-              <h2 class="text-3xl font-black text-[#016E98] mb-8 animate-slideInDown animation-delay-400">À propos de ce produit</h2>
+              <h2 class="text-3xl font-bold text-[#016E98] mb-8 animate-slideInDown animation-delay-400">À propos de ce produit</h2>
               <div class="prose prose-lg max-w-none text-gray-700" v-html="product.description"></div>
 
               <!-- Caractéristiques principales -->
               <div v-if="product.mainCharacteristics && product.mainCharacteristics.length > 0" class="mt-12 pt-8 border-t-2 border-gray-200">
-                <h3 class="text-2xl font-black text-[#016E98] mb-6">Caractéristiques principales:</h3>
+                <h3 class="text-2xl font-bold text-[#016E98] mb-6">Caractéristiques principales:</h3>
                 <ul class="space-y-3">
                   <li v-for="(char, idx) in product.mainCharacteristics" :key="idx" class="flex items-start gap-3">
                     <i class="fas fa-check-circle text-[#2F7914] text-lg mt-1 flex-shrink-0"></i>
@@ -136,7 +136,7 @@
 
               <!-- Avantages -->
               <div v-if="product.advantages && product.advantages.length > 0" class="mt-12 pt-8 border-t-2 border-gray-200">
-                <h3 class="text-2xl font-black text-[#016E98] mb-6">Avantages:</h3>
+                <h3 class="text-2xl font-bold text-[#016E98] mb-6">Avantages:</h3>
                 <ul class="space-y-3">
                   <li v-for="(adv, idx) in product.advantages" :key="idx" class="flex items-start gap-3">
                     <i class="fas fa-star text-[#FF9D35] text-lg mt-1 flex-shrink-0"></i>
@@ -150,7 +150,7 @@
           <!-- Right: Specifications -->
           <div>
             <div class="bg-white rounded-3xl p-8 shadow-lg sticky top-20 animate-fadeInUp animation-delay-400">
-              <h3 class="text-2xl font-black text-[#016E98] mb-8 animate-slideInDown animation-delay-500">Caractéristiques</h3>
+              <h3 class="text-2xl font-bold text-[#016E98] mb-8 animate-slideInDown animation-delay-500">Caractéristiques</h3>
               <div class="space-y-6">
                 <div v-for="(spec, index) in product.specs" :key="spec.label" :class="['border-b border-gray-200 pb-4 last:border-b-0', 'animate-fadeInUp', `animation-delay-${600 + index * 100}`]">
                   <p class="text-sm text-[#FF9D35] font-semibold uppercase tracking-widest mb-2">{{ spec.label }}</p>
@@ -180,7 +180,7 @@
     <section id="related-section" class="bg-white py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6 animate-fadeInUp animation-delay-200">AUTRES PRODUITS</h2>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#016E98] leading-tight mb-6 animate-fadeInUp animation-delay-200">AUTRES PRODUITS</h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto animate-fadeInUp animation-delay-300">
             Découvrez nos autres solutions énergétiques
           </p>
@@ -199,9 +199,9 @@
               class="w-full h-48 object-cover"
             />
             <div class="p-6">
-              <h3 class="text-xl font-black text-[#0392C7] mb-2 hover:text-[#EE6D08] transition-colors">{{ relatedProduct.name }}</h3>
+              <h3 class="text-xl font-bold text-[#0392C7] mb-2 hover:text-[#EE6D08] transition-colors">{{ relatedProduct.name }}</h3>
               <p class="text-gray-600 text-sm mb-4 line-clamp-2">{{ relatedProduct.shortDescription }}</p>
-              <p class="text-[#FF9D35] font-black text-lg">{{ relatedProduct.price }}</p>
+              <p class="text-[#FF9D35] font-bold text-lg">{{ relatedProduct.price }}</p>
             </div>
           </router-link>
         </div>
@@ -211,7 +211,7 @@
     <!-- CTA Section -->
     <section id="cta-section" class="bg-gradient-to-r from-[#016E98] to-[#0392C7] py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-black text-white mb-8 animate-slideInDown animation-delay-200">PRÊT À PASSER À L'ACTION ?</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 animate-slideInDown animation-delay-200">PRÊT À PASSER À L'ACTION ?</h2>
         <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-fadeInUp animation-delay-400">
           Nos experts sont disponibles pour vous aider à choisir la solution idéale pour vos besoins énergétiques.
         </p>
@@ -443,7 +443,7 @@
 
           <!-- À propos de ce produit -->
           <div>
-            <h3 class="text-lg font-black text-[#016E98] mb-6 flex items-center gap-2">
+            <h3 class="text-lg font-bold text-[#016E98] mb-6 flex items-center gap-2">
               <i class="fas fa-info-circle text-[#0392C7]"></i>
               À propos de ce produit
             </h3>

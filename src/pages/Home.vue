@@ -22,7 +22,7 @@
         <div class="flex items-start justify-center w-full">
           <!-- Content -->
           <div class="z-10 max-w-4xl text-center pt-32 md:pt-40 px-2 sm:px-4">
-            <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
+            <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-semibold leading-tight drop-shadow-lg animate-fadeInUp translate-y-6">
               <span class="text-white">Écrivons l'Avenir de </span>
               <span class="text-white">l'Énergie</span>
               <br />
@@ -117,8 +117,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           <!-- Content -->
           <div class="order-2 md:order-1 transition-all duration-1000" :class="aboutInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'">
-            <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-pulse">L’EXPERTISE SOLAIRE AU TOGO</p>
-            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight">LEADER DE VOTRE TRANSITION ÉNERGÉTIQUE.</h2>
+            <p class="text-[#FF9D35] font-normal mb-3 text-sm uppercase tracking-widest animate-pulse">L’EXPERTISE SOLAIRE AU TOGO</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#016E98] mb-6 leading-tight">LEADER DE VOTRE TRANSITION ÉNERGÉTIQUE</h2>
             
             <p class="text-gray-600 mb-8 leading-relaxed text-lg">
               Depuis 2019, EGENT TOGO s’impose comme la référence en solutions solaires à Lomé et dans la sous-région. Nous ne nous contentons pas d’installer des panneaux : nous concevons des systèmes durables qui garantissent la continuité de vos activités et de votre confort.
@@ -143,8 +143,8 @@
     <section id="services" class="bg-gradient-to-br from-white to-gray-50 py-12 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 md:mb-20 animate-fadeInUp">
-          <p class="text-[#FF9D35] font-semibold mb-3 text-xs sm:text-sm uppercase tracking-widest animate-pulse">Nos services</p>
-          <h2 class="text-2xl sm:text-3xl md:text-5xl font-black text-[#016E98] leading-tight">NOUS OFFRONS DES SOLUTIONS ÉNERGÉTIQUES DURABLES</h2>
+          <p class="text-[#FF9D35] font-normal mb-3 text-xs sm:text-sm uppercase tracking-widest animate-pulse">Nos services</p>
+          <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-[#016E98] leading-tight">NOUS OFFRONS DES SOLUTIONS ÉNERGÉTIQUES DURABLES</h2>
         </div>
 
         
@@ -165,7 +165,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-6 rounded-3xl">
-              <h3 class="text-2xl md:text-3xl font-black text-white">ÉNERGIE<br>SOLAIRE</h3>
+              <h3 class="text-xl md:text-2xl font-bold text-white">ÉNERGIE<br>SOLAIRE</h3>
             </div>
             
             <!-- Button -->
@@ -190,7 +190,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-6 rounded-3xl">
-              <h3 class="text-2xl md:text-3xl font-black text-white">ÉLECTRICITE<br>GÉNERALE</h3>
+              <h3 class="text-xl md:text-2xl font-bold text-white">ÉLECTRICITE<br>GÉNERALE</h3>
             </div>
             
             <!-- Button -->
@@ -215,7 +215,7 @@
             
             <!-- Text Content -->
             <div class="absolute inset-0 flex items-end justify-between p-6 rounded-3xl">
-              <h3 class="text-2xl md:text-3xl font-black text-white">CLIMATISATION<br>& FROID</h3>
+              <h3 class="text-xl md:text-2xl font-bold text-white">CLIMATISATION<br>& FROID</h3>
             </div>
             
             <!-- Button -->
@@ -287,7 +287,7 @@
           <!-- Content -->
           <div class="order-1 md:order-2 transition-all duration-1000" :class="whyChooseInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'">
             <p class="text-[#FF9D35] font-semibold mb-3 text-xs sm:text-sm uppercase tracking-widest animate-pulse">Nos valeurs</p>
-            <h2 class="text-2xl sm:text-3xl md:text-5xl font-black text-[#016E98] mb-6 leading-tight">POURQUOI CHOISIR LES SOLUTIONS EGENT TOGO ?</h2>
+            <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-[#016E98] mb-6 leading-tight">POURQUOI CHOISIR LES SOLUTIONS EGENT TOGO ?</h2>
             
             <p class="text-gray-600 mb-8 md:mb-12 leading-relaxed text-sm sm:text-base md:text-lg">
               EGENT TOGO se distingue par son engagement envers la qualité, l'innovation et la satisfaction client. Nous utilisons uniquement des équipements certifiés et nos techniciens sont formés aux dernières technologies en matière d'énergie renouvelable.
@@ -299,7 +299,7 @@
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-gem text-[#FF9D35] text-2xl"></i>
                 </div>
-                <h3 class="font-black text-[#016E98] text-lg mb-3">Équipement de Qualité</h3>
+                <h3 class="font-bold text-[#016E98] text-lg mb-3">Équipement de Qualité</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">Tous nos équipements sont certifiés et proviennent de marques internationales réputées pour leur durabilité.</p>
               </div>
 
@@ -308,7 +308,7 @@
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-bolt text-[#FF9D35] text-2xl"></i>
                 </div>
-                <h3 class="font-black text-[#016E98] text-lg mb-3">Énergie Durable</h3>
+                <h3 class="font-bold text-[#016E98] text-lg mb-3">Énergie Durable</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">Nos solutions réduisent votre consommation d'électricité et votre empreinte carbone pour un avenir plus vert.</p>
               </div>
 
@@ -317,7 +317,7 @@
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-shield-alt text-[#FF9D35] text-2xl"></i>
                 </div>
-                <h3 class="font-black text-[#016E98] text-lg mb-3">Installation sécurisée</h3>
+                <h3 class="font-bold text-[#016E98] text-lg mb-3">Installation sécurisée</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">Nos installations respectent les normes de sécurité internationales pour protéger votre investissement.</p>
               </div>
 
@@ -326,7 +326,7 @@
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#FF9D35]/10 mb-4">
                   <i class="fas fa-users text-[#FF9D35] text-2xl"></i>
                 </div>
-                <h3 class="font-black text-[#016E98] text-lg mb-3">Technicien qualifié</h3>
+                <h3 class="font-bold text-[#016E98] text-lg mb-3">Technicien qualifié</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">Notre équipe dispose de certifications professionnelles et d'années d'expérience en installations énergétiques.</p>
               </div>
             </div>
@@ -340,7 +340,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 md:mb-20 animate-fadeInUp">
           <p class="text-[#FF9D35] font-semibold mb-3 text-xs sm:text-sm uppercase tracking-widest animate-pulse">Nos partenaires</p>
-          <h2 class="text-2xl sm:text-3xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">Ils nous ont fait confiance.</h2>
+          <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-[#016E98] leading-tight mb-6">Ils nous ont fait confiance.</h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Ils sont nombreux à nous faire confiance
           </p>
@@ -417,7 +417,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20 animate-fadeInUp">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-pulse">Nos produits phares</p>
-          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">DÉCOUVREZ NOS PRODUITS PHARES</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#016E98] leading-tight mb-6">DÉCOUVREZ NOS PRODUITS PHARES</h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Nous proposons une gamme complète de solutions énergétiques pour particuliers et entreprises, conçues pour optimiser votre consommation et maximiser vos économies.
           </p>
@@ -455,7 +455,7 @@
             <!-- Product Info Card -->
             <div class="bg-white p-6 flex flex-col flex-grow">
               <div class="flex items-start justify-between mb-3">
-                <h3 class="text-xl font-black text-[#0392C7] group-hover:text-[#EE6D08] transition-colors flex-grow">{{ product.name || product.title || 'Produit' }}</h3>
+                <h3 class="text-xl font-bold text-[#0392C7] group-hover:text-[#EE6D08] transition-colors flex-grow">{{ product.name || product.title || 'Produit' }}</h3>
                 <span v-if="product.featured" class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold whitespace-nowrap ml-2">⭐ Phare</span>
               </div>
               
@@ -465,7 +465,7 @@
               </p>
 
               <!-- Price if available -->
-              <p v-if="product.price" class="text-[#FF9D35] font-black text-lg mb-4">{{ product.price }}</p>
+              <p v-if="product.price" class="text-[#FF9D35] font-bold text-lg mb-4">{{ product.price }}</p>
 
               <!-- Detail Button -->
               <button 
@@ -487,7 +487,7 @@
         <div class="text-center">
           <router-link 
             to="/produits" 
-            class="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF9D35] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-10 py-4 rounded-full font-black text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            class="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF9D35] to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
             <span>Voir tous nos produits</span>
             <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
@@ -502,7 +502,7 @@
         <!-- Section Header -->
         <div class="text-center mb-20 animate-fadeInUp">
           <p class="text-[#FF9D35] font-semibold mb-3 text-sm uppercase tracking-widest animate-pulse">Témoignages</p>
-          <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-6">CE QUE NOS CLIENTS DISENT DE NOUS</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#016E98] leading-tight mb-6">CE QUE NOS CLIENTS DISENT DE NOUS</h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Découvrez les histoires de réussite de nos clients qui ont transformé leur consommation énergétique grâce à nos solutions innovantes.
           </p>
@@ -543,7 +543,7 @@
 
               <!-- Client Info -->
               <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
-                <h4 class="font-black text-[#016E98] text-base">VON WALTER</h4>
+                <h4 class="font-bold text-[#016E98] text-base">VON WALTER</h4>
                 <p class="text-gray-500 text-sm">Retraité électricien</p>
               </div>
             </div>
@@ -581,7 +581,7 @@
 
               <!-- Client Info -->
               <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
-                <h4 class="font-black text-[#016E98] text-base">Famille ALOMASSOR</h4>
+                <h4 class="font-bold text-[#016E98] text-base">Famille ALOMASSOR</h4>
                 <p class="text-gray-500 text-sm">Couple retraité</p>
               </div>
             </div>
@@ -619,7 +619,7 @@
 
               <!-- Client Info -->
               <!-- <div class="flex flex-col items-center justify-center pt-4 border-t border-gray-200">
-                <h4 class="font-black text-[#016E98] text-base">Ekué Laurent</h4>
+                <h4 class="font-bold text-[#016E98] text-base">Ekué Laurent</h4>
                 <p class="text-gray-500 text-sm">Syndic, Kpalimé</p>
               </div>
             </div> -->
@@ -635,7 +635,7 @@
                 <i class="fas fa-check-circle text-white text-2xl"></i>
               </div>
             </div>
-            <h3 class="text-4xl font-black text-[#016E98] mb-2">500+</h3>
+            <h3 class="text-3xl font-bold text-[#016E98] mb-2">500+</h3>
             <p class="text-gray-600 font-semibold">Clients Satisfaits</p>
           </div> -->
 
@@ -646,7 +646,7 @@
                 <i class="fas fa-project-diagram text-white text-2xl"></i>
               </div>
             </div>
-            <h3 class="text-4xl font-black text-[#016E98] mb-2">1000+</h3>
+            <h3 class="text-3xl font-bold text-[#016E98] mb-2">1000+</h3>
             <p class="text-gray-600 font-semibold">Projets Réalisés</p>
           </div> -->
 
@@ -657,7 +657,7 @@
                 <i class="fas fa-leaf text-white text-2xl"></i>
               </div>
             </div>
-            <h3 class="text-4xl font-black text-[#016E98] mb-2">2000+</h3>
+            <h3 class="text-3xl font-bold text-[#016E98] mb-2">2000+</h3>
             <p class="text-gray-600 font-semibold">Tonnes CO2 Évitées</p>
           </div> -->
 
@@ -668,7 +668,7 @@
                 <i class="fas fa-award text-white text-2xl"></i>
               </div>
             </div>
-            <h3 class="text-4xl font-black text-[#016E98] mb-2">10+</h3>
+            <h3 class="text-3xl font-bold text-[#016E98] mb-2">10+</h3>
             <p class="text-gray-600 font-semibold">Ans d'Expérience</p>
           </div>
         </div> -->
@@ -676,7 +676,7 @@
         <!-- CTA -->
         <!-- <div class="text-center">
           <p class="text-gray-700 text-lg mb-6">Rejoignez nos clients satisfaits et transformez votre consommation énergétique dès aujourd'hui!</p>
-          <button @click="navigateTo('/devis')" class="bg-gradient-to-r from-[#EE6D08] to-[#FF9D35] hover:from-[#d95c07] hover:to-orange-600 text-white px-10 py-4 text-lg font-black rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md">
+          <button @click="navigateTo('/devis')" class="bg-gradient-to-r from-[#EE6D08] to-[#FF9D35] hover:from-[#d95c07] hover:to-orange-600 text-white px-10 py-4 text-lg font-bold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md">
             Demander un devis gratuit
           </button>
         </div> -->
@@ -689,7 +689,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <!-- Content -->
           <div class="transition-all duration-1000" :class="ctaInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'">
-            <h2 class="text-4xl md:text-5xl font-black text-[#016E98] leading-tight mb-8">DITES AU REVOIR AUX PANNES<br>D'ÉLECTRICITÉ ET<br>AUX FACTURES SALÉES.</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#016E98] leading-tight mb-8">DITES AU REVOIR AUX PANNES<br>D'ÉLECTRICITÉ ET<br>AUX FACTURES SALÉES.</h2>
             
             <p class="text-[#016E98] mb-8 leading-relaxed text-lg">
               Nous vous proposons des solutions d'énergie renouvelable adaptées à votre maison ou votre entreprise à des prix abordables. Rejoignez les centaines de clients satisfaits qui ont déjà réduit leurs factures d'électricité.
