@@ -1,5 +1,6 @@
+version: '3.8'
+
 services:
-  # Application EGENT TOGO - Production
   app:
     build:
       context: .
@@ -11,7 +12,7 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - FRONTEND_URL=https://www.egenttogo.com
+      - FRONTEND_URL=${FRONTEND_URL:-https://www.egenttogo.com}
       - VITE_ENVIRONMENT=production
       - VITE_FIREBASE_API_KEY=${VITE_FIREBASE_API_KEY}
       - VITE_FIREBASE_AUTH_DOMAIN=${VITE_FIREBASE_AUTH_DOMAIN}
@@ -25,13 +26,12 @@ services:
     networks:
       - egent_network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
 
-  # Nginx Reverse Proxy (optional mais recommandé)
   nginx:
     image: nginx:alpine
     container_name: egent_togo_nginx
@@ -41,7 +41,7 @@ services:
       - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./ssl:/etc/nginx/ssl:ro  # Pour les certificats SSL
+      - ./ssl:/etc/nginx/ssl:ro
     depends_on:
       - app
     networks:

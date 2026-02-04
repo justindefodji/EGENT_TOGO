@@ -1,51 +1,33 @@
-# Dockerfile pour EGENT TOGO - Production
+ARG UBUNTU_VERSION=22.04
+ARG NODE_VERSION=22.12.0
 
-# Stage 1: Build
-FROM node:20-alpine AS builder
-
+FROM ubuntu:22.04 AS builder
+ARG NODE_VERSION
+ARG UBUNTU_VERSION
 WORKDIR /app
 
-# Désactiver le téléchargement du navigateur Puppeteer lors de l'installation des dépendances
-ENV PUPPETEER_SKIP_DOWNLOAD=true
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-COPY package.json package-lock.json* ./
-RUN npm ci && npm cache clean --force
+# Install node from nvm
+ENV NVM_DIR=/root/.nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash \
+    && . $NVM_DIR/nvm.sh \
+    && nvm install ${NODE_VERSION} \
+    && nvm alias default ${NODE_VERSION} \
+    && nvm use default
 
+ENV PATH=${NVM_DIR}/versions/node/v${NODE_VERSION}/bin:${PATH}
+
+# Install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy source and build
 COPY . .
 RUN npm run build
 
-# Stage 2: Production
-FROM node:20-alpine AS production
-
-# Installer les dépendances système pour Puppeteer et Chromium
-RUN apk add --no-cache \
-      chromium \
-      nss \
-      freetype \
-      harfbuzz \
-      ca-certificates \
-      ttf-freefont
-
-# Informer Puppeteer d'utiliser le Chromium installé par le système
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-
-WORKDIR /app
-
-# Installer Express et dépendances runtime uniquement
-COPY package.json package-lock.json* ./
-# Désactiver le téléchargement automatique de Puppeteer ici aussi
-ENV PUPPETEER_SKIP_DOWNLOAD=true
-RUN npm ci --only=production && npm cache clean --force
-
-# Copier les fichiers compilés depuis le builder
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/public ./public
-COPY server.js .
-COPY .env* ./
-
-# Exposer le port production
-EXPOSE 3000
-
-
-# Commande de démarrage production
-CMD ["npm", "start"]
+# Remove development dependencies to reduce image size
+RUN npm prune --production

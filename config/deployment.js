@@ -11,19 +11,19 @@ const deploymentConfig = {
     serverUrl: 'http://localhost:3000',
     baseUrl: 'http://localhost:5173',
     prerender: false,
-    cache: true,
-    cacheTTL: 3600000 // 1 heure
+    cache: false,
+    cacheTTL: 0
   },
 
   // GitHub Pages (actuellement)
   'github-pages': {
     name: 'GitHub Pages',
     frontendUrl: 'https://alifoe.github.io/EGENT_TOGO',
-    serverUrl: 'https://prerender.egenttogo.com', // À configurer
+    serverUrl: '', 
     baseUrl: 'https://alifoe.github.io/EGENT_TOGO',
-    prerender: true,
-    cache: true,
-    cacheTTL: 86400000 // 24 heures
+    prerender: false,
+    cache: false,
+    cacheTTL: 0
   },
 
   // egenttogo.com (cible finale)
@@ -32,7 +32,7 @@ const deploymentConfig = {
     frontendUrl: 'https://www.egenttogo.com',
     serverUrl: 'https://www.egenttogo.com',
     baseUrl: 'https://www.egenttogo.com',
-    prerender: true,
+    prerender: false,
     cache: true,
     cacheTTL: 86400000 // 24 heures
   }
@@ -64,17 +64,6 @@ const serverConfig = {
   timeouts: {
     render: 30000,
     cache: 86400000
-  },
-
-  // Puppeteer
-  puppeteer: {
-    headless: 'new',
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-gpu'
-    ]
   },
 
   // Crawlers à détecter

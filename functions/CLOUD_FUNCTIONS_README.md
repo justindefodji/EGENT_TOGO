@@ -15,19 +15,18 @@ functions/
 
 ### functions/index.js
 Contient la Cloud Function `prerender` qui:
-- **Initialise Puppeteer** avec les bonnes options pour Google Cloud
-- **Détecte les crawlers sociaux** via le User-Agent (Facebook, WhatsApp, Twitter, etc.)
-- **Pré-rend les pages** avec Puppeteer quand un crawler y accède
-- **Expose une API** `/api/prerender/articles/:slug` pour le prerendering à la demande
-- **Retourne le HTML** avec les meta tags OG générés par @vueuse/head
+- **Génère des métadonnées statiques** pour les articles via Firestore
+- **Détecte les crawlers sociaux** pour adapter les en-têtes de cache
+- **Retourne le HTML** avec les meta tags OG pré-remplis pour les partages sociaux
+- **Expose une API** de santé `/api/health`
 
 ### functions/package.json
 Contient les dépendances:
 - `firebase-functions@4.4.0` - SDK Cloud Functions
 - `firebase-admin@11.11.0` - SDK Firebase admin
 - `express@4.18.2` - Framework web
-- `puppeteer@20.0.0` - Navigateur headless pour prerendering
 - `cors@2.8.5` - Support CORS
+- `nodemailer@6.9.7` - Envoi d'emails (devis)
 
 ## 📋 Configuration (firebase.json)
 
@@ -58,7 +57,7 @@ Contient les dépendances:
 **Comment ça marche:**
 1. Quand quelqu'un accède `/article/mon-article`, la requête va d'abord à la Cloud Function
 2. La fonction reçoit le User-Agent et vérifie si c'est un crawler
-3. Si c'est un crawler → Puppeteer pré-rend la page avec les meta tags OG et retourne le HTML
+3. Si c'est un crawler → La fonction génère le HTML avec les meta tags statiques via Firestore et le retourne.
 4. Si c'est un utilisateur normal → La fonction le redirige vers Firebase Hosting qui sert l'SPA Vue.js
 
 ## 🚀 Déploiement
@@ -152,33 +151,9 @@ Dans `firebase.json`:
 }
 ```
 
-## 🐛 Dépannage
-
-### Problème: Puppeteer timeout
-**Solution:** Augmentez le timeout dans `functions/index.js`:
-```javascript
-await page.goto(url, {
-  waitUntil: 'networkidle2',
-  timeout: 60000  // 60 secondes
-})
-```
-
-### Problème: Meta tags non détectés
-**Vérifier:**
-1. Les meta tags sont bien générés par `useOpenGraphMeta.js`
-2. Visitez `/debug-meta-tags` pour voir les tags generés
-3. Regardez les logs: `firebase functions:log`
-
-### Problème: Images non visibles
-**Solution:** Assurez-vous que:
-1. Les images sont en HTTPS (Firebase Storage le fait automatiquement)
-2. `normalizeImageUrl()` convertit les URLs relatives en absolues
-3. Les URLs existent et sont accessibles publiquement
-
 ## 📚 Ressources
 
 - [Google Cloud Functions Documentation](https://cloud.google.com/functions/docs)
 - [Firebase Hosting Rewrites](https://firebase.google.com/docs/hosting/full-config)
-- [Puppeteer API](https://pptr.dev/)
 - [Open Graph Protocol](https://ogp.me/)
 - [@vueuse/head Documentation](https://head.unhead.io/)

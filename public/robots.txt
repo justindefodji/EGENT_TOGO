@@ -6,7 +6,6 @@ User-agent: *
 Allow: /
 Allow: /assets/
 Allow: /src/
-Allow: /EGENT_TOGO/
 
 # Disallow sections sensibles
 Disallow: /admin/
@@ -34,7 +33,6 @@ Crawl-delay: 1
 # SEO Optimisation - Directives d'indexation
 # Important: Définir le sitemap
 Sitemap: https://www.egenttogo.com/sitemap.xml
-Sitemap: https://alifoe.github.io/EGENT_TOGO/sitemap.xml
 
 # Images et médias - Autoriser l'indexation
 User-agent: *
