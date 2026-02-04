@@ -253,6 +253,17 @@ app.get('/api/health', (req, res) => {
 });
 
 /**
+ * Redirection pour l'ancienne base path /EGENT_TOGO/
+ * Utile pour la transition de GitHub Pages vers domaine personnalisé
+ */
+app.use((req, res, next) => {
+  if (req.url.startsWith('/EGENT_TOGO/')) {
+    req.url = req.url.replace('/EGENT_TOGO/', '/');
+  }
+  next();
+});
+
+/**
  * Servir les fichiers statiques (build Vue)
  */
 app.use(express.static('dist'));
