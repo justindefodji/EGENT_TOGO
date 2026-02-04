@@ -15,7 +15,7 @@
 
     <!-- Message si aucun formulaire -->
     <div v-if="forms.length === 0" class="text-center py-8 text-gray-500">
-      <p>Aucun formulaire de contact pour le moment.</p>
+      <p>Aucun formulaire de contact pour le moment..</p>
     </div>
 
     <!-- Tableau des formulaires -->
