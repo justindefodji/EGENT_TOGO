@@ -33,18 +33,20 @@ const injectPrerenderServerPlugin = {
 }
 
 // https://vite.dev/config/
-export default defineConfig({
-  base: '/',
-  plugins: [vue(), copy404Plugin, injectPrerenderServerPlugin],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
+export default defineConfig(({ command }) => {
+  return {
+    base: command === 'build' ? '/EGENT_TOGO/' : '/',
+    plugins: [vue(), copy404Plugin, injectPrerenderServerPlugin],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+      },
     },
-  },
-  build: {
-    minify: 'terser',
-    commonjsOptions: {
-      include: [/node_modules/]
-    }
-  },
+    build: {
+      minify: 'terser',
+      commonjsOptions: {
+        include: [/node_modules/]
+      }
+    },
+  }
 })
