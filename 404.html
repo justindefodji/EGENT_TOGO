@@ -7,9 +7,9 @@
     <script>
       // GitHub Pages 404 redirect for SPA
       (function(){
-        const pathWithoutBase = location.pathname.replace('/EGENT_TOGO/', '') || '/';
+        const pathWithoutBase = location.pathname || '/';
         sessionStorage.redirect = pathWithoutBase;
-        location.href = '/EGENT_TOGO/';
+        location.href = '/';
       })();
     </script>
   </head>
