@@ -252,7 +252,7 @@
                 <div class="w-12 h-12 bg-[#EE6D08]/10 rounded-lg flex items-center justify-center mb-4">
                   <i class="fas fa-gem text-[#EE6D08] text-2xl"></i>
                 </div>
-                <h3 class="text-lg font-bold text-[#016E98]">Équipement de Qualité</h3>
+                <h3 class="text-lg font-bold text-[#016E98]">EQUIPEMENT DE QUALITÉ</h3>
                 <p class="text-sm text-gray-600 leading-relaxed">
                   Nous sélectionnons uniquement des équipements conformes aux normes internationales pour assurer performance et durabilité maximales.
                 </p>
@@ -263,7 +263,7 @@
                 <div class="w-12 h-12 bg-[#EE6D08]/10 rounded-lg flex items-center justify-center mb-4">
                   <i class="fas fa-leaf text-[#EE6D08] text-2xl"></i>
                 </div>
-                <h3 class="text-lg font-bold text-[#016E98]">Énergie Durable</h3>
+                <h3 class="text-lg font-bold text-[#016E98]">ÉNERGIE DURABLE</h3>
                 <p class="text-sm text-gray-600 leading-relaxed">
                   Nos solutions énergétiques respectent l'environnement tout en réduisant votre consommation et vos factures pour un avenir plus vert et économique.
                 </p>
@@ -274,7 +274,7 @@
                 <div class="w-12 h-12 bg-[#EE6D08]/10 rounded-lg flex items-center justify-center mb-4">
                   <i class="fas fa-check-circle text-[#EE6D08] text-2xl"></i>
                 </div>
-                <h3 class="text-lg font-bold text-[#016E98]">Installation sécurisée</h3>
+                <h3 class="text-lg font-bold text-[#016E98]">INSTALLATION SÉCURISÉE</h3>
                 <p class="text-sm text-gray-600 leading-relaxed">
                   Nos équipes respectent les normes de sécurité strictes et utilisent les meilleures pratiques pour une installation fiable et sans risque.
                 </p>
@@ -285,7 +285,7 @@
                 <div class="w-12 h-12 bg-[#EE6D08]/10 rounded-lg flex items-center justify-center mb-4">
                   <i class="fas fa-users text-[#EE6D08] text-2xl"></i>
                 </div>
-                <h3 class="text-lg font-bold text-[#016E98]">Technicien qualifié</h3>
+                <h3 class="text-lg font-bold text-[#016E98]">TECHNICIENS QUALIFIÉS</h3>
                 <p class="text-sm text-gray-600 leading-relaxed">
                   Notre équipe de techniciens certifiés possède une expertise approfondie pour garantir des installations optimales et un support technique d'excellence.
                 </p>
