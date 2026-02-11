@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Pages principales -->
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/</loc>
+    <loc>https://www.egenttogo.com/</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/about</loc>
+    <loc>https://www.egenttogo.com/#/about</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/services</loc>
+    <loc>https://www.egenttogo.com/#/services</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/products</loc>
+    <loc>https://www.egenttogo.com/#/products</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/projects</loc>
+    <loc>https://www.egenttogo.com/#/projects</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/gallery</loc>
+    <loc>https://www.egenttogo.com/#/gallery</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/actualites</loc>
+    <loc>https://www.egenttogo.com/#/actualites</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/contact</loc>
+    <loc>https://www.egenttogo.com/#/contact</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/devis</loc>
+    <loc>https://www.egenttogo.com/#/devis</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -58,19 +58,19 @@
 
   <!-- Articles/Actualités -->
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/actualites/energie-solaire-togo</loc>
+    <loc>https://www.egenttogo.com/#/actualites/energie-solaire-togo</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/actualites/innovation-electricite</loc>
+    <loc>https://www.egenttogo.com/#/actualites/innovation-electricite</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/actualites/formation-technique</loc>
+    <loc>https://www.egenttogo.com/#/actualites/formation-technique</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -78,19 +78,19 @@
 
   <!-- Services détail -->
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/services/installation-solaire</loc>
+    <loc>https://www.egenttogo.com/#/services/installation-solaire</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/services/climatisation</loc>
+    <loc>https://www.egenttogo.com/#/services/climatisation</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/services/travaux-electricite</loc>
+    <loc>https://www.egenttogo.com/#/services/travaux-electricite</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -98,19 +98,19 @@
 
   <!-- Produits détail -->
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/produits/panneau-solaire</loc>
+    <loc>https://www.egenttogo.com/#/produits/panneau-solaire</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/produits/climatiseur</loc>
+    <loc>https://www.egenttogo.com/#/produits/climatiseur</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/produits/eau-gratuite</loc>
+    <loc>https://www.egenttogo.com/#/produits/eau-gratuite</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -118,19 +118,19 @@
 
   <!-- Projets détail -->
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/projets/maison-solaire</loc>
+    <loc>https://www.egenttogo.com/#/projets/maison-solaire</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/projets/entreprise-smart</loc>
+    <loc>https://www.egenttogo.com/#/projets/entreprise-smart</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://alifoe.github.io/EGENT_TOGO/#/projets/ferme-solaire</loc>
+    <loc>https://www.egenttogo.com/#/projets/ferme-solaire</loc>
     <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

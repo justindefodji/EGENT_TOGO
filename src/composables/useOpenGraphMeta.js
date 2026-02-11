@@ -4,7 +4,7 @@
  * Solution recommandée pour le partage sur WhatsApp, Facebook, LinkedIn, Twitter
  * 
  * ⚠️ IMPORTANT: Les réseaux sociaux ne peuvent pas exécuter JavaScript!
- * C'est pourquoi le serveur doit faire du pre-rendering avec Puppeteer
+ * Le serveur Firebase Functions génère des métadonnées statiques pour les articles.
  */
 
 import { useHead } from '@vueuse/head'

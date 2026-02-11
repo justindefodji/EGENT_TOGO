@@ -23,8 +23,6 @@ echo "🔧 Configuration des variables..."
 railway variable set PORT 3000
 railway variable set NODE_ENV production
 railway variable set FRONTEND_URL "https://alifoe.github.io/EGENT_TOGO"
-railway variable set PUPPETEER_HEADLESS "new"
-railway variable set PUPPETEER_SKIP_CHROMIUM_DOWNLOAD "false"
 
 # Déployer
 echo "🌐 Déploiement..."

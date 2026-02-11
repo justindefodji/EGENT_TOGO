@@ -1,4 +1,4 @@
-// Utiliser les chemins publics avec la base URL pour les images (GitHub Pages: /EGENT_TOGO/)
+// Utiliser les chemins publics avec la base URL pour les images
 const panneau_montés = '/images/panneau_montés.jpg'
 const montage_panneau = '/images/montage_panneau.jpg'
 const montage_panneau2 = '/images/montage_panneau2.jpg'

@@ -1,78 +1,33 @@
-# Dockerfile universel pour EGENT TOGO - Dev & Production
+ARG UBUNTU_VERSION=22.04
+ARG NODE_VERSION=22.12.0
 
-# Arguments de build
-ARG NODE_VERSION=20
-ARG NODE_VARIANT=alpine
-ARG BUILD_ENV=production
-ARG PORT=3000
-
-# Stage 1: Dependencies
-FROM node:${NODE_VERSION}-${NODE_VARIANT} AS dependencies
-
+FROM ubuntu:22.04 AS builder
+ARG NODE_VERSION
+ARG UBUNTU_VERSION
 WORKDIR /app
 
-# Désactiver le téléchargement du navigateur Puppeteer
-ENV PUPPETEER_SKIP_DOWNLOAD=true
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-COPY package.json package-lock.json* ./
+# Install node from nvm
+ENV NVM_DIR=/root/.nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash \
+    && . $NVM_DIR/nvm.sh \
+    && nvm install ${NODE_VERSION} \
+    && nvm alias default ${NODE_VERSION} \
+    && nvm use default
 
-# Installer toutes les dépendances
-RUN npm ci && npm cache clean --force
+ENV PATH=${NVM_DIR}/versions/node/v${NODE_VERSION}/bin:${PATH}
 
-# Stage 2: Build
-FROM dependencies AS builder
+# Install dependencies
+COPY package*.json ./
+RUN npm install
 
+# Copy source and build
 COPY . .
 RUN npm run build
 
-# Stage 3: Runtime base (Production)
-FROM node:${NODE_VERSION}-${NODE_VARIANT} AS runtime-prod
-
-# Installer les dépendances système pour Puppeteer et Chromium
-RUN apk add --no-cache \
-      chromium \
-      nss \
-      freetype \
-      harfbuzz \
-      ca-certificates \
-      ttf-freefont \
-      dumb-init
-
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-ENV PUPPETEER_SKIP_DOWNLOAD=true
-ENV NODE_ENV=production
-
-WORKDIR /app
-
-COPY package.json package-lock.json* ./
-RUN npm ci --only=production && npm cache clean --force
-
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/public ./public
-COPY server.js .
-COPY .env* ./
-
-EXPOSE ${PORT}
-
-HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-    CMD node -e "require('http').get('http://localhost:${PORT}', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
-
-ENTRYPOINT ["dumb-init", "--"]
-CMD ["node", "server.js"]
-
-# Stage 4: Runtime dev
-FROM dependencies AS runtime-dev
-
-ENV NODE_ENV=development
-
-WORKDIR /app
-
-COPY . .
-
-EXPOSE ${PORT}
-EXPOSE 5173
-
-CMD ["npm", "run", "dev"]
-
-# Stage final: Sélectionner dev ou prod
-FROM runtime-${BUILD_ENV}
+# Remove development dependencies to reduce image size
+RUN npm prune --production
