@@ -32,6 +32,20 @@ export default defineConfig({
     minify: 'terser',
     commonjsOptions: {
       include: [/node_modules/]
+    },
+    // Optimisation des assets
+    assetsInlineLimit: 4096,
+    rollupOptions: {
+      output: {
+        // Chunking stratégie pour meilleure performance
+        manualChunks: {
+          'vue': ['vue', 'vue-router'],
+        }
+      }
     }
   },
+  // Optimisation des images
+  server: {
+    middlewareMode: false
+  }
 })

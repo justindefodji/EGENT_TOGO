@@ -158,3 +158,24 @@ body {
   transform: scale(1);
 }
 
+/* Lazy Loading d'images */
+img[data-src] {
+  background-color: #f0f0f0;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img.lazy-loaded {
+  opacity: 1;
+}
+
+img {
+  /* Améliorer les performances d'affichage */
+  contain: layout style paint;
+}
+
+/* Optimisation des images responsives */
+picture {
+  display: block;
+  width: 100%;
+}

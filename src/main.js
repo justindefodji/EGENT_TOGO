@@ -4,9 +4,11 @@ import App from './App.vue'
 import router from './router'
 import '@fortawesome/fontawesome-free/css/all.css'
 import { googleAnalyticsConfig } from './config/analytics'
+import lazyLoadPlugin from './plugins/lazyLoadPlugin'
 
 const app = createApp(App)
 app.use(router)
+app.use(lazyLoadPlugin)
 
 // Initialize Google Analytics 4
 // Inject le script GA dans le document

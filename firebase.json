@@ -4,14 +4,6 @@
     "indexes": "firestore.indexes.json",
     "database": "(default)"
   },
-  "storage": {
-    "rules": "storage.rules"
-  },
-  "functions": {
-    "source": "functions",
-    "runtime": "nodejs18",
-    "codebase": "default"
-  },
   "hosting": {
     "public": "dist",
     "ignore": [
@@ -20,14 +12,6 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-      {
-        "source": "/article/:slug",
-        "function": "prerender"
-      },
-      {
-        "source": "/api/**",
-        "function": "prerender"
-      },
       {
         "source": "**",
         "destination": "/index.html"
