@@ -24,6 +24,9 @@
             src="https://images.unsplash.com/photo-1509391366360-2e938aa1ef14?w=600&h=500&fit=crop" 
             alt="Énergie solaire au Togo"
             class="w-full rounded-lg shadow-lg"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
           />
           <div class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-4 py-2 rounded text-sm">
             Crédit: Tom Photograph

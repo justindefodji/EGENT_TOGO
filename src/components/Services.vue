@@ -11,9 +11,12 @@
         <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
           <div class="relative h-64 bg-gray-300 overflow-hidden">
             <img 
-              src="https://via.placeholder.com/400x300?text=Electricite" 
+              v-lazy
+              :data-src="'https://via.placeholder.com/400x300?text=Electricite'" 
               alt="Électricité générale"
               class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <div class="text-white text-center">
@@ -28,9 +31,12 @@
         <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
           <div class="relative h-64 bg-gray-300 overflow-hidden">
             <img 
-              src="https://via.placeholder.com/400x300?text=Climatisation" 
+              v-lazy
+              :data-src="'https://via.placeholder.com/400x300?text=Climatisation'" 
               alt="Climatisation"
               class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <div class="text-white text-center">
@@ -45,9 +51,12 @@
         <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
           <div class="relative h-64 bg-gray-300 overflow-hidden">
             <img 
-              src="https://via.placeholder.com/400x300?text=Solaire" 
+              v-lazy
+              :data-src="'https://via.placeholder.com/400x300?text=Solaire'" 
               alt="Énergie solaire"
               class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <div class="text-white text-center">

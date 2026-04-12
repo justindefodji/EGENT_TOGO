@@ -5,9 +5,12 @@
         <!-- Image -->
         <div class="order-2 md:order-1">
           <img 
-            src="https://via.placeholder.com/500x400?text=Solar+Panel" 
+            v-lazy
+            :data-src="'https://via.placeholder.com/500x400?text=Solar+Panel'" 
             alt="Énergie autonome"
             class="w-full rounded-lg shadow-lg"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 

@@ -3,28 +3,28 @@ import { auth } from './lib/firebase'
 
 // Pages
 import Home from './pages/Home.vue'
-import About from './pages/About.vue'
-import Services from './pages/Services.vue'
-import ServiceDetail from './pages/ServiceDetail.vue'
-import Products from './pages/Products.vue'
-import ProductDetail from './pages/ProductDetail.vue'
-import Projects from './pages/Projects.vue'
-import ProjectDetail from './pages/ProjectDetail.vue'
-import Gallery from './pages/Gallery.vue'
-import News from './pages/News.vue'
-import ArticleDetail from './pages/ArticleDetail.vue'
-import Contact from './pages/Contact.vue'
-import Quote from './pages/Quote.vue'
-import Login from './pages/Login.vue'
-import AdminPanel from './pages/AdminPanel.vue'
-import DataImport from './pages/DataImport.vue'
-import AddImagesToGallery from './pages/AddImagesToGallery.vue'
-import ImportProductsPage from './pages/ImportProductsPage.vue'
-import Debug from './pages/Debug.vue'
-import MetaTagsDebug from './pages/MetaTagsDebug.vue'
+const About = () => import('./pages/About.vue')
+const Services = () => import('./pages/Services.vue')
+const ServiceDetail = () => import('./pages/ServiceDetail.vue')
+const Products = () => import('./pages/Products.vue')
+const ProductDetail = () => import('./pages/ProductDetail.vue')
+const Projects = () => import('./pages/Projects.vue')
+const ProjectDetail = () => import('./pages/ProjectDetail.vue')
+const Gallery = () => import('./pages/Gallery.vue')
+const News = () => import('./pages/News.vue')
+const ArticleDetail = () => import('./pages/ArticleDetail.vue')
+const Contact = () => import('./pages/Contact.vue')
+const Quote = () => import('./pages/Quote.vue')
+const Login = () => import('./pages/Login.vue')
+const AdminPanel = () => import('./pages/AdminPanel.vue')
+const DataImport = () => import('./pages/DataImport.vue')
+const AddImagesToGallery = () => import('./pages/AddImagesToGallery.vue')
+const ImportProductsPage = () => import('./pages/ImportProductsPage.vue')
+const Debug = () => import('./pages/Debug.vue')
+const MetaTagsDebug = () => import('./pages/MetaTagsDebug.vue')
 
 // Composants Admin
-import AdminNews from './components/AdminNews.vue'
+const AdminNews = () => import('./components/AdminNews.vue')
 
 const routes = [
   {

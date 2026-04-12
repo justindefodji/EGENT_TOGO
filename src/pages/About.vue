@@ -62,9 +62,12 @@
             <!-- Main image -->
             <div class="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl group">
               <img 
-                :src="EgentImage" 
+                v-lazy
+                :data-src="EgentImage" 
                 alt="À propos d'EGENT TOGO"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <!-- Gradient overlay -->
               <div class="absolute inset-0 bg-gradient-to-tr from-dark/40 via-transparent to-transparent group-hover:from-dark/20 transition-all duration-700"></div>
@@ -192,10 +195,13 @@
             <div class="relative w-full h-full bg-gray-200 flex items-center justify-center overflow-hidden">
               <transition name="carousel-fade" mode="out-in">
                 <img 
-                  :src="currentAdvantageImage()" 
+                  v-lazy
+                  :data-src="currentAdvantageImage()" 
                   :alt="`Produit EGENT TOGO - ${advantageSlideIndex + 1}`"
                   :key="advantageSlideIndex"
                   class="w-full h-full object-contain"
+                  loading="lazy"
+                  decoding="async"
                 />
               </transition>
             </div>
@@ -321,9 +327,12 @@
           <div class="group animate-fadeInUp" style="animation-delay: 0s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                :src="PasseportDGImage" 
+                v-lazy
+                :data-src="PasseportDGImage" 
                 alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/60 transition-all duration-300"></div>
               <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -378,9 +387,12 @@
           <div class="group animate-fadeInUp" style="animation-delay: 0.3s">
             <div class="relative mb-6 overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <img 
-                :src="DOImage" 
+                v-lazy
+                :data-src="DOImage" 
                 alt="Professionnelle de l'équipe"
                 class="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/60 transition-all duration-300"></div>
               <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -454,9 +466,12 @@
           <!-- Image droite -->
           <div class="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group transition-all duration-1000" :class="ctaAboutInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'">
             <img 
-              :src="DaureVoirImage" 
+              v-lazy
+              :data-src="DaureVoirImage" 
               alt="Solutions d'énergie renouvelable"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
             />
             <!-- Gradient overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/30 transition-all duration-300"></div>

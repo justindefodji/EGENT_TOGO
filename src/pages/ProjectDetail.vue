@@ -39,9 +39,12 @@
               <!-- Main Image -->
               <div class="relative bg-gray-100 rounded-3xl overflow-hidden w-full h-72 sm:h-80 md:h-96 lg:h-[28rem]">
                 <img 
-                  :src="currentImage" 
+                  v-lazy
+                  :data-src="currentImage" 
                   :alt="project.title"
                   class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               
@@ -50,9 +53,12 @@
                 <img 
                   v-for="(image, index) in project.images"
                   :key="index"
-                  :src="image"
+                  v-lazy
+                  :data-src="image"
                   :alt="`${project.title} - Image ${index + 1}`"
                   class="w-full h-20 sm:h-24 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent hover:border-[#FF9D35]"
+                  loading="lazy"
+                  decoding="async"
                   @click="currentImage = image"
                 />
               </div>
@@ -213,9 +219,12 @@
             >
               <div class="h-48 overflow-hidden bg-gray-100">
                 <img 
-                  :src="proj.mainImage || proj.images?.[0]"
+                  v-lazy
+                  :data-src="proj.mainImage || proj.images?.[0]"
                   :alt="proj.title"
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="p-6">

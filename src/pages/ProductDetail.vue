@@ -31,9 +31,12 @@
             <!-- Main Image -->
             <div class="relative bg-gray-100 rounded-3xl overflow-hidden w-full h-auto flex items-center justify-center">
               <img 
-                :src="product.mainImage || '/images/montage_panneau.jpg'" 
+                v-lazy
+                :data-src="product.mainImage || '/images/montage_panneau.jpg'" 
                 :alt="product.name"
                 class="w-full h-auto object-contain"
+                loading="lazy"
+                decoding="async"
                 @error="(e) => e.target.src = '/images/montage_panneau.jpg'"
               />
             </div>
@@ -43,9 +46,12 @@
               <img 
                 v-for="(image, index) in product.images"
                 :key="index"
-                :src="image || '/images/montage_panneau.jpg'"
+                v-lazy
+                :data-src="image || '/images/montage_panneau.jpg'"
                 :alt="`${product.name} - Image ${index + 1}`"
                 class="w-full h-20 sm:h-24 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent hover:border-[#FF9D35]"
+                loading="lazy"
+                decoding="async"
                 @click="product.mainImage = image"
                 @error="(e) => e.target.src = '/images/montage_panneau.jpg'"
               />
@@ -194,9 +200,12 @@
             :class="['bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105 duration-300', 'animate-fadeInUp', `animation-delay-${400 + index * 100}`]"
           >
             <img 
-              :src="relatedProduct.mainImage" 
+              v-lazy
+              :data-src="relatedProduct.mainImage" 
               :alt="relatedProduct.name"
               class="w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="p-6">
               <h3 class="text-xl font-bold text-[#0392C7] mb-2 hover:text-[#EE6D08] transition-colors">{{ relatedProduct.name }}</h3>

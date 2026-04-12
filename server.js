@@ -11,6 +11,7 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import compression from 'compression';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
+app.use(compression()); // Activer la compression Gzip
 app.use(cors());
 app.use(express.json());
 
@@ -48,7 +50,17 @@ app.use((req, res, next) => {
 /**
  * Servir les fichiers statiques (build Vue)
  */
-app.use(express.static('dist'));
+const oneYear = 31536000000;
+app.use(express.static('dist', {
+  maxAge: oneYear,
+  immutable: true,
+  setHeaders: (res, path) => {
+    if (path.endsWith('.html')) {
+      // Les fichiers HTML ne doivent pas être mis en cache de manière permanente
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    }
+  }
+}));
 
 /**
  * Fallback pour les routes du frontend (SPA)

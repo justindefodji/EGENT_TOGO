@@ -13,26 +13,35 @@ app.use(lazyLoadPlugin)
 // Initialize Google Analytics 4
 // Inject le script GA dans le document
 if (typeof window !== 'undefined') {
-  const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID || googleAnalyticsConfig.measurementId
-  
-  // Créer et injecter le script GA
-  const script = document.createElement('script')
-  script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`
-  document.head.appendChild(script)
-  
-  // Initialiser gtag
-  window.dataLayer = window.dataLayer || []
-  function gtag(){window.dataLayer.push(arguments);}
-  gtag('js', new Date())
-  gtag('config', measurementId, {
-    ...googleAnalyticsConfig.config,
-    'page_path': window.location.pathname,
-    'page_title': document.title,
-    'page_location': window.location.href
-  })
-  window.gtag = gtag
-  window.GA_MEASUREMENT_ID = measurementId
+  const initGA = () => {
+    const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID || googleAnalyticsConfig.measurementId
+    
+    // Créer et injecter le script GA
+    const script = document.createElement('script')
+    script.async = true
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`
+    document.head.appendChild(script)
+    
+    // Initialiser gtag
+    window.dataLayer = window.dataLayer || []
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date())
+    gtag('config', measurementId, {
+      ...googleAnalyticsConfig.config,
+      'page_path': window.location.pathname,
+      'page_title': document.title,
+      'page_location': window.location.href
+    })
+    window.gtag = gtag
+    window.GA_MEASUREMENT_ID = measurementId
+  }
+
+  // Utiliser requestIdleCallback pour ne pas bloquer le thread principal
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(() => initGA(), { timeout: 2000 })
+  } else {
+    setTimeout(initGA, 2000)
+  }
 }
 
 // Router tracking automatique

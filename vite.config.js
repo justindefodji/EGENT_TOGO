@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import fs from 'fs'
+import viteCompression from 'vite-plugin-compression'
 
 // Plugin pour copier 404.html dans dist/
 const copy404Plugin = {
@@ -22,7 +23,20 @@ const copy404Plugin = {
 // https://vite.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [vue(), copy404Plugin],
+  plugins: [
+    vue(),
+    copy404Plugin,
+    // Compression Gzip
+    viteCompression({
+      algorithm: 'gzip',
+      ext: '.gz',
+    }),
+    // Compression Brotli
+    viteCompression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+    })
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

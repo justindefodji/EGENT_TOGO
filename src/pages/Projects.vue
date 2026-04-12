@@ -53,9 +53,12 @@
           <div class="relative h-80 md:h-[450px] lg:h-[500px] animate-fadeInUp animation-delay-400">
             <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group animate-fadeInUp animation-delay-500">
               <img 
-                src="/src/assets/images/DC.webp" 
+                v-lazy
+                :data-src="'/src/assets/images/DC.webp'" 
                 alt="Nos projets"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div class="absolute inset-0 bg-gradient-to-tr from-dark/40 via-transparent to-transparent group-hover:from-dark/20 transition-all duration-700"></div>
             </div>
@@ -94,9 +97,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                :src="project.mainImage" 
+                v-lazy
+                :data-src="project.mainImage" 
                 :alt="project.title"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             

@@ -249,9 +249,12 @@
             <!-- Image -->
             <div v-if="article.image" class="relative overflow-hidden h-56 bg-gray-200">
               <img 
-                :src="article.image" 
+                v-lazy
+                :data-src="article.image" 
                 :alt="article.title"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
               <!-- Category Badge -->
               <div class="absolute top-4 left-4 bg-[#EE6D08] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">

@@ -5,9 +5,12 @@
         <!-- Image -->
         <div>
           <img 
-            src="https://via.placeholder.com/500x400?text=Why+Choose+Us" 
+            v-lazy
+            :data-src="'https://via.placeholder.com/500x400?text=Why+Choose+Us'" 
             alt="Pourquoi nous choisir"
             class="w-full rounded-lg shadow-lg"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 

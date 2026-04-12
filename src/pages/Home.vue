@@ -130,9 +130,12 @@
           <!-- Image -->
           <div class="order-1 md:order-2 transition-all duration-1000" :class="aboutInView ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-10 scale-95'">
             <img 
-              src="/src/assets/images/EGENT.webp" 
+              v-lazy
+              :data-src="'/src/assets/images/EGENT.webp'" 
               alt="Énergie autonome"
               class="w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -154,9 +157,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/Energysolaire.webp" 
+                v-lazy
+                :data-src="'/src/assets/images/Energysolaire.webp'" 
                 alt="Électricité générale"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -179,9 +185,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/electricitegen.webp" 
+                v-lazy
+                :data-src="'/src/assets/images/electricitegen.webp'" 
                 alt="Climatisation"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -204,9 +213,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/friod.webp" 
+                v-lazy
+                :data-src="'/src/assets/images/friod.webp'" 
                 alt="Énergie solaire"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -243,10 +255,13 @@
               <div class="relative w-full aspect-square bg-gray-200 flex items-center justify-center overflow-hidden">
                 <transition name="carousel-fade" mode="out-in">
                   <img 
-                    :src="currentSlideImage" 
+                    v-lazy
+                    :data-src="currentSlideImage" 
                     :alt="`Produit EGENT TOGO - ${currentSlideIndex + 1}`"
                     :key="currentSlideIndex"
                     class="w-full h-full object-contain"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </transition>
               </div>
@@ -362,9 +377,12 @@
                 class="flex-shrink-0 w-[calc(33.333%-16px)] flex items-center justify-center h-24 sm:h-32 md:h-48 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group p-2 sm:p-3 md:p-4"
               >
                 <img 
-                  :src="partner.src"
+                  v-lazy
+                  :data-src="partner.src"
                   :alt="partner.name"
                   class="w-full h-full object-contain group-hover:scale-125 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </transition-group>
@@ -436,9 +454,12 @@
             <!-- Product Image Section -->
             <div v-if="product.image || product.mainImage" class="relative w-full h-auto overflow-hidden bg-gray-200 flex items-center justify-center">
               <img 
-                :src="product.image || product.mainImage" 
+                v-lazy
+                :data-src="product.image || product.mainImage" 
                 :alt="product.name || product.title || 'Produit'"
                 class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
                 @error="(e) => e.target.src = '/images/montage_panneau.jpg'"
               />
               <!-- Hover Overlay -->
@@ -519,10 +540,13 @@
             <!-- Profile Image -->
             <div class="flex justify-center -mt-12 relative z-10">
               <img 
-                src="/src/assets/images/testimonials/testimony-01.png" 
+                v-lazy
+                :data-src="'/src/assets/images/testimonials/testimony-01.png'" 
                 alt="VON WALTER"
                 
                 class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image cursor-pointer hover:scale-110 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -557,10 +581,13 @@
             <!-- Profile Image -->
             <div class="flex justify-center -mt-12 relative z-10">
               <img 
-                src="/src/assets/images/testimonials/testimony-02.png" 
+                v-lazy
+                :data-src="'/src/assets/images/testimonials/testimony-02.png'" 
                 alt="Famille ALOMASSOR"
                 
                 class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover testimonial-image cursor-pointer hover:scale-110 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -703,9 +730,12 @@
           <!-- Image -->
           <div class="transition-all duration-1000" :class="ctaInView ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-10 scale-95'">
             <img 
-              src="/src/assets/images/DAUREVOIR.png" 
+              v-lazy
+              :data-src="'/src/assets/images/DAUREVOIR.png'" 
               alt="Professionnelle énergie solaire"
               class="w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

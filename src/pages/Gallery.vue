@@ -75,9 +75,12 @@
           >
             <!-- Image -->
             <img 
-              :src="image.image"
+              v-lazy
+              :data-src="image.image"
               :alt="image.title || 'Galerie image'"
               class="w-full h-full object-cover group-hover:brightness-50 transition-all duration-500"
+              loading="lazy"
+              decoding="async"
               @error="(e) => e.target.src = '/images/montage_panneau2.jpg'"
             />
             <!-- Overlay -->

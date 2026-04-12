@@ -58,9 +58,12 @@
             <!-- Main image -->
             <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group animate-fadeInUp animation-delay-400">
               <img 
-                src="/src/assets/images/DC.webp" 
+                v-lazy
+                :data-src="'/src/assets/images/DC.webp'" 
                 alt="Produits EGENT TOGO"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <!-- Gradient overlay -->
               <div class="absolute inset-0 bg-gradient-to-tr from-dark/40 via-transparent to-transparent group-hover:from-dark/20 transition-all duration-700"></div>
@@ -143,9 +146,12 @@
             <div class="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow cursor-pointer group h-full flex flex-col">
               <!-- Image -->
               <img 
-                :src="product.mainImage || product.image || '/images/montage_panneau.jpg'" 
+                v-lazy
+                :data-src="product.mainImage || product.image || '/images/montage_panneau.jpg'" 
                 :alt="product.name || product.title"
                 class="w-full h-[250px] object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
                 @error="(e) => e.target.src = '/images/montage_panneau.jpg'"
               />
               
@@ -191,9 +197,12 @@
       <!-- Background Image Overlay -->
       <div class="absolute inset-0 opacity-40 hidden md:block">
         <img 
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1440&h=371&fit=crop" 
+          v-lazy
+          :data-src="'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1440&h=371&fit=crop'" 
           alt="Main d'oeuvre qualifiée"
           class="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
@@ -243,9 +252,12 @@
           <!-- Right Image -->
           <div class="relative h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl animate-fadeInUp animation-delay-400">
             <img 
-              src="/src/assets/images/DAUREVOIR.png" 
+              v-lazy
+              :data-src="'/src/assets/images/DAUREVOIR.png'" 
               alt="Nos produits"
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

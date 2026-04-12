@@ -58,9 +58,12 @@
             <!-- Main image -->
             <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl group animate-fadeInUp animation-delay-500">
               <img 
-                src="/src/assets/images/EGENT.webp" 
+                v-lazy
+                :data-src="'/src/assets/images/EGENT.webp'" 
                 alt="Services énergétiques"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <!-- Gradient overlay -->
               <div class="absolute inset-0 bg-gradient-to-tr from-dark/40 via-transparent to-transparent group-hover:from-dark/20 transition-all duration-700"></div>
@@ -120,9 +123,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/Energysolaire.webp" 
+                v-lazy
+                :data-src="'/src/assets/images/Energysolaire.webp'" 
                 alt="Énergie solaire"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -147,9 +153,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/electricitegen.webp" 
+                v-lazy
+                :data-src="'/src/assets/images/electricitegen.webp'" 
                 alt="Électricité générale"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -174,9 +183,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/friod.webp" 
+                v-lazy
+                :data-src="'/src/assets/images/friod.webp'" 
                 alt="Climatisation & Froid"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -201,9 +213,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/Plomberie.png" 
+                v-lazy
+                :data-src="'/src/assets/images/Plomberie.png'" 
                 alt="Plomberie"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -228,9 +243,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/FP.png" 
+                v-lazy
+                :data-src="'/src/assets/images/FP.png'" 
                 alt="Fourniture d'équipements"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -255,9 +273,12 @@
             <!-- Image Container with Zoom Effect -->
             <div class="absolute inset-0 overflow-hidden rounded-3xl">
               <img 
-                src="/src/assets/images/Consultation.png" 
+                v-lazy
+                :data-src="'/src/assets/images/Consultation.png'" 
                 alt="Consulting"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -292,9 +313,12 @@
       <!-- Background Image Overlay -->
       <div class="absolute inset-0 opacity-40">
         <img 
-          src="/src/assets/images/chauffage_egent.jpg" 
+          v-lazy
+          :data-src="'/src/assets/images/chauffage_egent.jpg'" 
           alt="Main d'oeuvre qualifiée"
           class="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
@@ -339,9 +363,12 @@
           <!-- Right Image -->
           <div class="relative w-full h-64 sm:h-80 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl animate-fadeInUp animation-delay-500">
             <img 
-              src="/src/assets/images/DAUREVOIR.png" 
+              v-lazy
+              :data-src="'/src/assets/images/DAUREVOIR.png'" 
               alt="Solutions énergétiques"
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
