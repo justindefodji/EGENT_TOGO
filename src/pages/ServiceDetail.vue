@@ -287,6 +287,13 @@ export default {
       const slug = this.$route.params.slug;
       this.service = this.services.find(s => s.slug === slug);
       
+      const stripHtml = (html) => {
+        if (!html) return ''
+        const div = document.createElement('div')
+        div.innerHTML = html
+        return div.textContent || div.innerText || ''
+      }
+      
       if (this.service) {
         this.currentImage = this.service.mainImage;
         
@@ -294,7 +301,7 @@ export default {
         const { setMeta } = useSEOMeta();
         if (setMeta) {
           const pathname = `/services/${this.service.slug}`;
-          const description = this.service.description || `Découvrez notre service ${this.service.name}`;
+          const description = stripHtml(this.service.description) || `Découvrez notre service ${this.service.name}`;
           setMeta(
             this.service.name + ' - EGENT TOGO',
             description,

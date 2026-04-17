@@ -760,7 +760,7 @@ const findProject = () => {
     
     setMeta(
       `${project.value.title} - EGENT TOGO`,
-      project.value.description,
+      stripHtml(project.value.description),
       currentImage.value,
       `/projets/${slug}`,
       { type: 'article', siteName: 'EGENT TOGO' }

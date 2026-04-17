@@ -363,7 +363,7 @@ watch(article, (newArticle) => {
     // Configuration des meta tags Open Graph
     setMeta(
       `${newArticle.title} - EGENT TOGO`,
-      newArticle.excerpt || newArticle.title,
+      stripHtml(newArticle.excerpt || newArticle.title),
       newArticle.image,
       `/article/${newArticle.slug || route.params.slug}`,
       {
@@ -395,7 +395,7 @@ onMounted(async () => {
     // ✅ MISE À JOUR INITIALE DES MÉTADONNÉES
     setMeta(
       `${foundArticle.title} - EGENT TOGO`,
-      foundArticle.excerpt || foundArticle.title,
+      stripHtml(foundArticle.excerpt || foundArticle.title),
       foundArticle.image,
       `/article/${articleSlug}`,
       {

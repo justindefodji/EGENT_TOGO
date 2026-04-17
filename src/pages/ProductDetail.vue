@@ -680,7 +680,7 @@ const loadProduct = async () => {
     // ✅ SEO OPTIMISÉ POUR LA PAGE PRODUIT
     setMeta(
       `${product.value.name} - ${product.value.category} EGENT TOGO`,
-      product.value.shortDescription || product.value.description || `Découvrez ${product.value.name}, une solution ${product.value.category} de qualité d\'EGENT TOGO. Livré avec garantie et support technique.`,
+      stripHtml(product.value.shortDescription || product.value.description) || `Découvrez ${product.value.name}, une solution ${product.value.category} de qualité d\'EGENT TOGO. Livré avec garantie et support technique.`,
       product.value.mainImage,
       `/produits/${productSlug}`,
       {
