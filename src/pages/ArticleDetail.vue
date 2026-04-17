@@ -300,7 +300,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { auth } from '../lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../lib/firebase'
-import { useOpenGraphMeta } from '../composables/useOpenGraphMeta'
+import { useSEOMeta } from '../composables/useSEOMeta'
 import { useFirebaseData } from '../composables/useFirebaseData'
 import ArticleFormModal from '../components/ArticleFormModal.vue'
 
@@ -317,7 +317,7 @@ if (typeof window !== 'undefined') {
   document.head.appendChild(script)
 }
 
-const { setArticleMeta, getArticleJsonLD, injectJsonLD } = useOpenGraphMeta()
+const { setMeta } = useSEOMeta()
 const { deleteNews, updateNews } = useFirebaseData()
 const router = useRouter()
 const route = useRoute()
@@ -361,24 +361,17 @@ watch(article, (newArticle) => {
     console.log('👀 [ArticleDetail] Article détecté, configuration Open Graph...')
     
     // Configuration des meta tags Open Graph
-    setArticleMeta({
-      titre: `${newArticle.title} - EGENT TOGO`,
-      description: newArticle.excerpt || newArticle.title,
-      image: newArticle.image,
-      url: `/article/${newArticle.slug || route.params.slug}`,
-      date: newArticle.date || new Date().toISOString(),
-      categorie: newArticle.category || 'Articles'
-    })
-    
-    // Injecter les données structurées JSON-LD
-    const jsonLd = getArticleJsonLD({
-      titre: newArticle.title,
-      description: newArticle.excerpt || newArticle.title,
-      image: newArticle.image,
-      url: `/article/${newArticle.slug || route.params.slug}`,
-      date: newArticle.date || new Date().toISOString()
-    })
-    injectJsonLD(jsonLd)
+    setMeta(
+      `${newArticle.title} - EGENT TOGO`,
+      newArticle.excerpt || newArticle.title,
+      newArticle.image,
+      `/article/${newArticle.slug || route.params.slug}`,
+      {
+        type: 'article',
+        datePublished: newArticle.date || new Date().toISOString(),
+        author: newArticle.author || 'EGENT TOGO'
+      }
+    )
     
     console.log('✅ [ArticleDetail] Métadonnées OG configurées pour:', newArticle.title)
   }
@@ -400,24 +393,19 @@ onMounted(async () => {
     findRelatedArticles()
     
     // ✅ MISE À JOUR INITIALE DES MÉTADONNÉES
-    setArticleMeta({
-      titre: `${foundArticle.title} - EGENT TOGO`,
-      description: foundArticle.excerpt || foundArticle.title,
-      image: foundArticle.image,
-      url: `/article/${articleSlug}`,
-      date: foundArticle.date || new Date().toISOString(),
-      categorie: foundArticle.category || 'Articles'
-    })
+    setMeta(
+      `${foundArticle.title} - EGENT TOGO`,
+      foundArticle.excerpt || foundArticle.title,
+      foundArticle.image,
+      `/article/${articleSlug}`,
+      {
+        type: 'article',
+        datePublished: foundArticle.date || new Date().toISOString(),
+        author: foundArticle.author || 'EGENT TOGO'
+      }
+    )
     
-    // Injecter les données structurées JSON-LD
-    const jsonLd = getArticleJsonLD({
-      titre: foundArticle.title,
-      description: foundArticle.excerpt || foundArticle.title,
-      image: foundArticle.image,
-      url: `/article/${articleSlug}`,
-      date: foundArticle.date || new Date().toISOString()
-    })
-    injectJsonLD(jsonLd)
+    // JSON-LD is automatically handled by setMeta
   } else {
     router.push('/actualites')
     return

@@ -39,7 +39,7 @@ export function useSEOMeta() {
     
     // Si c'est déjà une URL absolue (http/https) - PRÉFÉRÉ pour les réseaux sociaux
     if (imagePath.startsWith('http')) {
-      return imagePath
+      return imagePath.startsWith('https') ? imagePath : imagePath.replace('http:', 'https:')
     }
     
     // Si c'est une URL de données (base64) - NON RECOMMANDÉ pour les réseaux sociaux
@@ -50,7 +50,8 @@ export function useSEOMeta() {
     // Si c'est un blob Webpack (image importée en Vue)
     if (imagePath.includes('/') || imagePath.includes('\\')) {
       // Pour les images dans src/assets, on les sert depuis /src/assets/
-      const resolvedUrl = `${baseUrl}/src${imagePath.startsWith('/') ? '' : '/'}${imagePath}`
+      const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`
+      const resolvedUrl = `${baseUrl}${path.startsWith('/src') ? '' : '/src'}${path}`
       return resolvedUrl
     }
     
@@ -107,6 +108,8 @@ export function useSEOMeta() {
     const imageHeight = options.imageHeight || '630'
     const locale = options.locale || 'fr_FR'
     const siteName = options.siteName || 'EGENT TOGO'
+    const datePublished = options.datePublished || new Date().toISOString()
+    const author = options.author || siteName
 
     // ✅ Open Graph Tags - OPTIMISÉ POUR TOUS LES RÉSEAUX SOCIAUX
     const ogTags = [
@@ -183,12 +186,13 @@ export function useSEOMeta() {
     // ✅ Ajouter les données structurées JSON-LD pour meilleure reconnaissance
     const jsonLdData = {
       '@context': 'https://schema.org',
-      '@type': ogType === 'article' ? 'NewsArticle' : 'WebPage',
+      '@type': ogType === 'article' ? 'NewsArticle' : (ogType === 'product' ? 'Product' : 'WebPage'),
       headline: title,
+      name: title,
       description: description,
       image: imageUrl,  // IMAGE - IMPORTANT POUR LE ROBOT GOOGLE
       url: fullUrl,
-      datePublished: new Date().toISOString(),
+      datePublished: datePublished,
       dateModified: new Date().toISOString(),
       inLanguage: 'fr-TG',
       publisher: {
@@ -203,7 +207,7 @@ export function useSEOMeta() {
       },
       author: {
         '@type': 'Organization',
-        name: siteName
+        name: author
       }
     }
 
