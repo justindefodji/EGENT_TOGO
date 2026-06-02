@@ -4,6 +4,8 @@ import path from 'path'
 import fs from 'fs'
 import viteCompression from 'vite-plugin-compression'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // Plugin pour copier 404.html dans dist/
 const copy404Plugin = {
   name: 'copy-404',
@@ -23,20 +25,15 @@ const copy404Plugin = {
 // https://vite.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [
-    vue(),
-    copy404Plugin,
-    // Compression Gzip
-    viteCompression({
-      algorithm: 'gzip',
-      ext: '.gz',
-    }),
-    // Compression Brotli
-    viteCompression({
-      algorithm: 'brotliCompress',
-      ext: '.br',
-    })
-  ],
+  plugins: [vue(), copy404Plugin, // Compression Gzip
+  viteCompression({
+    algorithm: 'gzip',
+    ext: '.gz',
+  }), // Compression Brotli
+  viteCompression({
+    algorithm: 'brotliCompress',
+    ext: '.br',
+  }), cloudflare()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
